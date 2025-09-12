@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +19,11 @@
     </section>
 
     <footer>
-    <a href="principal.html"><button>Inicio</button></a>
-    <a href="rrss.html"><button>Redes Sociales</button></a>
+    <a href="principal.php"><button>Inicio</button></a>
+    <a href="rrss.php"><button>Redes Sociales</button></a>
     </footer>
+
+    <?php include("cabecera.inc.php"); ?>
+
 </body>
 </html>

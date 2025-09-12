@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,8 @@
     <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Foto de perfil" />
   </section>
 
-  <a href="tecnologias.html"><button>tecnologias</button></a>
-  <a href="rrss.html"><button>Redes Sociales</button></a>
+  <a href="tecnologias.php"><button>tecnologias</button></a>
+  <a href="rrss.php"><button>Redes Sociales</button></a>
 
   <footer>
     <h4>Contacto:</h4>
@@ -39,5 +39,8 @@
     <br>
     <input type="submit" value="Enviar">
   </form>
+
+  <?php include("cabecera.inc.php"); ?>
+  
 </body>
 </html>
