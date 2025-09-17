@@ -8,6 +8,7 @@
 <body>
     
     <header>
+    <?php include("cabecera.inc.php"); ?>
     <h2>Tecnologías</h2>
     </header>
     <section>
@@ -23,7 +24,6 @@
     <a href="rrss.php"><button>Redes Sociales</button></a>
     </footer>
 
-    <?php include("cabecera.inc.php"); ?>
-
+    <?php include("footer.inc.php"); ?>
 </body>
 </html>

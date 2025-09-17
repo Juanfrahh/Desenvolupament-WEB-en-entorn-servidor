@@ -7,6 +7,7 @@
 </head>
 <body>
     <header>
+    <?php include("cabecera.inc.php"); ?>
     <h2>Redes Sociales</h2>
     </header>
     <section>
@@ -21,7 +22,7 @@
     <a href="tecnologias.php"><button>Tecnologías</button></a>
     </footer>
 
-    <?php include("cabecera.inc.php"); ?>
+    <?php include("footer.inc.php"); ?>
 
 </body>
 </html>

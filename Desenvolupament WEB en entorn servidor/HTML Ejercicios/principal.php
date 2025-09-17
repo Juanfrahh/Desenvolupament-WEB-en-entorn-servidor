@@ -7,6 +7,7 @@
 </head>
 <body>
     <header>
+    <?php include("cabecera.inc.php"); ?>
     <h1>Hola, soy Carlos <h1>
   </header>
     <p>Desarrollador Web Fullstack</p>
@@ -39,8 +40,8 @@
     <br>
     <input type="submit" value="Enviar">
   </form>
-
-  <?php include("cabecera.inc.php"); ?>
   
+  <?php include("footer.inc.php"); ?>
+
 </body>
 </html>
