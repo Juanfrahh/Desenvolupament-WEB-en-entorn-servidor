@@ -1,1 +1,1 @@
-let text1 = prompt ("Dame la ");
+let text1 = prompt ("Dame la primera cade");
