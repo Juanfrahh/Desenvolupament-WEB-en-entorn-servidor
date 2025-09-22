@@ -9,4 +9,4 @@ const texto2 = prompt ("Dame la segunda cadena de texto");
         window.alert("El texto " + texto1 + " y " + texto2 + "no son iguales");
     }
 
-}while(confirm((window.alert("Quieres comparar otras cadenas?")));
+}while(confirm((window.alert("Quieres comparar otras cadenas?"))));
