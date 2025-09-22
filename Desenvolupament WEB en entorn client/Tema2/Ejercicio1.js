@@ -6,7 +6,7 @@ const comparacion = function(){
     if (text1 === texto2){
         window.alert("El texto " + texto1 + " y " + texto2 + "son iguales");
     }else{
-        windowalert("El texto " + texto1 + " y " + texto2 + "no son iguales");
+        window.alert("El texto " + texto1 + " y " + texto2 + "no son iguales");
     }
 } 
 }while(confirm(("Quieres volver a jugar?")));
