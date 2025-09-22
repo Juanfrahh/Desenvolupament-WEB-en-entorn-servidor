@@ -4,7 +4,7 @@ let texto2 = prompt ("Dame la segunda cadena de texto");
 
 const comparacion = function(){
     if (text1 === texto2){
-        window.window.alert("El texto " + texto1 + " y " + texto2 + "son iguales");
+        window.alert("El texto " + texto1 + " y " + texto2 + "son iguales");
     }else{
         alert("El texto " + texto1 + " y " + texto2 + "no son iguales");
     }
