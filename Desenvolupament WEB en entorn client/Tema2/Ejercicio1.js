@@ -9,4 +9,4 @@ const comparacion = function(){
 
     }
 } 
-}while(confirm(("Quieres volver a jugar?")))
+}while(confirm(("Quieres volver a jugar?")));
