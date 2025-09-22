@@ -8,4 +8,5 @@ console.log (text1.trim.localcompare(texto2.trim))
     }else{
         window.alert("El texto " + texto1 + " y " + texto2 + "no son iguales");
     }
+    
 }while(confirm(("Quieres comparar otras cadenas?")));
