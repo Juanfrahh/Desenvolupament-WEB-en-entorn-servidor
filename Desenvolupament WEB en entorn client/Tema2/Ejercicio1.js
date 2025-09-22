@@ -1,5 +1,5 @@
 do{
-const text1 = prompt ("Dame la primera cadena de texto");
+let text1 = prompt ("Dame la primera cadena de texto");
 const texto2 = prompt ("Dame la segunda cadena de texto");
 
 window.alert(texto1);
