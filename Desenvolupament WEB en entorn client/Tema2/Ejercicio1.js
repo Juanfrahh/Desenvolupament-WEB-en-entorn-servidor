@@ -1,1 +1,1 @@
-let text1 = prom ;
+let text1 = prompt ;
