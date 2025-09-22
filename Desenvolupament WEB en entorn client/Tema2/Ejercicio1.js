@@ -9,4 +9,4 @@ const comparacion = function(){
         window.alert("El texto " + texto1 + " y " + texto2 + "no son iguales");
     }
 } 
-}while(confirm(("Quieres volver a jugar?")));
+}while(confirm(("Quieres com?")));
