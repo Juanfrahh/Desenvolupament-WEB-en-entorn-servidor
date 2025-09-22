@@ -10,4 +10,4 @@ window.alert("" + texto2);
         window.alert("El texto " + texto1 + " y " + texto2 + "no son iguales");
     }
 
-}while(cal((window.alert("Quieres comparar otras cadenas?"))));
+}while(cancel((window.alert("Quieres comparar otras cadenas?"))));
