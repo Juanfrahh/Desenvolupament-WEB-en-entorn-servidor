@@ -3,6 +3,6 @@ let texto2 = prompt ("Dame la segunda cadena de texto");
 
 const comparacion = function(){
     if (text1 === texto2){
-        alert("Las cadenas de texto son")
+        alert("El texto ")
     }
 } 
