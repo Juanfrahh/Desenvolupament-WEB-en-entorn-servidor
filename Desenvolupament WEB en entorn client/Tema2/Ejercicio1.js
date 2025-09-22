@@ -1,1 +1,1 @@
-let text1 = prompt ();
+let text1 = prompt ("");
