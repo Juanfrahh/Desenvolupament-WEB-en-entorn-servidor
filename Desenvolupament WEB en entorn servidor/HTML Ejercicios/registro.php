@@ -8,7 +8,7 @@
 <body>
     <?php include("cabecera.inc.php") ?>
     <main>
-        <form method="post" action="consulta.php">
+    <form method="post" action="consulta.php">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>
     <br>
