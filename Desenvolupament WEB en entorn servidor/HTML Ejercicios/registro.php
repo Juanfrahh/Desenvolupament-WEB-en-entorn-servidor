@@ -13,7 +13,7 @@
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>
     <br>
-    <label for="nombre">Apellidos:</label>
+    <label for="apellidos">Apellidos:</label>
     <input type="text" id="nombre" name="nombre" required>
     <br>
     <label for="email">Email:</label>
