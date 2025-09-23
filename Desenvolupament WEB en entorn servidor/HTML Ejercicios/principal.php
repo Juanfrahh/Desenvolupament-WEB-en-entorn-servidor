@@ -37,10 +37,10 @@
     <input type="date" id="fecha" name="fecha">
     <br>
     <label>
-  <input type="checkbox" name="suscripcion" value="Sí">
-  Deseo suscribirme al boletín
-</label>
-<br>
+    <input type="checkbox" name="suscripcion" value="Sí">
+    Deseo suscribirme al boletín
+  </label>
+  <br>
     <button type="submit">Enviar</button>
   </form>
   
