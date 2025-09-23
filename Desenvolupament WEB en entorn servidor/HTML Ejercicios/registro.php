@@ -20,7 +20,7 @@
     <input type="email" id="email" name="email" required>
     <br>
     <label for="password">Nombre:</label>
-    <input type="text" id="pasw" name="nombre" required>
+    <input type="text" id="password" name="nombre" required>
     <br>
     <label for="nombreUsu">Nombre de Usuario:</label>
     <input type="text" id="nombreUsu" name="nombreUsu" required>
