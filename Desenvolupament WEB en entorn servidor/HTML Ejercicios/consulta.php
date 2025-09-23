@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    
     <?php include("cabecera.inc.php") ?>
     <main>
         <h2>Datos recibidos: </h2>
