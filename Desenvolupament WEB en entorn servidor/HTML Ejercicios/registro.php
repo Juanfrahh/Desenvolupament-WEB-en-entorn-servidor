@@ -20,7 +20,7 @@
     <input type="email" id="email" name="email" required>
     <br>
     <label for="nombreUsu">Nombre de Usuario:</label>
-    <input type="text" id="nombreUsu" name="nombre" required>
+    <input type="text" id="nombreUsu" name="nombreUsu" required>
     <br>
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono">
