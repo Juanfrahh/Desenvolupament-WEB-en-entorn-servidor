@@ -19,6 +19,7 @@
             foreach ($_POST as $campo => $valor) {
                 echo "<tr>";
                 echo "<td>$campo</td>";
+                
             }
         ?>
     </main>
