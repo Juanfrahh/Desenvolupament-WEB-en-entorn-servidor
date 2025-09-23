@@ -26,7 +26,7 @@
                 } else {
                     echo "<td>$valor</td>";
                 }
-                
+                echo 
             }
         ?>
     </main>
