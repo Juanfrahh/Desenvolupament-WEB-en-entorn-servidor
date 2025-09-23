@@ -15,7 +15,7 @@
                 <th>Campo</th>
                 <th>Valor</th>
             </tr>
-        <
+        <?php
     </main>
     <?php include("footer.inc.php") ?>
 </body>
