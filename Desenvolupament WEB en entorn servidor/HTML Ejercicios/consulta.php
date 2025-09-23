@@ -17,7 +17,8 @@
             </tr>
         <?php
             foreach ($_POST as $campo => $valor) {
-                echo "<tr>;"
+                echo "<tr>;
+                "
             }
         ?>
     </main>
