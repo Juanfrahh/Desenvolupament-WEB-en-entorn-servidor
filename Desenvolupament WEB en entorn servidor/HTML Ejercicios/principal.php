@@ -40,7 +40,7 @@
     <input type="checkbox" name="suscripcion" value="Sí">
     Deseo suscribirme al boletín
     </label>
-  <br>
+    <br>
     <button type="submit">Enviar</button>
   </form>
   
