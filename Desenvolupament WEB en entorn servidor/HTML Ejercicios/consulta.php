@@ -17,9 +17,10 @@
             </tr>
         <?php
             foreach ($_POST as $campo => $valor) {
+                
                 echo "<tr>";
                 echo "<td>$campo</td>";
-                
+
                 if (is_array($valor)) {
                     echo "<td>" . implode(", ", $valor) . "</td>";
                 } else {
