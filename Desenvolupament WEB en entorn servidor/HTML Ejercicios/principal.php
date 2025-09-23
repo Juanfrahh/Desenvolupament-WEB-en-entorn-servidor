@@ -36,7 +36,8 @@
     <label for="fecha">Fecha de recogida:</label>
     <input type="date" id="fecha" name="fecha">
     <br>
-    <label><input type="checkbox" name="suscripcion" value="Sí">
+    <label>
+      <input type="checkbox" name="suscripcion" value="Sí">
     Deseo suscribirme al boletín
     </label>
     <br>
