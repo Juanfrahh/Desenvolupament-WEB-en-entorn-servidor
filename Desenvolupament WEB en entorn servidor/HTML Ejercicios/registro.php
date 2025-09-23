@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header><?php include("cabecera.inc.php") ?></header>
+    <?php include("cabecera.inc.php") ?></header>
     <main>
         
     <footer><?php include("footer.inc.php") ?></footer>
