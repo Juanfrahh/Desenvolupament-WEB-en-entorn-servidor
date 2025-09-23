@@ -44,7 +44,7 @@
   <?php include("footer.inc.php"); ?>
 
   <footer>
-  <h4>Contacto:</h4>
+    <h4>Contacto:</h4>
   <p><a href="carlostortosa2005@gmail.com">Email: carlostortosa2005@gmail.com</a></p>
   </footer>
 </body>
