@@ -17,7 +17,7 @@
             </tr>
         <?php
 
-?>
+        ?>
     </main>
     <?php include("footer.inc.php") ?>
 </body>
