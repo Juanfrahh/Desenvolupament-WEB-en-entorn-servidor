@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header><?php include("cabecera.inc.php") ?></header>
+    <?php include("cabecera.inc.php") ?>
     <main>
         <h2>Datos recibidos: </h2>
         <br>
@@ -30,6 +30,6 @@
             }
         ?>
     </main>
-    <footer><?php include("footer.inc.php") ?></footer>
+    <?php include("footer.inc.php") ?>
 </body>
 </html>
