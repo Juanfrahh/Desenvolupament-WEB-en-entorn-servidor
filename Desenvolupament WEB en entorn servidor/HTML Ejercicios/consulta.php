@@ -13,6 +13,8 @@
         <table border="1">
             <tr>
                 <th>Campo</th>
+                <th>Valor</th>
+            </tr>
     </main>
 </body>
 </html>
