@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header>º
+    <header>
+    <?php include("cabecera.inc.php") ?>
 </body>
 </html>
