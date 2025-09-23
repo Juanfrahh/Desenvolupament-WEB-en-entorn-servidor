@@ -25,6 +25,7 @@
     <label for="direccion">Dirección:</label>
     <input type="text" id="direccion" name="direccion">
     <br>
+    
     <label for="fecha">Fecha de recogida:</label>
     <input type="date" id="fecha" name="fecha">
     <br>
