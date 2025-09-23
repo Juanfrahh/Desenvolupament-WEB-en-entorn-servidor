@@ -26,7 +26,7 @@
     <input type="text" id="nombreUsu" name="nombreUsu" required>
     <br>
     <label for="fechaNac">Fecha de Nacimiento:</label>
-    <input type="date" id="fechaNac" name="fechaNac">
+    <input type="date" id="fechaNac" name="fechaNac" required>
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono">
     <br>
