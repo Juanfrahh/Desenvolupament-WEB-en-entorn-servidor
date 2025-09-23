@@ -16,7 +16,7 @@
                 <th>Valor</th>
             </tr>
         <?php
-            
+            for
         ?>
     </main>
     <?php include("footer.inc.php") ?>
