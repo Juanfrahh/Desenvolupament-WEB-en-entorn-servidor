@@ -35,6 +35,7 @@
     Deseo suscribirme al boletín
     </label>
     <br>
+    
     <button type="submit">Enviar</button>
   </form>
     <?php include("footer.inc.php") ?>
