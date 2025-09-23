@@ -8,7 +8,7 @@
 <body>
     <?php include("cabecera.inc.php") ?>
     <main>
-        <h2>
+        <h2>Datos recibidos
     </main>
 </body>
 </html>
