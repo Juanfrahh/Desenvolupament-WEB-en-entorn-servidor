@@ -25,7 +25,7 @@
     <p><a href="carlostortosa2005@gmail.com">Email: carlostortosa2005@gmail.com</a></p>
   </footer>
 
-  <form >
+  <form method="post" action="consulta.php">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>
     <br>
