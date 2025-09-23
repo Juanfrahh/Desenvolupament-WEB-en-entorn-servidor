@@ -10,7 +10,7 @@
     <main>
         <h2>Datos recibidos: </h2>
         <br>
-        <table border
+        <table border=
     </main>
 </body>
 </html>
