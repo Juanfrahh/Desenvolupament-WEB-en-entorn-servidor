@@ -16,7 +16,7 @@
                 <th>Valor</th>
             </tr>
         <?php
-            foreach 
+            foreach ()
         ?>
     </main>
     <?php include("footer.inc.php") ?>
