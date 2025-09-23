@@ -16,7 +16,7 @@
                 <th>Valor</th>
             </tr>
         <?php
-            foreach ($_POST as )
+            foreach ($_POST as $campo =>)
         ?>
     </main>
     <?php include("footer.inc.php") ?>
