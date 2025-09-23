@@ -8,7 +8,29 @@
 <body>
     <?php include("cabecera.inc.php") ?>
     <main>
-        
+        <form method="post" action="consulta.php">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="telefono">Teléfono:</label>
+    <input type="tel" id="telefono" name="telefono">
+    <br>
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" name="direccion">
+    <br>
+    <label for="fecha">Fecha de recogida:</label>
+    <input type="date" id="fecha" name="fecha">
+    <br>
+    <label>
+    <input type="checkbox" name="suscripcion" value="Sí">
+    Deseo suscribirme al boletín
+    </label>
+    <br>
+    <button type="submit">Enviar</button>
+  </form>
     <?php include("footer.inc.php") ?>
     </main>
 </body>
