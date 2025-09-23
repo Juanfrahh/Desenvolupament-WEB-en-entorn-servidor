@@ -34,6 +34,7 @@
         <option value="masculino">Masculino</option>
         <option value="femenino">Femenino</option>
         <option value="otro">Otro</option>
+    <br>
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono">
     <br>
