@@ -9,7 +9,7 @@
     <?php include("cabecera.inc.php") ?>
     <main>
         
-    <footer><?php include("footer.inc.php") ?>
+    <?php include("footer.inc.php") ?>
     </main>
 </body>
 </html>
