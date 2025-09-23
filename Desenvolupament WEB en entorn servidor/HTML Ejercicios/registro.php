@@ -19,7 +19,9 @@
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
     <br>
-    
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br>
     <label for="nombreUsu">Nombre de Usuario:</label>
     <input type="text" id="nombreUsu" name="nombreUsu" required>
     <br>
