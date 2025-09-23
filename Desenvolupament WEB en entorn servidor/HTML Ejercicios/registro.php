@@ -29,6 +29,7 @@
     <input type="date" id="fechaNac" name="fechaNac" required>
     <br>
     <label for="genero">Género:</label>
+    <select id="genero" name="genero" required>
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono">
     <br>
