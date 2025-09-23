@@ -24,7 +24,7 @@
     <br>
     <label for="confirmPassword">Confirmar Contraseña:</label>
     <input type="password" id="confirmPassword" name="confirmPassword" required>
-    
+    <br>
     <label for="nombreUsu">Nombre de Usuario:</label>
     <input type="text" id="nombreUsu" name="nombreUsu" required>
     <br>
