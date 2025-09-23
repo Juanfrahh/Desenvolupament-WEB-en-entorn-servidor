@@ -38,7 +38,7 @@
     <label for="direccion">Dirección:</label>
     <input type="text" id="direccion" name="direccion">
     <br>
-    <input type="submit" value="Enviar">
+    <button type="submit">Enviar</button>
   </form>
   
   <?php include("footer.inc.php"); ?>
