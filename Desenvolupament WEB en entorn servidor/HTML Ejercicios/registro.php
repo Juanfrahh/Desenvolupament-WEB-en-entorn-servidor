@@ -27,6 +27,7 @@
     <br>
     <label for="fechaNac">Fecha de Nacimiento:</label>
     <input type="date" id="fechaNac" name="fechaNac" required>
+    <br>
     
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono">
