@@ -22,7 +22,7 @@
     <label for="password">Contraseña:</label>
     <input type="password" id="password" name="password" required>
     <br>
-    <labe
+    <label 
     <label for="nombreUsu">Nombre de Usuario:</label>
     <input type="text" id="nombreUsu" name="nombreUsu" required>
     <br>
