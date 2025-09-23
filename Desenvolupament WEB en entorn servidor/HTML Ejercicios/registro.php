@@ -19,7 +19,7 @@
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
     <br>
-    <label for="password">Nombre:</label>
+    <label for="password">Contraseña:</label>
     <input type="password" id="password" name="password" required>
     <br>
     <label for="nombreUsu">Nombre de Usuario:</label>
