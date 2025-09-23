@@ -16,6 +16,6 @@
                 <th>Valor</th>
             </tr>
     </main>
-    
+    <?php
 </body>
 </html>
