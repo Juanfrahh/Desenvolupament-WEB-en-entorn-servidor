@@ -18,7 +18,7 @@
         <?php
             foreach ($_POST as $campo => $valor) {
                 echo "<tr>";
-                echo ""
+                echo "td"
             }
         ?>
     </main>
