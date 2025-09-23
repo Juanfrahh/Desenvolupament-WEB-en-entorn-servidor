@@ -25,7 +25,7 @@
     <label for="nombreUsu">Nombre de Usuario:</label>
     <input type="text" id="nombreUsu" name="nombreUsu" required>
     <br>
-    <labe
+    <label for
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono">
     <br>
