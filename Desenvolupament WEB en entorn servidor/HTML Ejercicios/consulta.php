@@ -12,7 +12,7 @@
         <br>
         <table border="1">
             <tr>
-                <th>Cam
+                <th>Campo
     </main>
 </body>
 </html>
