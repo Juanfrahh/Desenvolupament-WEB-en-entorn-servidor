@@ -8,6 +8,5 @@
 <body>
     <header><?php include("cabecera.inc.php") ?></header>
     <main>
-        
 </body>
 </html>
