@@ -17,7 +17,7 @@
             </tr>
         <?php
             foreach ($_POST as $campo => $valor) {
-                
+                echo 
             }
         ?>
     </main>
