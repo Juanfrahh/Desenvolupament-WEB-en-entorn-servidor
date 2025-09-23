@@ -9,7 +9,8 @@
     <?php include("cabecera.inc.php") ?>
     <main>
         <h2>Datos recibidos: </h2>
-        <br
+        <br>
+        
     </main>
 </body>
 </html>
