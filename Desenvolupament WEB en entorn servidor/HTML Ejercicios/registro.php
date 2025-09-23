@@ -7,6 +7,6 @@
 </head>
 <body>
     <header><?php include("cabecera.inc.php") ?></header>
-    <main>
+    <main><
 </body>
 </html>
