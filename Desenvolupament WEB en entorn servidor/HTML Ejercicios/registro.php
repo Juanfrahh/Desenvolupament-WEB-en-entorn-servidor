@@ -16,7 +16,9 @@
     <label for="apellidos">Apellidos:</label>
     <input type="text" id="apellidos" name="apellidos" required>
     <br>
-    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
 
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono">
