@@ -17,10 +17,11 @@
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
     <br>
-    
+
     <label for="telefono">Teléfono:</label>
     <input type="tel" id="telefono" name="telefono">
     <br>
+    
     <label for="direccion">Dirección:</label>
     <input type="text" id="direccion" name="direccion">
     <br>
