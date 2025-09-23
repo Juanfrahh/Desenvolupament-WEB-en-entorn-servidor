@@ -8,7 +8,7 @@
 <body>
     <?php include("cabecera.inc.php") ?>
     <main>
-    <form method="post" action="">
+    <form method="post" action="regis">
 
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>
