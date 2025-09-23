@@ -37,7 +37,7 @@
     <br>
     
     <button type="submit">Enviar</button>
-  </form>
+    </form>
     <?php include("footer.inc.php") ?>
     </main>
 </body>
