@@ -13,4 +13,4 @@ do{
 }while (true);
 
 let total = texto.charCodeAt(0) + desplazamiento;
-window.alert("$")
+window.alert("${texto")
