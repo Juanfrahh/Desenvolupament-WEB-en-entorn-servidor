@@ -12,4 +12,4 @@ do{
 
 }while (true);
 
-${texto.charCodeAt(0)};
+let total = {texto.charCodeAt(0)};
