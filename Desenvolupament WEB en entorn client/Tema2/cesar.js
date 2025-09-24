@@ -3,7 +3,7 @@ let desplazamiento = parseInt(prompt("Introduce el numero de desplazamientos"));
 
 do{
 
-    if (isNaN(desplazamiento)) {
+    if (isNaN(desplazamiento.toFixed(0))) {
         desplazamiento.toFixed(0) = parseInt(prompt("Introduce el numero de desplazamientos"));
     } else{
         break;
