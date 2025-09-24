@@ -13,3 +13,4 @@ do{
 }while (true);
 
 let total = texto.charCodeAt(0) + desplazamiento;
+window.
