@@ -13,5 +13,5 @@ do{
 }while (true);
 
 for (let j of texto){
-    window.al.log(j);
+    window.alert.log(j);
 }
