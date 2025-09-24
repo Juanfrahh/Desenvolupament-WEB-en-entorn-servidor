@@ -19,7 +19,6 @@ if (edad > 45 && NumHijos == 0){
 }*/
 
 switch (true) {
-    case 
     case (salario < 1000 && edad < 30 && NumHijos > 0):
         total = 1200;
         break;
