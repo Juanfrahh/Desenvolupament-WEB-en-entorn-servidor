@@ -9,3 +9,4 @@ document.write("<table border='1'>");
 for ( let i = 0; i < num2; i++) {
     document.writeln("<br>"+ (num1 = num1 * 2));
 }
+while
