@@ -12,4 +12,4 @@ do{
 
 }while (true);
 
-&{texto.ch}
+&{texto.charCodeAt(0)};
