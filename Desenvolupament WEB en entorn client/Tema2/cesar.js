@@ -14,3 +14,4 @@ do{
 
 for (let j of texto){
     alert.log(j);
+}
