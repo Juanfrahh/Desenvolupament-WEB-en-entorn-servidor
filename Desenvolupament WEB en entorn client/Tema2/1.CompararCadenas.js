@@ -17,5 +17,3 @@ do{
     }
 
 }while (confirm("¿Quieres comparar otras cadenas?"));
-
-
