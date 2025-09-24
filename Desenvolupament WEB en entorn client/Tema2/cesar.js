@@ -4,5 +4,5 @@ let desplazamiento = parseInt(prompt("Introduce el numero de desplazamientos"));
 
 do{
 
-    if (desplazamiento == nul)
+    if (desplazamiento == null)
 }while
