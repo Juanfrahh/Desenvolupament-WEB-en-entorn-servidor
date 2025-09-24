@@ -5,6 +5,7 @@ do{
     if (desplazamiento.toFixed(0)){
         break;
     }
+    
     if (isNaN(desplazamiento)) {
         desplazamiento = parseInt(prompt("Introduce el numero de desplazamientos"));
     } else{
