@@ -12,4 +12,4 @@ do{
 
 }while (true);
 
-const texto 
+const texto =
