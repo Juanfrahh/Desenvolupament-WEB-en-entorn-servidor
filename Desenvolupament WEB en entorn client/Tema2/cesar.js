@@ -12,6 +12,3 @@ do{
 
 }while (true);
 
-for (let j of texto){
-    window.alert.log(j);
-}
