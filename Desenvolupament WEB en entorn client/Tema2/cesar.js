@@ -7,3 +7,4 @@ if (isNaN(desplazamiento)) {
 } else{
     break;
 }
+}while (true);
