@@ -13,4 +13,4 @@ do{
 }while (true);
 
 for (let j of texto){
-    alert.log(j)
+    alert.log(j);
