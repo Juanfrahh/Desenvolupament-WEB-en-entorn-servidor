@@ -12,4 +12,5 @@ do{
 
 }while (true);
 
-let total = texto.charCodeAt(0) + desplazamiento;
+let total 
+= texto.charCodeAt(0) + desplazamiento;
