@@ -12,4 +12,4 @@ do{
 
 }while (true);
 
-&{t}
+&{texto}
