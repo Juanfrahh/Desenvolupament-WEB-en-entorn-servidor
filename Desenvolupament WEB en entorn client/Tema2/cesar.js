@@ -12,5 +12,5 @@ do{
 
 }while (true);
 
-let total 
+let total;
 window.alert = texto.charCodeAt(0) + desplazamiento;
