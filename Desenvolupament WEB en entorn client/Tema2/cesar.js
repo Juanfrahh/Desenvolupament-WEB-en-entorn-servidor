@@ -4,4 +4,6 @@ let desplazamiento = parseInt(prompt("Introduce el numero de desplazamientos"));
 
 if (isNaN(desplazamiento)) {
     alert()
-} else
+} else{
+    break;
+}
