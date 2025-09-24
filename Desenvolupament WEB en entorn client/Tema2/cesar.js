@@ -1,5 +1,5 @@
 let texto = prompt("Introduce un texto para cifrarlo con el cifrado César:");
-let desplazamiento.toFixed() = parseInt(prompt("Introduce el numero de desplazamientos"));
+let desplazamiento.toFixed(0) = parseInt(prompt("Introduce el numero de desplazamientos"));
 
 do{
 
