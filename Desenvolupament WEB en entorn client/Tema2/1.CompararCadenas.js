@@ -1,11 +1,3 @@
-
-/*
-function comparaCadena(cad1,cad2){
-    //return cad1.toUpperCase() === cad2.toUpperCase();
-    return cad1.localeCompare(cad2, 'es');
-}
-    */
-
 const comparaCadena = (cad1, cad2) => cad1.localeCompare(cad2, 'es');
 
 do{
