@@ -10,6 +10,4 @@ if (num1 === "" || isNaN(num1) || num2 === "" || isNaN(num2) || num2 < 0) {
 } else {
     break;
 }
-
-
 }while(true);
