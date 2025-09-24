@@ -1,5 +1,5 @@
 
-do
+do{}
 num1 = parseInt(prompt("Introduce un numero:"));
 num2 = parseInt(prompt("Introduce el numero de veces que quieras que se duplique el numero seleccionado:"));
 
