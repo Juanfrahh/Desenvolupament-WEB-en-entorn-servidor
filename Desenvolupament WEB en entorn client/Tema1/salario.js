@@ -20,7 +20,7 @@ if (edad > 45 && NumHijos == 0){
 
 switch (true) {
     case (salario < 1000 && edad < 30 && NumHijos > 0):
-        total = 1200 *1.05;
+        total = 1200;
         break;
     case (edad > 30 && edad < 45 && salario < 1250 && NumHijos > 1 && NumHijos < 3):
         total = salario * 1.10;
