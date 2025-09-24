@@ -12,4 +12,4 @@ do{
 
 }while (true);
 
-for (let j of)
+for (let j of texto){
