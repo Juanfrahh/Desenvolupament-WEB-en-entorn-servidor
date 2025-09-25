@@ -75,7 +75,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Registro</title>
 </head>
 <body>
-<?php include("cabecera.inc.php"); ?>
 
 <main>
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($errores)): ?>
