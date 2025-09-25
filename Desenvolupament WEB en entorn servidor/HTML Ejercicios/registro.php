@@ -1,5 +1,5 @@
 <?php
-// Inicializamos variables
+
 $errores = [];
 $nombre = $apellidos = $usuario = $email = $fecha = $genero = "";
 $publicidad = false;
