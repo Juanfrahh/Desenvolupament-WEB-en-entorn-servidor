@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <input type="submit" value="Registrarse">
     </form>
-
+<?php endif; ?>
 </main>
 
 <?php include("footer.inc.php"); ?>
