@@ -9,7 +9,6 @@
     <?php include("cabecera.inc.php") ?>
     <main>
         <h2>Datos recibidos: </h2>
-        <br>
         <table border="1">
             <tr>
                 <th>Campo</th>
