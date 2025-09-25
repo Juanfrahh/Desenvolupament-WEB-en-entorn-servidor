@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Registro</title>
 </head>
 <body>
-<
+
 <main>
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($errores)): ?>
     <h2>Registro completado</h2>
