@@ -6,9 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    
-</body>
-</html>
 <footer>
     <hr>
     <p>
@@ -32,4 +29,7 @@
         echo $diaSemana . ", " . $diaNumero . " de " . $mes . " de " . $anio;
         ?>
     </p>
-</footer>
+</footer>    
+</body>
+</html>
+
