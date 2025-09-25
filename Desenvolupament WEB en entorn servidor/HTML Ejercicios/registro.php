@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 <?php endif; ?>
 </main>
-<fo
+<footer
 <?php include("footer.inc.php"); ?>
 </body>
 </html>
