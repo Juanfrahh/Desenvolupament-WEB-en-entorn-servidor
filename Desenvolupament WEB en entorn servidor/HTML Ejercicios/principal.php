@@ -20,7 +20,7 @@
   <a href="tecnologias.php"><button>tecnologias</button></a>
   <a href="rrss.php"><button>Redes Sociales</button></a>
 
-  <?php include
+  <?php include("")
   
   <?php include("footer.inc.php"); ?>
 
