@@ -6,30 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-<footer>
-    <hr>
-    <p>
-        <?php
+    <footer>
+        <hr>
+        <p>
+            <?php
 
-        echo "Carlos Tortosa <br>";
+            echo "Carlos Tortosa <br>";
 
-        $diaNumero = date("d");
-        $mesNumero = date("n");
-        $anio = date("Y");
-        $diaSemanaNumero = date("w");
+            $diaNumero = date("d");
+            $mesNumero = date("n");
+            $anio = date("Y");
+            $diaSemanaNumero = date("w");
 
-        $fechas = [
-            "dias" => ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
-            "meses" => ["", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
-        ];
+            $fechas = [
+                "dias" => ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+                "meses" => ["", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+            ];
 
-        $diaSemana = $fechas["dias"][$diaSemanaNumero];
-        $mes = $fechas["meses"][$mesNumero];
+            $diaSemana = $fechas["dias"][$diaSemanaNumero];
+            $mes = $fechas["meses"][$mesNumero];
 
-        echo $diaSemana . ", " . $diaNumero . " de " . $mes . " de " . $anio;
-        ?>
-    </p>
-</footer>    
+            echo $diaSemana . ", " . $diaNumero . " de " . $mes . " de " . $anio;
+            ?>
+        </p>
+    </footer>    
 </body>
 </html>
 
