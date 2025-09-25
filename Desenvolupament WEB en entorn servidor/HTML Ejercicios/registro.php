@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <main>
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($errores)): ?>
-    <h2>Registro completado correctamente</h2>
+    <h2>Registro completado</h2>
     <p>Bienvenido, <?php echo $nombre . " " . $apellidos; ?> (<?php echo $usuario; ?>)</p>
 <?php else: ?>
     <h2>Formulario de Registro</h2>
