@@ -7,7 +7,7 @@ function mostrarReloj(){
     let segundos = fecha.getSeconds();
 
     let horaActual = `${horas}:${minutos}:${segundos}`;
-    reloj.textContent = `${horaActual}`;`;
+    reloj.textContent = `${horaActual}`;
 
 }
 
