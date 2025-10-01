@@ -28,7 +28,7 @@ function mostrarReloj(){
         case 2: dia = "Martes"; break;
         case 3: dia = "Miércoles"; break;
         case 4: dia = "Jueves"; break;
-        case 5: Lunes = "Viernes"; break;
+        case 5: dia = "Viernes"; break;
         case 6: Lunes = "Sábado"; break;
         case 7: Lunes = "Domingo"; break;
         default: break;
