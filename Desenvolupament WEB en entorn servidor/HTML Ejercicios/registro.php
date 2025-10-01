@@ -4,7 +4,6 @@ $errores = [];
 $nombre = $apellidos = $usuario = $email = $fecha = $genero = "";
 $publicidad = false;
 
-// Procesar el formulario solo si se ha enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Nombre
