@@ -23,7 +23,7 @@ function mostrarReloj(){
     let mes = fechaActual.getMonth() + 1;
     let ano = fechaActual.getFullYear();
 
-    diaSemana
+    diaSemana = fechaActual.getDay();
 
     switch (mes) {
         case 1: mes = "Ene"; break;
