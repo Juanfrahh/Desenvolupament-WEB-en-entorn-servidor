@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombre = htmlspecialchars($_POST['nombre']);
     }
 
-    // Apellidos
     if (empty($_POST['apellidos'])) {
         $errores['apellidos'] = "Los apellidos son obligatorios";
     } else {
