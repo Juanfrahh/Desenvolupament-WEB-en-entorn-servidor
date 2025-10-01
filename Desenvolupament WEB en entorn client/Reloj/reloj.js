@@ -14,7 +14,7 @@ function updateClock() {
     const timeString = `${hours}:${minutes}:${seconds}`;
     const dateString = `${day}/${month}/${year}`;
 
-    const clock = document.getElementById('hora');
+    const hora = document.getElementById('hora');
     const date = document.getElementById('fecha');
 
     if (clock && date) {
