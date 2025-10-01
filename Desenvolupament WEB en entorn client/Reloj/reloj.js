@@ -24,7 +24,7 @@ function mostrarReloj(){
     let ano = fechaActual.getFullYear();
 
     
-    
+
     switch (mes) {
         case 1: mes = "Enero"; break;
         case 2: mes = "Febrero"; break;
@@ -40,7 +40,7 @@ function mostrarReloj(){
         case 12: mes = "Diciembre"; break;
         default: break;
     }
-    let fechaCompleta = dia + "/" + mes + "/" + año;
+    let fechaCompleta ="" dia + "/" + mes + "/" + año;
     console.log(fechaCompleta);
     fecha.textContent = fechaCompleta;
 }
