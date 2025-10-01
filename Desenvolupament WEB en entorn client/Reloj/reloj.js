@@ -4,5 +4,5 @@ function hora(reloj){
     let minutos = fecha.getMinutes();
     let segundos = fecha.getSeconds();
 
-    const reloj= document.(reloj);
+    const reloj= document.qu(reloj);
 }
