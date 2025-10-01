@@ -1,4 +1,4 @@
-function hora(){
+function (){
     let fecha = new Date(); 
     let horas = fecha.getHours();
     let minutos = fecha.getMinutes();
