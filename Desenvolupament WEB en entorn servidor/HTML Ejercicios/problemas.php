@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <option value="dividir" <?php if(($_POST['operacion'] ?? '')=="dividir") echo "selected"; ?>>Dividir</option>
         </select><br><br>
 
-         <input type="submit" value="Calcular">
+        <input type="submit" value="Calcular">
         <span class="inline"><?php echo $resultado; ?></span>
     </form>
 </body>
