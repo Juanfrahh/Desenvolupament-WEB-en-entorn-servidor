@@ -21,7 +21,7 @@ function mostrarReloj(){
     let fechaActual = new Date();
     let dia = fechaActual.getDate();
     let mes = fechaActual.getMonth() + 1;
-    let año = fechaActual.getFullYear();
+    let ano = fechaActual.getFullYear();
 
     let fechaCompleta = dia + "/" + mes + "/" + año;
     console.log(fechaCompleta);
