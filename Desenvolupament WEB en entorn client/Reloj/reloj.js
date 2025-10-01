@@ -21,7 +21,6 @@ function mostrarReloj(){
     let fechaActual = new Date();
     let dia = fechaActual.getDate();
     let mes = fechaActual.getMonth() + 1;
-    let ano = fechaActual.getFullYear();
 
     diaSemana = fechaActual.getDay();
     switch (diaSemana) {
