@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
     <?php if ($resultado): ?>
-        <h3>📌 <?php echo $resultado; ?></h3>
+        <h3><?php echo $resultado; ?></h3>
     <?php endif; ?>
 </body>
 </html>
