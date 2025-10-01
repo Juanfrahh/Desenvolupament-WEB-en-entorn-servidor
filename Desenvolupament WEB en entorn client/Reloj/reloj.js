@@ -14,4 +14,8 @@ function mostrarReloj(){
 }
 
 function mostrarFecha(){
+    const fecha = document.querySelectorAll('.fecha');
+    let fechaActual = new Date();
+    let dia = fechaActual.getDate();
+    let mes = fechaActual.getMonth() + 1;
 setInterval(mostrarReloj, 1000);
