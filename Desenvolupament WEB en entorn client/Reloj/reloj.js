@@ -35,7 +35,10 @@ function mostrarReloj(){
     }
     switch (mes) {
         case 1: mes = "Enero"; break;
-        case 2: mes = "Febrero"; break; 
+        case 2: mes = "Febrero"; break;
+        case 3: mes = "Marzo"; break;
+        case 4: mes = "Abril"; break;
+        case 5: mes = "Mayo"; break;
     let fechaCompleta = dia + "/" + mes + "/" + año;
     console.log(fechaCompleta);
     fecha.textContent = fechaCompleta;
