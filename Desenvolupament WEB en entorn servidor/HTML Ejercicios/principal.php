@@ -22,6 +22,8 @@
 
   <?php include("registro.php"); ?>
   
+  
+
   <?php include("footer.inc.php"); ?>
 
   <footer>
