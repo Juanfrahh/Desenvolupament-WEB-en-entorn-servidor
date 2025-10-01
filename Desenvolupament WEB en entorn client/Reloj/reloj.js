@@ -5,5 +5,5 @@ function hora(reloj){
     let segundos = fecha.getSeconds();
 
     const reloj = document.querySelectorAll(reloj);
-
+    
 }
