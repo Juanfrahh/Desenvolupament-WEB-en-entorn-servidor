@@ -11,6 +11,7 @@ function mostrarReloj(){
     if (horas < 10) horas = "0" + horas;
     if (minutos < 10) minutos = "0" + minutos;
     if (segundos < 10) segundos = "0" + segundos;
+    
     let horaActual = horas + ":" + minutos + ":" + segundos;
     console.log(horaActual);
     hora.textContent = horaActual;
