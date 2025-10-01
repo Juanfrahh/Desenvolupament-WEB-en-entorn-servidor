@@ -22,7 +22,7 @@
 
   <?php include("registro.php"); ?>
   
-  <?php include("problema.php"); ?>
+  <?php include("problemas.php"); ?>
 
   <?php include("footer.inc.php"); ?>
 
