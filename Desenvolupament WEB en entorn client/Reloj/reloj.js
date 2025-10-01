@@ -40,7 +40,7 @@ function mostrarReloj(){
         case 12: mes = "Diciembre"; break;
         default: break;
     }
-    let fechaCompleta ="," dia + "/" + mes + "/" + año;
+    let fechaCompleta ="," + dia + "/" + mes + "/" + año;
     console.log(fechaCompleta);
     fecha.textContent = fechaCompleta;
 }
