@@ -18,7 +18,7 @@ function updateClock() {
     const fecha = document.getElementById('fecha');
 
     if (hora && fecha) {
-        clock.textContent = timeString;
+        hora.textContent = timeString;
         date.textContent = dateString;
 
         // Animation: toggle 'active' class for border effect
