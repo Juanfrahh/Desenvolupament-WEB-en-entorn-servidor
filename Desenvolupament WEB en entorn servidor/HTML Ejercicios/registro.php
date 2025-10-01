@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errores['condiciones'] = "Debe aceptar las condiciones";
     }
 
-    // Publicidad (opcional)
     $publicidad = isset($_POST['publicidad']);
 }
 ?>
