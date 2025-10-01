@@ -16,7 +16,7 @@ function mostrarReloj(){
     console.log(horaActual);
     hora.textContent = horaActual;
 
-    const fecha = document.querySelectorAll('.fecha');
+    const fecha2 = document.querySelectorAll('.fecha');
 
     let fechaActual = new Date();
     let dia = fechaActual.getDate();
