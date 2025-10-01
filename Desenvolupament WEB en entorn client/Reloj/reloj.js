@@ -10,7 +10,7 @@ function mostrarReloj(){
 
     let horaActual = horas + ":" + minutos + ":" + segundos + " " + año;``;
     console.log(horaActual);
-    horaA
+    hora
 }
 
 setInterval(mostrarReloj, 1000);
