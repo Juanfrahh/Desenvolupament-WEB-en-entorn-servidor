@@ -29,7 +29,6 @@
 </html>
 
 <?php
-// ---------------- FUNCIONES -----------------
 
 function sumar($a, $b) {
     if (!is_numeric($a) || !is_numeric($b)) {
