@@ -1,4 +1,4 @@
-function mostrarReloj(){
+function reloj(hora){
     let fecha = new Date(); 
     let horas = fecha.getHours();
     let minutos = fecha.getMinutes();
@@ -9,5 +9,3 @@ function mostrarReloj(){
     reloj.textContent = horaActual;
 
 }
-
-setInterval(mostrarReloj, 1000);
