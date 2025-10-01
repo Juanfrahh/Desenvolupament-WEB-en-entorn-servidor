@@ -30,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errores['password'] = "Las contraseñas no coinciden";
     }
 
-    // Email
     if (empty($_POST['email'])) {
         $errores['email'] = "El email es obligatorio";
     } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
