@@ -6,7 +6,6 @@ function mostrarReloj(){
     let minutos = fecha.getMinutes();
     let segundos = fecha.getSeconds();
 
-    const reloj = document.querySelectorAll('.hora');
     let horaActual = `${horas}:${minutos}:${segundos}`;
     reloj.textContent = horaActual;
 
