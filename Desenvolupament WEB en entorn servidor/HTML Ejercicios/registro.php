@@ -6,7 +6,6 @@ $publicidad = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Nombre
     if (empty($_POST['nombre'])) {
         $errores['nombre'] = "El nombre es obligatorio";
     } else {
