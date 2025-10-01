@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usuario = htmlspecialchars($_POST['usuario']);
     }
 
-    // Passwords
     if (empty($_POST['password']) || empty($_POST['password2'])) {
         $errores['password'] = "Las contraseñas son obligatorias";
     } elseif ($_POST['password'] !== $_POST['password2']) {
