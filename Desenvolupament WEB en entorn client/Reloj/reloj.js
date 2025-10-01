@@ -51,6 +51,6 @@ function mostrarReloj(){
     }
     let fechaCompleta = diaSemana + ", " + dia + " " + mes ;
     console.log(fechaCompleta);
-    fetxa.textContent = fechaCompleta;
+     = fechaCompleta;
 }
 setInterval(mostrarReloj, 1000);
