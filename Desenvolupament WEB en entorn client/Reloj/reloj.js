@@ -28,5 +28,5 @@ function mostrarReloj(){
     let fechaCompleta = dia + "/" + mes + "/" + año;
     console.log(fechaCompleta);
     fecha.textContent = fechaCompleta;
-}
+
 setInterval(mostrarReloj, 1000);
