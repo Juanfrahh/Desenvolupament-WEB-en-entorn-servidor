@@ -44,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fecha = $_POST['fecha'];
     }
 
-    // Género
     if (empty($_POST['genero'])) {
         $errores['genero'] = "Debe seleccionar un género";
     } else {
