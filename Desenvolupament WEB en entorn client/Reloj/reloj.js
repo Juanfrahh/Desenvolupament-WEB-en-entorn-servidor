@@ -25,6 +25,15 @@ function mostrarReloj(){
 
     diaSemana = fechaActual.getDay();
     switch (diaSemana) {
+        case 0: diaSemana = "Dom"; break;
+        case 1: diaSemana = "Lun"; break;
+        case 2: diaSemana = "Mar"; break;
+        case 3: diaSemana = "Mie"; break;
+        case 4: diaSemana = "Jue"; break;
+        case 5: diaSemana = "Vie"; break;
+        case 6: diaSemana = "Sab"; break;
+        default: break;
+    }
     switch (mes) {
         case 1: mes = "Ene"; break;
         case 2: mes = "Feb"; break;
