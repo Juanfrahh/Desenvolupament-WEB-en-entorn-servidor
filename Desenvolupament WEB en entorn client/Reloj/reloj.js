@@ -33,6 +33,7 @@ function mostrarReloj(){
         case 7: Lunes = "Domingo"; break;
         default: break;
     }
+    
     let fechaCompleta = dia + "/" + mes + "/" + año;
     console.log(fechaCompleta);
     fecha.textContent = fechaCompleta;
