@@ -22,5 +22,7 @@ function mostrarFecha(){
     let año = fechaActual.getFullYear();
 
     let fechaCompleta = dia + "/" + mes + "/" + año;
+    console.log(fechaCompleta);
+    fecha.textContent = fechaCompleta;
 }
 setInterval(mostrarReloj, 1000);
