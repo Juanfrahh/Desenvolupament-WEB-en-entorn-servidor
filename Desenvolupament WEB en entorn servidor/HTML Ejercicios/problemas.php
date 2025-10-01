@@ -28,3 +28,52 @@
 </body>
 </html>
 
+<?php
+// ---------------- FUNCIONES -----------------
+
+// Sumar
+function sumar($a, $b) {
+    if (!is_numeric($a) || !is_numeric($b)) {
+        throw new Exception("Ambos parámetros deben ser números.");
+    }
+    return $a + $b;
+}
+
+// Clase de excepción personalizada
+class MiExcepcion extends Exception {
+    public function __toString() {
+        return "⚠️ Error: " . $this->getMessage();
+    }
+}
+
+// Dividir
+function dividir($a, $b) {
+    if (!is_numeric($a) || !is_numeric($b)) {
+        throw new MiExcepcion("Los parámetros deben ser números.");
+    }
+    if ($b == 0) {
+        throw new MiExcepcion("No se puede dividir entre cero.");
+    }
+    return $a / $b;
+}
+
+// ---------------- PROGRAMA PRINCIPAL -----------------
+$resultado = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $num1 = $_POST['num1'];
+    $num2 = $_POST['num2'];
+    $operacion = $_POST['operacion'];
+
+    try {
+        if ($operacion == "sumar") {
+            $resultado = "Resultado de la suma: " . sumar($num1, $num2);
+        } elseif ($operacion == "dividir") {
+            $resultado = "Resultado de la división: " . dividir($num1, $num2);
+        }
+    } catch (Exception $e) {
+        $resultado = $e->getMessage();
+    } catch (MiExcepcion $e) {
+        $resultado = $e;
+    }
+}
+?>
