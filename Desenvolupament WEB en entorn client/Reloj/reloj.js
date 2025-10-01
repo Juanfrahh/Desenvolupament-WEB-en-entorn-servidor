@@ -1,5 +1,6 @@
 function mostrarReloj(){
-const reloj = document.querySelectorAll('.hora');    let fecha = new Date(); 
+const reloj = document.querySelectorAll('.hora');    
+let fecha = new Date(); 
     let horas = fecha.getHours();
     let minutos = fecha.getMinutes();
     let segundos = fecha.getSeconds();
