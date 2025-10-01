@@ -23,9 +23,7 @@ function dividir($a, $b) {
     return $a / $b;
 }
 
-// ---------------- PROGRAMA PRINCIPAL -----------------
-$resultado = "";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ ($_SERVER["REQUEST_METHOD"] == "POST") {
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
     $operacion = $_POST['operacion'];
