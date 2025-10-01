@@ -22,7 +22,7 @@ function updateClock() {
         fecha.textContent = dateString;
 
         // Animation: toggle 'active' class for border effect
-        clock.classList.toggle('active');
+        hora.classList.toggle('active');
     }
 }
 
