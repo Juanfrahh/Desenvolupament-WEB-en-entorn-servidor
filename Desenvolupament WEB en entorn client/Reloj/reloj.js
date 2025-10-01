@@ -21,6 +21,6 @@ function mostrarFecha(){
     let mes = fechaActual.getMonth() + 1;
     let año = fechaActual.getFullYear();
 
-    let
+    let fechaCompleta = dia + "/" + mes + "/" + año;
 }
 setInterval(mostrarReloj, 1000);
