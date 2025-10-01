@@ -1,5 +1,4 @@
 window.onload = function() {
-    const reloj = document.createElement('div');
     reloj.id = 'reloj';
     reloj.style.width = '300px';
     reloj.style.margin = '50px auto';
