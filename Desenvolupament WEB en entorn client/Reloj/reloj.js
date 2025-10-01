@@ -9,7 +9,7 @@ function mostrarReloj(){
     let año = fecha.getFullYear();
 
     let horaActual = horas + ":" + minutos + ":" + segundos + " " + año;``;
-    console.(horaActual);
+    console.ho(horaActual);
 
 }
 
