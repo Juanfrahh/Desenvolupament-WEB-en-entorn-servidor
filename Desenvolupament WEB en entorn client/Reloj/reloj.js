@@ -22,6 +22,7 @@ function mostrarReloj(){
     let dia = fechaActual.getDate();
     let mes = fechaActual.getMonth() + 1;
 
+
     diaSemana = fechaActual.getDay();
     switch (diaSemana) {
         case 0: diaSemana = "Dom"; break;
@@ -49,7 +50,7 @@ function mostrarReloj(){
         default: break;
     }
     let fechaCompleta = diaSemana + ", " + dia + " " + mes ;
-    console.log(horaActual);
-    hora.textContent = horaActual;
+    console.log(fechaCompleta);
+    fetxa.textContent = fechaCompleta;
 }
 setInterval(mostrarReloj, 1000);
