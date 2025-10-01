@@ -3,5 +3,6 @@ function hora(reloj){
     let horas = fecha.getHours();
     let minutos = fecha.getMinutes();
     let segundos = fecha.getSeconds();
+
     
 }
