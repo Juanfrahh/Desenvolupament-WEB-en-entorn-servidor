@@ -6,5 +6,6 @@ function hora(reloj){
 
     const reloj = document.querySelectorAll('.hora');
     let horaActual = `${horas}:${minutos}:${segundos}`;
+    
 
 }
