@@ -49,7 +49,7 @@ function mostrarReloj(){
         default: break;
     }
     let fechaCompleta = diaSemana + ", " + dia + " " + mes ;
-    console.log(fechaCompleta);
-    fetxa.textContent = horaActual;
+    console.log(horaActual);
+    hora.textContent = horaActual;
 }
 setInterval(mostrarReloj, 1000);
