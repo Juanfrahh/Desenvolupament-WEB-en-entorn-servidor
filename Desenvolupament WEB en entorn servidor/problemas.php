@@ -6,7 +6,6 @@ function sumar($a, $b) {
     return $a + $b;
 }
 
-// Programa principal
 try {
     echo "Resultado de la suma: " . sumar(5, 10) . "<br>";
     echo "Resultado de la suma: " . sumar("hola", 10) . "<br>"; // provoca excepción
