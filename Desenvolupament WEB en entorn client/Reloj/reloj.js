@@ -29,11 +29,11 @@ function mostrarReloj(){
         case 1: mes = "Ene"; break;
         case 2: mes = "Feb"; break;
         case 3: mes = "Mar"; break;
-        case 4: mes = "Abril"; break;
-        case 5: mes = "Mayo"; break;
-        case 6: mes = "Junio"; break;
-        case 7: mes = "Julio"; break;
-        case 8: mes = "Agosto"; break;
+        case 4: mes = "Abr"; break;
+        case 5: mes = "May"; break;
+        case 6: mes = "Jun"; break;
+        case 7: mes = "Jul"; break;
+        case 8: mes = "Agoo"; break;
         case 9: mes = "Septiembre"; break;
         case 10: mes = "Octubre"; break;    
         case 11: mes = "Noviembre"; break;
