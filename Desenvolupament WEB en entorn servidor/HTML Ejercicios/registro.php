@@ -38,7 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = htmlspecialchars($_POST['email']);
     }
 
-    // Fecha de nacimiento
     if (empty($_POST['fecha'])) {
         $errores['fecha'] = "La fecha de nacimiento es obligatoria";
     } else {
