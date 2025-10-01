@@ -1,4 +1,4 @@
-function mostrar-reloj(hora){
+function mostrarreloj(hora){
     let fecha = new Date(); 
     let horas = fecha.getHours();
     let minutos = fecha.getMinutes();
