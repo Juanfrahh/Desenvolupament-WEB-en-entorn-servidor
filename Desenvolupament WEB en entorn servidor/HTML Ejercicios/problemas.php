@@ -13,7 +13,6 @@ class MiExcepcion extends Exception {
     }
 }
 
-// Dividir
 function dividir($a, $b) {
     if (!is_numeric($a) || !is_numeric($b)) {
         throw new MiExcepcion("Los parámetros deben ser números.");
