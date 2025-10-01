@@ -73,7 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <input type="submit" value="Calcular">
         
-        <!-- Aquí mostramos el resultado -->
         <?php if (!empty($resultado)): ?>
             <strong><?php echo $resultado; ?></strong>
         <?php endif; ?>
