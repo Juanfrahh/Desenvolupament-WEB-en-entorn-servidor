@@ -24,14 +24,7 @@ window.onload = function() {
         reloj.textContent = `${fecha} ${hora}`;
     }
 
-    function animarMarco() {
-        reloj.style.borderColor = '#e74c3c';
-        reloj.style.boxShadow = '0 0 30px #e74c3c';
-        setTimeout(() => {
-            reloj.style.borderColor = '#3498db';
-            reloj.style.boxShadow = 'none';
-        }, 300);
-    }
+
 
     function actualizar() {
         mostrarFechaHora();
