@@ -50,7 +50,7 @@ function mostrarReloj(){
         default: break;
     }
     let fechaActual = diaSemana + ", " + dia + " " + mes ;
-    console.log(fechaActaual);
+    console.log(fechaActatual);
     fecha.textContent = fechaCompleta;
 }
 setInterval(mostrarReloj, 1000);
