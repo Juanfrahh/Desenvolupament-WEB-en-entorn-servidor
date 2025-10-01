@@ -1,5 +1,6 @@
 function mostrarReloj(){
     const reloj = document.querySelectorAll('.hora');
+    conso
 
     let fecha = new Date(); 
     let horas = fecha.getHours();
