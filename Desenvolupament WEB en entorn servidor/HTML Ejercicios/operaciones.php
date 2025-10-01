@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <h2>Calculadora con validación y excepciones</h2>
-    <form method="post" action="operaciones.php">
+    <form method="post">
         <label>Número 1:</label>
         <input type="text" name="num1" value="<?php echo $_POST['num1'] ?? ''; ?>" required><br><br>
 
