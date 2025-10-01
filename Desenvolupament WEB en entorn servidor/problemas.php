@@ -29,7 +29,6 @@ function dividir($a, $b) {
     return $a / $b;
 }
 
-// Programa principal
 try {
     echo "Resultado de la división: " . dividir(20, 5) . "<br>";
     echo "Resultado de la división: " . dividir(20, 0) . "<br>"; // provoca excepción
