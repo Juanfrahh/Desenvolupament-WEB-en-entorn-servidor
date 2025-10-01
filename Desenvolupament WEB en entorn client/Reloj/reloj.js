@@ -25,6 +25,10 @@ function mostrarReloj(){
 
     switch (dia) {
         case 1: Lunes = "Lunes"; break;
+        case 2: Lunes = "Martes"; break;
+        case 3: Lunes = "Miércoles"; break;
+        case 4: Lunes = "Jueves"; break;
+        
     let fechaCompleta = dia + "/" + mes + "/" + año;
     console.log(fechaCompleta);
     fecha.textContent = fechaCompleta;
