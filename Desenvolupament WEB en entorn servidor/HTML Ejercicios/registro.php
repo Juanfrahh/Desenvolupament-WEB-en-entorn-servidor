@@ -1,3 +1,62 @@
+<?php
+
+$errores = [];
+$nombre = $apellidos = $usuario = $email = $fecha = $genero = "";
+$publicidad = false;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if (empty($_POST['nombre'])) {
+        $errores['nombre'] = "El nombre es obligatorio";
+    } else {
+        $nombre = htmlspecialchars($_POST['nombre']);
+    }
+
+    if (empty($_POST['apellidos'])) {
+        $errores['apellidos'] = "Los apellidos son obligatorios";
+    } else {
+        $apellidos = htmlspecialchars($_POST['apellidos']);
+    }
+
+    if (empty($_POST['usuario'])) {
+        $errores['usuario'] = "El usuario es obligatorio";
+    } else {
+        $usuario = htmlspecialchars($_POST['usuario']);
+    }
+
+    if (empty($_POST['password']) || empty($_POST['password2'])) {
+        $errores['password'] = "Las contraseñas son obligatorias";
+    } elseif ($_POST['password'] !== $_POST['password2']) {
+        $errores['password'] = "Las contraseñas no coinciden";
+    }
+
+    if (empty($_POST['email'])) {
+        $errores['email'] = "El email es obligatorio";
+    } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errores['email'] = "Formato de email no válido";
+    } else {
+        $email = htmlspecialchars($_POST['email']);
+    }
+
+    if (empty($_POST['fecha'])) {
+        $errores['fecha'] = "La fecha de nacimiento es obligatoria";
+    } else {
+        $fecha = $_POST['fecha'];
+    }
+
+    if (empty($_POST['genero'])) {
+        $errores['genero'] = "Debe seleccionar un género";
+    } else {
+        $genero = $_POST['genero'];
+    }
+
+    if (!isset($_POST['condiciones'])) {
+        $errores['condiciones'] = "Debe aceptar las condiciones";
+    }
+
+    $publicidad = isset($_POST['publicidad']);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
