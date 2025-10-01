@@ -19,7 +19,7 @@ function updateClock() {
 
     if (hora && fecha) {
         hora.textContent = timeString;
-        date.textContent = dateString;
+        fecha.textContent = dateString;
 
         // Animation: toggle 'active' class for border effect
         clock.classList.toggle('active');
