@@ -1,1 +1,1 @@
-function reloj
+function reloj()
