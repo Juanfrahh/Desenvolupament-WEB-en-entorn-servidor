@@ -1,1 +1,1 @@
-function hora()
+function hora(relo)
