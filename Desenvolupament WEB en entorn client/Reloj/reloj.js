@@ -4,7 +4,6 @@ const reloj = document.querySelectorAll('.hora');    let fecha = new Date();
     let minutos = fecha.getMinutes();
     let segundos = fecha.getSeconds();
 
-    
     let horaActual = `${horas}:${minutos}:${segundos}`;
     reloj.textContent = horaActual;
 
