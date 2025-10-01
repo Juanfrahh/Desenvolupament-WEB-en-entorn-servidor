@@ -1,5 +1,7 @@
 <?php
+// ---------------- FUNCIONES -----------------
 
+// Sumar
 function sumar($a, $b) {
     if (!is_numeric($a) || !is_numeric($b)) {
         throw new Exception("Ambos parámetros deben ser números.");
@@ -7,12 +9,14 @@ function sumar($a, $b) {
     return $a + $b;
 }
 
+// Clase de excepción personalizada
 class MiExcepcion extends Exception {
     public function __toString() {
         return "⚠️ Error: " . $this->getMessage();
     }
 }
 
+// Dividir
 function dividir($a, $b) {
     if (!is_numeric($a) || !is_numeric($b)) {
         throw new MiExcepcion("Los parámetros deben ser números.");
@@ -23,6 +27,7 @@ function dividir($a, $b) {
     return $a / $b;
 }
 
+// ---------------- PROGRAMA PRINCIPAL -----------------
 $resultado = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $num1 = $_POST['num1'];
@@ -31,14 +36,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         if ($operacion == "sumar") {
-            $resultado = "Resultado de la suma: " . sumar($num1, $num2);
+            $resultado = "Resultado: " . sumar($num1, $num2);
         } elseif ($operacion == "dividir") {
-            $resultado = "Resultado de la división: " . dividir($num1, $num2);
+            $resultado = "Resultado: " . dividir($num1, $num2);
         }
-    } catch (Exception $e) {
-        $resultado = $e->getMessage();
-    } catch (MiExcepcion $e) {
+    } 
+    catch (MiExcepcion $e) {
         $resultado = $e;
+    } 
+    catch (Exception $e) {
+        $resultado = "Error: " . $e->getMessage();
     }
 }
 ?>
@@ -53,22 +60,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Calculadora con validación y excepciones</h2>
     <form method="post" action="operaciones.php">
         <label>Número 1:</label>
-        <input type="text" name="num1" required><br><br>
+        <input type="text" name="num1" value="<?php echo $_POST['num1'] ?? ''; ?>" required><br><br>
 
         <label>Número 2:</label>
-        <input type="text" name="num2" required><br><br>
+        <input type="text" name="num2" value="<?php echo $_POST['num2'] ?? ''; ?>" required><br><br>
 
         <label>Operación:</label>
         <select name="operacion">
-            <option value="sumar">Sumar</option>
-            <option value="dividir">Dividir</option>
+            <option value="sumar" <?php if(($_POST['operacion'] ?? '')=="sumar") echo "selected"; ?>>Sumar</option>
+            <option value="dividir" <?php if(($_POST['operacion'] ?? '')=="dividir") echo "selected"; ?>>Dividir</option>
         </select><br><br>
 
         <input type="submit" value="Calcular">
+        
+        <!-- Aquí mostramos el resultado -->
+        <?php if (!empty($resultado)): ?>
+            <strong><?php echo $resultado; ?></strong>
+        <?php endif; ?>
     </form>
-
-    <?php if ($resultado): ?>
-        <h3><?php echo $resultado; ?></h3>
-    <?php endif; ?>
 </body>
 </html>
