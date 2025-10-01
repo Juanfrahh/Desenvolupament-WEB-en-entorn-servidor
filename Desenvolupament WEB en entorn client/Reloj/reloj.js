@@ -49,7 +49,7 @@ function mostrarReloj(){
         case 12: mes = "Dic"; break;
         default: break;
     }
-    let fechaActual = diaSemana + ", " + dia + " " + mes ;
+    let fechaCompleta = diaSemana + ", " + dia + " " + mes ;
     console.log(fechaActual);
     fecha.textContent = fechaCompleta;
 }
