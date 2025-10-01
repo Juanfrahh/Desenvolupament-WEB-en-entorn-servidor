@@ -11,3 +11,4 @@ function mostrarReloj(){
 }
 
 setInterval(mostrarReloj, 1000);
+mostrarReloj
