@@ -27,7 +27,7 @@ function mostrarReloj(){
 
     switch (mes) {
         case 1: mes = "Ene"; break;
-        case 2: mes = "Febrero"; break;
+        case 2: mes = "Feb"; break;
         case 3: mes = "Marzo"; break;
         case 4: mes = "Abril"; break;
         case 5: mes = "Mayo"; break;
