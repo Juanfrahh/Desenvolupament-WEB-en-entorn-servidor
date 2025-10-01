@@ -14,8 +14,6 @@ try {
     echo "Error en la suma: " . $e->getMessage();
 }
 
-
-<?php
 // Clase que extiende Exception
 class MiExcepcion extends Exception {
     public function __toString() {
