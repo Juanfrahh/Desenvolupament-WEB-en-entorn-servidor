@@ -13,7 +13,6 @@ function mostrarReloj(){
     if (segundos < 10) segundos = "0" + segundos;
 
     let horaActual = horas + ":" + minutos + ":" + segundos;
-    console.log(horaActual);
     hora.textContent = horaActual;
 
     const fecha2 = document.querySelectorAll('.fecha');
