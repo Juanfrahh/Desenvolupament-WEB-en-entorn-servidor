@@ -50,5 +50,7 @@ function mostrarReloj(){
     }
     let fechaCompleta = diaSemana + ", " + dia + " " + mes ;
     fecha.textContent = fechaCompleta;
+
+    
 }
 setInterval(mostrarReloj, 1000);
