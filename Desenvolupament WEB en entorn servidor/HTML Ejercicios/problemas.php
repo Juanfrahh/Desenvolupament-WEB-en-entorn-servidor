@@ -39,7 +39,6 @@ function sumar($a, $b) {
     return $a + $b;
 }
 
-// Clase de excepción personalizada
 class MiExcepcion extends Exception {
     public function __toString() {
         return "⚠️ Error: " . $this->getMessage();
