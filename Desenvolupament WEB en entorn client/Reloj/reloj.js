@@ -1,6 +1,6 @@
 function mostrarReloj(){
     const reloj = document.querySelectorAll('.hora');
-    //console.log(reloj);
+    
 
     let fecha = new Date(); 
     let horas = fecha.getHours();
@@ -10,7 +10,7 @@ function mostrarReloj(){
 
     let horaActual = horas + ":" + minutos + ":" + segundos + " " + año;``;
     console.log(horaActual);
-    
+
 }
 
 setInterval(mostrarReloj, 1000);
