@@ -13,5 +13,5 @@ function mostrarReloj(){
     hora.textContent = horaActual;
 }
 
-
+func
 setInterval(mostrarReloj, 1000);
