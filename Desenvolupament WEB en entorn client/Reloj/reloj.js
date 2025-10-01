@@ -36,8 +36,8 @@ function mostrarReloj(){
         case 8: mes = "Ago"; break;
         case 9: mes = "Sep"; break;
         case 10: mes = "Oct"; break;    
-        case 11: mes = "Noviembre"; break;
-        case 12: mes = "Diciembre"; break;
+        case 11: mes = "Nov"; break;
+        case 12: mes = "Dic"; break;
         default: break;
     }
     let fechaCompleta ="," + dia + "/" + mes + "/" + año;
