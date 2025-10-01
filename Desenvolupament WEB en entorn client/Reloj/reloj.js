@@ -5,7 +5,7 @@ function mostrarReloj(){
     let fecha1 = new Date(); 
     let horas = fecha1.getHours();
     let minutos = fecha1.getMinutes();
-    let segundos = fecha.getSeconds();
+    let segundos = fecha1.getSeconds();
     let año = fecha.getFullYear();
 
     if (horas < 10) horas = "0" + horas;
