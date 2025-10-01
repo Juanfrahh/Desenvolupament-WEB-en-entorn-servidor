@@ -3,7 +3,7 @@ function mostrarReloj(){
     
 
     let fecha1 = new Date(); 
-    let horas = fecha.getHours();
+    let horas = fecha1.getHours();
     let minutos = fecha.getMinutes();
     let segundos = fecha.getSeconds();
     let año = fecha.getFullYear();
