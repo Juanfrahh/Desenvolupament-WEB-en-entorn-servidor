@@ -23,7 +23,7 @@ function mostrarReloj(){
     let mes = fechaActual.getMonth() + 1;
     let ano = fechaActual.getFullYear();
 
-    switch (mes) {
+    switch (dia) {
     let fechaCompleta = dia + "/" + mes + "/" + año;
     console.log(fechaCompleta);
     fecha.textContent = fechaCompleta;
