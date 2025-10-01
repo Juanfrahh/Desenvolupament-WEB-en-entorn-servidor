@@ -24,8 +24,6 @@ window.onload = function() {
         reloj.textContent = `${fecha} ${hora}`;
     }
 
-
-
     function actualizar() {
         mostrarFechaHora();
         animarMarco();
