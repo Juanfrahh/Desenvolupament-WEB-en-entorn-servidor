@@ -1,7 +1,5 @@
 <?php
-// ---------------- FUNCIONES -----------------
 
-// Sumar
 function sumar($a, $b) {
     if (!is_numeric($a) || !is_numeric($b)) {
         throw new Exception("Ambos parámetros deben ser números.");
