@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $apellidos = htmlspecialchars($_POST['apellidos']);
     }
 
-    // Usuario
     if (empty($_POST['usuario'])) {
         $errores['usuario'] = "El usuario es obligatorio";
     } else {
