@@ -17,7 +17,7 @@ function updateClock() {
     const hora = document.getElementById('hora');
     const fecha = document.getElementById('fecha');
 
-    if (hora && date) {
+    if (hora && fecha) {
         clock.textContent = timeString;
         date.textContent = dateString;
 
