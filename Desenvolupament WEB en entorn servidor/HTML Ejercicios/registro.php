@@ -50,7 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $genero = $_POST['genero'];
     }
 
-    // Condiciones
     if (!isset($_POST['condiciones'])) {
         $errores['condiciones'] = "Debe aceptar las condiciones";
     }
