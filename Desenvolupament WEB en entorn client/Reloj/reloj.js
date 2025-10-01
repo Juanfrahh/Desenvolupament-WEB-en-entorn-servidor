@@ -24,6 +24,7 @@ function mostrarReloj(){
     let ano = fechaActual.getFullYear();
 
     
+    
     switch (mes) {
         case 1: mes = "Enero"; break;
         case 2: mes = "Febrero"; break;
