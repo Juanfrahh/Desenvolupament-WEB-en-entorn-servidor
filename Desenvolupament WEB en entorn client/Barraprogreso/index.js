@@ -5,3 +5,4 @@ let p = 0, bar = document.getElementById("bar");
       bar.style.width = p + "%";
       bar.textContent = p + "%";
     }, 50);
+    
