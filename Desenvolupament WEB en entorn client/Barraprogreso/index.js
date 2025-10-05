@@ -15,6 +15,6 @@ const intervalo = setInterval(() => {
   // Cuando llega a 100 %, detenemos el intervalo
   if (progreso >= 100) {
     clearInterval(intervalo);
-    contador.textContent = "Completado ✓";
+    contador.textContent = "100%";
   }
 }, 50);
