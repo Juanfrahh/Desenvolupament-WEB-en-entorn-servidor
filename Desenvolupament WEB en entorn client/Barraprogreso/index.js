@@ -1,4 +1,4 @@
-// Seleccionamos los elementos del DOM
+
 const contador = document.querySelector(".contador");
 const barraFront = document.querySelector(".barraFront");
 
