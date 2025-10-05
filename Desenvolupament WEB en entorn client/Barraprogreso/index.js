@@ -1,4 +1,3 @@
-
 const contador = document.querySelector(".contador");
 const barraFront = document.querySelector(".barraFront");
 
