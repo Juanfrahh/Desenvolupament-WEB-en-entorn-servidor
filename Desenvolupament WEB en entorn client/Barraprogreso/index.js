@@ -3,7 +3,6 @@ const barraFront = document.querySelector(".barraFront");
 
 let progreso = 0;
 
-// Intervalo que actualiza el progreso cada 50 ms
 const intervalo = setInterval(() => {
   progreso++;
 
