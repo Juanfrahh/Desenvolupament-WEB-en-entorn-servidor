@@ -9,7 +9,6 @@ const intervalo = setInterval(() => {
   contador.textContent = `${progreso}%`;
   barraFront.style.width = `${progreso}%`;
 
-  // Cuando llega a 100 %, detenemos el intervalo
   if (progreso >= 100) {
     clearInterval(intervalo);
     contador.textContent = "100%";
