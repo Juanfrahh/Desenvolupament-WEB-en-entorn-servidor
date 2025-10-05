@@ -6,7 +6,6 @@ let progreso = 0;
 const intervalo = setInterval(() => {
   progreso++;
 
-  // Actualizamos el texto y la barra
   contador.textContent = `${progreso}%`;
   barraFront.style.width = `${progreso}%`;
 
