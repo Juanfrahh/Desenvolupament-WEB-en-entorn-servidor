@@ -1,7 +1,7 @@
 <?php
 echo "<h2>Prueba de clases de herencia (UD3)</h2>";
 
-// Probamos la clase Soporte
+// clase Soporte
 include "Soporte.php";
 
 $soporte1 = new Soporte("Tenet", 22, 3);
