@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="css/style2.css">
+    <!--Carga de página en Modelo de eventos en línea-->
+   <!-- <body onload="alert('La página se ha cargado correctamente')"> -->
+</head>
+<body>
+
+    <div class="contenido">
+        <h1>JavaScript: EVENTOS </h1>
+        <h1>-- Modelo de eventos en línea --</h1>
+       <h2 id ="cab1" onclick = "this.innerHTML='Eventos en HTML'"
+       onmouseover="this.style.background='green'"
+       onmouseout="this.style.background='yellow'">Haz click...</h2>
+       <!--Si no queremos usar this, debemos seleccionarlo -->
+       <!--<h2 id="cab1" onclick="document.getElementById('cab1').innerHTML="...">...</h2> -->
+      
+       
+       <!-- Modelo de eventos en línea con funciones externas -->
+       <h2 onclick="cambiar(this)">Haz click...</h2>
+       <!-- Para evitar que el navegador ejecute la acción por defecto necesitamos añadir "return false;" -->
+       <a href="http://www.google.com" onclick="alertar(); return false ;">Pulsa aquí para ver qué se ejecuta</a>
+       <br/>
+       <a href="http://www.google.com" onclick="return preguntar();">Pulsa aquí para ver qué se ejecuta</a>
+       
+       <!-- Modelo de eventos tradicional -->
+       <h1>-- Modelo de eventos tradicional --</h1>   
+       <h2 id="trad">Haz click...</h2>
+       <h2 id="trad2">Haz click...</h2>
+
+       <!-- Modelo de eventos con addEventListener -->
+       <h1>-- Modelo de eventos W3C --</h1>   
+       <h2 id="uno">Pasa tu ratón por encima....</h2>
+       <h2 id="dos">Pasa tu ratón por encima....</h2>
+       <button id="w3c">Haz click...</button>
+       <button id="w3canonim">Haz doble click...</button> 
+    </div>
+
+   <!--<script src="js/01-scripts.js"></script> -->
+    <script src="js/02-scripts.js"></script>
+    <script src="js/04-scripts.js"></script>
+    
+</body>
+</html>
