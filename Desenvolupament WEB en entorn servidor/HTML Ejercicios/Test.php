@@ -12,7 +12,7 @@ $soporte1->muestraResumen();
 
 echo "<hr>";
 
-// 2️⃣ Probamos la clase CintaVideo
+// Probamos la clase CintaVideo
 include "CintaVideo.php";
 
 $miCinta = new CintaVideo("Los cazafantasmas", 23, 3.5, 107);
