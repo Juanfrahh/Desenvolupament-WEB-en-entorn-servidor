@@ -23,7 +23,7 @@ $miCinta->muestraResumen();
 
 echo "<hr>";
 
-// 3️⃣ Probamos la clase Dvd
+// clase Dvd
 include "Dvd.php";
 
 $miDvd = new Dvd("Origen", 24, 15, "es,en,fr", "16:9");
