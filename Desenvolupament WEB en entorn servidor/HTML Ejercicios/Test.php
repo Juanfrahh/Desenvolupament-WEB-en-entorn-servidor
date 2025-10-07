@@ -34,7 +34,7 @@ $miDvd->muestraResumen();
 
 echo "<hr>";
 
-// 4️⃣ Probamos la clase Juego
+// clase Juego
 include "Juego.php";
 
 $miJuego = new Juego("The Last of Us Part II", 26, 49.99, "PS4", 1, 1);
