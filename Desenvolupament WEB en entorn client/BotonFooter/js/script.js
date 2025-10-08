@@ -1,4 +1,4 @@
-// Suponiendo que tienes un botón con id "footer" y un footer con id "footer"
+// El footer debe de aparecer cuando le demos al botn
 const btn = document.getElementById('btn-footer');
 const footer = document.getElementById('footer');
 
