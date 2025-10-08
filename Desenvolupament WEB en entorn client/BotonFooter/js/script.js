@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const colorOriginal = getComputedStyle(btnFooter).backgroundColor;
 
   // Añadimos el evento click
-  btn-Footer.addEventListener("click", function() {
+  btnFooter.addEventListener("click", function() {
     if (footer.style.display === "none") {
       // Mostrar footer
       footer.style.display = "block";
@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
       // Ocultar footer
       footer.style.display = "none";
       // Restaurar color y texto original
-      btn-Footer.style.backgroundColor = colorOriginal;
-      btn-Footer.textContent = "Descubre más...";
+      btnFooter.style.backgroundColor = colorOriginal;
+      btnFooter.textContent = "Descubre más...";
     }
   });
 });
