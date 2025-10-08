@@ -1,1 +1,1 @@
-// Hazme que el id footer aparezca 
+// Hazme que el id footer aparezca el footer
