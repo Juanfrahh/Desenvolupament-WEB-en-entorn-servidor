@@ -2,13 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnFooter = document.getElementById("btn-footer");
   const footer = document.getElementById("footer");
 
-  // Aseguramos que existen ambos elementos
-  if (!btnFooter || !footer) {
-    console.error("No se encontró el botón o el footer.");
-    return;
-  }
-
-  // Ocultamos el footer al iniciar
+   // Ocultamos el footer al iniciar
   footer.style.display = "none";
 
   // Guardamos el color original del botón
