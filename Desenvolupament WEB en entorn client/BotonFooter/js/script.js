@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (footer.style.display === "none" || footer.style.display === "") {
       footer.style.display = "block"; // lo muestra
       btnFooter.style.backgroundColor = "#ff0000"; // color al abrir
-      btnFooter.textContent = "Cerrar";
+      btnFooter.textContent = "XCerrar";
     } 
     // Si está visible, lo ocultamos
     else {
