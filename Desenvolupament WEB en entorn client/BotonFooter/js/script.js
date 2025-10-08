@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnFooter.classList.toggle("activo");
 
     if (footer.classList.contains("visible")) {
-      btnFooter.textContent = "Cerrar";
+      btnFooter.textContent = "XCerrar";
     } else {
       btnFooter.textContent = "Descubre más...";
     }
