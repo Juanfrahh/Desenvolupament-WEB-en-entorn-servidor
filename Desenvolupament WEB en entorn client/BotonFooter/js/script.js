@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnFooter = document.getElementById("btn-footer");
   const footer = document.getElementById("footer");
 
-   // Ocultamos el footer al iniciar
+  // Ocultamos el footer al iniciar
   footer.style.display = "none";
 
   // Guardamos el color original del botón
