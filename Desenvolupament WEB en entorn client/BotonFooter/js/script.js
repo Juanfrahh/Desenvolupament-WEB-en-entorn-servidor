@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (footer.classList.contains('activo')) {
       boton.textContent = 'X Cerrar';
-      
+      //
     } else {
       boton.textContent = 'Descubre más...';
     }
