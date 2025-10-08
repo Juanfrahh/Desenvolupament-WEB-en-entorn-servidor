@@ -17,4 +17,4 @@ btn.addEventListener('click', function() {
     }
 });
 
-//El footer se abre cuando pulsas el bot
+//El footer se abre cuando pulsas el boton
