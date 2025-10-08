@@ -1,4 +1,3 @@
-<script>
 document.addEventListener('DOMContentLoaded', function() {
   const boton = document.querySelector('.btn-flotante');
   const footer = document.querySelector('.footer');
