@@ -1,5 +1,5 @@
 const btn = document.querySelector('#btn-footer');
-const footer = document.getElementById('footer');
+const footer = document.querySelector('footer');
 
 btn.addEventListener('click', function() {
     // El footer debe de aparecer cuando le demos al boton con el id btn-footer.
