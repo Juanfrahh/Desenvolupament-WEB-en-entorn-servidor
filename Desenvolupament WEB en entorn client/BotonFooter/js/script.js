@@ -4,6 +4,7 @@ const btn = document.getElementById('btn-footer');
 const footer = document.getElementById('footer');
 
 btn.addEventListener('click', function() {
+    
     // Alternar la visibilidad del footer
     footer.classList.toggle('abierto');
 
