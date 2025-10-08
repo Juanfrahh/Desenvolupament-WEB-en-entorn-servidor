@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (footer.classList.contains('activo')) {
       boton.textContent = 'X Cerrar';
-      //
+      //cambiar color a rojo
+      
     } else {
       boton.textContent = 'Descubre más...';
     }
