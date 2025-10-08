@@ -13,6 +13,6 @@ btn.addEventListener('click', function() {
         btn.style.backgroundColor = '#ff0000'; // Cambia a rojo
     } else {
         btn.textContent = 'Descubre más...';
-        btn.style.backgroundColor = '#f8fafbff'; // Cambia a azul
+        btn.style.backgroundColor = '#ffffffff'; // Cambia a azul
     }
 });
