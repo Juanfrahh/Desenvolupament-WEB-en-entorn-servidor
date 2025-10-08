@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (footer.classList.contains('activo')) {
       boton.textContent = 'X Cerrar';
       //cambiar color a rojo
-      
+        boton.style.backgroundColor = '#ff0000';
     } else {
       boton.textContent = 'Descubre más...';
     }
