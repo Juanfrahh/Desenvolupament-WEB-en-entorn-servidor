@@ -5,4 +5,4 @@ document.querySelector('.btn-flotante').addEventListener('click', function(e) {
     document.querySelector('#footer').scrollIntoView({
         behavior: 'smooth'
     });
-}
+});
