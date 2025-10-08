@@ -1,22 +1,28 @@
-const btn = document.querySelector('#btn-footer');
-const footer = document.querySelector('#footer');
+// Esperamos a que el DOM esté cargado
+document.addEventListener("DOMContentLoaded", function() {
+  const btnFooter = document.getElementById("btn-footer");
+  const footer = document.getElementById("footer");
 
-btn.addEventListener('click', function() {
-    // El footer debe de aparecer cuando le demos al boton con el id btn-footer.
-    footer.style.transition = 'all 0.3s ease'; // Suavizar la transición
-    
+  // Ocultamos el footer inicialmente
+  footer.style.display = "none";
 
-    // Alternar la visibilidad del footer
-    footer.classList.toggle('abierto');
+  // Guardamos el color original del botón
+  const colorOriginal = getComputedStyle(btnFooter).backgroundColor;
 
-    // Cambiar el texto del botón
-    if (footer.classList.contains('abierto')) {
-        btn.textContent = 'XCerrar';
-        //Cambiar el color del botón
-        btn.style.backgroundColor = '#ff0000'; // Cambia a rojo
+  // Añadimos el evento click
+  btnFooter.addEventListener("click", function() {
+    if (footer.style.display === "none") {
+      // Mostrar footer
+      footer.style.display = "block";
+      // Cambiar color y texto del botón
+      btnFooter.style.backgroundColor = "#ff9800"; // color de ejemplo (naranja)
+      btnFooter.textContent = "Cerrar";
     } else {
-        btn.textContent = 'Descubre más...';
-        btn.style.backgroundColor = '#ffffffff';
+      // Ocultar footer
+      footer.style.display = "none";
+      // Restaurar color y texto original
+      btnFooter.style.backgroundColor = colorOriginal;
+      btnFooter.textContent = "Descubre más...";
     }
+  });
 });
-
