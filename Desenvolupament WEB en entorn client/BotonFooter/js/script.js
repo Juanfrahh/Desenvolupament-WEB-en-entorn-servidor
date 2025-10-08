@@ -1,25 +1,20 @@
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const btnFooter = document.getElementById("btn-footer");
   const footer = document.getElementById("footer");
 
-  // Ocultamos el footer al cargar
-  footer.style.display = "none";
+  btnFooter.addEventListener("click", (e) => {
+    e.preventDefault(); // evita que el enlace salte
 
-  // Guardamos el color original del botón
-  const colorOriginal = getComputedStyle(btnFooter).backgroundColor;
+    footer.classList.toggle("visible");
+    footer.classList.toggle("oculto");
+    btnFooter.classList.toggle("activo");
 
-  btnFooter.addEventListener("click", () => {
-    // Si el footer está oculto, lo mostramos
-    if (footer.style.display === "none" || footer.style.display === "") {
-      footer.style.display = "block"; // lo muestra
-      btnFooter.style.backgroundColor = "#ff0000"; // color al abrir
-      btnFooter.textContent = "XCerrar";
-    } 
-    // Si está visible, lo ocultamos
-    else {
-      footer.style.display = "none";
-      btnFooter.style.backgroundColor = colorOriginal;
+    if (footer.classList.contains("visible")) {
+      btnFooter.textContent = "Cerrar";
+    } else {
       btnFooter.textContent = "Descubre más...";
     }
   });
 });
+</script>
