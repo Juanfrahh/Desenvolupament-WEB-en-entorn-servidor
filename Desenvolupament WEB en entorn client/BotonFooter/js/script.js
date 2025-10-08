@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Si el footer está oculto, lo mostramos
     if (footer.style.display === "none" || footer.style.display === "") {
       footer.style.display = "block"; // lo muestra
-      btnFooter.style.backgroundColor = "#ff9800"; // color al abrir
+      btnFooter.style.backgroundColor = "#ff0000"; // color al abrir
       btnFooter.textContent = "Cerrar";
     } 
     // Si está visible, lo ocultamos
