@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (footer) {
                 footer.style.display = 'none';
             }
-            boton.style.backgroundColor = ''; // Restaurar color original
+            boton.style.backgroundColor = ''; 
             boton.style.color = '';
             boton.textContent = 'Descubre más…';
             boton.disabled = false;
