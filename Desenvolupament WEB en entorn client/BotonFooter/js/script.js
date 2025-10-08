@@ -3,7 +3,7 @@ const footer = document.querySelector('#footer');
 
 btn.addEventListener('click', function() {
     // El footer debe de aparecer cuando le demos al boton con el id btn-footer.
-    footer
+    footer.style.transition = 'all 0.3s ease'; // Suavizar la transición
 
     // Alternar la visibilidad del footer
     footer.classList.toggle('abierto');
