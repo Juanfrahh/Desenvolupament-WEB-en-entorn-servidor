@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Ocultar footer
       footer.style.display = "none";
       // Restaurar color y texto original
-      btnFooter.style.backgroundColor = colorOriginal;
+      btn-Footer.style.backgroundColor = colorOriginal;
       btnFooter.textContent = "Descubre más...";
     }
   });
