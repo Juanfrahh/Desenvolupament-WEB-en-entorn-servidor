@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const colorOriginal = getComputedStyle(btnFooter).backgroundColor;
 
   // Añadimos el evento click
-  btnFooter.addEventListener("click", function() {
+  btn-Footer.addEventListener("click", function() {
     if (footer.style.display === "none") {
       // Mostrar footer
       footer.style.display = "block";
