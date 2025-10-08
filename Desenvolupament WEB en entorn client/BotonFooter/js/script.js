@@ -1,4 +1,4 @@
-const btn = document.getElementById('btn-footer');
+const btn = document.qu('btn-footer');
 const footer = document.getElementById('footer');
 
 btn.addEventListener('click', function() {
