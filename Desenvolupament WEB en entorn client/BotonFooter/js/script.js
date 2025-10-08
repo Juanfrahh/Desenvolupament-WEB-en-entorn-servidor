@@ -1,4 +1,4 @@
-// Suponiendo que tienes un botón con id "descubreBtn" y un footer con id "footer"
+// Suponiendo que tienes un botón con id "footer" y un footer con id "footer"
 const btn = document.getElementById('descubreBtn');
 const footer = document.getElementById('footer');
 
