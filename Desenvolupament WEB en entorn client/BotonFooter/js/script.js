@@ -1,6 +1,6 @@
 // Espera a que el DOM esté cargado
 document.addEventListener('DOMContentLoaded', function () {
-    const btnDescubreMas = document.getElementById('btn-descubre-mas');
+    const btnDescubreMas = document.getElementById('btn-flotante');
     const footer = document.querySelector('#footer');
 
     // Oculta el footer al inicio
