@@ -1,4 +1,4 @@
-// El footer debe de aparecer cuando le demos al boton con el id btn-footer
+// El footer debe de aparecer cuando le demos al boton con el id btn-footer y 
 const btn = document.getElementById('btn-footer');
 const footer = document.getElementById('footer');
 
