@@ -1,5 +1,5 @@
 // Suponiendo que tienes un botón con id "footer" y un footer con id "footer"
-const btn = document.getElementById('btn-fotante');
+const btn = document.getElementById('btn-footante');
 const footer = document.getElementById('footer');
 
 btn.addEventListener('click', function() {
