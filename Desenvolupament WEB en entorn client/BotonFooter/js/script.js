@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
       footer.style.display = "none";
       // Restaurar color y texto original
       btn-Footer.style.backgroundColor = colorOriginal;
-      btnFooter.textContent = "Descubre más...";
+      btn-Footer.textContent = "Descubre más...";
     }
   });
 });
