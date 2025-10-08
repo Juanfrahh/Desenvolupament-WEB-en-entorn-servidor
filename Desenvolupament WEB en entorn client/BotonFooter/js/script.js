@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (footer.style.display === "none" || footer.style.display === "") {
       footer.style.display = "block"; // lo muestra
-      btnFooter.style.backgroundColor = "#ff9800"; // cambia color
+      btnFooter.style.backgroundColor = "#ff0000"; // cambia color
       btnFooter.textContent = "Cerrar"; // cambia texto
     } else {
       footer.style.display = "none"; // lo oculta
