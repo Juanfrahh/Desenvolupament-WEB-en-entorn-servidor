@@ -9,7 +9,7 @@ btn.addEventListener('click', function() {
     // Cambiar el texto del botón
     if (footer.classList.contains('abierto')) {
         btn.textContent = 'XCerrar';
-        btn.colo = 'red';
+        btn.cl = 'red';
     } else {
         btn.textContent = 'Descubre más...';
     }
