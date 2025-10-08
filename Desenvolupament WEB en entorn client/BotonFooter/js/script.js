@@ -10,6 +10,7 @@ btn.addEventListener('click', function() {
     if (footer.classList.contains('abierto')) {
         btn.textContent = 'XCerrar';
         //Cambiar el color del botón
+        btn.style.backgroundColor = '#ff0000'; // Cambia a rojo
     } else {
         btn.textContent = 'Descubre más...';
     }
