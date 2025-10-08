@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Mostrar footer
       footer.style.display = "block";
       // Cambiar color y texto del botón
-      btnFooter.style.backgroundColor = "#ff9800"; // color de ejemplo (naranja)
+      btnFooter.style.backgroundColor = "#ff0000"; // color de ejemplo (naranja)
       btnFooter.textContent = "XCerrar";
     } else {
       // Ocultar footer
