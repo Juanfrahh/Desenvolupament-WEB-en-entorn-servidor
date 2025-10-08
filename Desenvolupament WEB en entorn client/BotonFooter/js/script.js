@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const btnFooter = document.getElementById("btn-footer");
   const footer = document.getElementById("footer");
