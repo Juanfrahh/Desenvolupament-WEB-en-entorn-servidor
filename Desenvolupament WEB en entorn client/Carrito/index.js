@@ -58,7 +58,6 @@ function eliminarCurso(e) {
     }
 }
 
-// 3️⃣ Vaciar carrito
 function vaciarCarrito() {
     articulosCarrito = [];
     limpiarHTML();
