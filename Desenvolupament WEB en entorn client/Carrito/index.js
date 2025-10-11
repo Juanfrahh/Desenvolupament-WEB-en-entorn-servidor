@@ -9,7 +9,6 @@ let articulosCarrito = [];
 cargarEventListeners();
 
 function cargarEventListeners() {
-    // Agregar curso
     listaCursos.addEventListener('click', agregarCurso);
 
     carrito.addEventListener('click', eliminarCurso);
