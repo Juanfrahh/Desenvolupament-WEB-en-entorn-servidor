@@ -105,7 +105,6 @@ function enviarEmail(e) {
         spinnerDiv.innerHTML = '';
         spinnerDiv.classList.add('hidden');
 
-        // Mensaje de enviado correctamente
         const alertaExito = document.createElement('P');
         alertaExito.textContent = 'El mensaje se ha enviado correctamente';
         alertaExito.classList.add('bg-green-600', 'text-white', 'p-2', 'text-center', 'rounded');
