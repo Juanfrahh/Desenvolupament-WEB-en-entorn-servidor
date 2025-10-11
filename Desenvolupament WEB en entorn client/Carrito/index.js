@@ -5,7 +5,6 @@ const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 
 let articulosCarrito = [];
 
-// ===== EVENTOS =====
 cargarEventListeners();
 
 function cargarEventListeners() {
