@@ -7,7 +7,6 @@ const btnSubmit = formulario.querySelector('button[type="submit"]');
 const btnReset = formulario.querySelector('button[type="reset"]');
 const spinnerDiv = document.querySelector('#spinner');
 
-// Objeto para validar campos
 const emailObj = {
     email: '',
     asunto: '',
