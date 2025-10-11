@@ -52,7 +52,6 @@ function validar(e) {
     comprobarEmailObj();
 }
 
-// Mostrar errores sin duplicarlos
 function mostrarError(mensaje, referencia) {
     limpiarError(referencia);
     const error = document.createElement('P');
