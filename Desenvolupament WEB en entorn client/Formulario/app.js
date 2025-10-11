@@ -84,7 +84,6 @@ function validarEmail(email) {
     return regex.test(email);
 }
 
-// ======== ENVÍO DEL EMAIL (simulación) ========
 function enviarEmail(e) {
     e.preventDefault();
 
