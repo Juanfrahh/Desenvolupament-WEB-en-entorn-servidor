@@ -47,7 +47,7 @@ function validar(e) {
         return;
     }
 
-    limpiarError(e.target); // elimina error si estaba
+    limpiarError(e.target);
     emailObj[campo] = valor.toLowerCase();
     comprobarEmailObj();
 }
