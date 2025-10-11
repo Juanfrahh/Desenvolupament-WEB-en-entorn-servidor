@@ -77,7 +77,6 @@ function vaciarCarrito() {
     limpiarHTML();
 }
 
-// ===== IMPRIMIR EL CARRITO EN EL HTML =====
 function carritoHTML() {
     limpiarHTML();
 
