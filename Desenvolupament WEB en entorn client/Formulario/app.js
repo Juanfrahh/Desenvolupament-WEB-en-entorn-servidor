@@ -61,7 +61,6 @@ function mostrarError(mensaje, referencia) {
     referencia.parentElement.appendChild(error);
 }
 
-// Quita mensaje de error
 function limpiarError(referencia) {
     const alerta = referencia.parentElement.querySelector('.bg-red-600');
     if (alerta) alerta.remove();
