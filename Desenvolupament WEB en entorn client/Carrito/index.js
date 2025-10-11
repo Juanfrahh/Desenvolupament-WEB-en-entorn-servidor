@@ -81,7 +81,6 @@ function carritoHTML() {
     });
 }
 
-// Elimina los cursos del tbody
 function limpiarHTML() {
     while (carrito.firstChild) {
         carrito.removeChild(carrito.firstChild);
