@@ -9,7 +9,6 @@ const btnSubmit = formulario.querySelector('button[type="submit"]');
 const btnReset = formulario.querySelector('button[type="reset"]');
 const spinnerDiv = document.querySelector('#spinner');
 
-// Objeto que guarda el estado del formulario
 const emailObj = {
   email: '',
   asunto: '',
