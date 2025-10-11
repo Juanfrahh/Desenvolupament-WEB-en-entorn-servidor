@@ -14,7 +14,6 @@ const emailObj = {
     mensaje: ''
 };
 
-// ======== EVENTOS ========
 eventListeners();
 
 function eventListeners() {
