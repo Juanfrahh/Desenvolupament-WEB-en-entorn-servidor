@@ -88,7 +88,6 @@ function validarEmail(email) {
 function enviarEmail(e) {
     e.preventDefault();
 
-    // Muestra spinner
     spinnerDiv.classList.remove('hidden');
     spinnerDiv.innerHTML = `
         <div class="sk-chase">
