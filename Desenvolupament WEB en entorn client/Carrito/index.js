@@ -31,8 +31,7 @@ function agregarCurso(e) {
     }
 }
 
-// Extraer info del curso y guardarla en objeto
-function leerDatosCurso(curso) {
+unction leerDatosCurso(curso) {
     const infoCurso = {
         imagen: curso.querySelector('img').src,
         titulo: curso.querySelector('h4').textContent,
