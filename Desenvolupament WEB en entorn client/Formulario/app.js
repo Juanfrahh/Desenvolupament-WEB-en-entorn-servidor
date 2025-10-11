@@ -118,7 +118,6 @@ function enviarEmail(e) {
     }, 2500);
 }
 
-// ======== RESET DEL FORMULARIO ========
 function resetFormulario() {
     formulario.reset();
     emailObj.email = '';
