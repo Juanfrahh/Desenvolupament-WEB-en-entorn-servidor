@@ -19,9 +19,6 @@ function cargarEventListeners() {
     vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
 }
 
-// ===== FUNCIONES =====
-
-// 1️⃣ Agregar curso
 function agregarCurso(e) {
     e.preventDefault();
 
