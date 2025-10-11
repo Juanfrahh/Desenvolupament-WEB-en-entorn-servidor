@@ -58,9 +58,6 @@ function validar(e) {
   comprobarCampos();
 }
 
-// ===============================
-// FUNCIONES AUXILIARES
-// ===============================
 function mostrarError(mensaje, referencia) {
   limpiarError(referencia);
   const error = document.createElement('p');
