@@ -26,9 +26,6 @@ function eventListeners() {
     btnReset.addEventListener('click', resetFormulario);
 }
 
-// ======== FUNCIONES ========
-
-// Validación de los campos
 function validar(e) {
     const valor = e.target.value.trim();
     const campo = e.target.id;
