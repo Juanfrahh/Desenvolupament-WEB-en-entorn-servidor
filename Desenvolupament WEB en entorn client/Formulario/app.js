@@ -1,4 +1,3 @@
-// ======== VARIABLES ========
 const formulario = document.querySelector('#formulario');
 const inputEmail = document.querySelector('#email');
 const inputAsunto = document.querySelector('#asunto');
