@@ -50,7 +50,6 @@ function leerDatosCurso(curso) {
     carritoHTML();
 }
 
-// 2️⃣ Eliminar curso del carrito
 function eliminarCurso(e) {
     if (e.target.classList.contains('borrar-curso')) {
         const cursoId = e.target.getAttribute('data-id');
