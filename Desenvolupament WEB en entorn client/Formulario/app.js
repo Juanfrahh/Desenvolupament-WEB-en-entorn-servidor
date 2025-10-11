@@ -45,7 +45,6 @@ function validar(e) {
     return;
   }
 
-  // Validación del email con regex
   if (campo === 'email' && !validarEmail(valor)) {
     mostrarError('El EMAIL no es válido', e.target);
     emailObj[campo] = '';
