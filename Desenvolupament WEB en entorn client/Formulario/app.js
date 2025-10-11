@@ -1,3 +1,6 @@
+// ===============================
+// VARIABLES
+// ===============================
 const formulario = document.querySelector('#formulario');
 const inputEmail = document.querySelector('#email');
 const inputAsunto = document.querySelector('#asunto');
@@ -6,109 +9,127 @@ const btnSubmit = formulario.querySelector('button[type="submit"]');
 const btnReset = formulario.querySelector('button[type="reset"]');
 const spinnerDiv = document.querySelector('#spinner');
 
+// Objeto que guarda el estado del formulario
 const emailObj = {
-    email: '',
-    asunto: '',
-    mensaje: ''
+  email: '',
+  asunto: '',
+  mensaje: ''
 };
 
+// ===============================
+// EVENTOS
+// ===============================
 eventListeners();
 
 function eventListeners() {
-    inputEmail.addEventListener('input', validar);
-    inputAsunto.addEventListener('input', validar);
-    inputMensaje.addEventListener('input', validar);
+  inputEmail.addEventListener('input', validar);
+  inputAsunto.addEventListener('input', validar);
+  inputMensaje.addEventListener('input', validar);
 
-    formulario.addEventListener('submit', enviarEmail);
-    btnReset.addEventListener('click', resetFormulario);
+  formulario.addEventListener('submit', enviarEmail);
+  btnReset.addEventListener('click', resetFormulario);
 }
+
+// ===============================
+// FUNCIONES
+// ===============================
 
 function validar(e) {
-    const valor = e.target.value.trim();
-    const campo = e.target.id;
+  const valor = e.target.value.trim();
+  const campo = e.target.id;
 
-    if (valor === '') {
-        mostrarError(`El campo ${campo.toUpperCase()} es obligatorio`, e.target);
-        emailObj[campo] = '';
-        comprobarEmailObj();
-        return;
-    }
+  if (valor === '') {
+    mostrarError(`El campo ${campo.toUpperCase()} es obligatorio`, e.target);
+    emailObj[campo] = '';
+    comprobarCampos();
+    return;
+  }
 
-    if (campo === 'email' && !validarEmail(valor)) {
-        mostrarError('El EMAIL no es válido', e.target);
-        emailObj[campo] = '';
-        comprobarEmailObj();
-        return;
-    }
+  // Validación del email con regex
+  if (campo === 'email' && !validarEmail(valor)) {
+    mostrarError('El EMAIL no es válido', e.target);
+    emailObj[campo] = '';
+    comprobarCampos();
+    return;
+  }
 
-    limpiarError(e.target);
-    emailObj[campo] = valor.toLowerCase();
-    comprobarEmailObj();
+  limpiarError(e.target);
+  emailObj[campo] = valor;
+  comprobarCampos();
 }
 
+// ===============================
+// FUNCIONES AUXILIARES
+// ===============================
 function mostrarError(mensaje, referencia) {
-    limpiarError(referencia);
-    const error = document.createElement('P');
-    error.textContent = mensaje;
-    error.classList.add('bg-red-600', 'text-white', 'p-2', 'text-center', 'rounded');
-    referencia.parentElement.appendChild(error);
+  limpiarError(referencia); // Evita duplicados
+  const error = document.createElement('p');
+  error.textContent = mensaje;
+  error.classList.add('bg-red-600', 'text-white', 'p-2', 'text-center', 'rounded', 'text-sm');
+  referencia.parentElement.appendChild(error);
 }
 
 function limpiarError(referencia) {
-    const alerta = referencia.parentElement.querySelector('.bg-red-600');
-    if (alerta) alerta.remove();
+  const alerta = referencia.parentElement.querySelector('.bg-red-600');
+  if (alerta) alerta.remove();
 }
 
-function comprobarEmailObj() {
-    if (Object.values(emailObj).includes('')) {
-        btnSubmit.disabled = true;
-        btnSubmit.classList.add('opacity-50');
-    } else {
-        btnSubmit.disabled = false;
-        btnSubmit.classList.remove('opacity-50');
-    }
+function comprobarCampos() {
+  if (Object.values(emailObj).includes('')) {
+    btnSubmit.disabled = true;
+    btnSubmit.classList.add('opacity-50');
+  } else {
+    btnSubmit.disabled = false;
+    btnSubmit.classList.remove('opacity-50');
+  }
 }
 
 function validarEmail(email) {
-    const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-    return regex.test(email);
+  const regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  return regex.test(email);
 }
 
+// ===============================
+// ENVÍO DE EMAIL (simulado)
+// ===============================
 function enviarEmail(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    spinnerDiv.classList.remove('hidden');
-    spinnerDiv.innerHTML = `
-        <div class="sk-chase">
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-            <div class="sk-chase-dot"></div>
-        </div>
-    `;
+  spinnerDiv.classList.remove('hidden');
+  spinnerDiv.innerHTML = `
+      <div class="sk-chase">
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+          <div class="sk-chase-dot"></div>
+      </div>
+  `;
+
+  setTimeout(() => {
+    spinnerDiv.innerHTML = '';
+    spinnerDiv.classList.add('hidden');
+
+    const exito = document.createElement('p');
+    exito.textContent = 'El mensaje se ha enviado correctamente';
+    exito.classList.add('bg-green-500', 'text-white', 'p-2', 'text-center', 'rounded');
+    formulario.appendChild(exito);
 
     setTimeout(() => {
-        spinnerDiv.innerHTML = '';
-        spinnerDiv.classList.add('hidden');
-
-        const alertaExito = document.createElement('P');
-        alertaExito.textContent = 'El mensaje se ha enviado correctamente';
-        alertaExito.classList.add('bg-green-600', 'text-white', 'p-2', 'text-center', 'rounded');
-        formulario.appendChild(alertaExito);
-
-        setTimeout(() => {
-            alertaExito.remove();
-            resetFormulario();
-        }, 3000);
-    }, 2500);
+      exito.remove();
+      resetFormulario();
+    }, 3000);
+  }, 2500);
 }
 
+// ===============================
+// RESET FORMULARIO
+// ===============================
 function resetFormulario() {
-    formulario.reset();
-    emailObj.email = '';
-    emailObj.asunto = '';
-    emailObj.mensaje = '';
-    comprobarEmailObj();
+  formulario.reset();
+  emailObj.email = '';
+  emailObj.asunto = '';
+  emailObj.mensaje = '';
+  comprobarCampos();
 }
