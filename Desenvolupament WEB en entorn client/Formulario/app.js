@@ -62,7 +62,7 @@ function validar(e) {
 // FUNCIONES AUXILIARES
 // ===============================
 function mostrarError(mensaje, referencia) {
-  limpiarError(referencia); // Evita duplicados
+  limpiarError(referencia);
   const error = document.createElement('p');
   error.textContent = mensaje;
   error.classList.add('bg-red-600', 'text-white', 'p-2', 'text-center', 'rounded', 'text-sm');
