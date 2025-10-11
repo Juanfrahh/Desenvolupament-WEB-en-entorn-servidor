@@ -89,9 +89,6 @@ function validarEmail(email) {
   return regex.test(email);
 }
 
-// ===============================
-// ENVÍO DE EMAIL (simulado)
-// ===============================
 function enviarEmail(e) {
   e.preventDefault();
 
