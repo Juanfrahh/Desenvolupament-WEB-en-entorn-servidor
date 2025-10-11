@@ -67,7 +67,6 @@ function limpiarError(referencia) {
     if (alerta) alerta.remove();
 }
 
-// Comprueba si se puede habilitar el botón ENVIAR
 function comprobarEmailObj() {
     if (Object.values(emailObj).includes('')) {
         btnSubmit.disabled = true;
