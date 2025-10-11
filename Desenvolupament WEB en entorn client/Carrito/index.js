@@ -55,7 +55,6 @@ function leerDatosCurso(curso) {
         });
         articulosCarrito = [...cursos];
     } else {
-        // Agrega el nuevo curso
         articulosCarrito = [...articulosCarrito, infoCurso];
     }
 
