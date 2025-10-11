@@ -123,9 +123,6 @@ function enviarEmail(e) {
   }, 2500);
 }
 
-// ===============================
-// RESET FORMULARIO
-// ===============================
 function resetFormulario() {
   formulario.reset();
   emailObj.email = '';
