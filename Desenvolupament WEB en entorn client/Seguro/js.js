@@ -117,7 +117,6 @@ function mostrarError(mensaje) {
   const error = document.createElement('div');
   error.textContent = mensaje;
 
-  // 🔥 Estilo personalizado que siempre se aplica
   error.style.backgroundColor = '#f8d7da'; // rojo claro (tipo alerta Bootstrap)
   error.style.color = '#842029'; // rojo oscuro
   error.style.border = '1px solid #f5c2c7';
