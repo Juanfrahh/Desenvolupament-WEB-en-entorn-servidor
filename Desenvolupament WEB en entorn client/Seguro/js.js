@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
 });
 
-// Validar formulario
 formulario.addEventListener('submit', validarFormulario);
 
 selectTipo.addEventListener('change', limpiarError);
