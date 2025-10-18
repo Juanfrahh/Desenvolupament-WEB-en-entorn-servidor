@@ -20,7 +20,6 @@ class Poliza {
     const base = 300;
     let cantidad = base;
 
-    // Gama del vehículo
     switch (this.tipo) {
       case 'baja':
         cantidad += base * 0.05;
