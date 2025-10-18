@@ -69,25 +69,25 @@ function llenarSelectAnios() {
   }
 }
 
-// function validarFormulario(e) {
-//   e.preventDefault();
+function validarFormulario(e) {
+  e.preventDefault();
 
-//   const tipo = document.querySelector('#tipo').value;
-//   const anio = document.querySelector('#anio').value;
-//   const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
+  const tipo = document.querySelector('#tipo').value;
+  const anio = document.querySelector('#anio').value;
+  const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
-//   if (tipo === '' || anio === '' || !cobertura) {
-//     mostrarError('Todos los campos son obligatorios');
-//     return;
-//   }
+  if (tipo === '' || anio === '' || !cobertura) {
+    mostrarError('Todos los campos son obligatorios');
+    return;
+  }
 
-//   // Si está todo correcto
-//   limpiarError();
-//   const poliza = new Poliza(tipo, anio, cobertura);
-//   poliza.calcularSeguro();
-//   poliza.mostrarInfoHTML();
-// }
+  // Si está todo correcto
+  limpiarError();
+  const poliza = new Poliza(tipo, anio, cobertura);
+  poliza.calcularSeguro();
+  poliza.mostrarInfoHTML();
+}
 
-// function limpiarError() {
-//   mensajeErrorDiv.innerHTML = '';
-// }
+function limpiarError() {
+  mensajeErrorDiv.innerHTML = '';
+}
