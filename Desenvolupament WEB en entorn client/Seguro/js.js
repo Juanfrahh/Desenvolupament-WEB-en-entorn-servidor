@@ -112,7 +112,7 @@ function mostrarError(mensaje) {
     'text-red-100',
     'p-4',
     'text-center',
-    'font-semibold',
+    'font-semibold'
   );
 
   mensajeErrorDiv.appendChild(error);
