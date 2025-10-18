@@ -97,7 +97,7 @@ function validarFormulario(e) {
   }
 
   if (anio === '' || !cobertura) {
-    mostrarError('Falta el campo tipo por rellenar');
+    mostrarError('Falta el campo año por rellenar');
     return;
   }
   // Si está todo correcto
