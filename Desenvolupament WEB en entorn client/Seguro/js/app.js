@@ -3,10 +3,6 @@ const selectGama = document.querySelector('#gama');
 const selectYear = document.querySelector('#year');
 const resultado = document.querySelector('#resultado');
 
-
-// =========================
-// CLASE POLIZA
-// =========================
 class Poliza {
   constructor(gama, year, tipo) {
     this._gama = gama;
