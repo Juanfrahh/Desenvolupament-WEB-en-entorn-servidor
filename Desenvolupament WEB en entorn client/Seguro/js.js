@@ -50,6 +50,11 @@ class Poliza {
   }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  llenarSelectAnios();
+  mostrarError('Todos los campos son obligatorios');
+});
+
 formulario.addEventListener('submit', validarFormulario);
 
 function llenarSelectAnios() {
