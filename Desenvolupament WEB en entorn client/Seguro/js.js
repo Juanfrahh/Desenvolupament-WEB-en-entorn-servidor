@@ -90,7 +90,6 @@ function validarFormulario(e) {
 
   const tipo = document.querySelector('#tipo').value;
   const anio = document.querySelector('#anio').value;
-  const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
   // Si faltan campos
   if (tipo === '' || anio === '' || !cobertura) {
