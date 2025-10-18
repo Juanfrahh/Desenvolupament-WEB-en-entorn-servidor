@@ -101,7 +101,7 @@ function validarFormulario(e) {
     mostrarError('Falta el campo año por rellenar');
     return;
   }
-    if (tipo === '' || anio === '' || !cobertura) {
+  if (tipo === '' || anio === '' || !cobertura) {
     mostrarError('Rellena los campos que faltan');
     return;
   }
