@@ -39,7 +39,6 @@ class Poliza {
     const diferencia = new Date().getFullYear() - this.anio;
     cantidad += cantidad * (diferencia * 0.03);
 
-    // Tipo de cobertura
     if (this.cobertura === 'basico') {
       cantidad *= 1.3;
     } else if (this.cobertura === 'completo') {
