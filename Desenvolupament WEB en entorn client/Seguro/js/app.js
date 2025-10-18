@@ -1,6 +1,3 @@
-// =========================
-// VARIABLES Y SELECTORES
-// =========================
 const formulario = document.querySelector('#cotizar-seguro');
 const selectGama = document.querySelector('#gama');
 const selectYear = document.querySelector('#year');
