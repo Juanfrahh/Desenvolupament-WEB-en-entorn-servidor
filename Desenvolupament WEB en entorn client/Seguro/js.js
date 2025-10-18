@@ -1,7 +1,13 @@
+// =====================
+// VARIABLES
+// =====================
 const formulario = document.querySelector('#formulario');
 const selectAnio = document.querySelector('#anio');
 const mensajeErrorDiv = document.querySelector('#mensajeError');
 
+// =====================
+// CLASE POLIZA
+// =====================
 class Poliza {
   constructor(tipo, anio, cobertura) {
     this.tipo = tipo;
@@ -14,6 +20,7 @@ class Poliza {
     const base = 300;
     let cantidad = base;
 
+    // Gama del vehículo
     switch (this.tipo) {
       case 'baja':
         cantidad += base * 0.05;
@@ -26,9 +33,11 @@ class Poliza {
         break;
     }
 
+    // Antigüedad
     const diferencia = new Date().getFullYear() - this.anio;
     cantidad += cantidad * (diferencia * 0.03);
 
+    // Cobertura
     if (this.cobertura === 'basico') {
       cantidad *= 1.3;
     } else if (this.cobertura === 'completo') {
@@ -50,12 +59,20 @@ class Poliza {
   }
 }
 
+// =====================
+// EVENTOS
+// =====================
 document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
+  // Mostrar mensaje de error al cargar la página
+  mostrarError('Todos los campos son obligatorios');
 });
 
 formulario.addEventListener('submit', validarFormulario);
 
+// =====================
+// FUNCIONES
+// =====================
 function llenarSelectAnios() {
   const max = new Date().getFullYear();
   const min = max - 20;
@@ -75,11 +92,13 @@ function validarFormulario(e) {
   const anio = document.querySelector('#anio').value;
   const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
+  // Si faltan campos
   if (tipo === '' || anio === '' || !cobertura) {
     mostrarError('Todos los campos son obligatorios');
     return;
   }
 
+  // Si está todo correcto
   limpiarError();
   const poliza = new Poliza(tipo, anio, cobertura);
   poliza.calcularSeguro();
@@ -90,10 +109,16 @@ function mostrarError(mensaje) {
   limpiarError();
   const error = document.createElement('p');
   error.textContent = mensaje;
-  error.classList.add('error', 'mt-10', 'bg-red-600', 'text-white', 'p-3', 'rounded', 'text-center');
+  error.classList.add(
+    'error',
+    'mt-10',
+    'bg-red-600',
+    'text-white',
+    'p-3',
+    'rounded',
+    'text-center'
+  );
   mensajeErrorDiv.appendChild(error);
-
-  setTimeout(() => error.remove(), 3000);
 }
 
 function limpiarError() {
