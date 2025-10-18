@@ -57,17 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
 //Mostrar formulario
 formulario.addEventListener('submit', validarFormulario);
 
-function llenarSelectAnios() {
-  const max = new Date().getFullYear();
-  const min = max - 20;
+// function llenarSelectAnios() {
+//   const max = new Date().getFullYear();
+//   const min = max - 20;
 
-  for (let i = max; i >= min; i--) {
-    const option = document.createElement('option');
-    option.value = i;
-    option.textContent = i;
-    selectAnio.appendChild(option);
-  }
-}
+//   for (let i = max; i >= min; i--) {
+//     const option = document.createElement('option');
+//     option.value = i;
+//     option.textContent = i;
+//     selectAnio.appendChild(option);
+//   }
+// }
 
 function validarFormulario(e) {
   e.preventDefault();
