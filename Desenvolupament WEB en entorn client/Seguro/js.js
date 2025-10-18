@@ -52,7 +52,6 @@ class Poliza {
 
 document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
-  // Mostrar mensaje de error al cargar la página
   mostrarError('Todos los campos son obligatorios');
 });
 
