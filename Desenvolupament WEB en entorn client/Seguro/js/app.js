@@ -3,11 +3,6 @@ const selectGama = document.querySelector('#gama');
 const selectYear = document.querySelector('#year');
 const resultado = document.querySelector('#resultado');
 
-// Modal Bootstrap
-const modal = new bootstrap.Modal(document.getElementById('modal'));
-const modalTitle = document.querySelector('.modal-title');
-const modalBody = document.querySelector('.modal-body');
-const modalFooter = document.querySelector('.modal-footer');
 
 // =========================
 // CLASE POLIZA
