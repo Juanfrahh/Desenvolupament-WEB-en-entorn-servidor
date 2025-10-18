@@ -75,7 +75,6 @@ function validarFormulario(e) {
   const anio = document.querySelector('#anio').value;
   const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
-  // Validación simple
   if (tipo === '' || anio === '' || !cobertura) {
     mostrarError('Todos los campos son obligatorios');
     return;
