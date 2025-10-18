@@ -119,11 +119,6 @@ function mostrarError(mensaje) {
   );
 
   mensajeErrorDiv.appendChild(error);
-
-  // Quitar el mensaje después de 3 segundos
-  setTimeout(() => {
-    error.remove();
-  }, 3000);
 }
 
 function limpiarError() {
