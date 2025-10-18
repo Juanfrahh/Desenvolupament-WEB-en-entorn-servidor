@@ -100,7 +100,7 @@ function validarFormulario(e) {
   const poliza = new Poliza(tipo, anio, cobertura);
   poliza.calcularSeguro();
   poliza.mostrarInfoHTML();
-
+}
 
 function mostrarError(mensaje) {
   limpiarError();
