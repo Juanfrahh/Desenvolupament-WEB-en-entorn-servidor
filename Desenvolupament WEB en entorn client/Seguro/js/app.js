@@ -98,18 +98,17 @@ class Poliza {
 // =========================
 
 // Cargar los años dinámicamente
-document.addEventListener('DOMContentLoaded', () => {
-  const yearActual = new Date().getFullYear();
-  const max = yearActual;
-  const min = yearActual - 20;
+function llenarSelectAnios() {
+  const max = new Date().getFullYear();
+  const min = max - 20;
 
   for (let i = max; i >= min; i--) {
     const option = document.createElement('option');
     option.value = i;
     option.textContent = i;
-    selectYear.appendChild(option);
+    selectAnio.appendChild(option);
   }
-});
+}
 
 // Evento de envío del formulario
 formulario.addEventListener('submit', e => {
