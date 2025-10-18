@@ -122,4 +122,4 @@ function validarFormulario(e) {
 
 // function limpiarError() {
 //   mensajeErrorDiv.innerHTML = '';
- }
+}
