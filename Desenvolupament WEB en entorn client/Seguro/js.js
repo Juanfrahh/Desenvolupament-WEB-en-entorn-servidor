@@ -109,13 +109,7 @@ function mostrarError(mensaje) {
   const error = document.createElement('div');
   error.textContent = mensaje;
   error.classList.add(
-    'background-red-600',
-    'text-red-100',
-    'p-4',
-    'text-center',
-    'font-semibold',
-    'border-2',
-    'border-red-800',
+
   );
 
   mensajeErrorDiv.appendChild(error);
