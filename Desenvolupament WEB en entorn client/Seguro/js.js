@@ -112,7 +112,6 @@ function mostrarError(mensaje) {
     'background-red-600',
     'text-white',
     'p-4',
-    'rounded',
     'text-center',
     'font-semibold',
     'border-2',
