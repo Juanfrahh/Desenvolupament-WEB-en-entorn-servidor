@@ -1,6 +1,3 @@
-// =====================
-// VARIABLES
-// =====================
 const formulario = document.querySelector('#formulario');
 const selectAnio = document.querySelector('#anio');
 const mensajeErrorDiv = document.querySelector('#mensajeError');
