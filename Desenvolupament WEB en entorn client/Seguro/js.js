@@ -7,9 +7,6 @@ const mensajeErrorDiv = document.querySelector('#mensajeError');
 const selectTipo = document.querySelector('#tipo');
 const radiosCobertura = document.querySelectorAll('input[name="cobertura"]');
 
-// =====================
-// CLASE POLIZA
-// =====================
 class Poliza {
   constructor(tipo, anio, cobertura) {
     this.tipo = tipo;
