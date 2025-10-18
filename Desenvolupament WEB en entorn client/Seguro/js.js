@@ -91,10 +91,7 @@ function validarFormulario(e) {
   const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
   // Validación: si falta un campo
-  if (tipo === '' || anio === '' || !cobertura) {
-    mostrarError('Rellena los campos que faltan');
-    return;
-  }
+
   if (tipo === '' || !cobertura) {
     mostrarError('Falta el campo tipo por rellenar');
     return;
@@ -102,6 +99,9 @@ function validarFormulario(e) {
 
   if (anio === '' || !cobertura) {
     mostrarError('Falta el campo año por rellenar');
+    return;
+  }  if (tipo === '' || anio === '' || !cobertura) {
+    mostrarError('Rellena los campos que faltan');
     return;
   }
   // Si está todo correcto
