@@ -35,7 +35,6 @@ class Poliza {
         break;
     }
 
-    // Antigüedad del vehículo
     const diferencia = new Date().getFullYear() - this.anio;
     cantidad += cantidad * (diferencia * 0.03);
 
