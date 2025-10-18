@@ -16,7 +16,7 @@ calcularSeguro() {
     let cantidad = base;
 
     // Gama del vehículo
-    switch (this._tipo) {
+    switch (this.tipo) {
       case 'baja':
         cantidad += base * 0.05;
         break;
