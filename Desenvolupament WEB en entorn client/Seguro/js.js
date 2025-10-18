@@ -96,6 +96,10 @@ function validarFormulario(e) {
     return;
   }
 
+  if (tipo === '' || !cobertura) {
+    mostrarError('Falta el campo tipo por rellenar');
+    return;
+  }
   // Si está todo correcto
   limpiarError();
   const poliza = new Poliza(tipo, anio, cobertura);
