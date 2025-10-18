@@ -90,36 +90,37 @@ function validarFormulario(e) {
 
   const tipo = document.querySelector('#tipo').value;
   const anio = document.querySelector('#anio').value;
+  const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
   // Si faltan campos
-  if (tipo === '' || anio === '') {
+  if (tipo === '' || anio === '' || !cobertura) {
     mostrarError('Todos los campos son obligatorios');
     return;
   }
 
-//   // Si está todo correcto
-//   limpiarError();
-//   const poliza = new Poliza(tipo, anio, cobertura);
-//   poliza.calcularSeguro();
-//   poliza.mostrarInfoHTML();
-// }
+  // Si está todo correcto
+  limpiarError();
+  const poliza = new Poliza(tipo, anio, cobertura);
+  poliza.calcularSeguro();
+  poliza.mostrarInfoHTML();
+}
 
-// function mostrarError(mensaje) {
-//   limpiarError();
-//   const error = document.createElement('p');
-//   error.textContent = mensaje;
-//   error.classList.add(
-//     'error',
-//     'mt-10',
-//     'bg-red-600',
-//     'text-white',
-//     'p-3',
-//     'rounded',
-//     'text-center'
-//   );
-//   mensajeErrorDiv.appendChild(error);
-// }
+function mostrarError(mensaje) {
+  limpiarError();
+  const error = document.createElement('p');
+  error.textContent = mensaje;
+  error.classList.add(
+    'error',
+    'mt-10',
+    'bg-red-600',
+    'text-white',
+    'p-3',
+    'rounded',
+    'text-center'
+  );
+  mensajeErrorDiv.appendChild(error);
+}
 
-// function limpiarError() {
-//   mensajeErrorDiv.innerHTML = '';
-// }
+function limpiarError() {
+  mensajeErrorDiv.innerHTML = '';
+}
