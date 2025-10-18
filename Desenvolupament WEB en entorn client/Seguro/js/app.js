@@ -28,7 +28,6 @@ class Poliza {
   calcularSeguro() {
     let total = this._importe;
 
-
     switch (this._gama) {
       case '1':
         total += total * 0.05;
