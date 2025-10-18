@@ -104,7 +104,7 @@ function validarFormulario(e) {
 }
 
 function mostrarError(mensaje) {
-  limpiarError(); // evitar mensajes repetidos
+  limpiarError();
 
   const error = document.createElement('div');
   error.textContent = mensaje;
