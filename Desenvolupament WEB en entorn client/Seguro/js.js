@@ -105,6 +105,3 @@ function validarFormulario(e) {
   poliza.mostrarInfoHTML();
 }
 
-function limpiarError() {
-  mensajeErrorDiv.innerHTML = '';
-}
