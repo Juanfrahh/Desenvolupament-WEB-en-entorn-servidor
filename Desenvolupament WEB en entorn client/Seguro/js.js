@@ -113,7 +113,6 @@ function mostrarError(mensaje) {
     'p-4',
     'text-center',
     'font-semibold',
-    'border-red-800',
     'shadow-lg'
   );
 
