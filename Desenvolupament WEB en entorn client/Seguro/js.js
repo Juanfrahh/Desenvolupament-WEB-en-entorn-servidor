@@ -92,7 +92,7 @@ function validarFormulario(e) {
 
   // Validación: si falta un campo
   if (tipo === '' || anio === '' || !cobertura) {
-    mostrarError('Rellenar');
+    mostrarError('Rellena los cam');
     return;
   }
   if (tipo === '' || !cobertura) {
