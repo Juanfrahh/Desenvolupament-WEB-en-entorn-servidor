@@ -98,11 +98,11 @@ function validarFormulario(e) {
   }
 
 //   // Si está todo correcto
-//   limpiarError();
-//   const poliza = new Poliza(tipo, anio, cobertura);
-//   poliza.calcularSeguro();
-//   poliza.mostrarInfoHTML();
-// }
+  limpiarError();
+  const poliza = new Poliza(tipo, anio, cobertura);
+  poliza.calcularSeguro();
+  poliza.mostrarInfoHTML();
+}
 
 // function mostrarError(mensaje) {
 //   limpiarError();
