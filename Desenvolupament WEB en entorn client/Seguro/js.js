@@ -61,9 +61,6 @@ class Poliza {
   }
 }
 
-// =====================
-// EVENTOS
-// =====================
 document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
 });
