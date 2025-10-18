@@ -112,7 +112,7 @@ function validarFormulario(e) {
 }
 
 function mostrarError(mensaje) {
-  limpiarError(); // Evitar duplicados
+  limpiarError();
 
   const error = document.createElement('div');
   error.textContent = mensaje;
