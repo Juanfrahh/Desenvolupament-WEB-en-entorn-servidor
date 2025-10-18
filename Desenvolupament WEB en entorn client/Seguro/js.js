@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 //Mostrar formulario
 formulario.addEventListener('submit', validarFormulario);
-//
+//Mostrar los años
 function llenarSelectAnios() {
   const max = new Date().getFullYear();
   const min = max - 20;
