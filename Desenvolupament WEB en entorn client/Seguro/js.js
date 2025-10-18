@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Validar formulario
 formulario.addEventListener('submit', validarFormulario);
 
-// Borrar error cuando se modifiquen campos
 selectTipo.addEventListener('change', limpiarError);
 selectAnio.addEventListener('change', limpiarError);
 radiosCobertura.forEach(radio => radio.addEventListener('change', limpiarError));
