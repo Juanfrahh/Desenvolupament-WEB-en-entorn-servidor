@@ -4,6 +4,8 @@
 const formulario = document.querySelector('#formulario');
 const selectAnio = document.querySelector('#anio');
 const mensajeErrorDiv = document.querySelector('#mensajeError');
+const selectTipo = document.querySelector('#tipo');
+const radiosCobertura = document.querySelectorAll('input[name="cobertura"]');
 
 // =====================
 // CLASE POLIZA
@@ -66,7 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
 });
 
+// Validar formulario
 formulario.addEventListener('submit', validarFormulario);
+
+// Borrar error cuando se modifiquen campos
+selectTipo.addEventListener('change', limpiarError);
+selectAnio.addEventListener('change', limpiarError);
+radiosCobertura.forEach(radio => radio.addEventListener('change', limpiarError));
 
 // =====================
 // FUNCIONES
@@ -86,15 +94,16 @@ function llenarSelectAnios() {
 function validarFormulario(e) {
   e.preventDefault();
 
-  const tipo = document.querySelector('#tipo').value;
-  const anio = document.querySelector('#anio').value;
+  const tipo = selectTipo.value;
+  const anio = selectAnio.value;
   const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
   // Validación: si falta un campo
   if (tipo === '' || anio === '' || !cobertura) {
-    mostrarError('Rellena los campos que faltan');
+    mostrarError('⚠️ Rellena los campos que faltan');
     return;
   }
+
   // Si está todo correcto
   limpiarError();
   const poliza = new Poliza(tipo, anio, cobertura);
@@ -103,11 +112,21 @@ function validarFormulario(e) {
 }
 
 function mostrarError(mensaje) {
-  limpiarError();
+  limpiarError(); // Evitar duplicados
 
   const error = document.createElement('div');
   error.textContent = mensaje;
   error.classList.add(
+    'bg-red-100',      // Fondo rojo claro
+    'text-red-700',    // Texto rojo oscuro
+    'border',
+    'border-red-500',
+    'p-3',
+    'rounded',
+    'text-center',
+    'font-semibold',
+    'shadow-md',
+    'mt-5'
   );
 
   mensajeErrorDiv.appendChild(error);
