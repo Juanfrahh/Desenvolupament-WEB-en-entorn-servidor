@@ -26,7 +26,6 @@ class Poliza {
         break;
     }
 
-    // Antigüedad
     const diferencia = new Date().getFullYear() - this.anio;
     cantidad += cantidad * (diferencia * 0.03);
 
