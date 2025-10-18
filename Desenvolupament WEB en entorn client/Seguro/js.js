@@ -105,21 +105,21 @@ function validarFormulario(e) {
   poliza.mostrarInfoHTML();
 }
 
-function mostrarError(mensaje) {
-  limpiarError();
-  const error = document.createElement('p');
-  error.textContent = mensaje;
-  error.classList.add(
-    'error',
-    'mt-10',
-    'bg-red-600',
-    'text-white',
-    'p-3',
-    'rounded',
-    'text-center'
-  );
-  mensajeErrorDiv.appendChild(error);
-}
+// function mostrarError(mensaje) {
+//   limpiarError();
+//   const error = document.createElement('p');
+//   error.textContent = mensaje;
+//   error.classList.add(
+//     'error',
+//     'mt-10',
+//     'bg-red-600',
+//     'text-white',
+//     'p-3',
+//     'rounded',
+//     'text-center'
+//   );
+//   mensajeErrorDiv.appendChild(error);
+// }
 
 function limpiarError() {
   mensajeErrorDiv.innerHTML = '';
