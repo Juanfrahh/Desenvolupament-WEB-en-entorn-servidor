@@ -94,7 +94,7 @@ function validarFormulario(e) {
   if (tipo === '' || anio === '' || !cobertura) {
     mostrarError('<p style= color = "white"; back>Falta un campo por rellenar</p>');
     return;
-  }
+  }style
 
   // Si está todo correcto
   limpiarError();
