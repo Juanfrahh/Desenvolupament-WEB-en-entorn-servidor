@@ -4,6 +4,7 @@
 const formulario = document.querySelector('#formulario');
 const selectAnio = document.querySelector('#anio');
 const mensajeErrorDiv = document.querySelector('#mensajeError');
+
 class Poliza {
   constructor(tipo, anio, cobertura) {
     this.tipo = tipo;
