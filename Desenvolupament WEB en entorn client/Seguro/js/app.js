@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Evento de envío del formulario
-
+z
 formulario.addEventListener('submit', e => {
   e.preventDefault();
 
