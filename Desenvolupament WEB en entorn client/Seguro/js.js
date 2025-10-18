@@ -50,8 +50,6 @@ class Poliza {
   }
 }
 
-
-
 formulario.addEventListener('submit', validarFormulario);
 
 function llenarSelectAnios() {
