@@ -76,9 +76,6 @@ selectTipo.addEventListener('change', limpiarError);
 selectAnio.addEventListener('change', limpiarError);
 radiosCobertura.forEach(radio => radio.addEventListener('change', limpiarError));
 
-// =====================
-// FUNCIONES
-// =====================
 function llenarSelectAnios() {
   const max = new Date().getFullYear();
   const min = max - 20;
