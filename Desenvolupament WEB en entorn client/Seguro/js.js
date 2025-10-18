@@ -110,7 +110,7 @@ function mostrarError(mensaje) {
   error.textContent = mensaje;
   error.classList.add(
     'background-red-600',
-    'text-white',
+    'text-red',
     'p-4',
     'text-center',
     'font-semibold',
