@@ -96,7 +96,7 @@ function validarFormulario(e) {
     return;
   }
 
-  if (tipo === '' || !cobertura) {
+  if (anio === '' || !cobertura) {
     mostrarError('Falta el campo tipo por rellenar');
     return;
   }
