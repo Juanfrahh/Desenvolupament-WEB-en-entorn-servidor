@@ -92,7 +92,7 @@ function validarFormulario(e) {
   const anio = document.querySelector('#anio').value;
 
   // Si faltan campos
-  if (tipo === '' || anio === '' || !cobertura) {
+  if (tipo === '' || anio === '') {
     mostrarError('Todos los campos son obligatorios');
     return;
   }
