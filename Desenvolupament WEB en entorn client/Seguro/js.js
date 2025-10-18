@@ -91,7 +91,7 @@ function validarFormulario(e) {
   const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
   // Validación: si falta un campo
-  if (tipo === ''  || !cobertura) {
+  if (tipo === '' ||  || !cobertura) {
     mostrarError('Falta el campo tipo por rellenar');
     return;
   }
