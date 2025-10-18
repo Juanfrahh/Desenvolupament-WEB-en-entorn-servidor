@@ -49,7 +49,7 @@ class Poliza {
     modal.show();
   }
 }
-
+//Motrar 
 document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
   mostrarError('Todos los campos son obligatorios');
