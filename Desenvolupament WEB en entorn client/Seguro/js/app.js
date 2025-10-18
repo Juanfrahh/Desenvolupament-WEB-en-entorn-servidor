@@ -112,9 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Evento de envío del formulario
-  document.addEventListener('DOMContentLoaded', () => {
-    llenarSelectAnios();
-  });
+
 formulario.addEventListener('submit', e => {
   e.preventDefault();
 
