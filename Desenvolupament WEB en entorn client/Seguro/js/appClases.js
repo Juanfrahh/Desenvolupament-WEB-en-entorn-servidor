@@ -30,7 +30,7 @@ calcularSeguro() {
   }
   document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
-});
+  });
   mostrarInfoHTML() {
     modalTitle.textContent = 'RESUMEN DE PÓLIZA';
     modalTitle.classList.add('header', 'col');
