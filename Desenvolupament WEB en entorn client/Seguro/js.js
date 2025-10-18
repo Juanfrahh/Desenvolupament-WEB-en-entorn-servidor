@@ -106,16 +106,18 @@ function validarFormulario(e) {
 function mostrarError(mensaje) {
   limpiarError(); // evitar mensajes repetidos
 
-  const error = document.createElement('p');
+  const error = document.createElement('div');
   error.textContent = mensaje;
   error.classList.add(
     'bg-red-600',
     'text-white',
-    'p-3',
+    'p-4',
     'rounded',
     'text-center',
-    'mt-5',
-    'font-semibold'
+    'font-semibold',
+    'border-2',
+    'border-red-800',
+    'shadow-lg'
   );
 
   mensajeErrorDiv.appendChild(error);
