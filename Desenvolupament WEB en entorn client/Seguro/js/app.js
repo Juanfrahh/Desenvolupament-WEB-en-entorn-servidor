@@ -96,7 +96,8 @@ class Poliza {
 // =========================
 // FUNCIONES
 // =========================
-
+document.addEventListener('DOMContentLoaded', () => {
+  llenarSelectAnios();
 // Cargar los años dinámicamente
 function llenarSelectAnios() {
   const max = new Date().getFullYear();
