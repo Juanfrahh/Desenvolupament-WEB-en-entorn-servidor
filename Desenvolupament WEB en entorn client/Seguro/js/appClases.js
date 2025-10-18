@@ -27,7 +27,7 @@ calcularSeguro() {
         cantidad += base * 0.3;
         break;
     }
-
+    
   mostrarInfoHTML() {
     modalTitle.textContent = 'RESUMEN DE PÓLIZA';
     modalTitle.classList.add('header', 'col');
