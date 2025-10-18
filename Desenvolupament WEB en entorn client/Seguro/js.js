@@ -104,7 +104,6 @@ function validarFormulario(e) {
     return;
   }
 
-  // Si está todo correcto
   limpiarError();
   const poliza = new Poliza(tipo, anio, cobertura);
   poliza.calcularSeguro();
