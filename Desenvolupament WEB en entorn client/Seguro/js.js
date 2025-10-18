@@ -91,7 +91,6 @@ function validarFormulario(e) {
   const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
   // Validación: si falta un campo
-
   if (tipo === '' || anio === '' || !cobertura) {
     mostrarError('Rellena los campos que faltan');
     return;
