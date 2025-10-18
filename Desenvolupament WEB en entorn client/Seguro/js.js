@@ -118,7 +118,7 @@ function mostrarError(mensaje) {
     'border-2',
     'border-red-800',
     'shadow-lg'
-    ''
+    'wh'
   );
 
   mensajeErrorDiv.appendChild(error);
