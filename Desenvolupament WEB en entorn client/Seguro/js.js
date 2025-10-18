@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   mostrarError('Todos los campos son obligatorios');
 });
 
-formulario.addEventListener('submit', validarFormulario);
+// formulario.addEventListener('submit', validarFormulario);
 
 function llenarSelectAnios() {
   const max = new Date().getFullYear();
