@@ -116,21 +116,24 @@ function mostrarError(mensaje) {
 
   const error = document.createElement('div');
   error.textContent = mensaje;
-  error.classList.add(
-    'bg-red-100',      // Fondo rojo claro
-    'text-red-700',    // Texto rojo oscuro
-    'border',
-    'border-red-500',
-    'p-3',
-    'rounded',
-    'text-center',
-    'font-semibold',
-    'shadow-md',
-    'mt-5'
-  );
+
+  // 🔥 Estilo personalizado que siempre se aplica
+  error.style.backgroundColor = '#f8d7da'; // rojo claro (tipo alerta Bootstrap)
+  error.style.color = '#842029'; // rojo oscuro
+  error.style.border = '1px solid #f5c2c7';
+  error.style.padding = '12px';
+  error.style.borderRadius = '6px';
+  error.style.textAlign = 'center';
+  error.style.fontWeight = '600';
+  error.style.marginTop = '15px';
+  error.style.maxWidth = '400px';
+  error.style.marginLeft = 'auto';
+  error.style.marginRight = 'auto';
+  error.style.boxShadow = '0px 2px 6px rgba(0,0,0,0.1)';
 
   mensajeErrorDiv.appendChild(error);
 }
+
 
 function limpiarError() {
   mensajeErrorDiv.innerHTML = '';
