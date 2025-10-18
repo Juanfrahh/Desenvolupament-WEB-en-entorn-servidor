@@ -1,7 +1,13 @@
+// =====================
+// VARIABLES
+// =====================
 const formulario = document.querySelector('#formulario');
 const selectAnio = document.querySelector('#anio');
 const mensajeErrorDiv = document.querySelector('#mensajeError');
 
+// =====================
+// CLASE POLIZA
+// =====================
 class Poliza {
   constructor(tipo, anio, cobertura) {
     this.tipo = tipo;
@@ -14,6 +20,7 @@ class Poliza {
     const base = 300;
     let cantidad = base;
 
+    // Gama del vehículo
     switch (this.tipo) {
       case 'baja':
         cantidad += base * 0.05;
@@ -26,9 +33,11 @@ class Poliza {
         break;
     }
 
+    // Antigüedad del vehículo
     const diferencia = new Date().getFullYear() - this.anio;
     cantidad += cantidad * (diferencia * 0.03);
 
+    // Tipo de cobertura
     if (this.cobertura === 'basico') {
       cantidad *= 1.3;
     } else if (this.cobertura === 'completo') {
@@ -49,14 +58,19 @@ class Poliza {
     modal.show();
   }
 }
-//Motrar años
+
+// =====================
+// EVENTOS
+// =====================
 document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
-  mostrarError('Todos los campos son obligatorios');
 });
-//Mostrar formulario
+
 formulario.addEventListener('submit', validarFormulario);
-//Mostrar los años
+
+// =====================
+// FUNCIONES
+// =====================
 function llenarSelectAnios() {
   const max = new Date().getFullYear();
   const min = max - 20;
@@ -76,8 +90,9 @@ function validarFormulario(e) {
   const anio = document.querySelector('#anio').value;
   const cobertura = document.querySelector('input[name="cobertura"]:checked')?.value;
 
+  // Validación: si falta un campo
   if (tipo === '' || anio === '' || !cobertura) {
-    mostrarError('Todos los campos son obligatorios');
+    mostrarError('⚠️ Falta un campo por rellenar');
     return;
   }
 
@@ -86,6 +101,29 @@ function validarFormulario(e) {
   const poliza = new Poliza(tipo, anio, cobertura);
   poliza.calcularSeguro();
   poliza.mostrarInfoHTML();
+}
+
+function mostrarError(mensaje) {
+  limpiarError(); // evitar mensajes repetidos
+
+  const error = document.createElement('p');
+  error.textContent = mensaje;
+  error.classList.add(
+    'bg-red-600',
+    'text-white',
+    'p-3',
+    'rounded',
+    'text-center',
+    'mt-5',
+    'font-semibold'
+  );
+
+  mensajeErrorDiv.appendChild(error);
+
+  // Quitar el mensaje después de 3 segundos
+  setTimeout(() => {
+    error.remove();
+  }, 3000);
 }
 
 function limpiarError() {
