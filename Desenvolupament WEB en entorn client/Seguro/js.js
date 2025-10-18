@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
   mostrarError('Todos los campos son obligatorios');
 });
-//Mostrar mens
+//Mostrar formulario
 formulario.addEventListener('submit', validarFormulario);
 
 function llenarSelectAnios() {
