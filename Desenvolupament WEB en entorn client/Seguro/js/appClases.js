@@ -18,7 +18,7 @@ calcularSeguro() {
     // Gama del vehículo
     switch (this.tipo) {
       case 'baja':
-        cantidad += asee * 0.05;
+        cantidad += base * 0.05;
         break;
       case 'media':
         cantidad += base * 0.15;
