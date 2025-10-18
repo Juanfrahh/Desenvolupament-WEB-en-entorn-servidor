@@ -11,24 +11,22 @@ class Poliza {
   get tipo() { return this._tipo; }
   get importe() { return this._importe; }
 
-  calcularSeguro() {
-    let total = this._importe;
+calcularSeguro() {
+    const base = 300;
+    let cantidad = base;
 
-    switch (this._gama) {
-      case '1': total += total * 0.05; break;
-      case '2': total += total * 0.15; break;
-      case '3': total += total * 0.30; break;
+    // Gama del vehículo
+    switch (this.tipo) {
+      case 'baja':
+        cantidad += base * 0.05;
+        break;
+      case 'media':
+        cantidad += base * 0.15;
+        break;
+      case 'alta':
+        cantidad += base * 0.3;
+        break;
     }
-
-    const yearActual = new Date().getFullYear();
-    const antiguedad = yearActual - this._year;
-    total += total * (antiguedad * 0.03);
-
-    if (this._tipo === 'Básico') total += total * 0.30;
-    else total += total * 0.50;
-
-    this._importe = Math.round(total);
-  }
 
   mostrarInfoHTML() {
     modalTitle.textContent = 'RESUMEN DE PÓLIZA';
