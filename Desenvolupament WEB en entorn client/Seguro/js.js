@@ -117,7 +117,7 @@ function mostrarError(mensaje) {
     'font-semibold',
     'border-2',
     'border-red-800',
-    'shadow-lg'
+    'shadow-lg',
     'height-10'
   );
 
