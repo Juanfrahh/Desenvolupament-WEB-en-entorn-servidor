@@ -116,4 +116,3 @@ function mostrarError(mensaje) {
 function limpiarError() {
   mensajeErrorDiv.innerHTML = '';
 }
-}
