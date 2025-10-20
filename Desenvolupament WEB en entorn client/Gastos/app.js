@@ -174,7 +174,7 @@ function agregarGasto(e) {
   presupuesto.nuevoGasto(gasto);
 
   // Mostrar éxito
-  ui.imprimirAlerta(`💰 Gasto "${nombre}" añadido correctamente`, 'success');
+  ui.imprimirAlerta(`Gasto "${nombre}" añadido correctamente`, 'success');
 
   // Actualizar interfaz
   const { gastos, restante } = presupuesto;
