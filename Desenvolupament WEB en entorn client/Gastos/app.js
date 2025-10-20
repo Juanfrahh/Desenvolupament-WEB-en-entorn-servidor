@@ -1,0 +1,186 @@
+// ===============================
+// CLASES
+// ===============================
+class Presupuesto {
+  constructor(presupuesto) {
+    this.presupuesto = Number(presupuesto);
+    this.restante = Number(presupuesto);
+    this.gastos = [];
+  }
+
+  // Añadir un nuevo gasto
+  nuevoGasto(gasto) {
+    this.gastos = [...this.gastos, gasto];
+    this.calcularRestante();
+  }
+
+  // Calcular el restante actual
+  calcularRestante() {
+    const gastado = this.gastos.reduce((total, gasto) => total + gasto.cantidad, 0);
+    this.restante = this.presupuesto - gastado;
+  }
+
+  // Eliminar gasto por id
+  eliminarGasto(id) {
+    this.gastos = this.gastos.filter(gasto => gasto.id !== id);
+    this.calcularRestante();
+  }
+}
+
+// ===============================
+// INTERFAZ DE USUARIO
+// ===============================
+class UI {
+  imprimirPresupuesto(presupuestoObj) {
+    const { presupuesto, restante } = presupuestoObj;
+    document.querySelector('#total').textContent = presupuesto;
+    document.querySelector('#restante').textContent = restante;
+  }
+
+  imprimirAlerta(mensaje, tipo) {
+    const div = document.createElement('div');
+    div.classList.add('text-center', 'alert');
+    div.textContent = mensaje;
+
+    if (tipo === 'error') {
+      div.classList.add('alert-danger');
+    } else {
+      div.classList.add('alert-success');
+    }
+
+    // Insertar en el DOM
+    document.querySelector('.primario').insertBefore(div, document.querySelector('#agregar-gasto'));
+
+    // Quitar después de 3 segundos
+    setTimeout(() => div.remove(), 3000);
+  }
+
+  imprimirGastosListado(gastos) {
+    this.limpiarHTML();
+    const listado = document.querySelector('#gastos ul');
+
+    gastos.forEach(gasto => {
+      const { nombre, cantidad, id } = gasto;
+      const li = document.createElement('li');
+      li.className = 'list-group-item d-flex justify-content-between align-items-center';
+      li.dataset.id = id;
+      li.innerHTML = `
+        ${nombre} 
+        <span class="badge badge-primary badge-pill">${cantidad} €</span>
+      `;
+
+      // Botón borrar
+      const btnBorrar = document.createElement('button');
+      btnBorrar.classList.add('btn', 'btn-danger', 'borrar-gasto');
+      btnBorrar.textContent = 'Borrar';
+      btnBorrar.onclick = () => eliminarGasto(id);
+
+      li.appendChild(btnBorrar);
+      listado.appendChild(li);
+    });
+  }
+
+  limpiarHTML() {
+    const listado = document.querySelector('#gastos ul');
+    while (listado.firstChild) {
+      listado.removeChild(listado.firstChild);
+    }
+  }
+
+  actualizarRestante(restante) {
+    document.querySelector('#restante').textContent = restante;
+  }
+
+  comprobarPresupuesto(presupuestoObj) {
+    const { presupuesto, restante } = presupuestoObj;
+    const restanteDiv = document.querySelector('.restante');
+
+    // Quitar clases previas
+    restanteDiv.classList.remove('alert-success', 'alert-warning', 'alert-danger');
+
+    if (restante <= 0) {
+      restanteDiv.classList.add('alert-danger');
+      ui.imprimirAlerta('Has agotado el presupuesto', 'error');
+      document.querySelector('button[type="submit"]').disabled = true;
+    } else if (restante <= presupuesto * 0.25) {
+      restanteDiv.classList.add('alert-danger');
+    } else if (restante <= presupuesto * 0.5) {
+      restanteDiv.classList.add('alert-warning');
+    } else {
+      restanteDiv.classList.add('alert-success');
+    }
+  }
+}
+
+// ===============================
+// VARIABLES Y EVENTOS
+// ===============================
+const formulario = document.querySelector('#agregar-gasto');
+const gastoListado = document.querySelector('#gastos ul');
+let presupuesto;
+const ui = new UI();
+
+document.addEventListener('DOMContentLoaded', preguntarPresupuesto);
+formulario.addEventListener('submit', agregarGasto);
+
+// ===============================
+// FUNCIONES
+// ===============================
+function preguntarPresupuesto() {
+  const presupuestoUsuario = prompt('¿Cuál es tu presupuesto semanal?');
+
+  if (
+    presupuestoUsuario === '' ||
+    presupuestoUsuario === null ||
+    isNaN(presupuestoUsuario) ||
+    presupuestoUsuario <= 0
+  ) {
+    window.location.reload();
+  }
+
+  presupuesto = new Presupuesto(presupuestoUsuario);
+  ui.imprimirPresupuesto(presupuesto);
+}
+
+function agregarGasto(e) {
+  e.preventDefault();
+
+  const nombre = document.querySelector('#gasto').value.trim();
+  const cantidad = Number(document.querySelector('#cantidad').value);
+
+  // Validaciones
+  if (nombre === '' || cantidad === '') {
+    ui.imprimirAlerta('Ambos campos son obligatorios', 'error');
+    return;
+  } else if (cantidad <= 0 || isNaN(cantidad)) {
+    ui.imprimirAlerta('Cantidad no válida', 'error');
+    return;
+  }
+
+  // Crear objeto gasto
+  const gasto = { nombre, cantidad, id: Date.now() };
+
+  // Añadir al presupuesto
+  presupuesto.nuevoGasto(gasto);
+
+  // Mensaje de éxito
+  ui.imprimirAlerta('Gasto agregado correctamente', 'success');
+
+  // Mostrar gastos
+  const { gastos, restante } = presupuesto;
+  ui.imprimirGastosListado(gastos);
+  ui.actualizarRestante(restante);
+  ui.comprobarPresupuesto(presupuesto);
+
+  // Reiniciar formulario
+  formulario.reset();
+}
+
+function eliminarGasto(id) {
+  presupuesto.eliminarGasto(id);
+
+  const { gastos, restante } = presupuesto;
+  ui.imprimirGastosListado(gastos);
+  ui.actualizarRestante(restante);
+  ui.comprobarPresupuesto(presupuesto);
+}
