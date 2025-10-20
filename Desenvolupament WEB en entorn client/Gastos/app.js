@@ -38,8 +38,12 @@ class UI {
   }
 
   imprimirAlerta(mensaje, tipo) {
+    // Eliminar mensaje previo (si existe)
+    const alertaExistente = document.querySelector('.alert-mensaje');
+    if (alertaExistente) alertaExistente.remove();
+
     const div = document.createElement('div');
-    div.classList.add('text-center', 'alert');
+    div.classList.add('text-center', 'alert', 'alert-mensaje');
     div.textContent = mensaje;
 
     if (tipo === 'error') {
@@ -48,8 +52,13 @@ class UI {
       div.classList.add('alert-success');
     }
 
-    // Insertar en el DOM
+    // Insertar en el DOM (antes del formulario)
     document.querySelector('.primario').insertBefore(div, document.querySelector('#agregar-gasto'));
+
+    // Quitar después de 3 segundos
+    setTimeout(() => {
+      if (div) div.remove();
+    }, 3000);
   }
 
   imprimirGastosListado(gastos) {
@@ -95,28 +104,37 @@ class UI {
     // Quitar clases previas
     restanteDiv.classList.remove('alert-success', 'alert-warning', 'alert-danger');
 
+    // Cambiar color según el nivel
     if (restante <= 0) {
       restanteDiv.classList.add('alert-danger');
-      ui.imprimirAlerta('Has agotado el presupuesto', 'error');
+      ui.imprimirAlerta('💸 Has agotado el presupuesto', 'error');
       document.querySelector('button[type="submit"]').disabled = true;
     } else if (restante <= presupuesto * 0.25) {
       restanteDiv.classList.add('alert-danger');
+      ui.imprimirAlerta('⚠️ Te queda menos del 25% del presupuesto', 'error');
     } else if (restante <= presupuesto * 0.5) {
       restanteDiv.classList.add('alert-warning');
+      ui.imprimirAlerta('⚠️ Has gastado más del 50% del presupuesto', 'error');
     } else {
       restanteDiv.classList.add('alert-success');
+      ui.imprimirAlerta('✅ Presupuesto en buen estado', 'success');
     }
   }
 }
 
+// ===============================
+// VARIABLES Y EVENTOS
+// ===============================
 const formulario = document.querySelector('#agregar-gasto');
-const gastoListado = document.querySelector('#gastos ul');
 let presupuesto;
 const ui = new UI();
 
 document.addEventListener('DOMContentLoaded', preguntarPresupuesto);
 formulario.addEventListener('submit', agregarGasto);
 
+// ===============================
+// FUNCIONES
+// ===============================
 function preguntarPresupuesto() {
   const presupuestoUsuario = prompt('¿Cuál es tu presupuesto semanal?');
 
@@ -131,6 +149,7 @@ function preguntarPresupuesto() {
 
   presupuesto = new Presupuesto(presupuestoUsuario);
   ui.imprimirPresupuesto(presupuesto);
+  ui.imprimirAlerta('✅ Presupuesto establecido correctamente', 'success');
 }
 
 function agregarGasto(e) {
@@ -141,10 +160,10 @@ function agregarGasto(e) {
 
   // Validaciones
   if (nombre === '' || cantidad === '') {
-    ui.imprimirAlerta('Ambos campos son obligatorios', 'error');
+    ui.imprimirAlerta('❌ Ambos campos son obligatorios', 'error');
     return;
   } else if (cantidad <= 0 || isNaN(cantidad)) {
-    ui.imprimirAlerta('Cantidad no válida', 'error');
+    ui.imprimirAlerta('⚠️ Cantidad no válida', 'error');
     return;
   }
 
@@ -154,16 +173,16 @@ function agregarGasto(e) {
   // Añadir al presupuesto
   presupuesto.nuevoGasto(gasto);
 
-  // Mensaje de éxito
-  ui.imprimirAlerta('Gasto agregado correctamente', 'success');
+  // Mostrar éxito
+  ui.imprimirAlerta(`💰 Gasto "${nombre}" añadido correctamente`, 'success');
 
-  // Mostrar gastos
+  // Actualizar interfaz
   const { gastos, restante } = presupuesto;
   ui.imprimirGastosListado(gastos);
   ui.actualizarRestante(restante);
   ui.comprobarPresupuesto(presupuesto);
 
-  // Reiniciar formulario
+  // Limpiar formulario
   formulario.reset();
 }
 
