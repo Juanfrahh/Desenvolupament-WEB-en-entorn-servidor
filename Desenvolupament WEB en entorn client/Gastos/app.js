@@ -50,7 +50,6 @@ class UI {
 
     // Insertar en el DOM
     document.querySelector('.primario').insertBefore(div, document.querySelector('#agregar-gasto'));
-
   }
 
   imprimirGastosListado(gastos) {
