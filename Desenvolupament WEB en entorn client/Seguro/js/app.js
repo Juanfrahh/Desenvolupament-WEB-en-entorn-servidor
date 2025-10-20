@@ -99,7 +99,7 @@ class Poliza {
 document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
 });
-// Cargar los años dinámicamente
+
 function llenarSelectAnios() {
   const selectYear = document.querySelector('#year');
   const max = new Date().getFullYear();
@@ -112,6 +112,7 @@ function llenarSelectAnios() {
     selectYear.appendChild(option);
   }
 }
+
 
 
 // Evento de envío del formulario
