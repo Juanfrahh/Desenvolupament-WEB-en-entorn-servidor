@@ -117,7 +117,7 @@ class UI {
       ui.imprimirAlerta('⚠️ Has gastado más del 50% del presupuesto', 'error');
     } else {
       restanteDiv.classList.add('alert-success');
-      ui.imprimirAlerta('✅ Presupuesto en buen estado', 'success');
+      ui.imprimirAlerta('Presupuesto en buen estado', 'success');
     }
   }
 }
