@@ -160,7 +160,7 @@ function agregarGasto(e) {
 
   // Validaciones
   if (nombre === '' || cantidad === '') {
-    ui.imprimirAlerta('❌ Ambos campos son obligatorios', 'error');
+    ui.imprimirAlerta('Ambos campos son obligatorios', 'error');
     return;
   } else if (cantidad <= 0 || isNaN(cantidad)) {
     ui.imprimirAlerta('Cantidad no válida', 'error');
