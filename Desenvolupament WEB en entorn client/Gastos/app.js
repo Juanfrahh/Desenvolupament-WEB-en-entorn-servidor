@@ -49,7 +49,7 @@ class UI {
       div.classList.add('alert-success');
     }
 
-    // Insertar en el DOM (antes del formulario)
+    // Insertar en el DOM
     document.querySelector('.primario').insertBefore(div, document.querySelector('#agregar-gasto'));
   }
 
