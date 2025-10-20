@@ -123,9 +123,6 @@ const ui = new UI();
 document.addEventListener('DOMContentLoaded', preguntarPresupuesto);
 formulario.addEventListener('submit', agregarGasto);
 
-// ===============================
-// FUNCIONES
-// ===============================
 function preguntarPresupuesto() {
   const presupuestoUsuario = prompt('¿Cuál es tu presupuesto semanal?');
 
