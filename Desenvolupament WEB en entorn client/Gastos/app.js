@@ -107,7 +107,7 @@ class UI {
     // Cambiar color según el nivel
     if (restante <= 0) {
       restanteDiv.classList.add('alert-danger');
-      ui.imprimirAlerta('💸 Has agotado el presupuesto', 'error');
+      ui.imprimirAlerta('Has agotado el presupuesto', 'error');
       document.querySelector('button[type="submit"]').disabled = true;
     } else if (restante <= presupuesto * 0.25) {
       restanteDiv.classList.add('alert-danger');
