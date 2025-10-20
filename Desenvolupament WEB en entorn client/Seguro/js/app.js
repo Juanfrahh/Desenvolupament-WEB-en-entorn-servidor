@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // Cargar los años dinámicamente
 function llenarSelectAnios() {
+  const selectYear = document.querySelector('#year');
   const max = new Date().getFullYear();
   const min = max - 20;
 
@@ -108,9 +109,10 @@ function llenarSelectAnios() {
     const option = document.createElement('option');
     option.value = i;
     option.textContent = i;
-    selectAnio.appendChild(option);
+    selectYear.appendChild(option);
   }
 }
+
 
 // Evento de envío del formulario
 formulario.addEventListener('submit', e => {
