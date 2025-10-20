@@ -1,4 +1,4 @@
-// Referencias
+// Referencias al DOM
 const formulario = document.getElementById('cotizar-seguro');
 const modalElement = document.getElementById('modal');
 const modal = new bootstrap.Modal(modalElement);
@@ -7,20 +7,17 @@ const modalBody = modalElement.querySelector('.modal-body');
 const modalFooter = modalElement.querySelector('.modal-footer');
 
 // Cargar años al iniciar
-document.addEventListener('DOMContentLoaded', llenarSelectAnios);
-
-function llenarSelectAnios() {
+document.addEventListener('DOMContentLoaded', () => {
   const selectYear = document.querySelector('#year');
   const max = new Date().getFullYear();
   const min = max - 20;
-
   for (let i = max; i >= min; i--) {
     const option = document.createElement('option');
     option.value = i;
     option.textContent = i;
     selectYear.appendChild(option);
   }
-}
+});
 
 // Evento submit del formulario
 formulario.addEventListener('submit', (e) => {
@@ -28,10 +25,10 @@ formulario.addEventListener('submit', (e) => {
 
   const gama = document.querySelector('#gama').value;
   const year = document.querySelector('#year').value;
-  const tipo = document.querySelector('input[name="tipo"]:checked').value;
+  const tipo = document.querySelector('input[name="tipo"]:checked')?.value;
 
   if (gama === '' || year === '' || tipo === '') {
-    mostrarMensaje('Todos los campos son obligatorios', 'error');
+    mostrarMensaje('⚠️ Todos los campos son obligatorios', 'error');
     return;
   }
 
@@ -45,12 +42,7 @@ function mostrarMensaje(texto, tipo) {
   const div = document.createElement('div');
   div.textContent = texto;
   div.classList.add('text-center', 'p-2', 'rounded-lg', 'mt-3', 'text-white');
-
-  if (tipo === 'error') {
-    div.classList.add('bg-red-600');
-  } else {
-    div.classList.add('bg-green-500');
-  }
+  div.classList.add(tipo === 'error' ? 'bg-red-600' : 'bg-green-500');
 
   formulario.insertBefore(div, document.querySelector('#resultado'));
 
