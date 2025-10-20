@@ -1,58 +1,58 @@
-class Poliza {
-  constructor(gama, year, tipo) {
-    this._gama = gama;
-    this._year = year;
-    this._tipo = tipo;
-    this._importe = 300;
+// Referencias
+const formulario = document.getElementById('cotizar-seguro');
+const modalElement = document.getElementById('modal');
+const modal = new bootstrap.Modal(modalElement);
+const modalTitle = modalElement.querySelector('.modal-title');
+const modalBody = modalElement.querySelector('.modal-body');
+const modalFooter = modalElement.querySelector('.modal-footer');
+
+// Cargar años al iniciar
+document.addEventListener('DOMContentLoaded', llenarSelectAnios);
+
+function llenarSelectAnios() {
+  const selectYear = document.querySelector('#year');
+  const max = new Date().getFullYear();
+  const min = max - 20;
+
+  for (let i = max; i >= min; i--) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    selectYear.appendChild(option);
+  }
+}
+
+// Evento submit del formulario
+formulario.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const gama = document.querySelector('#gama').value;
+  const year = document.querySelector('#year').value;
+  const tipo = document.querySelector('input[name="tipo"]:checked').value;
+
+  if (gama === '' || year === '' || tipo === '') {
+    mostrarMensaje('Todos los campos son obligatorios', 'error');
+    return;
   }
 
-  get gama() { return this._gama; }
-  get year() { return this._year; }
-  get tipo() { return this._tipo; }
-  get importe() { return this._importe; }
+  const poliza = new Poliza(gama, year, tipo);
+  poliza.calcularSeguro();
+  poliza.mostrarInfoHTML();
+});
 
-calcularSeguro() {
-    const base = 300;
-    let cantidad = base;
+// Mostrar mensaje temporal en el formulario
+function mostrarMensaje(texto, tipo) {
+  const div = document.createElement('div');
+  div.textContent = texto;
+  div.classList.add('text-center', 'p-2', 'rounded-lg', 'mt-3', 'text-white');
 
-    // Gama del vehículo
-    switch (this.tipo) {
-      case 'baja':
-        cantidad += base * 0.05;
-        break;
-      case 'media':
-        cantidad += base * 0.15;
-        break;
-      case 'alta':
-        cantidad += base * 0.3;
-        break;
-    }
-  }
-  
-  mostrarInfoHTML() {
-    modalTitle.textContent = 'RESUMEN DE PÓLIZA';
-    modalTitle.classList.add('header', 'col');
-    modalBody.innerHTML = `
-      <p class="font-bold">Tipo de gama: ${this.obtenerGamaTexto()}</p>
-      <p class="font-bold">Año del vehículo: ${this._year}</p>
-      <p class="font-bold">Cobertura: ${this._tipo}</p>
-      <p class="font-bold">Importe total: ${this._importe} €</p>
-    `;
-    modalFooter.innerHTML = '';
-    const btnCerrar = document.createElement('button');
-    btnCerrar.textContent = 'Cerrar';
-    btnCerrar.classList.add('btn', 'btn-primary', 'btn-raised', 'col');
-    btnCerrar.onclick = () => modal.hide();
-    modalFooter.appendChild(btnCerrar);
-    modal.show();
+  if (tipo === 'error') {
+    div.classList.add('bg-red-600');
+  } else {
+    div.classList.add('bg-green-500');
   }
 
-  obtenerGamaTexto() {
-    switch (this._gama) {
-      case '1': return 'Gama Baja';
-      case '2': return 'Gama Media';
-      case '3': return 'Gama Alta';
-      default: return '';
-    }
-  }
+  formulario.insertBefore(div, document.querySelector('#resultado'));
+
+  setTimeout(() => div.remove(), 3000);
 }
