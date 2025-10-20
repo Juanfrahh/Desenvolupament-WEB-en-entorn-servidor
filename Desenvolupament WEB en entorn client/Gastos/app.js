@@ -114,7 +114,7 @@ class UI {
       ui.imprimirAlerta('⚠️ Te queda menos del 25% del presupuesto', 'error');
     } else if (restante <= presupuesto * 0.5) {
       restanteDiv.classList.add('alert-warning');
-      ui.imprimirAlerta('⚠️ Has gastado más del 50% del presupuesto', 'error');
+      ui.imprimirAlerta('Has gastado más del 50% del presupuesto', 'error');
     } else {
       restanteDiv.classList.add('alert-success');
       ui.imprimirAlerta('Presupuesto en buen estado', 'success');
