@@ -113,8 +113,6 @@ function llenarSelectAnios() {
   }
 }
 
-
-
 // Evento de envío del formulario
 formulario.addEventListener('submit', e => {
   e.preventDefault();
