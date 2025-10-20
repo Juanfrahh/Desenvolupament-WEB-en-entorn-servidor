@@ -51,11 +51,6 @@ class UI {
 
     // Insertar en el DOM (antes del formulario)
     document.querySelector('.primario').insertBefore(div, document.querySelector('#agregar-gasto'));
-
-    // Quitar después de 3 segundos
-    setTimeout(() => {
-      if (div) div.remove();
-    }, 3000);
   }
 
   imprimirGastosListado(gastos) {
