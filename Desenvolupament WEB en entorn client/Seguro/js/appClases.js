@@ -28,7 +28,7 @@ formulario.addEventListener('submit', (e) => {
   const tipo = document.querySelector('input[name="tipo"]:checked')?.value;
 
   if (gama === '' || year === '' || tipo === '') {
-    mostrarMensaje('⚠️ Todos los campos son obligatorios', 'error');
+    mostrarMensaje('Todos los campos son obligatorios', 'error');
     return;
   }
 
