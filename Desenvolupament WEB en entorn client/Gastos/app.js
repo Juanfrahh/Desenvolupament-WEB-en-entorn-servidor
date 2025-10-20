@@ -27,9 +27,6 @@ class Presupuesto {
   }
 }
 
-// ===============================
-// INTERFAZ DE USUARIO
-// ===============================
 class UI {
   imprimirPresupuesto(presupuestoObj) {
     const { presupuesto, restante } = presupuestoObj;
