@@ -93,9 +93,6 @@ class Poliza {
   }
 }
 
-// =========================
-// FUNCIONES
-// =========================
 document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
 });
