@@ -1,6 +1,4 @@
-// ===============================
-// CLASES
-// ===============================
+
 class Presupuesto {
   constructor(presupuesto) {
     this.presupuesto = Number(presupuesto);
