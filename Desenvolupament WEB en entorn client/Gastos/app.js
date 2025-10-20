@@ -149,7 +149,7 @@ function preguntarPresupuesto() {
 
   presupuesto = new Presupuesto(presupuestoUsuario);
   ui.imprimirPresupuesto(presupuesto);
-  ui.imprimirAlerta('✅ Presupuesto establecido correctamente', 'success');
+  ui.imprimirAlerta('Presupuesto establecido correctamente', 'success');
 }
 
 function agregarGasto(e) {
