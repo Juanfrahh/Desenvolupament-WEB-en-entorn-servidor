@@ -122,9 +122,6 @@ class UI {
   }
 }
 
-// ===============================
-// VARIABLES Y EVENTOS
-// ===============================
 const formulario = document.querySelector('#agregar-gasto');
 let presupuesto;
 const ui = new UI();
