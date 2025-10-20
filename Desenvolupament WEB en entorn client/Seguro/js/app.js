@@ -93,22 +93,7 @@ class Poliza {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  llenarSelectAnios();
-});
 
-function llenarSelectAnios() {
-  const selectYear = document.querySelector('#year');
-  const max = new Date().getFullYear();
-  const min = max - 20;
-
-  for (let i = max; i >= min; i--) {
-    const option = document.createElement('option');
-    option.value = i;
-    option.textContent = i;
-    selectYear.appendChild(option);
-  }
-}
 
 // Evento de envío del formulario
 formulario.addEventListener('submit', e => {
@@ -148,4 +133,20 @@ function mostrarError(mensaje) {
 function limpiarError() {
   const alerta = document.querySelector('.error');
   if (alerta) alerta.remove();
+}
+document.addEventListener('DOMContentLoaded', () => {
+  llenarSelectAnios();
+});
+
+function llenarSelectAnios() {
+  const selectYear = document.querySelector('#year');
+  const max = new Date().getFullYear();
+  const min = max - 20;
+
+  for (let i = max; i >= min; i--) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    selectYear.appendChild(option);
+  }
 }
