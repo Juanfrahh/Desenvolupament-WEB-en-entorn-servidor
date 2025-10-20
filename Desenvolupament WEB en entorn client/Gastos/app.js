@@ -111,7 +111,7 @@ class UI {
       document.querySelector('button[type="submit"]').disabled = true;
     } else if (restante <= presupuesto * 0.25) {
       restanteDiv.classList.add('alert-danger');
-      ui.imprimirAlerta('⚠️ Te queda menos del 25% del presupuesto', 'error');
+      ui.imprimirAlerta('Te queda menos del 25% del presupuesto', 'error');
     } else if (restante <= presupuesto * 0.5) {
       restanteDiv.classList.add('alert-warning');
       ui.imprimirAlerta('Has gastado más del 50% del presupuesto', 'error');
