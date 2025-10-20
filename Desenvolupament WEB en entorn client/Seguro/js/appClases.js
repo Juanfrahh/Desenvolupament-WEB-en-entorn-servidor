@@ -46,5 +46,5 @@ function mostrarMensaje(texto, tipo) {
 
   formulario.insertBefore(div, document.querySelector('#resultado'));
 
-  setTimeout(() => div.remove(), 3000);
+  setTimeout(() => div.remove());
 }
