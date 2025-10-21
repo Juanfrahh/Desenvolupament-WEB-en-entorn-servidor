@@ -8,7 +8,6 @@ ini_set('display_errors', 1);
 
 $mensaje = '';
 
-// Si ya hay sesión activa → ir al index
 if (isset($_SESSION['usuario'])) {
     header('Location: index.php');
     exit();
