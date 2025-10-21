@@ -52,7 +52,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
             $mensaje = "<p style='color:green;'>✅ Usuario registrado correctamente. Ahora puedes iniciar sesión.</p>";
         }
     } else {
-        $mensaje = "<p style='color:red;'>❌ Rellena todos los campos.</p>";
+        $mensaje = "<p style='color:red;'>Rellena todos los campos.</p>";
     }
 }
 ?>
