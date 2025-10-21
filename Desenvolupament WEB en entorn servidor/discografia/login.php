@@ -116,7 +116,6 @@ p { margin-top: 15px; }
         </fieldset>
     </form>
 
-    <!-- Formulario de registro -->
     <form method="post">
         <fieldset>
             <legend>Registrarse</legend>
