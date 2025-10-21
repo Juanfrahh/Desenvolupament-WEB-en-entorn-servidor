@@ -34,7 +34,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
     $password = $_POST['password'] ?? '';
 
     if (!empty($usuario) && !empty($password)) {
-        // Comprobar si ya existe el usuario
         $check = $conexion->prepare("SELECT COUNT(*) FROM tabla_usuarios WHERE usuario = ?");
         $check->execute([$usuario]);
         $existe = $check->fetchColumn();
