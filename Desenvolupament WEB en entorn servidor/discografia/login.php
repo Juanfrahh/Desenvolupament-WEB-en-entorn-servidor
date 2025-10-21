@@ -61,7 +61,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
 <head>
 <meta charset="UTF-8">
 <title>Login / Registro</title>
-
 </head>
 <body>
 
