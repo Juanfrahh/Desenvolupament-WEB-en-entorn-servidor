@@ -14,7 +14,6 @@ if (isset($_SESSION['usuario'])) {
     exit();
 }
 
-// === LOGIN ===
 if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
     $usuario = trim($_POST['usuario'] ?? '');
     $password = $_POST['password'] ?? '';
