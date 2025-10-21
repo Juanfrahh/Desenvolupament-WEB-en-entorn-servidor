@@ -5,10 +5,12 @@ include 'conexion.php';
 $mensaje = '';
 
 // Si ya ha iniciado sesión, lo mandamos a la página principal
-if (isset($_SESSION['usuario'])) {
-    header('Location: index.php');
-    exit();
-}
+<?php
+session_start();
+session_destroy();
+header('Location: login.php');
+?>
+
 
 // Si el usuario envía el formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
