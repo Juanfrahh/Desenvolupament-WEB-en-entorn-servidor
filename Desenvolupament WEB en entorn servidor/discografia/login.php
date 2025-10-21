@@ -28,7 +28,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
         header('Location: index.php');
         exit();
     } else {
-        $mensaje = "<p style='color:red;'>❌ Usuario o contraseña incorrectos.</p>";
+        $mensaje = "<p style='color:red;'>Usuario o contraseña incorrectos.</p>";
     }
 }
 
