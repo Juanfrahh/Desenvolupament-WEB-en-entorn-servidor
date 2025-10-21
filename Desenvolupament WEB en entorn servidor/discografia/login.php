@@ -33,7 +33,7 @@ input { margin-bottom: 10px; }
 </head>
 <body>
 
-<h2>🔒 Acceso a la Discografía</h2>
+<h2>Acceso a la Discografía</h2>
 
 <form method="post" action="">
 <fieldset>
