@@ -49,7 +49,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conexion->prepare("INSERT INTO tabla_usuarios (usuario, password) VALUES (?, ?)");
             $stmt->execute([$usuario, $passwordHash]);
-            $mensaje = "<p style='color:green;'>✅ Usuario registrado correctamente. Ahora puedes iniciar sesión.</p>";
+            $mensaje = "<p style='color:green;'>Usuario registrado correctamente. Ahora puedes iniciar sesión.</p>";
         }
     } else {
         $mensaje = "<p style='color:red;'>Rellena todos los campos.</p>";
