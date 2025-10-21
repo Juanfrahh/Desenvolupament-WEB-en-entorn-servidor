@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($resultado && password_verify($password, $resultado['password'])) {
         $mensaje = "<p style='color:green;'>Login correcto. Bienvenido, <strong>$usuario</strong>.</p>";
     } else {
-        $mensaje = "<p style='color:red;'>❌ Login incorrecto.</p>";
+        $mensaje = "<p style='color:red;'>Login incorrecto.</p>";
     }
 }
 ?>
