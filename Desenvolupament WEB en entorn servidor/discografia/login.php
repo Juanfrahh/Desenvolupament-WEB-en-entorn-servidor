@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($resultado && password_verify($password, $resultado['password'])) {
         // Login correcto
         $_SESSION['usuario'] = $usuario;
-        header('Location: index.php'); // redirige al listado de álbumes
+        header('Location: index.php');
         exit();
     } else {
         $mensaje = "<p style='color:red;'>❌ Usuario o contraseña incorrectos.</p>";
