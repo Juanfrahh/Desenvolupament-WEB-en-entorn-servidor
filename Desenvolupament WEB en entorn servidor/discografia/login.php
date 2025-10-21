@@ -36,36 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
 <meta charset="UTF-8">
 <title>Iniciar sesión</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 50px;
-}
-fieldset {
-    width: 300px;
-    padding: 20px;
-    border: 2px solid #ccc;
-    background: white;
-}
-legend {
-    font-weight: bold;
-}
-input {
-    width: 95%;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    border: none;
-}
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-</style>
+
 </head>
 <body>
 
