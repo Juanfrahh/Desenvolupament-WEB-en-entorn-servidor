@@ -44,7 +44,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
         $existe = $check->fetchColumn();
 
         if ($existe > 0) {
-            $mensaje = "<p style='color:red;'>⚠️ El usuario '<strong>$usuario</strong>' ya existe.</p>";
+            $mensaje = "<p style='color:red;'>El usuario '<strong>$usuario</strong>' ya existe.</p>";
         } else {
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conexion->prepare("INSERT INTO tabla_usuarios (usuario, password) VALUES (?, ?)");
