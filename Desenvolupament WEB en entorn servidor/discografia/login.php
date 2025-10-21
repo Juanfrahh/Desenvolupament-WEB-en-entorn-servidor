@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $mensaje = '';
-º
+
 if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
     $usuario = trim($_POST['usuario'] ?? '');
     $password = $_POST['password'] ?? '';
