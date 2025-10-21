@@ -103,7 +103,6 @@ p { margin-top: 15px; }
 <h2>🎵 Acceso a la Discografía</h2>
 
 <div class="container">
-    <!-- Formulario de login -->
     <form method="post">
         <fieldset>
             <legend>Iniciar sesión</legend>
