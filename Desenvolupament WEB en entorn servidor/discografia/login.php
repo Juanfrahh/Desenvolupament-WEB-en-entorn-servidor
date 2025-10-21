@@ -61,42 +61,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
 <head>
 <meta charset="UTF-8">
 <title>Login / Registro</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 40px;
-}
-.container {
-    display: flex;
-    gap: 40px;
-}
-form {
-    background: white;
-    padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    width: 300px;
-}
-legend {
-    font-weight: bold;
-}
-input {
-    width: 95%;
-    padding: 6px;
-    margin-bottom: 10px;
-}
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-p { margin-top: 15px; }
-</style>
+
 </head>
 <body>
 
