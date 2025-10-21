@@ -29,7 +29,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
     }
 }
 
-// === REGISTRO ===
 if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
     $usuario = trim($_POST['usuario'] ?? '');
     $password = $_POST['password'] ?? '';
