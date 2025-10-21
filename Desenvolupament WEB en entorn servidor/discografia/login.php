@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = trim($_POST['usuario'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    // Buscar el usuario en la base de datos
     $stmt = $conexion->prepare("SELECT * FROM tabla_usuarios WHERE usuario = ?");
     $stmt->execute([$usuario]);
     $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
