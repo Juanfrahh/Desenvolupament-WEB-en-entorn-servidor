@@ -2,7 +2,6 @@
 session_start();
 include 'conexion.php';
 
-// Mostrar errores para depurar si algo no va
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
