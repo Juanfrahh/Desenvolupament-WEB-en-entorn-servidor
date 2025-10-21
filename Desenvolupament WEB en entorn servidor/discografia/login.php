@@ -4,7 +4,6 @@ include 'conexion.php';
 
 $mensaje = '';
 
-// Si ya ha iniciado sesión, lo mandamos a la página principal
 <?php
 session_start();
 session_destroy();
