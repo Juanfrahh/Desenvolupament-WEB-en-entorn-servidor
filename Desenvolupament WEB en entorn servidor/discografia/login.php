@@ -10,8 +10,6 @@ session_destroy();
 header('Location: login.php');
 ?>
 
-
-// Si el usuario envía el formulario
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = trim($_POST['usuario'] ?? '');
     $password = $_POST['password'] ?? '';
