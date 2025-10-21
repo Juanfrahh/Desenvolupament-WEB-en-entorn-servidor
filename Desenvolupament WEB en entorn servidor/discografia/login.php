@@ -1,10 +1,4 @@
 <?php
-
-session_start();
-session_destroy();
-header('Location: login.php');
-exit();
-
 session_start();
 include 'conexion.php';
 
@@ -13,6 +7,13 @@ ini_set('display_errors', 1);
 
 $mensaje = '';
 
+// Si ya hay sesión, redirige al index
+if (isset($_SESSION['usuario'])) {
+    header('Location: index.php');
+    exit();
+}
+
+// ===== LOGIN =====
 if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
     $usuario = trim($_POST['usuario'] ?? '');
     $password = $_POST['password'] ?? '';
@@ -26,10 +27,11 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
         header('Location: index.php');
         exit();
     } else {
-        $mensaje = "<p style='color:red;'>Usuario o contraseña incorrectos.</p>";
+        $mensaje = "<p style='color:red;'>❌ Usuario o contraseña incorrectos.</p>";
     }
 }
 
+// ===== REGISTRO =====
 if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
     $usuario = trim($_POST['usuario'] ?? '');
     $password = $_POST['password'] ?? '';
@@ -65,7 +67,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
 <div class="container">
     <form method="post">
         <fieldset>
-            <legend>Iniciar sesión</legend>
+            <h3>Iniciar sesión</h3>
             <input type="hidden" name="accion" value="login">
             <label>Usuario:</label><br>
             <input type="text" name="usuario" required><br>
@@ -77,7 +79,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
 
     <form method="post">
         <fieldset>
-            <legend>Registrarse</legend>
+            <h3>Registrarse</h3>
             <input type="hidden" name="accion" value="registro">
             <label>Usuario:</label><br>
             <input type="text" name="usuario" required><br>
