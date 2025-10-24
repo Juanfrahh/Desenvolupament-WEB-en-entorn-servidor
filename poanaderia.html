@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MisMigasDePan</title>
 
   <!-- Iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 
   <style>
     :root {
@@ -29,7 +32,7 @@
       color: var(--text);
     }
 
-    /* ====== LOGIN ====== */
+    /* ===== LOGIN ===== */
     #login-screen {
       display: flex;
       flex-direction: column;
@@ -69,10 +72,12 @@
       background-color: var(--accent);
     }
 
-    /* ====== APP ====== */
+    /* ===== APP ===== */
     #app {
       display: none;
       padding: 10px;
+      max-width: 480px;
+      margin: auto;
     }
 
     header {
@@ -91,6 +96,7 @@
 
     .flags {
       display: flex;
+      align-items: center;
       gap: 10px;
     }
 
@@ -98,6 +104,21 @@
       width: 25px;
       cursor: pointer;
       border-radius: 50%;
+      border: 2px solid var(--white);
+    }
+
+    #cart-icon {
+      font-size: 1.2rem;
+      margin-left: 5px;
+    }
+
+    #cart-count {
+      background-color: var(--accent);
+      color: var(--white);
+      font-size: 0.8rem;
+      border-radius: 50%;
+      padding: 2px 6px;
+      margin-left: 3px;
     }
 
     /* Productos */
@@ -113,12 +134,27 @@
       border-radius: 10px;
       padding: 10px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .producto img {
       width: 100%;
       border-radius: 10px;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .producto h4 {
+      margin: 8px 0 5px;
+      font-size: 1rem;
+    }
+
+    .producto p {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
     }
 
     .producto button {
@@ -127,8 +163,9 @@
       border: none;
       padding: 8px;
       border-radius: 5px;
-      margin-top: 5px;
       cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.9rem;
     }
 
     .producto button:hover {
@@ -141,12 +178,24 @@
       background-color: var(--white);
       padding: 10px;
       border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .carrito h3 {
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    .carrito ul {
+      list-style: none;
+      margin-top: 5px;
+    }
+
+    .carrito li {
+      border-bottom: 1px solid #eee;
+      padding: 4px 0;
+      font-size: 0.9rem;
     }
 
     /* Mapa */
@@ -166,12 +215,11 @@
   </style>
 </head>
 <body>
-
   <!-- LOGIN -->
   <div id="login-screen">
     <h1>MisMigasDePan</h1>
-    <input type="text" id="user" placeholder="Usuario">
-    <input type="password" id="pass" placeholder="Contraseña">
+    <input type="text" id="user" placeholder="Usuario" />
+    <input type="password" id="pass" placeholder="Contraseña" />
     <button onclick="login()">Entrar</button>
   </div>
 
@@ -180,15 +228,23 @@
     <header>
       <h2 id="titulo">MisMigasDePan 🥖</h2>
       <div class="flags">
-        <img src="https://flagcdn.com/w20/es.png" alt="ES" onclick="setLang('es')">
-        <img src="https://flagcdn.com/w20/pt.png" alt="PT" onclick="setLang('pt')">
+        <img
+          src="https://flagcdn.com/w20/es.png"
+          alt="ES"
+          onclick="setLang('es')"
+        />
+        <img
+          src="https://flagcdn.com/w20/pt.png"
+          alt="PT"
+          onclick="setLang('pt')"
+        />
         <i class="fas fa-shopping-cart" id="cart-icon"></i>
         <span id="cart-count">0</span>
       </div>
     </header>
 
     <div class="productos" id="productos">
-      <!-- Productos generados por JS -->
+      <!-- Generado por JS -->
     </div>
 
     <div class="carrito">
@@ -196,31 +252,54 @@
       <ul id="cart-list"></ul>
     </div>
 
-    <iframe 
+    <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d999216.6571883858!2d-8.190221544529137!3d39.49263006364057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1930d6b1d82909%3A0x400ebbde49036f0!2sFrontera%20España-Portugal!5e0!3m2!1ses!2ses!4v1696359699325!5m2!1ses!2ses"
       allowfullscreen=""
-      loading="lazy">
-    </iframe>
+      loading="lazy"
+    ></iframe>
   </div>
 
   <script>
-    // Datos
     const productos = [
-      {id:1, nombre_es:"Baguette", nombre_pt:"Baguete", precio:1.20, img:"https://images.unsplash.com/photo-1608198093002-de56f9cfd0c1?auto=format&fit=crop&w=600&q=60"},
-      {id:2, nombre_es:"Croissant", nombre_pt:"Croissant", precio:1.50, img:"https://images.unsplash.com/photo-1617196034796-73dfd3387f5b?auto=format&fit=crop&w=600&q=60"},
-      {id:3, nombre_es:"Pan integral", nombre_pt:"Pão integral", precio:1.00, img:"https://images.unsplash.com/photo-1609751284312-4e28e35cf81e?auto=format&fit=crop&w=600&q=60"},
-      {id:4, nombre_es:"Pastel de nata", nombre_pt:"Pastel de nata", precio:1.75, img:"https://images.unsplash.com/photo-1609944795378-5685bfe32d31?auto=format&fit=crop&w=600&q=60"}
+      {
+        id: 1,
+        nombre_es: "Baguette",
+        nombre_pt: "Baguete",
+        precio: 1.2,
+        img: "https://images.unsplash.com/photo-1608198093002-de56f9cfd0c1?auto=format&fit=crop&w=600&q=60",
+      },
+      {
+        id: 2,
+        nombre_es: "Croissant",
+        nombre_pt: "Croissant",
+        precio: 1.5,
+        img: "https://images.unsplash.com/photo-1617196034796-73dfd3387f5b?auto=format&fit=crop&w=600&q=60",
+      },
+      {
+        id: 3,
+        nombre_es: "Pan integral",
+        nombre_pt: "Pão integral",
+        precio: 1.0,
+        img: "https://images.unsplash.com/photo-1609751284312-4e28e35cf81e?auto=format&fit=crop&w=600&q=60",
+      },
+      {
+        id: 4,
+        nombre_es: "Pastel de nata",
+        nombre_pt: "Pastel de nata",
+        precio: 1.75,
+        img: "https://images.unsplash.com/photo-1609944795378-5685bfe32d31?auto=format&fit=crop&w=600&q=60",
+      },
     ];
 
     let carrito = [];
     let idioma = "es";
 
     function login() {
-      const user = document.getElementById('user').value;
-      const pass = document.getElementById('pass').value;
-      if(user && pass) {
-        document.getElementById('login-screen').style.display = "none";
-        document.getElementById('app').style.display = "block";
+      const user = document.getElementById("user").value;
+      const pass = document.getElementById("pass").value;
+      if (user && pass) {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("app").style.display = "block";
         renderProductos();
       } else {
         alert("Por favor, introduce usuario y contraseña");
@@ -228,44 +307,50 @@
     }
 
     function renderProductos() {
-      const contenedor = document.getElementById('productos');
+      const contenedor = document.getElementById("productos");
       contenedor.innerHTML = "";
-      productos.forEach(p => {
+      productos.forEach((p) => {
         const nombre = idioma === "es" ? p.nombre_es : p.nombre_pt;
         contenedor.innerHTML += `
           <div class="producto">
             <img src="${p.img}" alt="${nombre}">
             <h4>${nombre}</h4>
             <p>€${p.precio.toFixed(2)}</p>
-            <button onclick="addToCart(${p.id})"><i class="fas fa-cart-plus"></i> ${idioma === "es" ? "Agregar" : "Adicionar"}</button>
+            <button onclick="addToCart(${p.id})">
+              <i class="fas fa-cart-plus"></i> ${
+                idioma === "es" ? "Agregar" : "Adicionar"
+              }
+            </button>
           </div>
         `;
       });
     }
 
     function addToCart(id) {
-      const prod = productos.find(p => p.id === id);
+      const prod = productos.find((p) => p.id === id);
       carrito.push(prod);
-      document.getElementById('cart-count').textContent = carrito.length;
+      document.getElementById("cart-count").textContent = carrito.length;
       renderCart();
     }
 
     function renderCart() {
-      const list = document.getElementById('cart-list');
+      const list = document.getElementById("cart-list");
       list.innerHTML = "";
       let total = 0;
-      carrito.forEach(p => {
+      carrito.forEach((p) => {
         const nombre = idioma === "es" ? p.nombre_es : p.nombre_pt;
         list.innerHTML += `<li>${nombre} - €${p.precio.toFixed(2)}</li>`;
         total += p.precio;
       });
-      document.getElementById('total').textContent = "€" + total.toFixed(2);
+      document.getElementById("total").textContent = "€" + total.toFixed(2);
     }
 
     function setLang(lang) {
       idioma = lang;
-      document.getElementById('titulo').textContent = lang === "es" ? "MisMigasDePan 🥖" : "MinhasMigalhasDePão 🥖";
-      document.getElementById('cart-title').textContent = lang === "es" ? "🛒 Carrito" : "🛒 Carrinho";
+      document.getElementById("titulo").textContent =
+        lang === "es" ? "MisMigasDePan 🥖" : "MinhasMigalhasDePão 🥖";
+      document.getElementById("cart-title").textContent =
+        lang === "es" ? "🛒 Carrito" : "🛒 Carrinho";
       renderProductos();
       renderCart();
     }
