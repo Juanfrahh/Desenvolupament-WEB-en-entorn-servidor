@@ -48,7 +48,6 @@ export class Poliza {
     }
   }
 
-  // Devuelve un objeto resumen o HTML para que lo muestre quien controle el DOM
   toResumenObject() {
     return {
       gamaTexto: this.obtenerGamaTexto(),
