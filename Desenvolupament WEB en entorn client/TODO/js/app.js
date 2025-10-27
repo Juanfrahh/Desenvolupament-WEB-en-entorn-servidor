@@ -95,7 +95,6 @@ function guardarTareasLocalStorage() {
   localStorage.setItem('tareas', JSON.stringify(tareas));
 }
 
-// Cargar desde localStorage al iniciar
 function cargarTareasLocalStorage() {
   const tareasLS = JSON.parse(localStorage.getItem('tareas')) || [];
   tareas = tareasLS;
