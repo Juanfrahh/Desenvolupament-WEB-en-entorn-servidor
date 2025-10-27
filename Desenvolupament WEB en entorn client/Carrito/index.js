@@ -1,6 +1,3 @@
-// index.js (nuevo - sustituye al anterior)
-
-// Selectores
 const carrito = document.querySelector('#lista-carrito tbody');
 const listaCursos = document.querySelector('#lista-cursos');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
