@@ -87,7 +87,7 @@ function mostrarError(mensaje) {
 
   setTimeout(() => {
     divError.remove();
-  }, 3000); // desaparece a los 3 segundos
+  }, 3000);
 }
 
 function guardarTareasLocalStorage() {
