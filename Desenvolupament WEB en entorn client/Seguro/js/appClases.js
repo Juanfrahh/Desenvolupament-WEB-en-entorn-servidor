@@ -1,3 +1,4 @@
+
 // Referencias al DOM
 const formulario = document.getElementById('cotizar-seguro');
 const modalElement = document.getElementById('modal');
