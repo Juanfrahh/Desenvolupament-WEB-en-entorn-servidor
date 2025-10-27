@@ -57,7 +57,6 @@ if (formulario) {
     const poliza = new Poliza(gama, year, tipo);
     poliza.calcularSeguro();
 
-    // Usamos el método que devuelve HTML y mostramos en modal desde aquí
     modalTitle.textContent = 'RESUMEN DE PÓLIZA';
     modalBody.innerHTML = poliza.toResumenHTML();
 
