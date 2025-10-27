@@ -42,7 +42,6 @@ function agregarTarea(e) {
   guardarTareasLocalStorage();
 }
 
-// Pintar todas las tareas en pantalla
 function pintarTareas() {
   limpiarHTML();
   tareas.forEach(tarea => {
