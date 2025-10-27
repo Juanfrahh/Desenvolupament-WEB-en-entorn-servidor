@@ -64,7 +64,7 @@ function leerDatosCurso(curso) {
             }
         });
     } else {
-        // Añadir nuevo curso
+    
         articulosCarrito = [...articulosCarrito, infoCurso];
     }
 
