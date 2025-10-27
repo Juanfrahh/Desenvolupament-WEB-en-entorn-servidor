@@ -6,7 +6,6 @@ export class Poliza {
     this._importe = 300;
   }
 
-  /* Getters y setters */
   get gama() { return this._gama; }
   set gama(value) { this._gama = value; }
 
