@@ -1,4 +1,6 @@
+// appClases.js
 import { Poliza, llenarSelectAnios } from './app.js';
+
 // Referencias al DOM
 const formulario = document.getElementById('cotizar-seguro');
 const modalElement = document.getElementById('modal');
@@ -9,15 +11,7 @@ const modalFooter = modalElement.querySelector('.modal-footer');
 
 // Cargar años al iniciar
 document.addEventListener('DOMContentLoaded', () => {
-  const selectYear = document.querySelector('#year');
-  const max = new Date().getFullYear();
-  const min = max - 20;
-  for (let i = max; i >= min; i--) {
-    const option = document.createElement('option');
-    option.value = i;
-    option.textContent = i;
-    selectYear.appendChild(option);
-  }
+  llenarSelectAnios();
 });
 
 // Evento submit del formulario
@@ -47,5 +41,8 @@ function mostrarMensaje(texto, tipo) {
 
   formulario.insertBefore(div, document.querySelector('#resultado'));
 
-  setTimeout(() => div.remove());
+  setTimeout(() => div.remove(), 3000);
 }
+
+// Variables necesarias para que Poliza funcione
+export { modal, modalTitle, modalBody, modalFooter };
