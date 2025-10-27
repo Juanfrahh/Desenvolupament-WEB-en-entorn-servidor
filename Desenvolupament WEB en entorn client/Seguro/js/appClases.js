@@ -18,7 +18,6 @@ function mostrarMensaje(texto, tipo) {
   const formularioEl = document.getElementById('cotizar-seguro');
   if (!formularioEl) return;
 
-  // Si ya existe un mensaje temporal lo borramos antes
   const existente = formularioEl.querySelector('.mensaje-temporal');
   if (existente) {
     existente.remove();
