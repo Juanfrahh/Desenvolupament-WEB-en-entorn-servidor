@@ -57,7 +57,6 @@ function pintarTareas() {
   });
 }
 
-// Eliminar tarea
 function eliminarTarea(e) {
   if (e.target.classList.contains('borrar-tarea')) {
     const texto = e.target.previousElementSibling.textContent;
