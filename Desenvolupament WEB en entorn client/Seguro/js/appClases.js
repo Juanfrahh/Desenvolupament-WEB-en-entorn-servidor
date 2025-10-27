@@ -35,7 +35,6 @@ function mostrarMensaje(texto, tipo) {
 
   // Desaparece tras 3 segundos (3000 ms)
   setTimeout(() => {
-    // antes de eliminar, comprobamos si sigue en el DOM
     if (div.parentNode) div.remove();
   }, 3000);
 }
