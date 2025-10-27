@@ -86,8 +86,7 @@ function eliminarCurso(e) {
 function vaciarCarrito() {
     articulosCarrito = [];
     limpiarHTML();
-    // además limpiar localStorage
-    localStorage.removeItem('carrito');
+localStorage.removeItem('carrito');
 }
 
 function carritoHTML() {
