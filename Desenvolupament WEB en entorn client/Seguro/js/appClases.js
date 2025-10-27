@@ -1,6 +1,5 @@
 import { Poliza, llenarSelectAnios } from './app.js';
 
-// Referencias al DOM y modal (bootstrap)
 const formulario = document.getElementById('cotizar-seguro');
 const modalElement = document.getElementById('modal');
 const modal = new bootstrap.Modal(modalElement);
