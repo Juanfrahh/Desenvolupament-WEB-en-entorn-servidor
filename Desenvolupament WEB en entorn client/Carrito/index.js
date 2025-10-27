@@ -68,7 +68,6 @@ function leerDatosCurso(curso) {
         articulosCarrito = [...articulosCarrito, infoCurso];
     }
 
-     Renderizar y guardar en storage
     carritoHTML();
     guardarCarritoLocalStorage();
 }
