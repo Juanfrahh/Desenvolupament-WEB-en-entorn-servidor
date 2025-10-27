@@ -35,7 +35,6 @@ function agregarTarea(e) {
     return;
   }
 
-  // Agregar al array y mostrar
   tareas.push(texto);
   tareaInput.value = '';
   pintarTareas();
