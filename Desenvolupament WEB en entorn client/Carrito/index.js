@@ -1,17 +1,33 @@
+// index.js (nuevo - sustituye al anterior)
+
+// Selectores
 const carrito = document.querySelector('#lista-carrito tbody');
 const listaCursos = document.querySelector('#lista-cursos');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 
 let articulosCarrito = [];
 
+// Cargar listeners
 cargarEventListeners();
 
 function cargarEventListeners() {
+    // Cuando agregas un curso
     listaCursos.addEventListener('click', agregarCurso);
 
+    // Cuando eliminas un curso del carrito
     carrito.addEventListener('click', eliminarCurso);
 
-    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+    // Cuando vacías el carrito (prevenir comportamiento por defecto del enlace)
+    vaciarCarritoBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        vaciarCarrito();
+    });
+
+    // Al cargar el DOM, recuperar carrito desde localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+        articulosCarrito = obtenerCarritoLocalStorage();
+        carritoHTML();
+    });
 }
 
 function agregarCurso(e) {
@@ -27,45 +43,58 @@ function leerDatosCurso(curso) {
     const infoCurso = {
         imagen: curso.querySelector('img').src,
         titulo: curso.querySelector('h4').textContent,
-        precio: curso.querySelector('.precio span').textContent,
+        precio: curso.querySelector('.precio span') ? curso.querySelector('.precio span').textContent : curso.querySelector('.precio').textContent,
         id: curso.querySelector('a').getAttribute('data-id'),
         cantidad: 1
     };
 
+    // Comprobar si ya existe en el carrito
     const existe = articulosCarrito.some(curso => curso.id === infoCurso.id);
+
     if (existe) {
-        const cursos = articulosCarrito.map(curso => {
+        // Incrementar cantidad
+        articulosCarrito = articulosCarrito.map(curso => {
             if (curso.id === infoCurso.id) {
-                curso.cantidad++;
-                return curso;
+                return {
+                    ...curso,
+                    cantidad: curso.cantidad + 1
+                };
             } else {
                 return curso;
             }
         });
-        articulosCarrito = [...cursos];
     } else {
+        // Añadir nuevo curso
         articulosCarrito = [...articulosCarrito, infoCurso];
     }
 
+    // Renderizar y guardar en storage
     carritoHTML();
+    guardarCarritoLocalStorage();
 }
 
 function eliminarCurso(e) {
     if (e.target.classList.contains('borrar-curso')) {
+        e.preventDefault();
         const cursoId = e.target.getAttribute('data-id');
         articulosCarrito = articulosCarrito.filter(curso => curso.id !== cursoId);
         carritoHTML();
+        guardarCarritoLocalStorage();
     }
 }
 
 function vaciarCarrito() {
     articulosCarrito = [];
     limpiarHTML();
+    // además limpiar localStorage
+    localStorage.removeItem('carrito');
 }
 
+// Renderizar carrito en el tbody
 function carritoHTML() {
     limpiarHTML();
 
+    // Si no hay artículos, no añadimos filas (tbody quedará vacío)
     articulosCarrito.forEach(curso => {
         const { imagen, titulo, precio, cantidad, id } = curso;
 
@@ -81,8 +110,24 @@ function carritoHTML() {
     });
 }
 
+// Limpiar tbody (borramos todas las filas)
 function limpiarHTML() {
     while (carrito.firstChild) {
         carrito.removeChild(carrito.firstChild);
     }
+}
+
+/* -------------------------
+   localStorage helpers
+   ------------------------- */
+
+// Guardar el carrito actual en localStorage
+function guardarCarritoLocalStorage() {
+    localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
+}
+
+// Recuperar carrito desde localStorage, devuelve array (si no existe, devuelve [])
+function obtenerCarritoLocalStorage() {
+    const carritoLS = localStorage.getItem('carrito');
+    return carritoLS ? JSON.parse(carritoLS) : [];
 }
