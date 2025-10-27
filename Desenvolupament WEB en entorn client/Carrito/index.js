@@ -90,7 +90,6 @@ function vaciarCarrito() {
     localStorage.removeItem('carrito');
 }
 
-// Renderizar carrito en el tbody
 function carritoHTML() {
     limpiarHTML();
 
