@@ -6,7 +6,6 @@ const tareaInput = document.querySelector('#tarea');
 // Array de tareas
 let tareas = [];
 
-// Eventos
 document.addEventListener('DOMContentLoaded', cargarTareasLocalStorage);
 formulario.addEventListener('submit', agregarTarea);
 listaTareas.addEventListener('click', eliminarTarea);
