@@ -25,7 +25,7 @@ function agregarTarea(e) {
   }
 
   if (texto.length > 30) {
-    mostrarError('❌ La tarea no puede tener más de 30 caracteres');
+    mostrarError('La tarea no puede tener más de 30 caracteres');
     return;
   }
 
