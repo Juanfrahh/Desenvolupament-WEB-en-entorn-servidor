@@ -67,7 +67,6 @@ function eliminarTarea(e) {
   }
 }
 
-// Mostrar mensajes de error temporales
 function mostrarError(mensaje) {
   const existente = document.querySelector('.error');
   if (existente) existente.remove();
