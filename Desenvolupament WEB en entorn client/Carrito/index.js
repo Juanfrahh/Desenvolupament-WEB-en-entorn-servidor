@@ -126,7 +126,6 @@ function guardarCarritoLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
 }
 
-// Recuperar carrito desde localStorage, devuelve array (si no existe, devuelve [])
 function obtenerCarritoLocalStorage() {
     const carritoLS = localStorage.getItem('carrito');
     return carritoLS ? JSON.parse(carritoLS) : [];
