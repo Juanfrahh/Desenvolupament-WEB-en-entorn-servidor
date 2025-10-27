@@ -68,7 +68,6 @@ export class Poliza {
   }
 }
 
-/* Función para llenar el select de años */
 export function llenarSelectAnios() {
   const selectYear = document.querySelector('#year');
   if (!selectYear) return;
