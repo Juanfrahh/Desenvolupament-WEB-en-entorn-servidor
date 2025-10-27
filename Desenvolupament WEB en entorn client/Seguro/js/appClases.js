@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   llenarSelectAnios();
 });
 
-/* Mostrar mensaje temporal (controla que no se acumulen) */
 function mostrarMensaje(texto, tipo) {
   const formularioEl = document.getElementById('cotizar-seguro');
   if (!formularioEl) return;
