@@ -48,7 +48,7 @@ function pintarTareas() {
   tareas.forEach(tarea => {
     const div = document.createElement('div');
     div.classList.add('tarea-item');
-    div.style.marginLeft = '10%'; // opcional como indica el enunciado
+    div.style.marginLeft = '10%';
     div.innerHTML = `
       <p>${tarea}</p>
       <span class="borrar-tarea" style="color:red; cursor:pointer; font-weight:bold;">X</span>
