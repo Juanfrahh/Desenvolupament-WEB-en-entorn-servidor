@@ -121,7 +121,6 @@ function limpiarHTML() {
    localStorage helpers
    ------------------------- */
 
-// Guardar el carrito actual en localStorage
 function guardarCarritoLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
 }
