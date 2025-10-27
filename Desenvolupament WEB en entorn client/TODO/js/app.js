@@ -3,7 +3,6 @@ const formulario = document.querySelector('#formulario');
 const listaTareas = document.querySelector('#lista-tareas');
 const tareaInput = document.querySelector('#tarea');
 
-// Array de tareas
 let tareas = [];
 
 document.addEventListener('DOMContentLoaded', cargarTareasLocalStorage);
