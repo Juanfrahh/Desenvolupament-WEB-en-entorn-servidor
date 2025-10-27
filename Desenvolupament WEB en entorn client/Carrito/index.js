@@ -94,7 +94,7 @@ function vaciarCarrito() {
 function carritoHTML() {
     limpiarHTML();
 
-articulosCarrito.forEach(curso => {
+        articulosCarrito.forEach(curso => {
         const { imagen, titulo, precio, cantidad, id } = curso;
 
         const row = document.createElement('tr');
