@@ -29,7 +29,6 @@ function mostrarMensaje(texto, tipo) {
   div.classList.add('mensaje-temporal', 'text-center', 'p-2', 'rounded-lg', 'mt-3', 'text-white');
   div.classList.add(tipo === 'error' ? 'bg-red-600' : 'bg-green-500');
 
-  // Insertar antes del contenedor de resultado
   const lugar = document.querySelector('#resultado') || null;
   formularioEl.insertBefore(div, lugar);
 
