@@ -51,7 +51,8 @@ function leerDatosCurso(curso) {
     // Comprobar si ya existe en el carrito
     const existe = articulosCarrito.some(curso => curso.id === infoCurso.id);
 
-    if (existe) {articulosCarrito = articulosCarrito.map(curso => {
+    if (existe) {
+        articulosCarrito = articulosCarrito.map(curso => {
             if (curso.id === infoCurso.id) {
                 return {
                     ...curso,
