@@ -23,7 +23,6 @@ function cargarEventListeners() {
         vaciarCarrito();
     });
 
-    // Al cargar el DOM, recuperar carrito desde localStorage
     document.addEventListener('DOMContentLoaded', () => {
         articulosCarrito = obtenerCarritoLocalStorage();
         carritoHTML();
