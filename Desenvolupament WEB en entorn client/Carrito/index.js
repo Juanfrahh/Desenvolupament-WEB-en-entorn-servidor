@@ -94,8 +94,7 @@ function vaciarCarrito() {
 function carritoHTML() {
     limpiarHTML();
 
-    // Si no hay artículos, no añadimos filas (tbody quedará vacío)
-    articulosCarrito.forEach(curso => {
+articulosCarrito.forEach(curso => {
         const { imagen, titulo, precio, cantidad, id } = curso;
 
         const row = document.createElement('tr');
