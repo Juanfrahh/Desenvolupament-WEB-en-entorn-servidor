@@ -31,7 +31,7 @@ function agregarTarea(e) {
 
   const existe = tareas.some(t => t.toLowerCase() === texto.toLowerCase());
   if (existe) {
-    mostrarError('❌ Esa tarea ya existe');
+    mostrarError('Esa tarea ya existe');
     return;
   }
 
