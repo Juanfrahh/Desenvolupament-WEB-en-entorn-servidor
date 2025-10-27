@@ -1,4 +1,3 @@
-// appClases.js
 import { Poliza, llenarSelectAnios } from './app.js';
 
 // Referencias al DOM y modal (bootstrap)
