@@ -17,7 +17,6 @@ function cargarEventListeners() {
     // Cuando eliminas un curso del carrito
     carrito.addEventListener('click', eliminarCurso);
 
-    // Cuando vacías el carrito (prevenir comportamiento por defecto del enlace)
     vaciarCarritoBtn.addEventListener('click', (e) => {
         e.preventDefault();
         vaciarCarrito();
