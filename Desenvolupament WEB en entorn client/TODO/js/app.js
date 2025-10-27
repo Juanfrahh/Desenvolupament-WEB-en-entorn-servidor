@@ -20,7 +20,7 @@ function agregarTarea(e) {
 
   // Validaciones
   if (texto === '') {
-    mostrarError('❌ El campo no puede estar vacío');
+    mostrarError('El campo no puede estar vacío');
     return;
   }
 
