@@ -74,7 +74,6 @@ export function llenarSelectAnios() {
   const max = new Date().getFullYear();
   const min = max - 20;
 
-  // Limpiamos posibles opciones previas (por si se llamara dos veces)
   selectYear.innerHTML = `<option value="">- Seleccionar -</option>`;
 
   for (let i = max; i >= min; i--) {
