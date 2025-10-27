@@ -102,7 +102,6 @@ function cargarTareasLocalStorage() {
   pintarTareas();
 }
 
-// Limpiar lista antes de volver a pintar
 function limpiarHTML() {
   listaTareas.innerHTML = '';
 }
