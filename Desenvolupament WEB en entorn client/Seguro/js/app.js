@@ -1,7 +1,3 @@
-// app.js
-// Clase Poliza y función para rellenar años.
-// Esta clase NO manipula el DOM; solo calcula y devuelve datos.
-
 export class Poliza {
   constructor(gama, year, tipo) {
     this._gama = gama;
