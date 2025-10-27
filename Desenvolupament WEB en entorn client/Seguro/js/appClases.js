@@ -33,7 +33,6 @@ function mostrarMensaje(texto, tipo) {
   const lugar = document.querySelector('#resultado') || null;
   formularioEl.insertBefore(div, lugar);
 
-  // Desaparece tras 3 segundos (3000 ms)
   setTimeout(() => {
     if (div.parentNode) div.remove();
   }, 3000);
