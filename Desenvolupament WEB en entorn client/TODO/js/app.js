@@ -90,7 +90,6 @@ function mostrarError(mensaje) {
   }, 3000); // desaparece a los 3 segundos
 }
 
-// Guardar en localStorage
 function guardarTareasLocalStorage() {
   localStorage.setItem('tareas', JSON.stringify(tareas));
 }
