@@ -18,7 +18,6 @@ function agregarTarea(e) {
   e.preventDefault();
   const texto = tareaInput.value.trim();
 
-  // Validaciones
   if (texto === '') {
     mostrarError('El campo no puede estar vacío');
     return;
