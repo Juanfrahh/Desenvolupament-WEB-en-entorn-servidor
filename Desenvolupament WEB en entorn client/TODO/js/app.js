@@ -11,9 +11,6 @@ document.addEventListener('DOMContentLoaded', cargarTareasLocalStorage);
 formulario.addEventListener('submit', agregarTarea);
 listaTareas.addEventListener('click', eliminarTarea);
 
-// --- FUNCIONES ---
-
-// Agregar tarea
 function agregarTarea(e) {
   e.preventDefault();
   const texto = tareaInput.value.trim();
