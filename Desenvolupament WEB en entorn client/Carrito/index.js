@@ -117,10 +117,6 @@ function limpiarHTML() {
     }
 }
 
-/* -------------------------
-   localStorage helpers
-   ------------------------- */
-
 function guardarCarritoLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
 }
