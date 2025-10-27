@@ -110,7 +110,6 @@ function carritoHTML() {
     });
 }
 
-// Limpiar tbody (borramos todas las filas)
 function limpiarHTML() {
     while (carrito.firstChild) {
         carrito.removeChild(carrito.firstChild);
