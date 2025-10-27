@@ -18,7 +18,6 @@ export class Poliza {
   get importe() { return this._importe; }
   set importe(value) { this._importe = Number(value); }
 
-  // Calcula y actualiza this._importe
   calcularSeguro() {
     let total = this._importe;
 
