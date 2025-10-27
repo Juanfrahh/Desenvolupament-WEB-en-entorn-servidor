@@ -40,7 +40,6 @@ function mostrarMensaje(texto, tipo) {
   }, 3000);
 }
 
-/* Manejo del submit */
 if (formulario) {
   formulario.addEventListener('submit', (e) => {
     e.preventDefault();
