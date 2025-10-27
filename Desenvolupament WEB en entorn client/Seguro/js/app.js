@@ -1,4 +1,5 @@
-class Poliza {
+// app.js
+export class Poliza {
   constructor(gama, year, tipo) {
     this._gama = gama;
     this._year = year;
@@ -9,21 +10,17 @@ class Poliza {
   calcularSeguro() {
     let total = this._importe;
 
-    // Gama del vehículo
     switch (this._gama) {
       case '1': total += total * 0.05; break;
       case '2': total += total * 0.15; break;
       case '3': total += total * 0.30; break;
     }
 
-    // Antigüedad
     const yearActual = new Date().getFullYear();
     const antiguedad = yearActual - this._year;
     total += total * (antiguedad * 0.03);
 
-    // Tipo de seguro
     total += total * (this._tipo === 'Básico' ? 0.3 : 0.5);
-
     this._importe = Math.round(total);
   }
 
@@ -56,11 +53,7 @@ class Poliza {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  llenarSelectAnios();
-});
-
-function llenarSelectAnios() {
+export function llenarSelectAnios() {
   const selectYear = document.querySelector('#year');
   const max = new Date().getFullYear();
   const min = max - 20;
