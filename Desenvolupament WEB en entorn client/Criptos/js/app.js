@@ -15,7 +15,6 @@ async function obtenerCriptomonedas() {
 
     const criptos = data.Data;
 
-    // Llenar el select
     llenarSelectCriptos(criptos);
   } catch (error) {
     mostrarError('❌ Error al cargar las criptomonedas');
