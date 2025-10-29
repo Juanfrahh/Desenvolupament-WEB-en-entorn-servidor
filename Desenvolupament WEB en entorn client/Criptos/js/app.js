@@ -43,7 +43,6 @@ function llenarSelectCriptos(criptos) {
   });
 }
 
-// 3️⃣ Validar formulario y consultar la API
 function submitFormulario(e) {
   e.preventDefault();
 
