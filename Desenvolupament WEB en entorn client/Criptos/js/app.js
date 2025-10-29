@@ -13,7 +13,6 @@ async function obtenerCriptomonedas() {
     const respuesta = await fetch(url);
     const data = await respuesta.json();
 
-    // El array real está en data.Data
     const criptos = data.Data;
 
     // Llenar el select
