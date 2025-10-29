@@ -56,7 +56,6 @@ function submitFormulario(e) {
     return;
   }
 
-  // Consultar la API
   consultarAPI(moneda, cripto);
 }
 
