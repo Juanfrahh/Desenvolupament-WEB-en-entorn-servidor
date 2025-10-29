@@ -5,7 +5,6 @@ const resultadoDiv = document.querySelector('#resultado');
 
 document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 
-// Evento de formulario
 formulario.addEventListener('submit', submitFormulario);
 
 // --- FUNCIONES ---
