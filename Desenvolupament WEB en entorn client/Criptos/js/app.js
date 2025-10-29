@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 
 formulario.addEventListener('submit', submitFormulario);
 
-// --- FUNCIONES ---
-
-// 1️⃣ Obtener top 10 criptomonedas de la API
 async function obtenerCriptomonedas() {
   const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
   try {
