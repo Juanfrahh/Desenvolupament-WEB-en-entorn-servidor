@@ -146,7 +146,6 @@ function mostrarSpinner() {
   resultadoDiv.appendChild(spinner);
 }
 
-// 8️⃣ Limpiar resultados anteriores
 function limpiarHTML() {
   resultadoDiv.innerHTML = '';
 }
