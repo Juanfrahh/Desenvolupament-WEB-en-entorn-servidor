@@ -8,7 +8,8 @@ const resultadoDiv = document.querySelector('#resultado');
 document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 
 // Evento de formulario
-formulario.addEventListener('submit', submitFormulario
+formulario.addEventListener('submit', submitFormulario);
+
 async function obtenerCriptomonedas() {
   const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
   try {
