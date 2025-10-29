@@ -77,7 +77,7 @@ function mostrarCotizacion(info) {
   maximo.innerHTML = `Máximo del día: <span>${HIGHDAY}</span>`;
 
   const minimo = document.createElement('p');
-  minimo.innerHTML = `📉 Mínimo del día: <span>${LOWDAY}</span>`;
+  minimo.innerHTML = `Mínimo del día: <span>${LOWDAY}</span>`;
 
   const variacion = document.createElement('p');
   variacion.innerHTML = `📊 Variación 24h: <span>${CHANGEPCT24HOUR}%</span>`;
