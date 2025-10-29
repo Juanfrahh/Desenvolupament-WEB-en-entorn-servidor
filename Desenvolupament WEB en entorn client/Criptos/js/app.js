@@ -17,7 +17,7 @@ async function obtenerCriptomonedas() {
 
     llenarSelectCriptos(criptos);
   } catch (error) {
-    mostrarError('❌ Error al cargar las criptomonedas');
+    mostrarError('Error al cargar las criptomonedas');
     console.error(error);
   }
 }
