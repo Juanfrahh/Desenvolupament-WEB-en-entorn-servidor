@@ -7,7 +7,6 @@ const resultadoDiv = document.querySelector('#resultado');
 // Cargar criptomonedas al iniciar
 document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 
-// Evento de formulario
 formulario.addEventListener('submit', submitFormulario);
 
 async function obtenerCriptomonedas() {
