@@ -107,7 +107,6 @@ function mostrarCotizacion(info) {
   resultadoDiv.appendChild(actualizacion);
 }
 
-// 6️⃣ Mostrar errores temporales (no acumulables)
 function mostrarError(mensaje) {
   const existe = document.querySelector('.error');
   if (existe) existe.remove();
