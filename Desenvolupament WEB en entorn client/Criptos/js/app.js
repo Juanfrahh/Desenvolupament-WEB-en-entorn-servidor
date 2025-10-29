@@ -78,7 +78,6 @@ async function consultarAPI(moneda, cripto) {
   }
 }
 
-// 5️⃣ Mostrar datos en pantalla
 function mostrarCotizacion(info) {
   limpiarHTML();
 
