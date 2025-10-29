@@ -74,7 +74,7 @@ function mostrarCotizacion(info) {
   precio.innerHTML = `Precio actual: <span>${PRICE}</span>`;
 
   const maximo = document.createElement('p');
-  maximo.innerHTML = `📈 Máximo del día: <span>${HIGHDAY}</span>`;
+  maximo.innerHTML = `Máximo del día: <span>${HIGHDAY}</span>`;
 
   const minimo = document.createElement('p');
   minimo.innerHTML = `📉 Mínimo del día: <span>${LOWDAY}</span>`;
