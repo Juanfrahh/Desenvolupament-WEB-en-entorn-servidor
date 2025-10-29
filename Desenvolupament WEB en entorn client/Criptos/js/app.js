@@ -40,7 +40,7 @@ function submitFormulario(e) {
   const cripto = criptomonedasSelect.value;
 
   if (moneda === '' || cripto === '') {
-    mostrarError('ebes seleccionar ambas opciones');
+    mostrarError('Debes seleccionar ambas opciones');
     return;
   }
 
