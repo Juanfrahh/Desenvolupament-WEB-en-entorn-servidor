@@ -80,7 +80,7 @@ function mostrarCotizacion(info) {
   minimo.innerHTML = `Mínimo del día: <span>${LOWDAY}</span>`;
 
   const variacion = document.createElement('p');
-  variacion.innerHTML = `📊 Variación 24h: <span>${CHANGEPCT24HOUR}%</span>`;
+  variacion.innerHTML = `Variación 24h: <span>${CHANGEPCT24HOUR}%</span>`;
 
   const actualizacion = document.createElement('p');
   actualizacion.innerHTML = `⏰ Última actualización: <span>${LASTUPDATE}</span>`;
