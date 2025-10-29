@@ -83,7 +83,7 @@ function mostrarCotizacion(info) {
   variacion.innerHTML = `Variación 24h: <span>${CHANGEPCT24HOUR}%</span>`;
 
   const actualizacion = document.createElement('p');
-  actualizacion.innerHTML = `⏰ Última actualización: <span>${LASTUPDATE}</span>`;
+  actualizacion.innerHTML = `Última actualización: <span>${LASTUPDATE}</span>`;
 
   resultadoDiv.appendChild(precio);
   resultadoDiv.appendChild(maximo);
