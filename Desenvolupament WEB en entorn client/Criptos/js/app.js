@@ -71,7 +71,7 @@ function mostrarCotizacion(info) {
 
   const precio = document.createElement('p');
   precio.classList.add('precio');
-  precio.innerHTML = `💰 Precio actual: <span>${PRICE}</span>`;
+  precio.innerHTML = `Precio actual: <span>${PRICE}</span>`;
 
   const maximo = document.createElement('p');
   maximo.innerHTML = `📈 Máximo del día: <span>${HIGHDAY}</span>`;
