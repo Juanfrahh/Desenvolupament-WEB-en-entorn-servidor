@@ -27,7 +27,7 @@ function llenarSelectCriptos(criptos) {
     const { FullName, Name } = cripto.CoinInfo;
 
     const option = document.createElement('option');
-    option.value = Name; // Ejemplo: BTC
+    option.value = Name;
     option.textContent = FullName; // Ejemplo: Bitcoin
     criptomonedasSelect.appendChild(option);
   });
