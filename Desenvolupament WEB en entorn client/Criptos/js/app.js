@@ -60,7 +60,6 @@ function submitFormulario(e) {
   consultarAPI(moneda, cripto);
 }
 
-// 4️⃣ Consultar datos de la criptomoneda
 async function consultarAPI(moneda, cripto) {
   const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${moneda}`;
 
