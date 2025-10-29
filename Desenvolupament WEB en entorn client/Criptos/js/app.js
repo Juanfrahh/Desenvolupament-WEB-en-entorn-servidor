@@ -24,7 +24,6 @@ async function obtenerCriptomonedas() {
 
 function llenarSelectCriptos(criptos) {
   criptos.forEach(cripto => {
-    // Destructuring del objeto
     const { FullName, Name } = cripto.CoinInfo;
 
     const option = document.createElement('option');
