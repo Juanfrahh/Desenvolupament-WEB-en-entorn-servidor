@@ -3,7 +3,6 @@ const monedaSelect = document.querySelector('#moneda');
 const formulario = document.querySelector('#formulario');
 const resultadoDiv = document.querySelector('#resultado');
 
-// Cargar criptomonedas al iniciar
 document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 
 // Evento de formulario
