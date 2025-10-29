@@ -1,4 +1,3 @@
-// --- SELECTORES ---
 const criptomonedasSelect = document.querySelector('#criptomonedas');
 const monedaSelect = document.querySelector('#moneda');
 const formulario = document.querySelector('#formulario');
