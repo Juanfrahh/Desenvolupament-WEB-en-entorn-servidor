@@ -22,7 +22,6 @@ async function obtenerCriptomonedas() {
   }
 }
 
-// 2️⃣ Llenar el select con las criptomonedas obtenidas
 function llenarSelectCriptos(criptos) {
   criptos.forEach(cripto => {
     // Destructuring del objeto
