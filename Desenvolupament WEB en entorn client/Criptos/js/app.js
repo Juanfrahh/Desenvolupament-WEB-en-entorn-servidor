@@ -59,7 +59,7 @@ async function consultarAPI(moneda, cripto) {
     const info = data.DISPLAY[cripto][moneda];
     mostrarCotizacion(info);
   } catch (error) {
-    mostrarError('❌ No se pudo obtener la información');
+    mostrarError('No se pudo obtener la información');
     console.error(error);
   }
 }
