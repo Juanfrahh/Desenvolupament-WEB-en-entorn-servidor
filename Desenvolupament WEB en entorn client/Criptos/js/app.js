@@ -127,7 +127,6 @@ function mostrarError(mensaje) {
   setTimeout(() => divError.remove(), 2000);
 }
 
-// 7️⃣ Spinner de carga
 function mostrarSpinner() {
   limpiarHTML();
 
