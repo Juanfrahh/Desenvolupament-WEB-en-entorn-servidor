@@ -52,4 +52,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <a href="album.php?codigo=<?= htmlspecialchars($album) ?>">Volver</a>
 </body>
 </html>
-

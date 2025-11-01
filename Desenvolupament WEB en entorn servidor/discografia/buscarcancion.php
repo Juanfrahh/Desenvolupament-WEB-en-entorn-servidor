@@ -32,4 +32,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <a href="index.php">Volver</a>
 </body>
 </html>
-

@@ -54,4 +54,3 @@ label { display: inline-block; width: 120px; margin-bottom: 8px; }
 <a href="index.php">Volver</a>
 </body>
 </html>
-

@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header('Location: login.php');
+    exit();
+}
+
 include 'conexion.php';
 $consulta = $conexion->query("SELECT * FROM album ORDER BY titulo");
 $albumes = $consulta->fetchAll(PDO::FETCH_ASSOC);
@@ -24,4 +30,3 @@ $albumes = $consulta->fetchAll(PDO::FETCH_ASSOC);
 </ul>
 </body>
 </html>
-
