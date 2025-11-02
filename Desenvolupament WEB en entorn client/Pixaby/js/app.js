@@ -44,7 +44,7 @@ function mostrarError(mensaje) {
 
 // Consultar API de Pixabay
 async function buscarImagenes(termino) {
-  const key = 'TU_API_KEY_AQUI';
+  const key = '53059380-55c86030302e17d17eb7afc1c';
   const url = `https://pixabay.com/api/?key=${key}&q=${termino}&per_page=${registrosPorPagina}&page=${paginaActual}`;
 
   try {
