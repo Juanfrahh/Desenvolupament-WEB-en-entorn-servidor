@@ -63,7 +63,6 @@ function calcularPaginas(total) {
   return Math.ceil(total / registrosPorPagina);
 }
 
-// Mostrar imágenes en pantalla
 function mostrarImagenes(imagenes) {
   limpiarHTML(resultado);
   limpiarHTML(paginacionDiv);
