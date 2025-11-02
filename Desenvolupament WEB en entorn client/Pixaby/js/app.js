@@ -28,7 +28,6 @@ function validarFormulario(e) {
   buscarImagenes(terminoBusqueda);
 }
 
-// Mostrar mensaje de error (no acumulable)
 function mostrarError(mensaje) {
   const existe = document.querySelector('.error');
   if (existe) existe.remove();
