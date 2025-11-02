@@ -14,7 +14,7 @@ function validarFormulario(e) {
   const terminoBusqueda = document.querySelector('#termino').value.trim();
 
   if (terminoBusqueda === '') {
-    mostrarError('❌ El campo no puede estar vacío');
+    mostrarError('El campo no puede estar vacío');
     return;
   }
 
