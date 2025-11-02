@@ -58,7 +58,6 @@ async function buscarImagenes(termino) {
   }
 }
 
-// Calcular número total de páginas
 function calcularPaginas(total) {
   return Math.ceil(total / registrosPorPagina);
 }
