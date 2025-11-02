@@ -9,7 +9,6 @@ let totalPaginas;
 let iterador;
 let paginaActual = 1;
 
-// EVENTOS
 formulario.addEventListener('submit', validarFormulario);
 
 function validarFormulario(e) {
