@@ -104,7 +104,6 @@ function mostrarImagenes(imagenes) {
     resultado.appendChild(contenedor);
   });
 
-  // Generar paginador
   imprimirPaginador();
 }
 
