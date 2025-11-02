@@ -128,7 +128,6 @@ function imprimirPaginador() {
     const { value, done } = iterador.next();
     if (done) return;
 
-    // Crear botón por cada página
     const boton = document.createElement('a');
     boton.href = '#';
     boton.dataset.pagina = value;
