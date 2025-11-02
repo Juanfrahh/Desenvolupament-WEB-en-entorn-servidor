@@ -12,9 +12,6 @@ let paginaActual = 1;
 // EVENTOS
 formulario.addEventListener('submit', validarFormulario);
 
-// ---------------- FUNCIONES PRINCIPALES ----------------
-
-// Validar formulario
 function validarFormulario(e) {
   e.preventDefault();
   const terminoBusqueda = document.querySelector('#termino').value.trim();
