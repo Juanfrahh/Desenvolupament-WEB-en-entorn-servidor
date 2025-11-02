@@ -24,7 +24,6 @@ function validarFormulario(e) {
     return;
   }
 
-  // Llamar a la API
   buscarImagenes(terminoBusqueda);
 }
 
