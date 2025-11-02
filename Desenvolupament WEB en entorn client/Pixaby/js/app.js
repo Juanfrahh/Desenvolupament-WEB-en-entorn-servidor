@@ -73,7 +73,6 @@ function mostrarImagenes(imagenes) {
     return;
   }
 
-  // Recorrer imágenes
   imagenes.forEach(imagen => {
     const { previewURL, likes, views, largeImageURL } = imagen;
 
