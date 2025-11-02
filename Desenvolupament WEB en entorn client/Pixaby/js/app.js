@@ -107,7 +107,6 @@ function mostrarImagenes(imagenes) {
   imprimirPaginador();
 }
 
-// Limpiar resultados anteriores
 function limpiarHTML(elemento) {
   while (elemento.firstChild) {
     elemento.removeChild(elemento.firstChild);
