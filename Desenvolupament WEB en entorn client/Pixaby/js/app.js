@@ -42,7 +42,6 @@ function mostrarError(mensaje) {
   setTimeout(() => alerta.remove(), 2000);
 }
 
-// Consultar API de Pixabay
 async function buscarImagenes(termino) {
   const key = '53059380-55c86030302e17d17eb7afc1c';
   const url = `https://pixabay.com/api/?key=${key}&q=${termino}&per_page=${registrosPorPagina}&page=${paginaActual}`;
