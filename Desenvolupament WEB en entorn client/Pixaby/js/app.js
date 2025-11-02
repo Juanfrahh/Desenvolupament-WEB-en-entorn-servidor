@@ -3,7 +3,6 @@ const formulario = document.querySelector('#formulario');
 const resultado = document.querySelector('#resultado');
 const paginacionDiv = document.querySelector('#paginacion');
 
-// Variables globales
 const registrosPorPagina = 40;
 let totalPaginas;
 let iterador;
