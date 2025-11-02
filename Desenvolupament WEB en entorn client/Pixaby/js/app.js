@@ -127,9 +127,6 @@ function limpiarHTML(elemento) {
   }
 }
 
-// ---------------- PAGINADOR ----------------
-
-// Generador para crear número de páginas
 function *crearPaginador(total) {
   for (let i = 1; i <= total; i++) {
     yield i;
