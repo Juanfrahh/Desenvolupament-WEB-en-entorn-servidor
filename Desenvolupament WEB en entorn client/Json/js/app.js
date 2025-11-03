@@ -26,14 +26,19 @@ async function mostrarClientes() {
 }
 
 async function confirmarEliminar(e) {
+  // solo si el clic fue en un botón con la clase "eliminar"
   if (e.target.classList.contains('eliminar')) {
-    const id = e.target.dataset.cliente; // 👈 ya no lo convertimos
+    const id = e.target.dataset.cliente; // 👈 no usamos parseInt
 
-    if (confirmar) {
+    const confirmarBorrado = confirm('¿Deseas eliminar este cliente?'); // 👈 declaramos correctamente
+
+    if (confirmarBorrado) {
       await eliminarCliente(id);
-      // Espera a que el servidor confirme y luego recarga
       alert('Cliente eliminado correctamente');
-      window.location.reload();
+
+      // Eliminar la fila directamente sin recargar
+      e.target.closest('tr').remove();
     }
   }
 }
+
