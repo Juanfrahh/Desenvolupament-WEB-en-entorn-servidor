@@ -1,4 +1,5 @@
 import { mostrarAlerta, validar } from './funciones.js';
+
 import { nuevoCliente } from './api.js';
 
 document.addEventListener('DOMContentLoaded', () => {
