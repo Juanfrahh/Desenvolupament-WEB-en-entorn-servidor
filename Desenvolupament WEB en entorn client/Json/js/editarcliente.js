@@ -1,5 +1,5 @@
 // js/editarcliente.js
-import { obtenerCliente, editarCliente } from './api.js';
+import { obtenerCliente, editarCliente } from './API.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const parametrosURL = new URLSearchParams(window.location.search);
