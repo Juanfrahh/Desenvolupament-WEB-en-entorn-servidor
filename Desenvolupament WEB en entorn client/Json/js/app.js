@@ -1,6 +1,6 @@
 //inicia la aplicación. Puede contener alguna función complementaria
 
-import { obtenerClientes } from './api.js';
+import { obtenerClientes } from './API.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const contenedor = document.querySelector('#clientes');
