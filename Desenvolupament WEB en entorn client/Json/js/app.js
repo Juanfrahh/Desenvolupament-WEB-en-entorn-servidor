@@ -1,4 +1,4 @@
-import { obtenerClientes, eliminarCliente } from './API.js';
+import { obtenerClientes, eliminarCliente } from './api.js';
 
 document.addEventListener('DOMContentLoaded', mostrarClientes);
 
@@ -26,19 +26,14 @@ async function mostrarClientes() {
 }
 
 async function confirmarEliminar(e) {
-  // solo si el clic fue en un botón con la clase "eliminar"
   if (e.target.classList.contains('eliminar')) {
-    const id = e.target.dataset.cliente; // 👈 no usamos parseInt
-
-    const confirmarBorrado = confirm('¿Deseas eliminar este cliente?'); // 👈 declaramos correctamente
+    const id = e.target.dataset.cliente;
+    const confirmarBorrado = confirm('¿Deseas eliminar este cliente?');
 
     if (confirmarBorrado) {
       await eliminarCliente(id);
       alert('Cliente eliminado correctamente');
-
-      // Eliminar la fila directamente sin recargar
       e.target.closest('tr').remove();
     }
   }
 }
-
