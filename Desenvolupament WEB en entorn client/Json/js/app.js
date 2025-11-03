@@ -1,4 +1,3 @@
-// js/app.js
 import { obtenerClientes, eliminarCliente } from './api.js';
 
 document.addEventListener('DOMContentLoaded', mostrarClientes);
