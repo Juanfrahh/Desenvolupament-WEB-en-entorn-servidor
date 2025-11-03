@@ -1,0 +1,1 @@
+//inicia la aplicación. Puede contener alguna función complementaria

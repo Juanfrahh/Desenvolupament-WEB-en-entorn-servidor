@@ -1,0 +1,1 @@
+//todo lo relacionado con la validación y llamada a función conexión API
