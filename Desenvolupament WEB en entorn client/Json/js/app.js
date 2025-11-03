@@ -27,8 +27,7 @@ async function mostrarClientes() {
 
 async function confirmarEliminar(e) {
   if (e.target.classList.contains('eliminar')) {
-    const id = parseInt(e.target.dataset.cliente);
-    const confirmar = confirm('¿Deseas eliminar este cliente?');
+    const id = e.target.dataset.cliente; // 👈 ya no lo convertimos
 
     if (confirmar) {
       await eliminarCliente(id);

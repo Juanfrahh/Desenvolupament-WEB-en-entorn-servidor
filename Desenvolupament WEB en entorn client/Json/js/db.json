@@ -1,20 +1,6 @@
 {
   "clientes": [
     {
-      "nombre": "Carlos Tortosa",
-      "email": "carlostortosa2005@gmail.com",
-      "telefono": "665475395",
-      "empresa": "IES Serra Perenxisa",
-      "id": "4"
-    },
-    {
-      "nombre": "Roberto García",
-      "email": "roberto@gmail.com",
-      "telefono": "111111111",
-      "empresa": "IES La Marxadella",
-      "id": "5"
-    },
-    {
       "id": "8cd8",
       "nombre": "Carlos",
       "email": "carlostortosa2005@gmail.com",
