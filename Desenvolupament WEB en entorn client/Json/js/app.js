@@ -1,4 +1,4 @@
-import { obtenerClientes, eliminarCliente } from './API.js';
+import { obtenerClientes, eliminarCliente } from './api.js';
 
 document.addEventListener('DOMContentLoaded', mostrarClientes);
 
@@ -29,8 +29,11 @@ async function confirmarEliminar(e) {
   if (e.target.classList.contains('eliminar')) {
     const id = parseInt(e.target.dataset.cliente);
     const confirmar = confirm('¿Deseas eliminar este cliente?');
+
     if (confirmar) {
       await eliminarCliente(id);
+      // Espera a que el servidor confirme y luego recarga
+      alert('Cliente eliminado correctamente');
       window.location.reload();
     }
   }
