@@ -33,5 +33,7 @@ export async function editarCliente(id, cliente) {
 
 // ELIMINAR cliente
 export async function eliminarCliente(id) {
-  await fetch(`${URL}/${id}`, { method: 'DELETE' });
+  await fetch(`${URL}/${id}`, {
+    method: 'DELETE',
+  });
 }
