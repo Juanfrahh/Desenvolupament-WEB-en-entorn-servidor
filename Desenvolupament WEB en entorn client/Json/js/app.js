@@ -1,4 +1,4 @@
-import { obtenerClientes, eliminarCliente } from './api.js';
+import { obtenerClientes, eliminarCliente } from './API.js';
 
 document.addEventListener('DOMContentLoaded', mostrarClientes);
 
