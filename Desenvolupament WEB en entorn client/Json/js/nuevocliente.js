@@ -1,5 +1,5 @@
 import { mostrarAlerta, validar } from './funciones.js';
-import { nuevoCliente } from './api.js';
+import { nuevoCliente } from './API.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const formulario = document.querySelector('#formulario');
