@@ -1,4 +1,4 @@
-import { obtenerClientes, eliminarCliente } from './AOI.js';
+import { obtenerClientes, eliminarCliente } from './A.js';
 
 document.addEventListener('DOMContentLoaded', mostrarClientes);
 
