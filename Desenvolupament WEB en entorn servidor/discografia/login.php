@@ -13,7 +13,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
         } else {
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-            // === Validar imagen ===
             if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == UPLOAD_ERR_OK) {
                 $tmp = $_FILES['imagen']['tmp_name'];
                 $tipo = mime_content_type($tmp);
