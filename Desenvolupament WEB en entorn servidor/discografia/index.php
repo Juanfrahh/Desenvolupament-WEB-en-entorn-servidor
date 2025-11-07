@@ -21,7 +21,6 @@ $albumes = $consulta->fetchAll(PDO::FETCH_ASSOC);
 <head>
 <meta charset="UTF-8">
 <title>Discografía</title>
-
 </head>
 <body>
 
