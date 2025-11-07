@@ -52,7 +52,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
                 $imgPequena = NULL;
             }
 
-            // Insertar usuario
             $stmt = $conexion->prepare("INSERT INTO tabla_usuarios (usuario, password, img_grande, img_pequena) VALUES (?, ?, ?, ?)");
             $stmt->execute([$usuario, $passwordHash, $imgGrande, $imgPequena]);
 
