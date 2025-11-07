@@ -22,7 +22,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
                     die("<p style='color:red;'>❌ Solo se permiten imágenes PNG o JPG.</p>");
                 }
 
-                // Crear carpeta del usuario
                 $rutaUsuario = "img/users/$usuario";
                 if (!is_dir($rutaUsuario)) {
                     mkdir($rutaUsuario, 0777, true);
