@@ -62,3 +62,4 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
         $mensaje = "<p style='color:red;'>❌ Rellena todos los campos.</p>";
     }
 }
+>
