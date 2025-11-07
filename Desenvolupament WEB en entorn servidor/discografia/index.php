@@ -12,7 +12,6 @@ $stmt = $conexion->prepare("SELECT img_pequena FROM tabla_usuarios WHERE usuario
 $stmt->execute([$_SESSION['usuario']]);
 $img = $stmt->fetchColumn();
 
-// Obtener los álbumes
 $consulta = $conexion->query("SELECT * FROM album ORDER BY titulo");
 $albumes = $consulta->fetchAll(PDO::FETCH_ASSOC);
 ?>
