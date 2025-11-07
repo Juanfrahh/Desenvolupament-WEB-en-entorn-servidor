@@ -36,7 +36,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
                 // Redimensionar imagenes
                 $imagen = ($tipo == 'image/png') ? imagecreatefrompng($tmp) : imagecreatefromjpeg($tmp);
 
-                // Imagen grande
                 $grande = imagescale($imagen, 360, 480);
                 imagepng($grande, $imgGrande);
 
