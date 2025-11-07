@@ -7,7 +7,6 @@ if (!isset($_SESSION['usuario'])) {
 
 include 'conexion.php';
 
-// Obtener avatar pequeño del usuario logueado
 $stmt = $conexion->prepare("SELECT img_pequena FROM tabla_usuarios WHERE usuario = ?");
 $stmt->execute([$_SESSION['usuario']]);
 $img = $stmt->fetchColumn();
