@@ -21,18 +21,7 @@ $albumes = $consulta->fetchAll(PDO::FETCH_ASSOC);
 <head>
 <meta charset="UTF-8">
 <title>Discografía</title>
-<style>
-body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 20px; }
-header { display: flex; align-items: center; justify-content: space-between; background: #fff; padding: 10px 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-header img { width: 72px; height: 96px; border-radius: 8px; vertical-align: middle; }
-nav a { margin-right: 10px; text-decoration: none; color: #0077cc; }
-nav a:hover { text-decoration: underline; }
-h1 { color: #333; }
-ul { list-style-type: none; padding: 0; }
-li { margin: 8px 0; }
-a.album-link { text-decoration: none; color: #222; font-weight: bold; }
-a.album-link:hover { color: #0077cc; }
-</style>
+
 </head>
 <body>
 
