@@ -33,7 +33,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
                 $imgGrande = "$rutaUsuario/{$id}_big.png";
                 $imgPequena = "$rutaUsuario/{$id}_small.png";
 
-                // Redimensionar imagenes
                 $imagen = ($tipo == 'image/png') ? imagecreatefrompng($tmp) : imagecreatefromjpeg($tmp);
 
                 $grande = imagescale($imagen, 360, 480);
