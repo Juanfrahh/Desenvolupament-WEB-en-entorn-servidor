@@ -40,7 +40,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
                 $grande = imagescale($imagen, 360, 480);
                 imagepng($grande, $imgGrande);
 
-                // Imagen pequeña
                 $pequena = imagescale($imagen, 72, 96);
                 imagepng($pequena, $imgPequena);
 
