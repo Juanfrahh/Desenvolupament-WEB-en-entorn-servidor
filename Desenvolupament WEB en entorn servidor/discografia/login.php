@@ -28,7 +28,6 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
                     mkdir($rutaUsuario, 0777, true);
                 }
 
-                // Crear imagen grande y pequeña
                 $id = uniqid();
                 $imgGrande = "$rutaUsuario/{$id}_big.png";
                 $imgPequena = "$rutaUsuario/{$id}_small.png";
