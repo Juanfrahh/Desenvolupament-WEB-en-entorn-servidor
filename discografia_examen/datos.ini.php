@@ -38,7 +38,6 @@ function formularioDisco(){
         $album->registrarDisco($conexion); // Método para registrar el disco en la BD
     }
 }
-
 // Función que imprime un formulario para crear una nueva canción y la registra
 function formularioCancion($cancion){ 
     echo '<button  onclick=location.href="./index.php">Volver</button>'; // Botón de regreso
