@@ -184,7 +184,6 @@ function datosDisco($album){
 
     datosCancion($album->getCod()); // Llama a función para mostrar las canciones del disco
 }
-
 // Función que devuelve los datos de todas las canciones de un disco
 function datosCancion($cod){ 
     $conectar = new Conexion('localhost','user','user','discografia');
