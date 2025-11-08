@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario'])){
+    header("Location: login.php"); // Redirige al login si no hay sesión
+    exit();
+}
+
+// Aquí va el contenido de index.php
+echo "<h1>Bienvenido, ".$_SESSION['usuario']."</h1>";
 
 <!DOCTYPE html>
 <html lang="en">
