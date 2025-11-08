@@ -1,40 +1,50 @@
 <?php
-session_start();
-include("conexion.ini.php"); // Conexión a la base de datos
+session_start(); // Inicia la sesión para poder usar $_SESSION
 
-// Verificar si usuario está logueado
-if(!isset($_SESSION['usuario'])){
-    header("Location: login.php"); // Redirige al login si no hay sesión
+// Si no hay usuario en sesión, redirige al login
+if (!isset($_SESSION['usuario'])) {
+    header('Location: login.php');
     exit();
 }
 
-// Opcional: si quieres usar usuario recordado por cookie
-if(!isset($_SESSION['usuario']) && isset($_COOKIE['usuario_recordado'])){
-    $_SESSION['usuario'] = $_COOKIE['usuario_recordado'];
-}
-?>
+// Conexión a la base de datos
+include 'conexion.php'; // Aquí debes tener tu objeto $conexion de PDO
 
+// Recuperamos los datos del usuario desde la BD
+$stmt = $conexion->prepare("SELECT * FROM tabla_usuarios WHERE usuario = ?");
+$stmt->execute([$_SESSION['usuario']]);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Aquí puedes añadir cualquier otra lógica que quieras mostrar en el index,
+// por ejemplo, lista de discos, últimas canciones, etc.
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Panel principal</title>
+    <title>Inicio - <?= htmlspecialchars($_SESSION['usuario']) ?></title>
 </head>
 <body>
-    <h1>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
+    <h1>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?> 👋</h1>
 
-    <!-- Botón de logout -->
-    <a href="logout.php">Cerrar sesión</a>
+    <!-- Imagen de perfil -->
+    <?php if ($usuario['img_pequena']): ?>
+        <img src="<?= htmlspecialchars($usuario['img_pequena']) ?>" alt="Imagen de perfil">
+    <?php else: ?>
+        <p>Sin imagen de perfil</p>
+    <?php endif; ?>
+
+    <!-- Enlaces importantes -->
+    <p>
+        <a href="perfil.php">Mi perfil</a> | 
+        <a href="logout.php">Cerrar sesión</a>
+    </p>
 
     <hr>
 
-    <!-- Enlaces a la gestión de discos y canciones -->
-    <h2>Gestión de discografía</h2>
-    <ul>
-        <li><a href="disconuevo.php">Registrar nuevo disco</a></li>
-        <li><a href="canciones.php">Buscar canciones</a></li>
-        <li><a href="datosdiscografia.php">Ver todos los discos</a></li>
-    </ul>
+    <!-- Aquí podrías incluir la lista de discos/canciones -->
+    <h2>Mis discos y canciones</h2>
+    <p>Aquí podrías llamar a tus funciones de datosDiscografia() o similares.</p>
 
 </body>
 </html>
