@@ -108,7 +108,6 @@ function formularioBuscarCancion(){
     echo '</div>';
     echo '<input id="reg-mod" type="submit" value="Buscar"/>'; // Botón buscar
     echo '</form>';
-
     // Llama a la función que devuelve los resultados si se envió el formulario
     if(isset($_POST["textoBuscar"])){
         datosBuscados($_POST['textoBuscar'], $_POST['select'], $_POST['genero']); 
