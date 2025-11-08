@@ -114,7 +114,6 @@ function formularioBuscarCancion(){
         datosBuscados($_POST['textoBuscar'], $_POST['select'], $_POST['genero']); 
     }
 }
-
 // Función que devuelve una lista de todos los discos (albums)
 function datosDiscografia(){ 
     $conectar = new Conexion('localhost','user','user','discografia'); // Conexión a BD
