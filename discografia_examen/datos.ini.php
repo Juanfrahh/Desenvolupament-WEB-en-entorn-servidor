@@ -61,7 +61,6 @@
 			$cancion->registrarCancion($conexion);
 		}
 	}
-
 	function formularioBuscarCancion(){//Esta función imprimirá en la página un formulario y llamará a la función datosBuacados para devolver una lista de canciones
 		echo '<button  onclick=location.href="./index.php">Volver</button>';
 		echo '<h1>Búsqueda de canciones</h1>';
