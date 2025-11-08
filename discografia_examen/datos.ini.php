@@ -145,7 +145,6 @@ function datosDiscografia(){
     }
     echo '</table>';
 }
-
 // Función que devuelve los datos de un disco específico y sus canciones
 function datosDisco($album){ 
     $conectar = new Conexion('localhost','user','user','discografia'); 
