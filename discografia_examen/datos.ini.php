@@ -28,7 +28,6 @@
 			$album->registrarDisco($conexion);
 		}
 	}
-
 	function formularioCancion($cancion){//Esta función imprimirá en la página un formulario y llamará a la función registrar del objeto para registrar una cancion nueva
 		echo '<button  onclick=location.href="./index.php">Volver</button>';
 		echo '<h1>Crear nueva canción</h1>';
