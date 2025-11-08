@@ -99,7 +99,6 @@
 			
 		}
 	}
-
 	function datosDiscografia(){//devuelve una lista de Albums
 		$conectar = new Conexion('localhost','user','user','discografia');
 		$conexion = $conectar->conectionPDO();
