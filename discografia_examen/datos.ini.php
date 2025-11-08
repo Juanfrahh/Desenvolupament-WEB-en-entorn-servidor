@@ -192,7 +192,6 @@
 		}
 		echo'</table>';
 	}
-
 	function datosBuscados($textoBuscar, $select, $genero){//Esta función devuelve una lista de canciones dependiendo de los datos que quiera utilizar el usuario para su busqueda
 		$conectar = new Conexion('localhost','user','user','discografia');
 		$conexion = $conectar->conectionPDO();
