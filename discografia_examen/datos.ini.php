@@ -20,7 +20,6 @@ function formularioDisco(){
     echo '<input type="number" step="  " min=0 value=0 name="precio" placeholder="precio"/>'; // Precio del disco
     echo '<input id="reg-mod" type="submit" value="Registrar"/>'; // Botón para enviar el formulario
     echo '</form>';
-
     // Si se envió el formulario, se crea un objeto Album y se registra en la base de datos
     if(isset($_POST["titulo"])){
         $conectar = new Conexion('localhost','user','user','discografia'); // Conexión a la base de datos 'discografia'
