@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta charset="UTF-8"> <!-- Codificación UTF-8 -->
     <?php
-        include("datos.ini.php");     // Archivo con funciones o datos generales: cambiar por ejemplo a datosPeliculas.ini.php
-        include("conexion.ini.php");  // Conexión a la base de datos: normalmente no se cambia
-        include("album.ini.php");     // Archivo con funciones específicas de discos: cambiar por ejemplo a peliculas.ini.php
+        include("datos.ini.php");   // Funciones de formularios y consultas
+        include("conexion.ini.php"); // Conexión a BD
+        include("album.ini.php");    // Clase Album
     ?>
-    <title>Document</title> <!-- Título de la página: cambiar por ejemplo a "Formulario de Películas" -->
+    <title>Document</title>
 </head>
 <body>
     <?php
-        formularioDisco(); // Función que genera el formulario de discos: cambiar por ejemplo a formularioPeliculas()
+        formularioDisco(); // Muestra el formulario para registrar un disco nuevo
+        // Para Pokémon: reemplazar por formularioPokemon()
     ?>
 </body>
 </html>
