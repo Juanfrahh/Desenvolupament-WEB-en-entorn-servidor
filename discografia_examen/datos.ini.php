@@ -66,7 +66,6 @@ function formularioCancion($cancion){
         </select>'; // Género de la canción
     echo '<input id="reg-mod" type="submit" value="Registrar"/>'; // Botón para enviar
     echo '</form>';
-
     // Si se envió el formulario, crea un objeto Cancion y lo registra
     if(isset($_POST["titulo"])){
         $conectar = new Conexion('localhost','user','user','discografia'); // BD
