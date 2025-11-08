@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
-    <title>Document</title> <!-- Título de la página: cambiar según el tema -->
-    <link rel="stylesheet" href="css/estilo.css"/> <!-- CSS de la página: opcional cambiar por otro estilo -->
+    <meta charset="UTF-8"> <!-- Define codificación UTF-8 para caracteres especiales -->
+    <title>Document</title> <!-- Título de la pestaña del navegador -->
+    <link rel="stylesheet" href="css/estilo.css"/> <!-- Vincula hoja de estilos CSS -->
     <?php
-        include("datos.ini.php");     // Archivo con funciones o datos generales: cambiar por ejemplo a datosPeliculas.ini.php
-        include("conexion.ini.php");  // Conexión a la base de datos: normalmente no se cambia
-        include("album.ini.php");     // Archivo con funciones específicas de la discografía: cambiar por ejemplo a peliculas.ini.php
+        include("datos.ini.php");   // Incluye funciones de datos (formularios, consultas)
+        include("conexion.ini.php"); // Incluye clase de conexión a BD
+        include("album.ini.php");    // Incluye la clase Album para manejar objetos álbum
     ?>
 </head>
 <body>
     <?php
-        datosDiscografia(); // Función que muestra la discografía: cambiar por ejemplo a datosPeliculas()
+        datosDiscografia(); // Llama a la función que muestra la lista de álbumes/discos
+        // Para otra base de datos (Pokémon): reemplazar por datosPokemon()
     ?>
 </body>
 </html>
