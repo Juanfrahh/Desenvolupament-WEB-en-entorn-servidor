@@ -211,7 +211,6 @@ function datosCancion($cod){
     }
     echo '</table>';
 }
-
 // Función que busca canciones según los parámetros introducidos por el usuario
 function datosBuscados($textoBuscar, $select, $genero){ 
     $conectar = new Conexion('localhost','user','user','discografia');
