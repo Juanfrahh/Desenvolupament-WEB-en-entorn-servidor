@@ -75,7 +75,6 @@ function formularioCancion($cancion){
         $cancion->registrarCancion($conexion); // Registrar canción en la BD
     }
 }
-
 // Función que imprime un formulario de búsqueda de canciones
 function formularioBuscarCancion(){ 
     echo '<button  onclick=location.href="./index.php">Volver</button>'; // Botón de regreso
