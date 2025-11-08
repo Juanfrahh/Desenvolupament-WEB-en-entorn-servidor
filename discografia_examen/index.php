@@ -1,29 +1,40 @@
 <?php
 session_start();
+include("conexion.ini.php"); // Conexión a la base de datos
+
+// Verificar si usuario está logueado
 if(!isset($_SESSION['usuario'])){
     header("Location: login.php"); // Redirige al login si no hay sesión
     exit();
 }
 
-// Aquí va el contenido de index.php
-echo "<h1>Bienvenido, ".$_SESSION['usuario']."</h1>";
+// Opcional: si quieres usar usuario recordado por cookie
+if(!isset($_SESSION['usuario']) && isset($_COOKIE['usuario_recordado'])){
+    $_SESSION['usuario'] = $_COOKIE['usuario_recordado'];
+}
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8"> <!-- Define codificación UTF-8 para caracteres especiales -->
-    <title>Document</title> <!-- Título de la pestaña del navegador -->
-    <link rel="stylesheet" href="css/estilo.css"/> <!-- Vincula hoja de estilos CSS -->
-    <?php
-        include("datos.ini.php");   // Incluye funciones de datos (formularios, consultas)
-        include("conexion.ini.php"); // Incluye clase de conexión a BD
-        include("album.ini.php");    // Incluye la clase Album para manejar objetos álbum
-    ?>
+    <meta charset="UTF-8">
+    <title>Panel principal</title>
 </head>
 <body>
-    <?php
-        datosDiscografia(); // Llama a la función que muestra la lista de álbumes/discos
-        // Para otra base de datos (Pokémon): reemplazar por datosPokemon()
-    ?>
+    <h1>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h1>
+
+    <!-- Botón de logout -->
+    <a href="logout.php">Cerrar sesión</a>
+
+    <hr>
+
+    <!-- Enlaces a la gestión de discos y canciones -->
+    <h2>Gestión de discografía</h2>
+    <ul>
+        <li><a href="disconuevo.php">Registrar nuevo disco</a></li>
+        <li><a href="canciones.php">Buscar canciones</a></li>
+        <li><a href="datosdiscografia.php">Ver todos los discos</a></li>
+    </ul>
+
 </body>
 </html>
