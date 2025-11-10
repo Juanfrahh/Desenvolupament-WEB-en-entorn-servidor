@@ -301,7 +301,7 @@ body {
   margin-bottom: 10px;
   color: var(--accent);
 }
-/* Ajuste opcional para más de 3 tarjetas */
+
 .feature-list {
   display: flex;
   justify-content: center;
