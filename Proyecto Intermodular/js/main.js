@@ -8,7 +8,6 @@ hamburger.addEventListener('click', () => {
   header.classList.toggle('open');
 });
 
-
 // Menú lateral
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
