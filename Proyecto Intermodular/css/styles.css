@@ -225,19 +225,26 @@ body {
   text-align: center;
   padding: 80px 20px;
   background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .how-it-works h2 {
   font-size: 1.8rem;
   color: var(--accent);
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .steps {
   display: flex;
-  justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
 }
 
 .step {
@@ -247,22 +254,17 @@ body {
   padding: 25px;
   width: 250px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.step:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  text-align: center;
 }
 
 .step img {
+  display: block;
+  margin: 0 auto 15px;
   width: 60px;
-  margin-bottom: 15px;
+  height: 60px;
+  object-fit: contain;
 }
 
-.step h3 {
-  color: var(--accent);
-  margin-bottom: 10px;
-}
 
 /* ===== VENTAJAS ===== */
 .features {
