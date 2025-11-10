@@ -33,6 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
     themeToggle.textContent = '🌙';
   }
 });
+
 // ===== MAPA Y GEOLOCALIZACIÓN =====
 const map = L.map('map').setView([40.4168, -3.7038], 13); // Madrid por defecto
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
