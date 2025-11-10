@@ -115,7 +115,7 @@
     </ul>
   </nav>
 
-<?php include './php'
+<?php include './php/'
 
   <div id="overlay"></div>
 
