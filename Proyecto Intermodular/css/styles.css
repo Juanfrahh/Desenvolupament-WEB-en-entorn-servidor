@@ -302,3 +302,46 @@ body {
   margin-bottom: 10px;
   color: var(--accent);
 }
+
+/* ===== MAPA ===== */
+.map-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--bg);
+}
+
+.map-section h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.map-section p {
+  margin-bottom: 20px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+#locate-btn {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#locate-btn:hover {
+  background-color: #005ecb;
+  transform: scale(1.05);
+}
