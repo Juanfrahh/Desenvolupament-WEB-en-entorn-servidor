@@ -1,56 +1,37 @@
-function mostrarReloj(){
-    const reloj = document.querySelectorAll('.hora');
-    
+function mostrarReloj() {
+    const horaElemento = document.getElementById("hora");
+    const fechaElemento = document.getElementById("fecha");
+    const contenedor = document.getElementById("contenedor");
 
-    let fecha1 = new Date(); 
-    let horas = fecha1.getHours();
-    let minutos = fecha1.getMinutes();
-    let segundos = fecha1.getSeconds();
-    let año = fecha1.getFullYear();
+    let fecha = new Date();
 
-    if (horas < 10) horas = "0" + horas;
-    if (minutos < 10) minutos = "0" + minutos;
-    if (segundos < 10) segundos = "0" + segundos;
+    // Obtener hora, minutos y segundos
+    let horas = fecha.getHours();
+    let minutos = fecha.getMinutes();
+    let segundos = fecha.getSeconds();
 
-    let horaActual = horas + ":" + minutos + ":" + segundos;
-    hora.textContent = horaActual;
+    // Asegurar dos dígitos
+    horas = horas < 10 ? "0" + horas : horas;
+    minutos = minutos < 10 ? "0" + minutos : minutos;
+    segundos = segundos < 10 ? "0" + segundos : segundos;
 
-    const fecha2 = document.querySelector('.fecha');
+    // Mostrar hora
+    horaElemento.textContent = `${horas}:${minutos}:${segundos}`;
 
-    let fechaActual = new Date();
-    let dia = fechaActual.getDate();
-    let mes = fechaActual.getMonth() + 1;
+    // Obtener día de la semana y mes
+    let diasSemana = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
+    let meses = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
 
+    let diaSemana = diasSemana[fecha.getDay()];
+    let dia = fecha.getDate();
+    let mes = meses[fecha.getMonth()];
 
-    diaSemana = fechaActual.getDay();
-    switch (diaSemana) {
-        case 0: diaSemana = "Dom"; break;
-        case 1: diaSemana = "Lun"; break;
-        case 2: diaSemana = "Mar"; break;
-        case 3: diaSemana = "Mie"; break;
-        case 4: diaSemana = "Jue"; break;
-        case 5: diaSemana = "Vie"; break;
-        case 6: diaSemana = "Sab"; break;
-        default: break;
-    }
-    switch (mes) {
-        case 1: mes = "Ene"; break;
-        case 2: mes = "Feb"; break;
-        case 3: mes = "Mar"; break;
-        case 4: mes = "Abr"; break;
-        case 5: mes = "May"; break;
-        case 6: mes = "Jun"; break;
-        case 7: mes = "Jul"; break;
-        case 8: mes = "Ago"; break;
-        case 9: mes = "Sep"; break;
-        case 10: mes = "Oct"; break;    
-        case 11: mes = "Nov"; break;
-        case 12: mes = "Dic"; break;
-        default: break;
-    }
-    let fechaCompleta = diaSemana + ", " + dia + " " + mes ;
-    fecha.textContent = fechaCompleta;
+    // Mostrar fecha
+    fechaElemento.textContent = `${diaSemana}, ${dia} ${mes}`;
 
-    document.getElementById("contenedor").classList.toggle("animar");
+    // Añadir animación cada segundo
+    contenedor.classList.toggle("animar");
 }
+
+// Actualizar cada segundo
 setInterval(mostrarReloj, 1000);
