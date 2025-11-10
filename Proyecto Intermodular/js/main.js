@@ -8,9 +8,6 @@ hamburger.addEventListener('click', () => {
   header.classList.toggle('open');
 });
 
-const hamburger = document.getElementById('hamburger');
-const sideMenu = document.getElementById('side-menu');
-const themeToggle = document.getElementById('theme-toggle');
 
 // Menú lateral
 hamburger.addEventListener('click', () => {
