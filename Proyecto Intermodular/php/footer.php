@@ -1,4 +1,5 @@
-  <!-- ===== FOOTER ===== -->
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-logo">
