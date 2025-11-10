@@ -1,17 +1,20 @@
-// ==== LÓGICA DEL MENÚ HAMBURGUESA ====
 const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-const header = document.querySelector('.header');
-
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-  header.classList.toggle('open');
-});
+const sideMenu = document.getElementById('side-menu');
+const overlay = document.getElementById('overlay');
+const themeToggle = document.getElementById('theme-toggle');
 
 // Menú lateral
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   sideMenu.classList.toggle('active');
+  overlay.classList.toggle('active');
+});
+
+// Cerrar menú al hacer clic fuera
+overlay.addEventListener('click', () => {
+  hamburger.classList.remove('active');
+  sideMenu.classList.remove('active');
+  overlay.classList.remove('active');
 });
 
 // Modo claro/oscuro
