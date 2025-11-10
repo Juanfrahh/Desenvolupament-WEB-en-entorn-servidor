@@ -115,7 +115,7 @@
     </ul>
   </nav>
 
-<?php include './php/footer.php' ?>
+<?php include
 
   <div id="overlay"></div>
 
