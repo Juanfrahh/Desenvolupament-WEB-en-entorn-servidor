@@ -3,56 +3,208 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ParkEase</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- Cargar Leaflet para el mapa -->
+  <title>ParkEase – Tu plataforma de aparcamiento inteligente</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Icono -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1036/1036717.png">
+
+  <!-- Mapa Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 </head>
+
 <body>
   <!-- ===== HEADER ===== -->
   <header class="header">
-    <div class="left-section">
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="logo-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Parking_icon.svg" alt="ParkEase Logo" class="logo" id="logo">
-      </div>
+    <div class="header-left">
+      <button id="menu-toggle" class="menu-toggle">☰</button>
+      <img src="https://cdn-icons-png.flaticon.com/512/1036/1036717.png" alt="Logo" class="logo">
+      <h1 class="site-title">ParkEase</h1>
     </div>
 
-    <h1 class="page-title">ParkEase</h1>
-
-    <div class="right-section">
-      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">🌞</button>
+    <div class="theme-switch">
+      <input type="checkbox" id="theme-toggle">
+      <label for="theme-toggle" class="toggle-label">🌙 / ☀️</label>
     </div>
+
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Reservar</a></li>
+        <li><a href="#">Reservas</a></li>
+        <li><a href="#">Mapas</a></li>
+        <li><a href="#">Formas de pago</a></li>
+        <li><a href="#">Prime</a></li>
+        <li><a href="#">Descargar</a></li>
+        <li><a href="#">Iniciar sesión</a></li>
+      </ul>
+    </nav>
   </header>
 
-
-
-
-  <!-- ===== MENÚ LATERAL IZQUIERDO ===== -->
-  <nav class="side-menu" id="side-menu">
-    <div class="menu-header">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Parking_icon.svg" alt="ParkEase Logo" class="menu-logo">
-      <h2>ParkEase</h2>
+  <!-- ===== SECCIÓN HERO ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Encuentra tu aparcamiento en segundos</h2>
+      <p>Busca, reserva y aparca sin estrés con ParkEase. La forma inteligente de estacionar.</p>
+      <button class="hero-btn">🚗 Buscar aparcamientos</button>
     </div>
+  </section>
 
-    <ul class="menu-links">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Reservar</a></li>
-      <li><a href="#">Mis Reservas</a></li>
-      <li><a href="#">Mapa</a></li>
-      <li><a href="#">Formas de Pago</a></li>
-      <li><a href="#">Prime</a></li>
-      <li><a href="#">Descargar</a></li>
-      <li><a href="#">Iniciar Sesión</a></li>
-    </ul>
-  </nav>
+  <!-- ===== SECCIÓN MAPA (GPS) ===== -->
+  <section class="map-section">
+    <h2>Encuentra aparcamientos cerca de ti</h2>
+    <p>Usa tu ubicación actual para descubrir los aparcamientos disponibles más cercanos.</p>
+    <div id="map"></div>
+    <button id="locate-btn">📍 Usar mi ubicación</button>
+  </section>
 
-  <div id="overlay"></div>
+  <!-- ===== SECCIÓN CÓMO FUNCIONA ===== -->
+  <section class="how-it-works">
+    <h2>Cómo funciona ParkEase</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar">
+        <h3>1. Busca</h3>
+        <p>Encuentra los aparcamientos más cercanos o económicos desde tu ubicación.</p>
+      </div>
+      <div class="step">
+        <img src="https://cdn-icons-png.flaticon.com/512/482/482541.png" alt="Reservar">
+        <h3>2. Reserva</h3>
+        <p>Selecciona tu plaza, confirma tu reserva y olvídate de las vueltas innecesarias.</p>
+      </div>
+      <div class="step">
+        <img src="https://cdn-icons-png.flaticon.com/512/786/786432.png" alt="Aparcar">
+        <h3>3. Aparca</h3>
+        <p>Llega al destino y aparca fácilmente con tu plaza garantizada.</p>
+      </div>
+    </div>
+  </section>
 
-  <script src="js/main.js"></script>
+  <!-- ===== CÓMO USAR LA APLICACIÓN ===== -->
+  <section class="how-to" id="how-to">
+    <h2>Cómo usar la aplicación</h2>
+    <p class="subtitle">Guía rápida en 4 pasos para encontrar y reservar tu plaza con ParkEase.</p>
+
+    <div class="how-to-container">
+      <aside class="how-steps">
+        <div class="progress-wrap">
+          <div id="progress" class="progress-bar"><span class="progress-fill" style="width:0%"></span></div>
+        </div>
+
+        <ol class="steps-list" id="steps-list">
+          <li class="step-item active" data-step="1">
+            <div class="step-num">1</div>
+            <div class="step-title">Buscar destino</div>
+          </li>
+          <li class="step-item" data-step="2">
+            <div class="step-num">2</div>
+            <div class="step-title">Seleccionar plaza</div>
+          </li>
+          <li class="step-item" data-step="3">
+            <div class="step-num">3</div>
+            <div class="step-title">Confirmar reserva</div>
+          </li>
+          <li class="step-item" data-step="4">
+            <div class="step-num">4</div>
+            <div class="step-title">Aparcar y disfrutar</div>
+          </li>
+        </ol>
+
+        <div class="step-controls">
+          <button id="prev-step" class="btn secondary">Anterior</button>
+          <button id="next-step" class="btn">Siguiente</button>
+        </div>
+      </aside>
+
+      <div class="how-detail" id="how-detail">
+        <article class="detail-card" data-step="1">
+          <h3>1. Buscar destino</h3>
+          <p>Introduce la dirección o punto de referencia en el buscador. Puedes usar la opción “Usar mi ubicación” para centrar el mapa automáticamente.</p>
+          <ul>
+            <li>Escribe la calle o lugar</li>
+            <li>Selecciona rango horario</li>
+            <li>Pulsa Buscar para ver plazas disponibles</li>
+          </ul>
+          <button class="link-more" data-step="1">Ver ejemplo</button>
+        </article>
+
+        <article class="detail-card" data-step="2" style="display:none">
+          <h3>2. Seleccionar plaza</h3>
+          <p>La aplicación muestra una lista de plazas con precio y distancia. Haz clic en una tarjeta para ver detalles (precio, horario y condiciones).</p>
+          <ul>
+            <li>Comparar precio y distancia</li>
+            <li>Ver valoración / foto</li>
+            <li>Seleccionar y pulsar Reservar</li>
+          </ul>
+          <button class="link-more" data-step="2">Ver ejemplo</button>
+        </article>
+
+        <article class="detail-card" data-step="3" style="display:none">
+          <h3>3. Confirmar reserva</h3>
+          <p>Revisa los datos: horario, plaza y precio. El pago es simulado en la versión educativa, pero puedes ver el comprobante generado.</p>
+          <ul>
+            <li>Revisa importe y horario</li>
+            <li>Confirma la reserva</li>
+            <li>Recibe comprobante</li>
+          </ul>
+          <button class="link-more" data-step="3">Ver ejemplo</button>
+        </article>
+
+        <article class="detail-card" data-step="4" style="display:none">
+          <h3>4. Aparcar y disfrutar</h3>
+          <p>Llega a la plaza reservada, muestra el comprobante si es necesario y aparca con total tranquilidad. Administra tus reservas desde “Mis Reservas”.</p>
+          <ul>
+            <li>Mostrar comprobante</li>
+            <li>Cancelar o modificar reserva</li>
+            <li>Valorar el servicio</li>
+          </ul>
+          <button class="link-more" data-step="4">Ver ejemplo</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal ejemplo -->
+  <div id="how-modal" class="modal" aria-hidden="true">
+    <div class="modal-inner">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>ParkEase</h3>
+        <p>Tu plataforma web para estacionar sin complicaciones.  
+        Optimiza tu tiempo y olvida el estrés de buscar aparcamiento.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Reservar</a></li>
+          <li><a href="#">Mapa</a></li>
+          <li><a href="#">Prime</a></li>
+          <li><a href="#">Descargar</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ParkEase. Todos los derechos reservados. | IES Serra Perenxisa</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
