@@ -11,82 +11,104 @@
 
 </head>
 <body>
-  <header>
-    <!-- Aquí mantienes tu header actual con logo, hamburguesa y modo oscuro -->
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="left-section">
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Parking_icon.svg" alt="ParkEase Logo" class="logo" id="logo">
+      </div>
+    </div>
+
+    <h1 class="page-title">ParkEase</h1>
+
+    <div class="right-section">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">🌞</button>
+    </div>
   </header>
 
   <!-- ===== SECCIÓN HERO ===== -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Encuentra tu aparcamiento en segundos</h1>
-      <p>Busca, reserva y aparca sin estrés con ParkEase. La forma inteligente de estacionar.</p>
-      <button class="hero-btn">🚗 Buscar aparcamientos</button>
+<section class="hero">
+  <div class="hero-content">
+    <h2>Encuentra tu aparcamiento en segundos</h2>
+    <p>Reserva tu plaza fácilmente desde cualquier lugar con ParkEase.</p>
+    <button class="cta-btn">Buscar aparcamiento</button>
+  </div>
+</section>
+
+<!-- ===== SECCIÓN CÓMO FUNCIONA ===== -->
+<section class="how-it-works">
+  <h2>¿Cómo funciona ParkEase?</h2>
+  <div class="steps">
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/64/64673.png" alt="Buscar">
+      <h3>1. Busca</h3>
+      <p>Encuentra plazas disponibles cerca de tu destino.</p>
     </div>
-  </section>
-
-  <!-- ===== SECCIÓN MAPA (AHORA ARRIBA) ===== -->
-  <section class="map-section">
-    <h2>Encuentra aparcamientos cerca de ti</h2>
-    <p>Usa tu ubicación actual para descubrir los aparcamientos disponibles más cercanos.</p>
-    <div id="map"></div>
-    <button id="locate-btn">📍 Usar mi ubicación</button>
-  </section>
-
-  <!-- ===== SECCIÓN CÓMO FUNCIONA ===== -->
-  <section class="how-it-works">
-    <h2>Cómo funciona ParkEase</h2>
-    <div class="steps">
-      <div class="step">
-        <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Buscar">
-        <h3>1. Busca</h3>
-        <p>Encuentra los aparcamientos más cercanos o económicos desde tu ubicación.</p>
-      </div>
-      <div class="step">
-        <img src="https://cdn-icons-png.flaticon.com/512/482/482541.png" alt="Reservar">
-        <h3>2. Reserva</h3>
-        <p>Selecciona tu plaza, confirma tu reserva y olvídate de las vueltas innecesarias.</p>
-      </div>
-      <div class="step">
-        <img src="https://cdn-icons-png.flaticon.com/512/786/786432.png" alt="Aparcar">
-        <h3>3. Aparca</h3>
-        <p>Llega al destino y aparca fácilmente con tu plaza garantizada.</p>
-      </div>
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/1584/1584891.png" alt="Reservar">
+      <h3>2. Reserva</h3>
+      <p>Selecciona y reserva tu plaza en segundos.</p>
     </div>
-  </section>
+    <div class="step">
+      <img src="https://cdn-icons-png.flaticon.com/512/2085/2085261.png" alt="Aparcar">
+      <h3>3. Aparca</h3>
+      <p>Llega, muestra tu código y disfruta del día sin preocupaciones.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-left">
-        <h3>ParkEase</h3>
-        <p>Tu plataforma web para estacionar sin complicaciones.  
-        Optimiza tu tiempo y olvida el estrés de buscar aparcamiento.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Enlaces rápidos</h4>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Reservar</a></li>
-          <li><a href="#">Mapa</a></li>
-          <li><a href="#">Prime</a></li>
-          <li><a href="#">Descargar</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h4>Síguenos</h4>
-        <div class="social-icons">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+    <!-- ===== SECCIÓN VENTAJAS ===== -->
+    <section class="features">
+    <h2>Ventajas de usar ParkEase</h2>
+    <div class="feature-list">
+        <div class="feature">
+        <h3>💡 Rápido</h3>
+        <p>Encuentra plazas disponibles sin perder tiempo dando vueltas.</p>
         </div>
-      </div>
+        <div class="feature">
+        <h3>🔒 Seguro</h3>
+        <p>Tus datos y tus pagos están completamente protegidos.</p>
+        </div>
+        <div class="feature">
+        <h3>💰 Económico</h3>
+        <p>Aprovecha tarifas más bajas con ParkEase Prime.</p>
+        </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 ParkEase. Todos los derechos reservados. | IES Serra Perenxisa</p>
-    </div>
-  </footer>
+    </section>
 
-  <script src="main.js"></script>
+    <!-- ===== SECCIÓN MAPA GPS ===== -->
+  <section class="map-section">
+      <h2>Encuentra aparcamientos cerca de ti</h2>
+      <p>Usa tu ubicación actual para descubrir los aparcamientos disponibles más cercanos.</p>
+      <div id="map"></div>
+      <button id="locate-btn">📍 Usar mi ubicación</button>
+  </section>
+
+
+  <!-- ===== MENÚ LATERAL IZQUIERDO ===== -->
+  <nav class="side-menu" id="side-menu">
+    <div class="menu-header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Parking_icon.svg" alt="ParkEase Logo" class="menu-logo">
+      <h2>ParkEase</h2>
+    </div>
+
+    <ul class="menu-links">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Reservar</a></li>
+      <li><a href="#">Mis Reservas</a></li>
+      <li><a href="#">Mapa</a></li>
+      <li><a href="#">Formas de Pago</a></li>
+      <li><a href="#">Prime</a></li>
+      <li><a href="#">Descargar</a></li>
+      <li><a href="#">Iniciar Sesión</a></li>
+    </ul>
+  </nav>
+
+  <div id="overlay"></div>
+
+  <script src="js/main.js"></script>
 </body>
-
 </html>
