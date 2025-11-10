@@ -4,11 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   boton.addEventListener('click', function(e) {
     e.preventDefault();
-    footer.classList.toggle('activo');
 
+    // Alternamos la clase 'activo' tanto en el footer como en el botón
+    footer.classList.toggle('activo');
+    boton.classList.toggle('activo');
+
+    // Cambiamos el texto según el estado
     if (footer.classList.contains('activo')) {
       boton.textContent = 'X Cerrar';
-      boton.style.backgroundColor = '#ff0000';
     } else {
       boton.textContent = 'Descubre más...';
     }
