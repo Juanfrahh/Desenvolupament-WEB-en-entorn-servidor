@@ -55,7 +55,7 @@ body {
 }
 
 .logo {
-  width: 50px;
+  width: 32px;
   transition: transform 0.3s ease;
 }
 
@@ -139,7 +139,7 @@ body {
 }
 
 .menu-logo {
-  width: 50px;
+  width: 0px;
   margin-right: 10px;
 }
 
