@@ -181,6 +181,7 @@ body {
   opacity: 1;
   visibility: visible;
 }
+
 /* ===== HERO ===== */
 .hero {
   background: linear-gradient(to bottom right, #007bff, #66a6ff);
