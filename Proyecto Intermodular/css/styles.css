@@ -302,6 +302,7 @@ body {
   color: var(--accent);
 }
 
+
 /* ===== MAPA ===== */
 .map-section {
   text-align: center;
@@ -345,3 +346,95 @@ body {
   transform: scale(1.05);
 }
 
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--header-bg);
+  color: var(--text);
+  padding: 60px 20px 30px;
+  border-top: 3px solid var(--accent);
+  transition: background 0.3s, color 0.3s;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  flex: 1 1 220px;
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-logo h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+  flex: 1 1 220px;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin: 8px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-contact p {
+  margin: 6px 0;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social img {
+  width: 28px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-social img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
