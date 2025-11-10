@@ -181,3 +181,123 @@ body {
   opacity: 1;
   visibility: visible;
 }
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(to bottom right, #007bff, #66a6ff);
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.cta-btn {
+  background-color: #fff;
+  color: #007bff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ===== CÓMO FUNCIONA ===== */
+.how-it-works {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: var(--bg);
+}
+
+.how-it-works h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: var(--header-bg);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  padding: 25px;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.step img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+/* ===== VENTAJAS ===== */
+.features {
+  background: #e9eef6;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.features h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 40px;
+}
+
+.feature-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  background: var(--header-bg);
+  border-radius: 15px;
+  padding: 25px;
+  width: 250px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-8px);
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+  color: var(--accent);
+}
