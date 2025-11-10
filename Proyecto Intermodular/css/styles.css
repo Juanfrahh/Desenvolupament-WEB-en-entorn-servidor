@@ -303,16 +303,6 @@ body {
   color: var(--accent);
 }
 
-.feature-list {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-
 /* ===== MAPA ===== */
 .map-section {
   text-align: center;
