@@ -74,8 +74,6 @@ async function consultarAPI(categoria) {
 function mostrarRecetas(info) {
   limpiarHTML(); // Limpiamos resultados previos
 
-  const { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, LASTUPDATE } = info;
-
   // Creamos elementos p para cada dato y los añadimos al div resultado
   const precio = document.createElement('p');
   precio.classList.add('precio');
