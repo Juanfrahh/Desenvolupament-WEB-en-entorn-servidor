@@ -110,7 +110,7 @@ function iniciarApp() {
             contenedorResultado.innerHTML = `<p class="text-center fs-4 mt-5">Tienes ${favoritos.length} recetas Favoritas</p>`
 
             favoritos.forEach(receta => {
-                                const { idMeal, strMeal, strMealThumb } = receta;
+                const { idMeal, strMeal, strMealThumb } = receta;
                 const recetaDiv = document.createElement('div');
                 recetaDiv.classList.add('col-md-4');
 
