@@ -24,7 +24,7 @@ export async function obtenerCategorias() {
    - Obtiene un único cliente según su ID.
    - Ideal para cuando se necesita editar o ver detalles.
 ===================================================== */
-export async function obtenerCategorias(id) {
+export async function obtenerCategoria(id) {
   // Se hace la petición GET al endpoint específico (clientes/ID)
   const respuesta = await fetch(`${URL}/${id}`);
   // Se devuelve el cliente encontrado en formato JSON
