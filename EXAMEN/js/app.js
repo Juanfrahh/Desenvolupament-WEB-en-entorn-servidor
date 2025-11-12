@@ -15,18 +15,17 @@ function llenarSelectCriptos(criptos) {
     option.textContent = FullName; // Texto visible será el nombre completo
     criptomonedasSelect.appendChild(option); // Agregamos la opción al select
   });
-}
-
-// Función que maneja el submit del formulario
+}// Función que maneja el submit del formulario
 function submitFormulario(e) {
   e.preventDefault(); // Prevenimos el comportamiento por defecto (recargar la página)
 
-  const categoria = CategoriaSelect.value; // Obtenemos la moneda seleccionada
+  const moneda = CategoriaSelect.value; // Obtenemos la moneda seleccionada
+  const cripto = criptomonedasSelect.value; // Obtenemos la cripto seleccionada
 
-  if (categoria === '') {
-    mostrarError('Seleccione una categoria'); // Validamos que se seleccione todo
+  if (moneda === '' || cripto === '') {
+    mostrarError('Debes seleccionar ambas opciones'); // Validamos que se seleccione todo
     return;
   }
 
-  consultarAPI(categoria); // Llamamos a la API con los valores seleccionados
+  consultarAPI(moneda, cripto); // Llamamos a la API con los valores seleccionados
 }
