@@ -11,7 +11,7 @@ const URL = 'http://localhost:4000/clientes';
      todos los registros de clientes.
    - Devuelve la respuesta convertida en JSON.
 ===================================================== */
-export async function obtenerReceas() {
+export async function obtenerRecetas() {
   // Se hace la petición HTTP al endpoint /clientes
   const respuesta = await fetch(URL);
   // Se convierte la respuesta (que viene como JSON) a objeto JavaScript
