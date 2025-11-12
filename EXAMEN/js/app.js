@@ -97,44 +97,33 @@ function iniciarApp() {
     function inicializarFavoritos() {
         mostrarFavoritos();
 
-        function mostrarFavoritos() {
-            const favoritos = obtenerFavoritos();
+        function mostrarRecetas(recetas = [], categoria) {
             contenedorResultado.innerHTML = '';
 
-            if (favoritos.length === 0) {
-                contenedorResultado.innerHTML = `
-                    <p class="text-center fs-4 mt-5">No tienes recetas en Favoritos</p>
-                `;
+            if (!recetas || recetas.length === 0) {
+                mensajeResultados.textContent = `No se encontraron recetas para la categoría "${categoria}".`;
                 return;
             }
 
-            favoritos.forEach(receta => {
+            mensajeResultados.textContent = `Se encontraron ${recetas.length} recetas en la categoría "${categoria}".`;
+
+            recetas.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
+                const recetaDiv = document.createElement('div');
+                recetaDiv.classList.add('col-md-4');
 
-                const divReceta = document.createElement('div');
-                divReceta.classList.add('col-md-4');
-
-                divReceta.innerHTML = `
+                recetaDiv.innerHTML = `
                     <div class="card mb-4">
-                        <img src="${strMealThumb}" alt="${strMeal}" class="card-img-top">
+                        <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title mb-3">${strMeal}</h3>
-                            <button class="btn btn-danger w-100 mb-2" data-id="${idMeal}">Ver Receta</button>
-                            <button class="btn btn-secondary w-100" data-id="${idMeal}">Eliminar de Favoritos</button>
+                            <button class="btn btn-danger w-100" data-id="${idMeal}">Ver Receta</button>
                         </div>
                     </div>
                 `;
 
-                const btnVer = divReceta.querySelector('.btn-danger');
-                const btnEliminar = divReceta.querySelector('.btn-secondary');
-
-                btnVer.addEventListener('click', () => mostrarRecetaModal(idMeal));
-                btnEliminar.addEventListener('click', () => {
-                    eliminarFavorito(idMeal);
-                    mostrarFavoritos();
-                });
-
-                contenedorResultado.appendChild(divReceta);
+                recetaDiv.querySelector('button').addEventListener('click', () => mostrarRecetaModal(idMeal));
+                contenedorResultado.appendChild(recetaDiv);
             });
         }
     }
