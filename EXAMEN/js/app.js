@@ -1,5 +1,5 @@
 //código js para prueba 1ª evaluación
-const CategoriaSelect = document.querySelector('#moneda'); // Select con la moneda fiat
+const CategoriaSelect = document.querySelector('#categoria'); // Select con la moneda fiat
 const RecetasSelect = document.querySelector('#criptomonedas'); // Select con las criptomonedas
 
 
