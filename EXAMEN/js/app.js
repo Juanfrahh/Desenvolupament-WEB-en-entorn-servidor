@@ -167,7 +167,7 @@ function iniciarApp() {
         modal.show();
     }
 
-    // 🧠 Funciones para manejar localStorage
+    // Funciones para manejar localStorage
     function obtenerFavoritos() {
         return JSON.parse(localStorage.getItem('favoritos')) || [];
     }
