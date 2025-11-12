@@ -112,10 +112,10 @@ function iniciarApp() {
             favoritos.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
 
-                const Recetadiv = document.createElement('div');
-                recetaDiv.classList.add('col-md-4');
+                const divReceta = document.createElement('div');
+                divReceta.classList.add('col-md-4');
 
-                recetaDiv.innerHTML = `
+                divReceta.innerHTML = `
                     <div class="card mb-4">
                         <img src="${strMealThumb}" alt="${strMeal}" class="card-img-top">
                         <div class="card-body">
@@ -228,3 +228,5 @@ function iniciarApp() {
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
 }
+
+//quiero que solo aparezca el boton de eliminar de favoritos en el model y aparezcan los resultados de las recetas que hay en favoritos.
