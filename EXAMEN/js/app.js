@@ -187,3 +187,40 @@ function iniciarApp() {
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
 }
+
+ // 3️⃣ Mostrar recetas
+    function mostrarRecetas(recetas = [], categoria) {
+        contenedorResultado.innerHTML = ''; // limpiar anteriores
+
+        if (!recetas || recetas.length === 0) {
+            mensajeResultados.textContent = `No se encontraron recetas para la categoría "${categoria}".`;
+            return;
+        }
+
+        mensajeResultados.textContent = `Se encontraron ${recetas.length} recetas en la categoría "${categoria}".`;
+
+        recetas.forEach(receta => {
+            const { idMeal, strMeal, strMealThumb } = receta;
+
+            const recetaDiv = document.createElement('div');
+            recetaDiv.classList.add('col-md-4');
+
+            recetaDiv.innerHTML = `
+                <div class="card mb-4">
+                    <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="card-img-top">
+                    <div class="card-body">
+                        <h3 class="card-title mb-3">${strMeal}</h3>
+                        <button 
+                            class="btn btn-danger w-100"
+                            data-id="${idMeal}"
+                        >Ver Receta</button>
+                    </div>
+                </div>
+            `;
+
+            const btn = recetaDiv.querySelector('button');
+            btn.addEventListener('click', () => mostrarRecetaModal(idMeal));
+
+            contenedorResultado.appendChild(recetaDiv);
+        });
+    }
