@@ -107,7 +107,7 @@ function iniciarApp() {
                 return;
             }
 
-            contenedorResultado.textContent = `Tienes ${favoritos.length}`
+            contenedorResultado.textContent = `Tienes ${favoritos.length} recetas `
 
             favoritos.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
