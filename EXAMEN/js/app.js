@@ -32,7 +32,7 @@ function submitFormulario(e) {
 }
 
 async function consultarAPI(moneda, cripto) {
-  const url = `fsyms=${cripto}&tsyms=${moneda}`;
+  const url = `fsyms=${cripto}`;
 
   mostrarSpinner(); // Mostramos spinner mientras llega la información
 
