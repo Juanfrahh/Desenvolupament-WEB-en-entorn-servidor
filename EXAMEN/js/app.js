@@ -189,6 +189,22 @@ function iniciarApp() {
         btnCerrar.textContent = 'Cerrar';
         btnCerrar.setAttribute('data-bs-dismiss', 'modal');
 
+        // Acción botón favorito
+        btnFavorito.addEventListener('click', () => {
+            if (esFavorito(idMeal)) {
+                eliminarFavorito(idMeal);
+                btnFavorito.textContent = 'Agregar a Favoritos';
+            } else {
+                agregarFavorito({ idMeal, strMeal, strMealThumb });
+                btnFavorito.textContent = 'Eliminar de Favoritos';
+            }
+
+            // Si estamos en favoritos.html, actualizar lista
+            if (document.querySelector('main h2')?.textContent.includes('Favoritos')) {
+                mostrarFavoritos();
+            }
+        });
+
         modalFooter.appendChild(btnFavorito);
         modalFooter.appendChild(btnCerrar);
 
