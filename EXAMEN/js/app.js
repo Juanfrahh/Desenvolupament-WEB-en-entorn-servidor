@@ -11,7 +11,7 @@ formulario.addEventListener('submit', submitFormulario);
 
 // Función que obtiene las criptomonedas desde la API
 async function obtenerCategorias() {
-  const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
+  const url = '';
   try {
     const respuesta = await fetch(url); // Petición a la API
     const data = await respuesta.json(); // Parseamos la respuesta JSON
