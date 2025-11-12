@@ -35,7 +35,7 @@ function iniciarApp() {
         });
     }
 
-    // 2️⃣ Cuando el usuario selecciona una categoría
+    // Cuando el usuario selecciona una categoría
     function seleccionarCategoria(e) {
         const categoria = e.target.value;
         if (categoria !== '-- Seleccione --') {
