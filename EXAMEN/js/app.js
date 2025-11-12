@@ -24,7 +24,7 @@ function submitFormulario(e) {
   const moneda = CategoriaSelect.value; // Obtenemos la moneda seleccionada
   const cripto = criptomonedasSelect.value; // Obtenemos la cripto seleccionada
 
-  if (moneda === '') {
+  if (categoria === '') {
     mostrarError('Debes seleccionar ambas opciones'); // Validamos que se seleccione todo
     return;
   }
