@@ -116,11 +116,10 @@ function iniciarApp() {
 
                 divReceta.innerHTML = `
                     <div class="card mb-4">
-                        <img src="${strMealThumb}" alt="${strMeal}" class="card-img-top">
+                        <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title mb-3">${strMeal}</h3>
-                            <button class="btn btn-danger w-100 mb-2" data-id="${idMeal}">Ver Receta</button>
-                            <button class="btn btn-secondary w-100" data-id="${idMeal}">Eliminar de Favoritos</button>
+                            <button class="btn btn-danger w-100" data-id="${idMeal}">Ver Receta</button>
                         </div>
                     </div>
                 `;
