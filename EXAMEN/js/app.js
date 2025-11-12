@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', mostrarRecetas);
    - Agrega enlaces para editar o eliminar cada cliente.
    - Configura el evento de eliminación.
 ===================================================== */
-async function mostrarRecetass() {
+async function mostrarRecetas() {
   // Referencia al elemento <tbody> donde se mostrarán los clientes.
   const listado = document.querySelector('#listado-clientes');
 
