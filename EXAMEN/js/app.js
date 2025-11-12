@@ -189,8 +189,6 @@ async function mostrarClientes() {
       </td>
     `;
 
-    // Agregamos la fila al listado (al cuerpo de la tabla).
-    listado.appendChild(row);
   });
 
 }
