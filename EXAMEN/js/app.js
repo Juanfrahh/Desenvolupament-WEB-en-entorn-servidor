@@ -24,7 +24,7 @@ function submitFormulario(e) {
   const categoria = CategoriaSelect.value; // Obtenemos la moneda seleccionada
 
   if (categoria === '') {
-    mostrarError('Seleccione '); // Validamos que se seleccione todo
+    mostrarError('Seleccione una categoria'); // Validamos que se seleccione todo
     return;
   }
 
