@@ -199,7 +199,7 @@ function iniciarApp() {
                 btnFavorito.textContent = 'Eliminar de Favoritos';
             }
 
-            // actualizar lista
+            // Actualizar lista
             if (document.querySelector('main h2')?.textContent.includes('Favoritos')) {
                 mostrarFavoritos();
             }
