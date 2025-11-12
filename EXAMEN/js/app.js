@@ -146,7 +146,7 @@ function limpiarHTML() {
 
 // Importamos las funciones necesarias desde el módulo API.js
 // - obtenerClientes(): trae la lista completa de clientes desde el servidor.
-import { obtenerReces} from './API.js';
+import { obtenerRecetas} from './API.js';
 
 // Cuando el documento se haya cargado completamente (HTML listo),
 // se ejecuta la función mostrarClientes() para cargar los datos en pantalla.
