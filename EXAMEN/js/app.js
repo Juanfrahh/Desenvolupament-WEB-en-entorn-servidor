@@ -21,7 +21,7 @@ function llenarSelectCategorias(criptos) {
 function submitFormulario(e) {
   e.preventDefault(); // Prevenimos el comportamiento por defecto (recargar la página)
 
-  const categori = CategoriaSelect.value; // Obtenemos la moneda seleccionada
+  const categoria = CategoriaSelect.value; // Obtenemos la moneda seleccionada
 
   if (categoria === '') {
     mostrarError('Debes seleccionar ambas opciones'); // Validamos que se seleccione todo
