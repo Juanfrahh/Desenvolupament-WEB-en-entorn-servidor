@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', obtenerRecetas);
 
 async function obtenerRecetas() {
-  const url = 'https://www.themealdb.com/api.php';
+  const url = 'www.themealdb.com/api/json/v1/1/categories.php';
   try {
     const respuesta = await fetch(url); // Petición a la API
     const data = await respuesta.json(); // Parseamos la respuesta JSON
