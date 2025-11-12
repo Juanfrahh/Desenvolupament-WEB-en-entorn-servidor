@@ -8,27 +8,7 @@ function iniciarApp() {
     const modalBody = document.querySelector('#modal .modal-body');
     const modalFooter = document.querySelector('#modal .modal-footer');
 
-    function guardarRecetasEnDB(recetas) {
-    // Verificar si el servidor está activo
-    fetch('http://localhost:3000/recetas')
-        .then(res => res.json())
-        .then(datosExistentes => {
-            const idsExistentes = datosExistentes.map(r => r.idMeal);
-            const nuevas = recetas.filter(r => !idsExistentes.includes(r.idMeal));
-
-            // Solo añadir recetas que no estén ya en db.json
-            nuevas.forEach(receta => {
-                fetch('http://localhost:3000/recetas', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(receta)
-                });
-            });
-        })
-        .catch(() => {
-            console.warn('⚠️ No se pudo conectar con el servidor JSON (json-server no activo)');
-        });
-    }
+    
 
     // Detectar página actual
     const esInicio = document.querySelector('main h2')?.textContent.includes('Inicio');
