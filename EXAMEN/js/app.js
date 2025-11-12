@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', obtenerCategoriasRecetas);
 
-async function obtenerRecetas() {
+async function obtenerCategoRecetas() {
   const url = 'www.themealdb.com/api/json/v1/1/categories.php';
   try {
     const respuesta = await fetch(url); // Petición a la API
