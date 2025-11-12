@@ -74,4 +74,4 @@ function iniciarApp() {
     }
 }
 
-ahora cuando le des a ver receta abrira un ventana modal y nos muestra informacion 
+ahora cuando le des a ver receta abrira un ventana modal y nos muestra informacion de la receta 
