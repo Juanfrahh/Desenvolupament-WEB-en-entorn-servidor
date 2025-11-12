@@ -1,6 +1,6 @@
 //código js para prueba 1ª evaluación
 
-document.addEventListener('DOMContentLoaded', obtenerRecetas);
+document.addEventListener('DOMContentLoaded', obtenerCategoriasRecetas);
 
 async function obtenerRecetas() {
   const url = 'www.themealdb.com/api/json/v1/1/categories.php';
