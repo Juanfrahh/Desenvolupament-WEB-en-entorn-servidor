@@ -54,7 +54,7 @@ function iniciarApp() {
             .then(datos => mostrarRecetas(datos.meals, categoria));
     }
 
-    // 3️⃣ Mostrar recetas
+    // Mostrar recetas
     function mostrarRecetas(recetas = [], categoria) {
         contenedorResultado.innerHTML = ''; // limpiar anteriores
 
