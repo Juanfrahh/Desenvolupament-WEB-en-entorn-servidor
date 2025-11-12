@@ -198,12 +198,3 @@ async function mostrarClientes() {
   listado.addEventListener('click', confirmarEliminar);
 }
 
-/* =====================================================
-   FUNCIÓN: confirmarEliminar(e)
-   -----------------------------------------------------
-   - Se ejecuta cuando el usuario hace clic en un enlace "Eliminar".
-   - Pide confirmación antes de borrar el registro.
-   - Si se confirma, llama a la API para eliminar el cliente.
-   - Finalmente, elimina la fila del DOM sin recargar la página.
-===================================================== */
-
