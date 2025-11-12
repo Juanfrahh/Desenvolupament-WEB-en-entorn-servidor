@@ -108,7 +108,6 @@ function iniciarApp() {
                 return;
             }
 
-            mensajeResultados.textContent = `Se encontraron ${recetas.length} recetas en la categoría "${categoria}".`;
 
             favoritos.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
