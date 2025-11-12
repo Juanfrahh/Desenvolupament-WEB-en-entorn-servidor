@@ -11,7 +11,7 @@ formulario.addEventListener('submit', submitFormulario);
 
 // Función que obtiene las criptomonedas desde la API
 async function obtenerCategorias() {
-  const url = '';
+  const url = 'www.themealdb.com/api/json/v1/1/categories.php';
   try {
     const respuesta = await fetch(url); // Petición a la API
     const data = await respuesta.json(); // Parseamos la respuesta JSON
