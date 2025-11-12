@@ -192,4 +192,4 @@ async function mostrarRecetas() {
 
 }
 
-cuando el usuario seleccione una categoria deber
+cuando el usuario seleccione una categoria debe verser
