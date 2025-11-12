@@ -112,7 +112,7 @@ function iniciarApp() {
             favoritos.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
 
-                const recetaDiv = document.createElement('div');
+                const divReceta = document.createElement('div');
                 divReceta.classList.add('col-md-4');
 
                 divReceta.innerHTML = `
