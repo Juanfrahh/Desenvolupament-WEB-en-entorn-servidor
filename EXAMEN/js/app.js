@@ -74,4 +74,4 @@ function iniciarApp() {
     }
 }
 
-añadiremos un mensaje con el numero de 
+añadiremos un mensaje con el numero de resultados 
