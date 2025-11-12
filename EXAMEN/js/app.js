@@ -230,5 +230,8 @@ function iniciarApp() {
         localStorage.setItem('favoritos', JSON.stringify([...favoritos, receta]));
     }
 
-
+    function eliminarFavorito(id) {
+        const favoritos = obtenerFavoritos().filter(fav => fav.idMeal !== id);
+        localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    }
 }
