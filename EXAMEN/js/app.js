@@ -1,4 +1,6 @@
 //código js para prueba 1ª evaluación
+const monedaSelect = document.querySelector('#moneda'); // Select con la moneda fiat
+
 
 document.addEventListener('DOMContentLoaded', obtenerCategoriasRecetas);
 
