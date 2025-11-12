@@ -47,3 +47,22 @@ async function consultarAPI(categoria) {
     console.error(error);
   }
 }
+
+// Función que muestra un spinner de carga mientras llega la información
+function mostrarSpinner() {
+  limpiarHTML(); // Limpiamos resultados previos
+
+  const spinner = document.createElement('div');
+  spinner.classList.add('spinner');
+  spinner.innerHTML = `
+    <div class="sk-chase">
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+      <div class="sk-chase-dot"></div>
+    </div>
+  `;
+  resultadoDiv.appendChild(spinner); // Lo añadimos al div resultado
+}
