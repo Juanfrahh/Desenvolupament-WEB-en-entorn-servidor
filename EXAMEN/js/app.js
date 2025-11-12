@@ -180,7 +180,7 @@ function iniciarApp() {
         const btnFavorito = document.createElement('button');
         btnFavorito.classList.add('btn', 'btn-danger', 'col');
         btnFavorito.textContent = esFavorito(idMeal)
-
+            ? 'Eliminar de Favoritos'
             : 'Agregar a Favoritos';
 
         const btnCerrar = document.createElement('button');
