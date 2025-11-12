@@ -114,7 +114,7 @@ function iniciarApp() {
                 const divReceta = document.createElement('div');
                 divReceta.classList.add('col-md-4');
 
-                divReceta.innerHTML = `
+                recetaDiv.innerHTML = `
                     <div class="card mb-4">
                         <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="card-img-top">
                         <div class="card-body">
@@ -124,12 +124,12 @@ function iniciarApp() {
                     </div>
                 `;
 
-                divReceta.querySelector('button').addEventListener('click', () => mostrarRecetaModal(idMeal));
-                contenedorResultado.appendChild(divReceta);
+                recetaDiv.querySelector('button').addEventListener('click', () => mostrarRecetaModal(idMeal));
+                contenedorResultado.appendChild(recetaDiv);
             });
 
-                const btnVer = divReceta.querySelector('.btn-danger');
-                const btnEliminar = divReceta.querySelector('.btn-secondary');
+                const btnVer = recetaDiv.querySelector('.btn-danger');
+                const btnEliminar = recetaDiv.querySelector('.btn-secondary');
 
                 btnVer.addEventListener('click', () => mostrarRecetaModal(idMeal));
                 btnEliminar.addEventListener('click', () => {
@@ -137,7 +137,7 @@ function iniciarApp() {
                     mostrarFavoritos();
                 });
 
-                contenedorResultado.appendChild(divReceta);
+                contenedorResultado.appendChild(recetaDiv);
             };
         }
     }
