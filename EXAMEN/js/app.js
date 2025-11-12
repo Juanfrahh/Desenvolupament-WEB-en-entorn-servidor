@@ -4,6 +4,7 @@ const CategoriaSelect = document.querySelector('#moneda'); // Select con la mone
 
 
 
+
 // Función que maneja el submit del formulario
 function submitFormulario(e) {
   e.preventDefault(); // Prevenimos el comportamiento por defecto (recargar la página)
