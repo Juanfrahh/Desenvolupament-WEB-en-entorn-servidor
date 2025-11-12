@@ -61,15 +61,3 @@ export async function editarCliente(id, cliente) {
   });
 }
 
-/* =====================================================
-   FUNCIÓN: eliminarCliente(id)
-   -----------------------------------------------------
-   - Elimina un cliente según su ID.
-   - Usa el método HTTP DELETE.
-   - No devuelve nada, pero borra el registro en el servidor.
-===================================================== */
-export async function eliminarCliente(id) {
-  await fetch(`${URL}/${id}`, {
-    method: 'DELETE', // Se usa DELETE para eliminar el cliente del servidor
-  });
-}
