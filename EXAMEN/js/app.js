@@ -228,3 +228,4 @@ function iniciarApp() {
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
 }
+
