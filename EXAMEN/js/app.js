@@ -16,3 +16,15 @@ async function obtenerCategoriasRecetas() {
     console.error(error);
   }
 }
+
+// Función que llena el select de criptomonedas
+function llenarSelectCriptos(criptos) {
+  criptos.forEach(cripto => {
+    const { FullName, Name } = cripto.CoinInfo; // Obtenemos el nombre completo y el símbolo
+
+    const option = document.createElement('option'); // Creamos un elemento option
+    option.value = Name; // Valor será el símbolo de la cripto
+    option.textContent = FullName; // Texto visible será el nombre completo
+    criptomonedasSelect.appendChild(option); // Agregamos la opción al select
+  });
+}
