@@ -192,3 +192,4 @@ async function mostrarRecetas() {
 
 }
 
+cuando el 
