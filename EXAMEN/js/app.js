@@ -4,7 +4,7 @@ const formulario = document.querySelector('#formulario'); // Formulario donde se
 const resultadoDiv = document.querySelector('#resultado'); // Div donde se mostrará la información de la cotización
 
 // Al cargar el DOM, obtenemos las criptomonedas
-document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
+document.addEventListener('DOMContentLoaded', obtenerCategorias);
 
 // Evento submit del formulario
 formulario.addEventListener('submit', submitFormulario);
