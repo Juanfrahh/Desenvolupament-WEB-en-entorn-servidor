@@ -1,5 +1,5 @@
 //código js para prueba 1ª evaluación
-const CategoriasSelect = document.querySelector('#categoria'); // Select con la moneda fiat
+const CategoriasSelect = document.querySelector('#categorias'); // Select con la moneda fiat
 const formulario = document.querySelector('#formulario'); // Formulario donde se seleccionan las opciones
 const resultadoDiv = document.querySelector('#resultado'); // Div donde se mostrará la información de la cotización
 
