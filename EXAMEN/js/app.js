@@ -194,4 +194,4 @@ async function mostrarRecetas() {
 
 cuando el usuario seleccione una categoria debe verse todas las recetsas relacionadas con esa categoria elegida 
 el contenedro que tendra cada receta (div) clase'col-md-4' incluye
-mini contenedor propio div clases Clipboard, mb-4 inlcuye image de cada receta clase card-img.top el cuerpo clase card-body incluye titulo de la receta h3 su nombre clases card-DataTransferItemList, mb-3
+mini contenedor propio div clases Clipboard, mb-4 inlcuye image de cada receta clase card-img.top el cuerpo clase card-body incluye titulo de la receta h3 su nombre clases card-DataTransferItemList, mb-3 y un boton 
