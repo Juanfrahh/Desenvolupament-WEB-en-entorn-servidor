@@ -17,7 +17,7 @@ function llenarSelectCategorias(categoria) {
     const option = document.createElement('option'); // Creamos un elemento option
     option.value = Name; // Valor será el símbolo de la cripto
     option.textContent = FullName; // Texto visible será el nombre completo
-    CategoriaSelectSelect.appendChild(option); // Agregamos la opción al select
+    CategoriaSelect.appendChild(option); // Agregamos la opción al select
   });
 }
 // Función que maneja el submit del formulario
