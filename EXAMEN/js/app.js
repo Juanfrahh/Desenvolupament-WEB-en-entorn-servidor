@@ -144,4 +144,4 @@ function iniciarApp() {
 }
 
 
-//creame dos botones en el model para cerra la ventat
+//creame dos botones en el model para cerra la venta
