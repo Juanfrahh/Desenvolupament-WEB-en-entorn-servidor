@@ -171,7 +171,6 @@ function iniciarApp() {
         btnCerrar.textContent = 'Cerrar';
         btnCerrar.setAttribute('data-bs-dismiss', 'modal');
 
-        // Si estamos en favoritos.html → solo mostrar "Eliminar de Favoritos"
         if (esFavoritos || esDesdeFavoritos) {
             const btnEliminar = document.createElement('button');
             btnEliminar.classList.add('btn', 'btn-danger', 'col');
