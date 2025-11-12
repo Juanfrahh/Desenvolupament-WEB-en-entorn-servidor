@@ -188,7 +188,7 @@ function iniciarApp() {
     }
 }
 
- // Mostrar recetas Favoritoz
+ // Mostrar recetas Favoritos
     function mostrarRecetas(recetas = [], categoria) {
         contenedorResultado.innerHTML = ''; // limpiar anteriores
 
