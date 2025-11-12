@@ -91,7 +91,7 @@ function iniciarApp() {
         });
     }
 
-    // 4️⃣ Mostrar información de una receta en el modal
+    // Mostrar información de una receta en el modal
     function mostrarRecetaModal(idMeal) {
         const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
         fetch(url)
