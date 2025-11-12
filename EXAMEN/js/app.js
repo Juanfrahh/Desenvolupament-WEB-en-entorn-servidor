@@ -192,4 +192,4 @@ async function mostrarRecetas() {
 
 }
 
-cuando el 
+cuando el usuario
