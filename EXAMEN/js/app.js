@@ -144,4 +144,4 @@ function iniciarApp() {
 }
 
 
-//creame dos botones en el model para cerra la ventana y otro para incluir la receta a Favoritos(localStorage) boton favoritos btn, btn dange, col
+//creame dos botones en el model para cerra la ventana y otro para incluir la receta a Favoritos(localStorage) boton favoritos btn, btn dange, col y el boton cerrar btn btn-
