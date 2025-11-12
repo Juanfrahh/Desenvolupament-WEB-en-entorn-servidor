@@ -1,6 +1,6 @@
 //código js para prueba 1ª evaluación
 async function obtenerCriptomonedas() {
-  const url = 'https://www.the';
+  const url = 'https://www.themeal';
   try {
     const respuesta = await fetch(url); // Petición a la API
     const data = await respuesta.json(); // Parseamos la respuesta JSON
