@@ -92,6 +92,8 @@ function iniciarApp() {
         }
     }
 
+// Pagina de Favoritos
+
     function inicializarFavoritos() {
         mostrarFavoritos();
 
@@ -101,7 +103,7 @@ function iniciarApp() {
 
             if (favoritos.length === 0) {
                 contenedorResultado.innerHTML = `
-                    <p class="text-center fs-4 mt-5">No tienes recetas Favoritos</p>
+                    <p class="text-center fs-4 mt-5">No tienes recetas en Favoritos</p>
                 `;
                 return;
             }
@@ -117,28 +119,36 @@ function iniciarApp() {
                         <img src="${strMealThumb}" alt="${strMeal}" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title mb-3">${strMeal}</h3>
-                            <button class="btn btn-danger w-100" data-id="${idMeal}">Ver Receta</button>
+                            <button class="btn btn-danger w-100 mb-2" data-id="${idMeal}">Ver Receta</button>
+                            <button class="btn btn-secondary w-100" data-id="${idMeal}">Eliminar de Favoritos</button>
                         </div>
                     </div>
                 `;
 
                 const btnVer = divReceta.querySelector('.btn-danger');
-                btnVer.addEventListener('click', () => mostrarRecetaModal(idMeal, true)); // true = está en favoritos
+                const btnEliminar = divReceta.querySelector('.btn-secondary');
+
+                btnVer.addEventListener('click', () => mostrarRecetaModal(idMeal));
+                btnEliminar.addEventListener('click', () => {
+                    eliminarFavorito(idMeal);
+                    mostrarFavoritos();
+                });
+
                 contenedorResultado.appendChild(divReceta);
             });
         }
     }
 
-    function mostrarRecetaModal(idMeal, esDesdeFavoritos = false) {
+    function mostrarRecetaModal(idMeal) {
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
             .then(res => res.json())
             .then(datos => {
                 const receta = datos.meals[0];
-                mostrarRecetaEnModal(receta, esDesdeFavoritos);
+                mostrarRecetaEnModal(receta);
             });
     }
 
-    function mostrarRecetaEnModal(receta, esDesdeFavoritos = false) {
+    function mostrarRecetaEnModal(receta) {
         const { idMeal, strMeal, strInstructions, strMealThumb } = receta;
 
         modalTitle.textContent = strMeal;
@@ -165,29 +175,37 @@ function iniciarApp() {
 
         modalFooter.innerHTML = '';
 
-        // Botón cerrar
+        // Botones modal
+        const btnFavorito = document.createElement('button');
+        btnFavorito.classList.add('btn', 'btn-danger', 'col');
+        btnFavorito.textContent = esFavorito(idMeal)
+            ? 'Eliminar de Favoritos'
+            : 'Agregar a Favoritos';
+
         const btnCerrar = document.createElement('button');
         btnCerrar.classList.add('btn', 'btn-secondary', 'col');
         btnCerrar.textContent = 'Cerrar';
         btnCerrar.setAttribute('data-bs-dismiss', 'modal');
 
-    // Archivo Favorito
-    
-        if (esFavoritos || esDesdeFavoritos) {
-            const btnEliminar = document.createElement('button');
-            btnEliminar.classList.add('btn', 'btn-danger', 'col');
-            btnEliminar.textContent = 'Eliminar de Favoritos';
-
-            btnEliminar.addEventListener('click', () => {
+        // Acción botón favorito
+        btnFavorito.addEventListener('click', () => {
+            if (esFavorito(idMeal)) {
                 eliminarFavorito(idMeal);
-                modal.hide();
-                if (esFavoritos) inicializarFavoritos(); // refrescar lista
-            });
+                btnFavorito.textContent = 'Agregar a Favoritos';
+            } else {
+                agregarFavorito({ idMeal, strMeal, strMealThumb });
+                btnFavorito.textContent = 'Eliminar de Favoritos';
+            }
 
-            modalFooter.appendChild(btnEliminar);
-        }
+            // Actualizar lista
+            if (document.querySelector('main h2')?.textContent.includes('Favoritos')) {
+                mostrarFavoritos();
+            }
+        });
 
+        modalFooter.appendChild(btnFavorito);
         modalFooter.appendChild(btnCerrar);
+
         modal.show();
     }
 
@@ -209,3 +227,4 @@ function iniciarApp() {
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
 }
+
