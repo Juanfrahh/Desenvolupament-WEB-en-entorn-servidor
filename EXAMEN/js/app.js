@@ -137,7 +137,7 @@ function iniciarApp() {
                     mostrarFavoritos();
                 });
 
-                contenedorResultado.appendChild(div);
+                contenedorResultado.appendChild(divReceta);
             };
         }
     }
