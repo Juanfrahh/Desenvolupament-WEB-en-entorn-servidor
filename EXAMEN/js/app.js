@@ -144,7 +144,6 @@ function limpiarHTML() {
 
 //Recetas
 
-
 // Importamos las funciones necesarias desde el módulo API.js
 // - obtenerClientes(): trae la lista completa de clientes desde el servidor.
 // - eliminarCliente(): elimina un cliente por su ID.
