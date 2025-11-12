@@ -188,7 +188,6 @@ async function mostrarClientes() {
         <a href="#" data-cliente="${id}" class="text-red-600 hover:text-red-900 eliminar">Eliminar</a>
       </td>
     `;
-
   });
 
 }
