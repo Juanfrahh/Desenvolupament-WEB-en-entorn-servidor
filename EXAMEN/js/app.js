@@ -228,4 +228,4 @@ function iniciarApp() {
     }
 }
 
-//quiero que 
+//quiero que solo aparezca 
