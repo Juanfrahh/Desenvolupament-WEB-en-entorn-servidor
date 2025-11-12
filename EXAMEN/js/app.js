@@ -15,7 +15,8 @@ function llenarSelectCriptos(criptos) {
     option.textContent = FullName; // Texto visible será el nombre completo
     criptomonedasSelect.appendChild(option); // Agregamos la opción al select
   });
-}// Función que maneja el submit del formulario
+}
+// Función que maneja el submit del formulario
 function submitFormulario(e) {
   e.preventDefault(); // Prevenimos el comportamiento por defecto (recargar la página)
 
