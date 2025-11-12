@@ -18,9 +18,6 @@ function iniciarApp() {
         inicializarFavoritos();
     }
 
-    // ============================================================
-    // 🏠 LÓGICA PARA INDEX.HTML
-    // ============================================================
     function inicializarInicio() {
         const main = document.querySelector('main');
 
