@@ -114,7 +114,7 @@ function iniciarApp() {
                 const divReceta = document.createElement('div');
                 divReceta.classList.add('col-md-4');
 
-                div.innerHTML = `
+                divReceta.innerHTML = `
                     <div class="card mb-4">
                         <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="card-img-top">
                         <div class="card-body">
