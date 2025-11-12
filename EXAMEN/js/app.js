@@ -14,7 +14,7 @@ function iniciarApp() {
     mensajeResultados.className = 'text-clearInterval text-back my-5 text-center';
     main.insertBefore(mensajeResultados, contenedorResultado);
 
-    // Cargar categorías al iniciar
+    // 1️⃣ Cargar categorías al iniciar
     obtenerCategorias();
 
     selectCategorias.addEventListener('change', seleccionarCategoria);
@@ -224,4 +224,3 @@ function iniciarApp() {
             contenedorResultado.appendChild(recetaDiv);
         });
     }
-
