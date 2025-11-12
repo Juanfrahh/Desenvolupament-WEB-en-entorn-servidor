@@ -50,7 +50,7 @@ function submitFormulario(e) {
   consultarAPI(categoria); // Llamamos a la API con los valores seleccionados
 }
 
-// Función que consulta la API con la moneda y la criptomoneda seleccionadas
+// Función que consulta la API  seleccionadas
 async function consultarAPI(categoria) {
   const url = `www.themealdb.com/api/json/v1/1/categories.phpfsyms=${categoria}`;
 
