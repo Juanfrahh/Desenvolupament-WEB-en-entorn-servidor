@@ -14,7 +14,7 @@ function iniciarApp() {
     mensajeResultados.className = 'text-clearInterval text-back my-5 text-center';
     main.insertBefore(mensajeResultados, contenedorResultado);
 
-    // Cargar categorías al iniciar
+    // 1️⃣ Cargar categorías al iniciar
     obtenerCategorias();
 
     selectCategorias.addEventListener('change', seleccionarCategoria);
@@ -35,7 +35,7 @@ function iniciarApp() {
         });
     }
 
-    // Cuando el usuario selecciona una categoría
+    // 2️⃣ Cuando el usuario selecciona una categoría
     function seleccionarCategoria(e) {
         const categoria = e.target.value;
         if (categoria !== '-- Seleccione --') {
@@ -54,7 +54,7 @@ function iniciarApp() {
             .then(datos => mostrarRecetas(datos.meals, categoria));
     }
 
-    // Mostrar recetas
+    // 3️⃣ Mostrar recetas
     function mostrarRecetas(recetas = [], categoria) {
         contenedorResultado.innerHTML = ''; // limpiar anteriores
 
@@ -91,7 +91,7 @@ function iniciarApp() {
         });
     }
 
-    // Mostrar información de una receta en el modal
+    // 4️⃣ Mostrar información de una receta en el modal
     function mostrarRecetaModal(idMeal) {
         const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
         fetch(url)
@@ -167,7 +167,7 @@ function iniciarApp() {
         modal.show();
     }
 
-    // Funciones para manejar localStorage
+    // 🧠 Funciones para manejar localStorage
     function obtenerFavoritos() {
         return JSON.parse(localStorage.getItem('favoritos')) || [];
     }
@@ -188,39 +188,3 @@ function iniciarApp() {
     }
 }
 
- // Mostrar recetas Favoritos
-    function mostrarRecetas(recetas = [], categoria) {
-        contenedorResultado.innerHTML = ''; // limpiar anteriores
-
-        if (!recetas || recetas.length === 0) {
-            mensajeResultados.textContent = `No se encontraron recetas para la categoría "${categoria}".`;
-            return;
-        }
-
-        mensajeResultados.textContent = `Se encontraron ${recetas.length} recetas en la categoría "${categoria}".`;
-
-        recetas.forEach(receta => {
-            const { idMeal, strMeal, strMealThumb } = receta;
-
-            const recetaDiv = document.createElement('div');
-            recetaDiv.classList.add('col-md-4');
-
-            recetaDiv.innerHTML = `
-                <div class="card mb-4">
-                    <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="card-img-top">
-                    <div class="card-body">
-                        <h3 class="card-title mb-3">${strMeal}</h3>
-                        <button 
-                            class="btn btn-danger w-100"
-                            data-id="${idMeal}"
-                        >Ver Receta</button>
-                    </div>
-                </div>
-            `;
-
-            const btn = recetaDiv.querySelector('button');
-            btn.addEventListener('click', () => mostrarRecetaModal(idMeal));
-
-            contenedorResultado.appendChild(recetaDiv);
-        });
-    }
