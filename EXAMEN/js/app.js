@@ -142,3 +142,6 @@ function iniciarApp() {
         modal.show();
     }
 }
+
+
+//creame dos boto
