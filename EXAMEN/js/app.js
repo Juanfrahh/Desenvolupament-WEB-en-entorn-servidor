@@ -101,7 +101,7 @@ function iniciarApp() {
 
             if (favoritos.length === 0) {
                 contenedorResultado.innerHTML = `
-                    <p class="text-center fs-4 mt-5">No tienes recetas guardadas en Favoritos</p>
+                    <p class="text-center fs-4 mt-5">No tienes recetas Favoritos</p>
                 `;
                 return;
             }
