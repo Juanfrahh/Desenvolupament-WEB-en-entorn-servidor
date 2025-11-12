@@ -66,3 +66,7 @@ function mostrarSpinner() {
   `;
   resultadoDiv.appendChild(spinner); // Lo añadimos al div resultado
 }
+// Función que limpia el contenido del div resultado
+function limpiarHTML() {
+  resultadoDiv.innerHTML = '';
+}
