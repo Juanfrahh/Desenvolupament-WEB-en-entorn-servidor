@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 formulario.addEventListener('submit', submitFormulario);
 
 // Función que llena el select de criptomonedas
-function llenarSelectCategorias(catgoria) {
+function llenarSelectCategorias(categoria) {
   criptos.forEach(cripto => {
     const { FullName, Name } = categoria.CoinInfo; // Obtenemos el nombre completo y el símbolo
 
