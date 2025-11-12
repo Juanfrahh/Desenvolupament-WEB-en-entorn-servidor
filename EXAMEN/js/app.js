@@ -1,4 +1,9 @@
 //código js para prueba 1ª evaluación
+// Selección de elementos del DOM
+const criptomonedasSelect = document.querySelector('#criptomonedas'); // Select con las criptomonedas
+const monedaSelect = document.querySelector('#moneda'); // Select con la moneda fiat
+const formulario = document.querySelector('#formulario'); // Formulario donde se seleccionan las opciones
+const resultadoDiv = document.querySelector('#resultado'); // Div donde se mostrará la información de la cotización
 
 document.addEventListener('DOMContentLoaded', obtenerCategoriasRecetas);
 
