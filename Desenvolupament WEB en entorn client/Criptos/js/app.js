@@ -1,74 +1,83 @@
-const criptomonedasSelect = document.querySelector('#criptomonedas');
-const monedaSelect = document.querySelector('#moneda');
-const formulario = document.querySelector('#formulario');
-const resultadoDiv = document.querySelector('#resultado');
+// Selección de elementos del DOM
+const criptomonedasSelect = document.querySelector('#criptomonedas'); // Select con las criptomonedas
+const monedaSelect = document.querySelector('#moneda'); // Select con la moneda fiat
+const formulario = document.querySelector('#formulario'); // Formulario donde se seleccionan las opciones
+const resultadoDiv = document.querySelector('#resultado'); // Div donde se mostrará la información de la cotización
 
+// Al cargar el DOM, obtenemos las criptomonedas
 document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 
+// Evento submit del formulario
 formulario.addEventListener('submit', submitFormulario);
 
+// Función que obtiene las criptomonedas desde la API
 async function obtenerCriptomonedas() {
   const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
   try {
-    const respuesta = await fetch(url);
-    const data = await respuesta.json();
+    const respuesta = await fetch(url); // Petición a la API
+    const data = await respuesta.json(); // Parseamos la respuesta JSON
 
-    const criptos = data.Data;
+    const criptos = data.Data; // Obtenemos el array de criptomonedas
 
-    llenarSelectCriptos(criptos);
+    llenarSelectCriptos(criptos); // Llenamos el select con las opciones
   } catch (error) {
-    mostrarError('Error al cargar las criptomonedas');
+    mostrarError('Error al cargar las criptomonedas'); // Mostramos error si falla la petición
     console.error(error);
   }
 }
 
+// Función que llena el select de criptomonedas
 function llenarSelectCriptos(criptos) {
   criptos.forEach(cripto => {
-    const { FullName, Name } = cripto.CoinInfo;
+    const { FullName, Name } = cripto.CoinInfo; // Obtenemos el nombre completo y el símbolo
 
-    const option = document.createElement('option');
-    option.value = Name;
-    option.textContent = FullName;
-    criptomonedasSelect.appendChild(option);
+    const option = document.createElement('option'); // Creamos un elemento option
+    option.value = Name; // Valor será el símbolo de la cripto
+    option.textContent = FullName; // Texto visible será el nombre completo
+    criptomonedasSelect.appendChild(option); // Agregamos la opción al select
   });
 }
 
+// Función que maneja el submit del formulario
 function submitFormulario(e) {
-  e.preventDefault();
+  e.preventDefault(); // Prevenimos el comportamiento por defecto (recargar la página)
 
-  const moneda = monedaSelect.value;
-  const cripto = criptomonedasSelect.value;
+  const moneda = monedaSelect.value; // Obtenemos la moneda seleccionada
+  const cripto = criptomonedasSelect.value; // Obtenemos la cripto seleccionada
 
   if (moneda === '' || cripto === '') {
-    mostrarError('Debes seleccionar ambas opciones');
+    mostrarError('Debes seleccionar ambas opciones'); // Validamos que se seleccione todo
     return;
   }
 
-  consultarAPI(moneda, cripto);
+  consultarAPI(moneda, cripto); // Llamamos a la API con los valores seleccionados
 }
 
+// Función que consulta la API con la moneda y la criptomoneda seleccionadas
 async function consultarAPI(moneda, cripto) {
   const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${moneda}`;
 
-  mostrarSpinner();
+  mostrarSpinner(); // Mostramos spinner mientras llega la información
 
   try {
     const respuesta = await fetch(url);
     const data = await respuesta.json();
 
-    const info = data.DISPLAY[cripto][moneda];
-    mostrarCotizacion(info);
+    const info = data.DISPLAY[cripto][moneda]; // Extraemos la información relevante
+    mostrarCotizacion(info); // Mostramos la información en el HTML
   } catch (error) {
-    mostrarError('No se pudo obtener la información');
+    mostrarError('No se pudo obtener la información'); // Mostramos error si falla la petición
     console.error(error);
   }
 }
 
+// Función que muestra la cotización en el HTML
 function mostrarCotizacion(info) {
-  limpiarHTML();
+  limpiarHTML(); // Limpiamos resultados previos
 
   const { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, LASTUPDATE } = info;
 
+  // Creamos elementos p para cada dato y los añadimos al div resultado
   const precio = document.createElement('p');
   precio.classList.add('precio');
   precio.innerHTML = `Precio actual: <span>${PRICE}</span>`;
@@ -85,6 +94,7 @@ function mostrarCotizacion(info) {
   const actualizacion = document.createElement('p');
   actualizacion.innerHTML = `Última actualización: <span>${LASTUPDATE}</span>`;
 
+  // Agregamos todos los elementos al div resultado
   resultadoDiv.appendChild(precio);
   resultadoDiv.appendChild(maximo);
   resultadoDiv.appendChild(minimo);
@@ -92,11 +102,12 @@ function mostrarCotizacion(info) {
   resultadoDiv.appendChild(actualizacion);
 }
 
+// Función que muestra un mensaje de error en pantalla
 function mostrarError(mensaje) {
-  const existe = document.querySelector('.error');
+  const existe = document.querySelector('.error'); // Si ya hay un error visible, lo removemos
   if (existe) existe.remove();
 
-  const divError = document.createElement('div');
+  const divError = document.createElement('div'); // Creamos un div para el error
   divError.classList.add('error');
   divError.textContent = mensaje;
   divError.style.backgroundColor = 'red';
@@ -106,13 +117,14 @@ function mostrarError(mensaje) {
   divError.style.marginTop = '10px';
   divError.style.borderRadius = '5px';
 
-  formulario.appendChild(divError);
+  formulario.appendChild(divError); // Lo agregamos al formulario
 
-  setTimeout(() => divError.remove(), 2000);
+  setTimeout(() => divError.remove(), 2000); // Lo eliminamos después de 2 segundos
 }
 
+// Función que muestra un spinner de carga mientras llega la información
 function mostrarSpinner() {
-  limpiarHTML();
+  limpiarHTML(); // Limpiamos resultados previos
 
   const spinner = document.createElement('div');
   spinner.classList.add('spinner');
@@ -126,9 +138,10 @@ function mostrarSpinner() {
       <div class="sk-chase-dot"></div>
     </div>
   `;
-  resultadoDiv.appendChild(spinner);
+  resultadoDiv.appendChild(spinner); // Lo añadimos al div resultado
 }
 
+// Función que limpia el contenido del div resultado
 function limpiarHTML() {
   resultadoDiv.innerHTML = '';
 }
