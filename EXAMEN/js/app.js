@@ -102,12 +102,13 @@ function iniciarApp() {
             contenedorResultado.innerHTML = '';
 
             if (favoritos.length === 0) {
-                contenedorResultado.innerHTML = ` No tienes recetas en Favoritos</p>
+                contenedorResultado.innerHTML = `
+                    <p class="text-center fs-4 mt-5">No tienes recetas en Favoritos</p>
                 `;
                 return;
             }
 
-            contenedorResultado.textContent = `Tienes ${favoritos.length} recetas favoritas`
+            contenedorResultado.textContent = `Tienes ${favoritos.length}`
 
             favoritos.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
