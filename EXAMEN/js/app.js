@@ -5,7 +5,17 @@ const CategoriaSelect = document.querySelector('#moneda'); // Select con la mone
 
 
 
-// Función que maneja el submit del formulario
+// Función que llena el select de criptomonedas
+function llenarSelectCriptos(criptos) {
+  criptos.forEach(cripto => {
+    const { FullName, Name } = cripto.CoinInfo; // Obtenemos el nombre completo y el símbolo
+
+    const option = document.createElement('option'); // Creamos un elemento option
+    option.value = Name; // Valor será el símbolo de la cripto
+    option.textContent = FullName; // Texto visible será el nombre completo
+    criptomonedasSelect.appendChild(option); // Agregamos la opción al select
+  });
+}// Función que maneja el submit del formulario
 function submitFormulario(e) {
   e.preventDefault(); // Prevenimos el comportamiento por defecto (recargar la página)
 
