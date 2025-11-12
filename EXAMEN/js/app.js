@@ -103,7 +103,7 @@ function iniciarApp() {
     }
 
     function mostrarRecetaEnModal(receta) {
-        const { strMeal, strInstructions, strMealThumb } = receta;
+        const { idMeal, strMeal, strInstructions, strMealThumb } = receta;
 
         // Título
         modalTitle.textContent = strMeal;
@@ -133,13 +133,57 @@ function iniciarApp() {
 
         modalBody.appendChild(lista);
 
-        // Limpiar footer y añadir botón cerrar
-        modalFooter.innerHTML = `
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        `;
+        // Limpiar footer
+        modalFooter.innerHTML = '';
+
+        // Crear botones
+        const btnFavorito = document.createElement('button');
+        btnFavorito.classList.add('btn', 'btn-danger', 'col');
+        btnFavorito.textContent = esFavorito(idMeal)
+            ? 'Eliminar de Favoritos'
+            : 'Agregar a Favoritos';
+
+        const btnCerrar = document.createElement('button');
+        btnCerrar.classList.add('btn', 'btn-secondary', 'col');
+        btnCerrar.textContent = 'Cerrar';
+        btnCerrar.setAttribute('data-bs-dismiss', 'modal');
+
+        // Evento del botón de favoritos
+        btnFavorito.addEventListener('click', () => {
+            if (esFavorito(idMeal)) {
+                eliminarFavorito(idMeal);
+                btnFavorito.textContent = 'Agregar a Favoritos';
+            } else {
+                agregarFavorito({ idMeal, strMeal, strMealThumb });
+                btnFavorito.textContent = 'Eliminar de Favoritos';
+            }
+        });
+
+        // Agregar botones al footer
+        modalFooter.appendChild(btnFavorito);
+        modalFooter.appendChild(btnCerrar);
 
         // Mostrar el modal
         modal.show();
     }
-}
 
+    // 🧠 Funciones para manejar localStorage
+    function obtenerFavoritos() {
+        return JSON.parse(localStorage.getItem('favoritos')) || [];
+    }
+
+    function esFavorito(id) {
+        const favoritos = obtenerFavoritos();
+        return favoritos.some(fav => fav.idMeal === id);
+    }
+
+    function agregarFavorito(receta) {
+        const favoritos = obtenerFavoritos();
+        localStorage.setItem('favoritos', JSON.stringify([...favoritos, receta]));
+    }
+
+    function eliminarFavorito(id) {
+        const favoritos = obtenerFavoritos().filter(fav => fav.idMeal !== id);
+        localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    }
+}
