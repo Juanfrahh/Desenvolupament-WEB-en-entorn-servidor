@@ -188,7 +188,7 @@ function iniciarApp() {
     }
 }
 
- // 4 Mostrar recetas
+ // Mostrar recetas
     function mostrarRecetas(recetas = [], categoria) {
         contenedorResultado.innerHTML = ''; // limpiar anteriores
 
