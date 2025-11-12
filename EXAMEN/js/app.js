@@ -8,7 +8,7 @@ async function obtenerCategoriasRecetas() {
     const respuesta = await fetch(url); // Petición a la API
     const data = await respuesta.json(); // Parseamos la respuesta JSON
 
-    const criptos = data.Data; // Obtenemos el array de criptomonedas
+    const Recetas = data.Data; // Obtenemos el array de criptomonedas
 
     llenarSelectCriptos(criptos); // Llenamos el select con las opciones
   } catch (error) {
