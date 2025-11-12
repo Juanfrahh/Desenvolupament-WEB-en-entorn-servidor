@@ -31,18 +31,3 @@ export async function obtenerCliente(id) {
   return await respuesta.json();
 }
 
-/* =====================================================
-   FUNCIÓN: nuevoCliente(cliente)
-   -----------------------------------------------------
-   - Envía los datos de un nuevo cliente al servidor.
-   - Usa el método HTTP POST.
-   - Convierte el objeto cliente a JSON antes de enviarlo.
-===================================================== */
-export async function nuevoCliente(cliente) {
-  await fetch(URL, {
-    method: 'POST', // Se usa POST para crear un nuevo registro
-    headers: { 'Content-Type': 'application/json' }, // Indica que se envía JSON
-    body: JSON.stringify(cliente), // Convierte el objeto a formato JSON
-  });
-}
-
