@@ -193,3 +193,4 @@ async function mostrarRecetas() {
 }
 
 cuando el usuario seleccione una categoria debe verse todas las recetsas relacionadas con esa categoria elegida 
+e
