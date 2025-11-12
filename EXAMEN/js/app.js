@@ -225,4 +225,3 @@ function iniciarApp() {
         });
     }
 
-    //ahora en
