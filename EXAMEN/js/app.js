@@ -48,6 +48,8 @@ async function consultarAPI(categoria) {
   }
 }
 
+
+
 function mostrarError(mensaje) {
   const existe = document.querySelector('.error'); // Si ya hay un error visible, lo removemos
   if (existe) existe.remove();
