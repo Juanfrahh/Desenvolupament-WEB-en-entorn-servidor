@@ -9,7 +9,7 @@ const RecetasSelect = document.querySelector('#criptomonedas'); // Select con la
 // Función que llena el select de criptomonedas
 function llenarSelectCategorias(criptos) {
   criptos.forEach(cripto => {
-    const { FullName, Name } = cripto.CoinInfo; // Obtenemos el nombre completo y el símbolo
+    const { FullName, Name } = categoria.CoinInfo; // Obtenemos el nombre completo y el símbolo
 
     const option = document.createElement('option'); // Creamos un elemento option
     option.value = Name; // Valor será el símbolo de la cripto
