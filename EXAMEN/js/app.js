@@ -3,6 +3,11 @@ const CategoriaSelect = document.querySelector('#categoria'); // Select con la m
 const formulario = document.querySelector('#formulario'); // Formulario donde se seleccionan las opciones
 const resultadoDiv = document.querySelector('#resultado'); // Div donde se mostrará la información de la cotización
 
+// Al cargar el DOM, obtenemos las criptomonedas
+document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
+
+// Evento submit del formulario
+formulario.addEventListener('submit', submitFormulario);
 // Función que llena el select de criptomonedas
 function llenarSelectCategorias(criptos) {
   criptos.forEach(cripto => {
