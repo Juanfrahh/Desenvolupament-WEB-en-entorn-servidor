@@ -61,7 +61,7 @@ async function consultarAPI(categoria) {
     const data = await respuesta.json();
 
     const info = data.DISPLAY[categoria]; // Extraemos la información relevante
-    mostrarCotizacion(info); // Mostramos la información en el HTML
+    mostrarRecetas(info); // Mostramos la información en el HTML
   } catch (error) {
     mostrarError('No se pudo obtener la información'); // Mostramos error si falla la petición
     console.error(error);
