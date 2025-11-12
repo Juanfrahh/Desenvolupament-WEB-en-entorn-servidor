@@ -61,7 +61,7 @@ function iniciarApp() {
             return;
         }
 
-        mensajeResultados.textContent = ` ${recetas.length} recetas en la categoría "${categoria}".`;
+        mensajeResultados.textContent = ` ${recetas.length} Recetas en la categoría "${categoria}".`;
 
         recetas.forEach(receta => {
             const { idMeal, strMeal, strMealThumb } = receta;
