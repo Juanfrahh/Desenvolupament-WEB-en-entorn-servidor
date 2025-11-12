@@ -8,8 +8,8 @@ function iniciarApp() {
     const modalBody = document.querySelector('#modal .modal-body');
     const modalFooter = document.querySelector('#modal .modal-footer');
 
-
     
+
     // Detectar página actual
     const esInicio = document.querySelector('main h2')?.textContent.includes('Inicio');
     const esFavoritos = document.querySelector('main h2')?.textContent.includes('Favoritos');
