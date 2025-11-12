@@ -40,7 +40,7 @@ async function consultarAPI(categoria) {
     const respuesta = await fetch(url);
     const data = await respuesta.json();
 
-    const info = data.DISPLAY[cripto][moneda]; // Extraemos la información relevante
+    const info = data.DISPLAY[categoria]; // Extraemos la información relevante
     mostrarCotizacion(info); // Mostramos la información en el HTML
   } catch (error) {
     mostrarError('No se pudo obtener la información'); // Mostramos error si falla la petición
