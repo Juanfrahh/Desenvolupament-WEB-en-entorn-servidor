@@ -108,6 +108,8 @@ function iniciarApp() {
                 return;
             }
 
+            
+
             favoritos.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
 
