@@ -74,4 +74,4 @@ function iniciarApp() {
     }
 }
 
-añadiremos un mensaje con el numero de resultados 
+añadiremos un mensaje con el numero de resultados de las recetas segun la categoria 
