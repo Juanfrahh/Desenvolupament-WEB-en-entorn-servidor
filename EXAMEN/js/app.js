@@ -171,7 +171,7 @@ function iniciarApp() {
         btnCerrar.textContent = 'Cerrar';
         btnCerrar.setAttribute('data-bs-dismiss', 'modal');
 
-    //
+    // Archivo Favorito
         if (esFavoritos || esDesdeFavoritos) {
             const btnEliminar = document.createElement('button');
             btnEliminar.classList.add('btn', 'btn-danger', 'col');
