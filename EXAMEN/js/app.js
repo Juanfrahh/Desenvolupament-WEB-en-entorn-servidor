@@ -32,7 +32,7 @@ function submitFormulario(e) {
 }
 
 async function consultarAPI(moneda, cripto) {
-  const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${moneda}`;
+  const url = `fsyms=${cripto}&tsyms=${moneda}`;
 
   mostrarSpinner(); // Mostramos spinner mientras llega la información
 
