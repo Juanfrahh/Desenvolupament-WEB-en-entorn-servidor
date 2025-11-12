@@ -1,6 +1,6 @@
 //código js para prueba 1ª evaluación
 
-document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
+document.addEventListener('DOMContentLoaded', obtenerRecetas);
 
 async function obtenerRecetas() {
   const url = 'https://www.themealdb.com/api.php';
