@@ -92,8 +92,6 @@ function iniciarApp() {
         }
     }
 
-// Pagina de Favoritos
-
     function inicializarFavoritos() {
         mostrarFavoritos();
 
@@ -103,7 +101,7 @@ function iniciarApp() {
 
             if (favoritos.length === 0) {
                 contenedorResultado.innerHTML = `
-                    <p class="text-center fs-4 mt-5">No tienes recetas en Favoritos</p>
+                    <p class="text-center fs-4 mt-5">No tienes recetas guardadas en Favoritos 😢</p>
                 `;
                 return;
             }
@@ -119,36 +117,28 @@ function iniciarApp() {
                         <img src="${strMealThumb}" alt="${strMeal}" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title mb-3">${strMeal}</h3>
-                            <button class="btn btn-danger w-100 mb-2" data-id="${idMeal}">Ver Receta</button>
-                            <button class="btn btn-secondary w-100" data-id="${idMeal}">Eliminar de Favoritos</button>
+                            <button class="btn btn-danger w-100" data-id="${idMeal}">Ver Receta</button>
                         </div>
                     </div>
                 `;
 
                 const btnVer = divReceta.querySelector('.btn-danger');
-                const btnEliminar = divReceta.querySelector('.btn-secondary');
-
-                btnVer.addEventListener('click', () => mostrarRecetaModal(idMeal));
-                btnEliminar.addEventListener('click', () => {
-                    eliminarFavorito(idMeal);
-                    mostrarFavoritos();
-                });
-
+                btnVer.addEventListener('click', () => mostrarRecetaModal(idMeal, true)); // true = está en favoritos
                 contenedorResultado.appendChild(divReceta);
             });
         }
     }
 
-    function mostrarRecetaModal(idMeal) {
+    function mostrarRecetaModal(idMeal, esDesdeFavoritos = false) {
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
             .then(res => res.json())
             .then(datos => {
                 const receta = datos.meals[0];
-                mostrarRecetaEnModal(receta);
+                mostrarRecetaEnModal(receta, esDesdeFavoritos);
             });
     }
 
-    function mostrarRecetaEnModal(receta) {
+    function mostrarRecetaEnModal(receta, esDesdeFavoritos = false) {
         const { idMeal, strMeal, strInstructions, strMealThumb } = receta;
 
         modalTitle.textContent = strMeal;
@@ -175,37 +165,27 @@ function iniciarApp() {
 
         modalFooter.innerHTML = '';
 
-        // Botones modal
-        const btnFavorito = document.createElement('button');
-        btnFavorito.classList.add('btn', 'btn-danger', 'col');
-        btnFavorito.textContent = esFavorito(idMeal)
-            ? 'Eliminar de Favoritos'
-            : 'Agregar a Favoritos';
-
+        // Botón cerrar
         const btnCerrar = document.createElement('button');
         btnCerrar.classList.add('btn', 'btn-secondary', 'col');
         btnCerrar.textContent = 'Cerrar';
         btnCerrar.setAttribute('data-bs-dismiss', 'modal');
 
-        // Acción botón favorito
-        btnFavorito.addEventListener('click', () => {
-            if (esFavorito(idMeal)) {
+        if (esFavoritos || esDesdeFavoritos) {
+            const btnEliminar = document.createElement('button');
+            btnEliminar.classList.add('btn', 'btn-danger', 'col');
+            btnEliminar.textContent = 'Eliminar de Favoritos';
+
+            btnEliminar.addEventListener('click', () => {
                 eliminarFavorito(idMeal);
-                btnFavorito.textContent = 'Agregar a Favoritos';
-            } else {
-                agregarFavorito({ idMeal, strMeal, strMealThumb });
-                btnFavorito.textContent = 'Eliminar de Favoritos';
-            }
+                modal.hide();
+                if (esFavoritos) inicializarFavoritos(); // refrescar lista
+            });
 
-            // Actualizar lista
-            if (document.querySelector('main h2')?.textContent.includes('Favoritos')) {
-                mostrarFavoritos();
-            }
-        });
+            modalFooter.appendChild(btnEliminar);
+        }
 
-        modalFooter.appendChild(btnFavorito);
         modalFooter.appendChild(btnCerrar);
-
         modal.show();
     }
 
@@ -227,5 +207,3 @@ function iniciarApp() {
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
 }
-
-//quiero que solo aparezca el boton de eliminar de favoritos en el model y aparezcan los resultados de las recetas que hay en favoritos.
