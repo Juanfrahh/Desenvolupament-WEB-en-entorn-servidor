@@ -111,25 +111,23 @@ function iniciarApp() {
 
             favoritos.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
-                const divReceta = document.createElement('div');
-                divReceta.classList.add('col-md-4');
+
+                const recetaDiv = document.createElement('div');
+                recetaDiv.classList.add('col-md-4');
 
                 recetaDiv.innerHTML = `
                     <div class="card mb-4">
-                        <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="card-img-top">
+                        <img src="${strMealThumb}" alt="${strMeal}" class="card-img-top">
                         <div class="card-body">
                             <h3 class="card-title mb-3">${strMeal}</h3>
-                            <button class="btn btn-danger w-100" data-id="${idMeal}">Ver Receta</button>
+                            <button class="btn btn-danger w-100 mb-2" data-id="${idMeal}">Ver Receta</button>
+                            <button class="btn btn-secondary w-100" data-id="${idMeal}">Eliminar de Favoritos</button>
                         </div>
                     </div>
                 `;
 
-                recetaDiv.querySelector('button').addEventListener('click', () => mostrarRecetaModal(idMeal));
-                contenedorResultado.appendChild(recetaDiv);
-            });
-
-                const btnVer = recetaDiv.querySelector('.btn-danger');
-                const btnEliminar = recetaDiv.querySelector('.btn-secondary');
+                const btnVer = divReceta.querySelector('.btn-danger');
+                const btnEliminar = divReceta.querySelector('.btn-secondary');
 
                 btnVer.addEventListener('click', () => mostrarRecetaModal(idMeal));
                 btnEliminar.addEventListener('click', () => {
@@ -137,8 +135,8 @@ function iniciarApp() {
                     mostrarFavoritos();
                 });
 
-                contenedorResultado.appendChild(recetaDiv);
-            };
+                contenedorResultado.appendChild(divReceta);
+            });
         }
     }
 
@@ -229,4 +227,4 @@ function iniciarApp() {
         const favoritos = obtenerFavoritos().filter(fav => fav.idMeal !== id);
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
-
+}
