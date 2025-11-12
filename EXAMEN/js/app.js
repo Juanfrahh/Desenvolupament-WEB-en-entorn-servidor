@@ -4,6 +4,10 @@ function iniciarApp() {
     const selectCategorias = document.querySelector('#categorias');
     const contenedorResultado = document.querySelector('#resultado');
     const main = document.querySelector('main');
+    const modal = new bootstrap.Modal('#modal', {});
+    const modalTitle = document.querySelector('#modal .modal-title');
+    const modalBody = document.querySelector('#modal .modal-body');
+    const modalFooter = document.querySelector('#modal .modal-footer');
 
     // Crear el mensaje de resultados dinámico
     const mensajeResultados = document.createElement('h2');
@@ -15,7 +19,6 @@ function iniciarApp() {
 
     selectCategorias.addEventListener('change', seleccionarCategoria);
 
-    // Función para obtener categorías
     function obtenerCategorias() {
         const url = 'https://www.themealdb.com/api/json/v1/1/categories.php';
         fetch(url)
@@ -23,7 +26,6 @@ function iniciarApp() {
             .then(datos => mostrarCategorias(datos.categories));
     }
 
-    // Mostrar categorías en el select
     function mostrarCategorias(categorias = []) {
         categorias.forEach(categoria => {
             const option = document.createElement('option');
@@ -52,7 +54,7 @@ function iniciarApp() {
             .then(datos => mostrarRecetas(datos.meals, categoria));
     }
 
-    // 3️⃣ Mostrar recetas y mensaje
+    // 3️⃣ Mostrar recetas
     function mostrarRecetas(recetas = [], categoria) {
         contenedorResultado.innerHTML = ''; // limpiar anteriores
 
@@ -61,7 +63,7 @@ function iniciarApp() {
             return;
         }
 
-        mensajeResultados.textContent = ` ${recetas.length} Recetas de "${categoria}".`;
+        mensajeResultados.textContent = `Se encontraron ${recetas.length} recetas en la categoría "${categoria}".`;
 
         recetas.forEach(receta => {
             const { idMeal, strMeal, strMealThumb } = receta;
@@ -82,11 +84,61 @@ function iniciarApp() {
                 </div>
             `;
 
+            const btn = recetaDiv.querySelector('button');
+            btn.addEventListener('click', () => mostrarRecetaModal(idMeal));
+
             contenedorResultado.appendChild(recetaDiv);
         });
     }
+
+    // 4️⃣ Mostrar información de una receta en el modal
+    function mostrarRecetaModal(idMeal) {
+        const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(datos => {
+                const receta = datos.meals[0];
+                mostrarRecetaEnModal(receta);
+            });
+    }
+
+    function mostrarRecetaEnModal(receta) {
+        const { strMeal, strInstructions, strMealThumb } = receta;
+
+        // Título
+        modalTitle.textContent = strMeal;
+
+        // Imagen e instrucciones
+        modalBody.innerHTML = `
+            <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="img-fluid mb-3">
+            <h3 class="my-3">Instrucciones</h3>
+            <p>${strInstructions}</p>
+            <h3 class="my-3">Ingredientes y Cantidades</h3>
+        `;
+
+        // Lista de ingredientes y cantidades
+        const lista = document.createElement('ul');
+        lista.classList.add('list-group', 'mb-3');
+
+        for (let i = 1; i <= 20; i++) {
+            const ingrediente = receta[`strIngredient${i}`];
+            const cantidad = receta[`strMeasure${i}`];
+            if (ingrediente && ingrediente.trim() !== '') {
+                const li = document.createElement('li');
+                li.classList.add('list-group-item');
+                li.textContent = `${ingrediente} - ${cantidad ?? ''}`;
+                lista.appendChild(li);
+            }
+        }
+
+        modalBody.appendChild(lista);
+
+        // Limpiar footer y añadir botón cerrar
+        modalFooter.innerHTML = `
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        `;
+
+        // Mostrar el modal
+        modal.show();
+    }
 }
-
-
-// ahora cuando le des a ver receta abrira un ventana modal y nos muestra informacion de la receta concreta y la informacion que queremos es nombre, id no lo guardamos pero si lo usaremo, ingredientes y foto  usaremos el div class modal fade para añadir informacion de la receta  con las clases siguientes imagen img-fluid, h3 instrucciones my-3 h3 ingredientes y cantidades my-3 ul para la lista de ingredientes y cantidades list-group li para los elementos de la lista list-gruop-item el ingrediente 1 va asociado a la cantidad 1
-//no mostrar ingredientes vacios ni cantidades
