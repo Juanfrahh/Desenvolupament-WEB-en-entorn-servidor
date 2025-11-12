@@ -50,7 +50,7 @@ function submitFormulario(e) {
   consultarAPI(categoria); // Llamamos a la API con los valores seleccionados
 }
 
-// Función que consulta la API  seleccionadas
+// Función que consulta la API categorias seleccionadas
 async function consultarAPI(categoria) {
   const url = `www.themealdb.com/api/json/v1/1/categories.phpfsyms=${categoria}`;
 
