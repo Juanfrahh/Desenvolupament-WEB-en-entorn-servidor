@@ -224,3 +224,5 @@ function iniciarApp() {
             contenedorResultado.appendChild(recetaDiv);
         });
     }
+
+    //
