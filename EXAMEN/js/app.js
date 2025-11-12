@@ -193,8 +193,5 @@ async function mostrarClientes() {
     listado.appendChild(row);
   });
 
-  // Delegación de eventos:
-  // Escuchamos los clics en todo el listado, pero solo actuamos si el clic fue en un botón "Eliminar".
-  listado.addEventListener('click', confirmarEliminar);
 }
 
