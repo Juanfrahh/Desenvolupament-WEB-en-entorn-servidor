@@ -5,8 +5,6 @@ const formulario = document.querySelector('#formulario'); // Formulario donde se
 
 
 
-
-
 // Función que llena el select de criptomonedas
 function llenarSelectCategorias(criptos) {
   criptos.forEach(cripto => {
