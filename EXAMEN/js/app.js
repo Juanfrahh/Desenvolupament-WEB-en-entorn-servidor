@@ -48,7 +48,36 @@ async function consultarAPI(categoria) {
   }
 }
 
+// Función que muestra la cotización en el HTML
+function mostrarCotizacion(info) {
+  limpiarHTML(); // Limpiamos resultados previos
 
+  const { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, LASTUPDATE } = info;
+
+  // Creamos elementos p para cada dato y los añadimos al div resultado
+  const precio = document.createElement('p');
+  precio.classList.add('precio');
+  precio.innerHTML = `Precio actual: <span>${PRICE}</span>`;
+
+  const maximo = document.createElement('p');
+  maximo.innerHTML = `Máximo del día: <span>${HIGHDAY}</span>`;
+
+  const minimo = document.createElement('p');
+  minimo.innerHTML = `Mínimo del día: <span>${LOWDAY}</span>`;
+
+  const variacion = document.createElement('p');
+  variacion.innerHTML = `Variación 24h: <span>${CHANGEPCT24HOUR}%</span>`;
+
+  const actualizacion = document.createElement('p');
+  actualizacion.innerHTML = `Última actualización: <span>${LASTUPDATE}</span>`;
+
+  // Agregamos todos los elementos al div resultado
+  resultadoDiv.appendChild(precio);
+  resultadoDiv.appendChild(maximo);
+  resultadoDiv.appendChild(minimo);
+  resultadoDiv.appendChild(variacion);
+  resultadoDiv.appendChild(actualizacion);
+}
 
 function mostrarError(mensaje) {
   const existe = document.querySelector('.error'); // Si ya hay un error visible, lo removemos
