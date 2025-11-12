@@ -113,7 +113,7 @@ function iniciarApp() {
                 const { idMeal, strMeal, strMealThumb } = receta;
 
                 const recetaDiv = document.createElement('div');
-                Divreceta.classList.add('col-md-4');
+                divReceta.classList.add('col-md-4');
 
                 divReceta.innerHTML = `
                     <div class="card mb-4">
