@@ -28,7 +28,7 @@ function iniciarApp() {
         .catch(() => {
             console.warn('⚠️ No se pudo conectar con el servidor JSON (json-server no activo)');
         });
-}
+    }
 
     // Detectar página actual
     const esInicio = document.querySelector('main h2')?.textContent.includes('Inicio');
