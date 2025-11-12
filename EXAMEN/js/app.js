@@ -125,7 +125,7 @@ function iniciarApp() {
                 `;
 
                 recetaDiv.querySelector('button').addEventListener('click', () => mostrarRecetaModal(idMeal));
-                contenedorResultado.appendChild(recetaDiv);
+                contenedorResultado.appendChild(divReceta);
             });
 
                 const btnVer = recetaDiv.querySelector('.btn-danger');
