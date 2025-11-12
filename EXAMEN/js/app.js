@@ -74,4 +74,4 @@ function iniciarApp() {
     }
 }
 
-ahora cuando le des a ver receta abrira un ventana modal y nos muestra informacion de la receta concreta y la informacion que queremos es nombre, id
+// ahora cuando le des a ver receta abrira un ventana modal y nos muestra informacion de la receta concreta y la informacion que queremos es nombre, id
