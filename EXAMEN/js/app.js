@@ -49,7 +49,7 @@ async function consultarAPI(categoria) {
 }
 
 // Función que muestra la cotización en el HTML
-function mostrarCotizacion(info) {
+function mostrar(info) {
   limpiarHTML(); // Limpiamos resultados previos
 
   const { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, LASTUPDATE } = info;
