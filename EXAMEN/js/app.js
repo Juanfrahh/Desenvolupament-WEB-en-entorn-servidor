@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 
-async function obtenerCriptomonedas() {
+async function obtenerRecetas() {
   const url = 'https://www.themealdb.com/api.php';
   try {
     const respuesta = await fetch(url); // Petición a la API
