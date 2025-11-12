@@ -228,4 +228,4 @@ function iniciarApp() {
     }
 }
 
-//quiero que solo aparezca 
+//quiero que solo aparezca el boton de eliminar de favoritos en 
