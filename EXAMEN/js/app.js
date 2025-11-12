@@ -206,27 +206,4 @@ async function mostrarClientes() {
    - Si se confirma, llama a la API para eliminar el cliente.
    - Finalmente, elimina la fila del DOM sin recargar la página.
 ===================================================== */
-async function confirmarEliminar(e) {
-  // Verifica si el elemento clicado tiene la clase "eliminar"
-  // (es decir, si el usuario hizo clic en el botón de eliminar).
-  if (e.target.classList.contains('eliminar')) {
-    // Obtiene el ID del cliente desde el atributo data-cliente del enlace.
-    const id = e.target.dataset.cliente;
 
-    // Muestra una ventana de confirmación antes de eliminar.
-    const confirmarBorrado = confirm('¿Deseas eliminar este cliente?');
-
-    // Si el usuario confirma la eliminación:
-    if (confirmarBorrado) {
-      // Llamamos a la función que elimina el cliente de la base de datos (API).
-      await eliminarCliente(id);
-
-      // Mostramos un mensaje de éxito.
-      alert('Cliente eliminado correctamente');
-
-      // Eliminamos la fila del cliente directamente del DOM,
-      // usando el método closest() para encontrar el <tr> más cercano.
-      e.target.closest('tr').remove();
-    }
-  }
-}
