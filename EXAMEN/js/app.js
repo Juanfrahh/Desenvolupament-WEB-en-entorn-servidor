@@ -7,7 +7,7 @@ const CategoriaSelect = document.querySelector('#moneda'); // Select con la mone
 
 // Función que llena el select de criptomonedas
 function llenarSelectCriptos(criptos) {
-  criptos.forEach(cripto => {
+  categoria.forEach(cripto => {
     const { FullName, Name } = cripto.CoinInfo; // Obtenemos el nombre completo y el símbolo
 
     const option = document.createElement('option'); // Creamos un elemento option
