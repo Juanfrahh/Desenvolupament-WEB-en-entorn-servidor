@@ -18,7 +18,7 @@ async function obtenerCategorias() {
 
     const categoria = data.Data; // Obtenemos el array de criptomonedas
 
-    llenarSelectCriptos(criptos); // Llenamos el select con las opciones
+    llenarSelectCriptos(categoria); // Llenamos el select con las opciones
   } catch (error) {
     mostrarError('Error al cargar las criptomonedas'); // Mostramos error si falla la petición
     console.error(error);
