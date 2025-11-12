@@ -211,7 +211,6 @@ function iniciarApp() {
         modal.show();
     }
 
-//Favoritos
     function obtenerFavoritos() {
         return JSON.parse(localStorage.getItem('favoritos')) || [];
     }
