@@ -101,7 +101,7 @@ function iniciarApp() {
             const favoritos = obtenerFavoritos();
             contenedorResultado.innerHTML = '';
 
-            if (!recetas || favoritos.length === 0) {
+            if (!favoritos || favoritos.length === 0) {
                 mensajeResultados.textContent = `No se encontraron recetas para la categoría "${categoria}".`;
                 return;
             }
