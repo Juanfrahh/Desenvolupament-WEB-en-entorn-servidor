@@ -197,6 +197,7 @@ function iniciarApp() {
     }
 
 
+
     function eliminarFavorito(id) {
         const favoritos = obtenerFavoritos().filter(fav => fav.idMeal !== id);
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
