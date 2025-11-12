@@ -110,12 +110,12 @@ function iniciarApp() {
             contenedorResultado.innerHTML = `<p class="text-center fs-4 mt-5">Tienes ${favoritos.length} recetas Favoritas</p>`
 
             favoritos.forEach(receta => {
+                recetas.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
+                const recetaDiv = document.createElement('div');
+                recetaDiv.classList.add('col-md-4');
 
-                const divReceta = document.createElement('div');
-                divReceta.classList.add('col-md-4');
-
-                divReceta.innerHTML = `
+                recetaDiv.innerHTML = `
                     <div class="card mb-4">
                         <img src="${strMealThumb}" alt="Imagen de ${strMeal}" class="card-img-top">
                         <div class="card-body">
@@ -124,6 +124,10 @@ function iniciarApp() {
                         </div>
                     </div>
                 `;
+
+                recetaDiv.querySelector('button').addEventListener('click', () => mostrarRecetaModal(idMeal));
+                contenedorResultado.appendChild(recetaDiv);
+            });
 
                 const btnVer = divReceta.querySelector('.btn-danger');
                 const btnEliminar = divReceta.querySelector('.btn-secondary');
