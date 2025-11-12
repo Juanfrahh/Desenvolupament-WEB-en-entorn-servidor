@@ -199,9 +199,6 @@ function iniciarApp() {
         modal.show();
     }
 
-    // ============================================================
-    // 💾 GESTIÓN DE FAVORITOS (LOCALSTORAGE)
-    // ============================================================
     function obtenerFavoritos() {
         return JSON.parse(localStorage.getItem('favoritos')) || [];
     }
