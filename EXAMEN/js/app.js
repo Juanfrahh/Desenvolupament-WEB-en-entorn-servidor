@@ -74,3 +74,4 @@ function iniciarApp() {
     }
 }
 
+ahora cuando le des a ver receta 
