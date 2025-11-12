@@ -95,9 +95,6 @@ function iniciarApp() {
         }
     }
 
-    // ============================================================
-    // ❤️ LÓGICA PARA FAVORITOS.HTML
-    // ============================================================
     function inicializarFavoritos() {
         mostrarFavoritos();
 
