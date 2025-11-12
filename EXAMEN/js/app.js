@@ -30,3 +30,20 @@ function submitFormulario(e) {
 
   consultarAPI(categoria); // Llamamos a la API con los valores seleccionados
 }
+
+async function consultarAPI(moneda, cripto) {
+  const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${moneda}`;
+
+  mostrarSpinner(); // Mostramos spinner mientras llega la información
+
+  try {
+    const respuesta = await fetch(url);
+    const data = await respuesta.json();
+
+    const info = data.DISPLAY[cripto][moneda]; // Extraemos la información relevante
+    mostrarCotizacion(info); // Mostramos la información en el HTML
+  } catch (error) {
+    mostrarError('No se pudo obtener la información'); // Mostramos error si falla la petición
+    console.error(error);
+  }
+}
