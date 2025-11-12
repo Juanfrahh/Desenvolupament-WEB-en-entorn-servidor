@@ -228,5 +228,3 @@ function iniciarApp() {
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
 }
-
-//quiero que solo aparezca el boton de eliminar de favoritos en el model y aparezcan los resultados de las recetas que hay en favoritos.
