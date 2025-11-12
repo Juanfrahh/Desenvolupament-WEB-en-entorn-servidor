@@ -95,7 +95,6 @@ function iniciarApp() {
         }
     }
 
-
     function inicializarFavoritos() {
         mostrarFavoritos();
 
