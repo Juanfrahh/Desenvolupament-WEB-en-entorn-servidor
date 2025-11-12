@@ -135,9 +135,6 @@ function iniciarApp() {
         }
     }
 
-    // ============================================================
-    // 🍳 LÓGICA COMÚN (MODAL, FAVORITOS)
-    // ============================================================
     function mostrarRecetaModal(idMeal, esDesdeFavoritos = false) {
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
             .then(res => res.json())
