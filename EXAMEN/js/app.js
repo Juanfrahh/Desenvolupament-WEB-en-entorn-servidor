@@ -88,4 +88,4 @@ function iniciarApp() {
 }
 
 
-// ahora cuando le des a ver receta abrira un ventana modal y nos muestra informacion de la receta concreta y la informacion que queremos es nombre, id no lo guardamos pero si lo usaremo, ingredientes y foto  usaremos el div class modal fade para añadir 
+// ahora cuando le des a ver receta abrira un ventana modal y nos muestra informacion de la receta concreta y la informacion que queremos es nombre, id no lo guardamos pero si lo usaremo, ingredientes y foto  usaremos el div class modal fade para añadir informacion de la receta 
