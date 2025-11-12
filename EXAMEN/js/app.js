@@ -101,12 +101,13 @@ function iniciarApp() {
             const favoritos = obtenerFavoritos();
             contenedorResultado.innerHTML = '';
 
-            if (favoritos.length === 0) {
-                contenedorResultado.innerHTML = `
-                    <p class="text-center fs-4 mt-5">No tienes recetas en Favoritos</p>
-                `;
+            if (!recetas || recetas.length === 0) {
+                mensajeResultados.textContent = `No se encontraron recetas para la categoría "${categoria}".`;
                 return;
             }
+
+            mensajeResultados.textContent = `Se encontraron ${recetas.length} recetas en la categoría "${categoria}".`;
+
 
             favoritos.forEach(receta => {
                 const { idMeal, strMeal, strMealThumb } = receta;
