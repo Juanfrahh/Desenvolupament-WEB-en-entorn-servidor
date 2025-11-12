@@ -46,18 +46,3 @@ export async function nuevoCliente(cliente) {
   });
 }
 
-/* =====================================================
-   FUNCIÓN: editarCliente(id, cliente)
-   -----------------------------------------------------
-   - Actualiza los datos de un cliente existente.
-   - Usa el método HTTP PUT (reemplaza el registro completo).
-   - Se envía el objeto actualizado al servidor.
-===================================================== */
-export async function editarCliente(id, cliente) {
-  await fetch(`${URL}/${id}`, {
-    method: 'PUT', // PUT reemplaza el registro completo
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(cliente), // Se convierte el cliente actualizado en JSON
-  });
-}
-
