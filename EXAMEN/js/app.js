@@ -27,7 +27,7 @@ async function obtenerCategorias() {
 
 // Función que llena el select de criptomonedas
 function llenarSelectCategorias(categorias) {
-  categoria.forEach(categoria => {
+  categorias.forEach(categoria => {
     const { FullName, Name } = categoria.CoinInfo; // Obtenemos el nombre completo y el símbolo
 
     const option = document.createElement('option'); // Creamos un elemento option
