@@ -8,9 +8,6 @@ function iniciarApp() {
     const modalBody = document.querySelector('#modal .modal-body');
     const modalFooter = document.querySelector('#modal .modal-footer');
 
-    // ============================================================
-// 🧩 GUARDAR TODAS LAS RECETAS EN db.json
-// ============================================================
 function guardarRecetasEnDB(recetas) {
     // Verificar si el servidor está activo
     fetch('http://localhost:3000/recetas')
