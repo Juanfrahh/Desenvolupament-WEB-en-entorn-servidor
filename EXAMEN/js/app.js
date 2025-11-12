@@ -92,7 +92,7 @@ function iniciarApp() {
         }
     }
 
-//Favorito
+    //Favorito
     function inicializarFavoritos() {
         mostrarFavoritos();
 
