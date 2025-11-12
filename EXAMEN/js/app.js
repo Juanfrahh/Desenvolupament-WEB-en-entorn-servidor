@@ -3,11 +3,16 @@ document.addEventListener('DOMContentLoaded', iniciarApp);
 function iniciarApp() {
     const selectCategorias = document.querySelector('#categorias');
     const contenedorResultado = document.querySelector('#resultado');
+    const main = document.querySelector('main');
+
+    // Crear el mensaje de resultados dinámico
+    const mensajeResultados = document.createElement('h2');
+    mensajeResultados.className = 'text-clearInterval text-back my-5 text-center';
+    main.insertBefore(mensajeResultados, contenedorResultado);
 
     // 1️⃣ Cargar categorías al iniciar
     obtenerCategorias();
 
-    // Evento cuando cambia el select
     selectCategorias.addEventListener('change', seleccionarCategoria);
 
     // Función para obtener categorías
@@ -18,13 +23,13 @@ function iniciarApp() {
             .then(datos => mostrarCategorias(datos.categories));
     }
 
-    // Mostrar opciones en el select
+    // Mostrar categorías en el select
     function mostrarCategorias(categorias = []) {
         categorias.forEach(categoria => {
             const option = document.createElement('option');
             option.value = categoria.strCategory;
             option.textContent = categoria.strCategory;
-            document.querySelector('#categorias').appendChild(option);
+            selectCategorias.appendChild(option);
         });
     }
 
@@ -34,7 +39,8 @@ function iniciarApp() {
         if (categoria !== '-- Seleccione --') {
             obtenerRecetas(categoria);
         } else {
-            contenedorResultado.innerHTML = ''; // limpiar
+            contenedorResultado.innerHTML = '';
+            mensajeResultados.textContent = '';
         }
     }
 
@@ -43,12 +49,19 @@ function iniciarApp() {
         const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoria}`;
         fetch(url)
             .then(res => res.json())
-            .then(datos => mostrarRecetas(datos.meals));
+            .then(datos => mostrarRecetas(datos.meals, categoria));
     }
 
-    // 3️⃣ Mostrar las recetas en tarjetas
-    function mostrarRecetas(recetas = []) {
-        contenedorResultado.innerHTML = ''; // limpiar resultados previos
+    // 3️⃣ Mostrar recetas y mensaje
+    function mostrarRecetas(recetas = [], categoria) {
+        contenedorResultado.innerHTML = ''; // limpiar anteriores
+
+        if (!recetas || recetas.length === 0) {
+            mensajeResultados.textContent = `No se encontraron recetas para la categoría "${categoria}".`;
+            return;
+        }
+
+        mensajeResultados.textContent = `Se encontraron ${recetas.length} recetas en la categoría "${categoria}".`;
 
         recetas.forEach(receta => {
             const { idMeal, strMeal, strMealThumb } = receta;
@@ -73,5 +86,3 @@ function iniciarApp() {
         });
     }
 }
-
-// ahora cuando le des a ver receta abrira un ventana modal y nos muestra informacion de la receta concreta y la informacion que queremos es nombre, id
