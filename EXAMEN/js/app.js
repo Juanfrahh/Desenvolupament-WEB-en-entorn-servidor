@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', obtenerCriptomonedas);
 // Evento submit del formulario
 formulario.addEventListener('submit', submitFormulario);
 
+
 // Función que llena el select de criptomonedas
 function llenarSelectCategorias(categoria) {
   categoria.forEach(categoria => {
