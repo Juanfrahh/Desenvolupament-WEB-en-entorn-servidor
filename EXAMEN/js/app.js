@@ -102,7 +102,7 @@ function iniciarApp() {
             contenedorResultado.innerHTML = '';
 
             if (favoritos.length === 0) {
-                contenedorResultado.innerHTML = `No tienes recetas en Favoritos</p>
+                contenedorResultado.innerHTML = ` No tienes recetas en Favoritos</p>
                 `;
                 return;
             }
