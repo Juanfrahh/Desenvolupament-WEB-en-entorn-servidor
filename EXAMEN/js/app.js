@@ -146,7 +146,6 @@ function limpiarHTML() {
 
 // Importamos las funciones necesarias desde el módulo API.js
 // - obtenerClientes(): trae la lista completa de clientes desde el servidor.
-// - eliminarCliente(): elimina un cliente por su ID.
 import { obtenerClientes, eliminarCliente } from './API.js';
 
 // Cuando el documento se haya cargado completamente (HTML listo),
