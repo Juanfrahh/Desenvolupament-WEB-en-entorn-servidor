@@ -126,7 +126,6 @@ function iniciarApp() {
                 `;
 
                 const btnVer = divReceta.querySelector('.btn-danger');
-                const btnEliminar = divReceta.querySelector('.btn-secondary');
 
                 btnVer.addEventListener('click', () => mostrarRecetaModal(idMeal));
                 btnEliminar.addEventListener('click', () => {
