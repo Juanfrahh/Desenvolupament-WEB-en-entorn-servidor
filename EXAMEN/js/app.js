@@ -28,5 +28,5 @@ function submitFormulario(e) {
     return;
   }
 
-  consultarAPI(categoria, cripto); // Llamamos a la API con los valores seleccionados
+  consultarAPI(categoria); // Llamamos a la API con los valores seleccionados
 }
