@@ -30,7 +30,6 @@ function iniciarApp() {
         });
 }
 
-
     // Detectar página actual
     const esInicio = document.querySelector('main h2')?.textContent.includes('Inicio');
     const esFavoritos = document.querySelector('main h2')?.textContent.includes('Favoritos');
