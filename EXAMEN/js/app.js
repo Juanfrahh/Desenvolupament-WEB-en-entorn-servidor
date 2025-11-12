@@ -150,7 +150,7 @@ import { obtenerRecetas} from './API.js';
 
 // Cuando el documento se haya cargado completamente (HTML listo),
 // se ejecuta la función mostrarClientes() para cargar los datos en pantalla.
-document.addEventListener('DOMContentLoaded', mostrarClientes);
+document.addEventListener('DOMContentLoaded', mostrarRecetass);
 
 /* =====================================================
    FUNCIÓN: mostrarClientes()
