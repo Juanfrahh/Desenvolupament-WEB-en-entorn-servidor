@@ -48,6 +48,24 @@ async function consultarAPI(categoria) {
   }
 }
 
+function mostrarError(mensaje) {
+  const existe = document.querySelector('.error'); // Si ya hay un error visible, lo removemos
+  if (existe) existe.remove();
+
+  const divError = document.createElement('div'); // Creamos un div para el error
+  divError.classList.add('error');
+  divError.textContent = mensaje;
+  divError.style.backgroundColor = 'red';
+  divError.style.color = 'white';
+  divError.style.padding = '8px';
+  divError.style.textAlign = 'center';
+  divError.style.marginTop = '10px';
+  divError.style.borderRadius = '5px';
+
+  formulario.appendChild(divError); // Lo agregamos al formulario
+
+  setTimeout(() => divError.remove(), 2000); // Lo eliminamos después de 2 segundos
+}
 // Función que muestra un spinner de carga mientras llega la información
 function mostrarSpinner() {
   limpiarHTML(); // Limpiamos resultados previos
