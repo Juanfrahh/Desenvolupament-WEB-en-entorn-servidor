@@ -8,7 +8,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 // Incluimos la conexión a la BD (usa el nuevo conexion.php)
-include 'conexion.php';
+include 'conexion.ini.php';
 
 // Obtenemos los datos del usuario actual desde la BD
 $stmt = $conexion->prepare("SELECT * FROM tabla_usuarios WHERE usuario = ?");
