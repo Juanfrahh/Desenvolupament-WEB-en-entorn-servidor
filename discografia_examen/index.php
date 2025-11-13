@@ -1,19 +1,32 @@
 <?php
-session_start(); // Inicia la sesión para controlar qué usuario está logueado
+session_start(); // Inicia la sesión para poder usar $_SESSION
 
-// Si no hay un usuario en sesión, redirige al login
+// Si no hay usuario en sesión, redirige al login
 if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');
     exit();
 }
 
-// Incluimos la conexión a la BD (usa el nuevo conexion.php)
-include 'conexion.ini.php';
+// Conexión a la base de datos
+include 'conexion.ini.php'; // ✅ Incluimos la clase de conexión
 
-// Obtenemos los datos del usuario actual desde la BD
+// ✅ Creamos la conexión usando la clase
+$conectar = new Conexion('localhost', 'user', 'user', 'discografia'); 
+// Si usas XAMPP por defecto, cambia a: new Conexion('localhost', 'root', '', 'discografia');
+$conexion = $conectar->conectionPDO();
+
+// ✅ Verificamos que la conexión funcione
+if (!$conexion) {
+    die("❌ Error: No se pudo conectar a la base de datos.");
+}
+
+// Recuperamos los datos del usuario desde la BD
 $stmt = $conexion->prepare("SELECT * FROM tabla_usuarios WHERE usuario = ?");
 $stmt->execute([$_SESSION['usuario']]);
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC); // Guardamos los datos del usuario
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Aquí puedes añadir cualquier otra lógica que quieras mostrar en el index,
+// por ejemplo, lista de discos, últimas canciones, etc.
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,23 +37,24 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC); // Guardamos los datos del usuario
 <body>
     <h1>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?> 👋</h1>
 
-    <!-- Muestra la imagen de perfil si existe -->
+    <!-- Imagen de perfil -->
     <?php if (!empty($usuario['img_pequena'])): ?>
         <img src="<?= htmlspecialchars($usuario['img_pequena']) ?>" alt="Imagen de perfil">
     <?php else: ?>
         <p>Sin imagen de perfil</p>
     <?php endif; ?>
 
-    <!-- Enlaces a otras secciones -->
+    <!-- Enlaces importantes -->
     <p>
-        <a href="perfil.php">👤 Mi perfil</a> | 
-        <a href="logout.php">🚪 Cerrar sesión</a>
+        <a href="perfil.php">Mi perfil</a> | 
+        <a href="logout.php">Cerrar sesión</a>
     </p>
 
     <hr>
 
-    <!-- Aquí podrías incluir las funciones de discografía o cualquier otro módulo -->
-    <h2>🎵 Mis discos y canciones</h2>
-    <p>Aquí podrías mostrar tus discos o canciones de la base de datos.</p>
+    <!-- Aquí podrías incluir la lista de discos/canciones -->
+    <h2>Mis discos y canciones</h2>
+    <p>Aquí podrías llamar a tus funciones de datosDiscografia() o similares.</p>
+
 </body>
 </html>
