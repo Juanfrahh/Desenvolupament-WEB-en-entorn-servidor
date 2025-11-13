@@ -3,7 +3,7 @@ session_start(); // Inicia sesión para guardar datos del usuario
 include("conexion.ini.php"); // Incluye la clase de conexión
 
 // Crear la conexión PDO
-$conectar = new Conexion('localhost','user','user','discografia'); // Cambiar datos según BD real
+$conectar = new Conexion('localhost', 'root', '', 'discografia');
 $conexion = $conectar->conectionPDO();
 
 // Inicializar mensaje de error/éxito
