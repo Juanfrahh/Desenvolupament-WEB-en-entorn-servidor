@@ -1,22 +1,19 @@
 <?php
-session_start(); // Inicia la sesión para poder usar $_SESSION
+session_start(); // Inicia la sesión para controlar qué usuario está logueado
 
-// Si no hay usuario en sesión, redirige al login
+// Si no hay un usuario en sesión, redirige al login
 if (!isset($_SESSION['usuario'])) {
     header('Location: login.php');
     exit();
 }
 
-// Conexión a la base de datos
-include 'conexion.php'; // Aquí debes tener tu objeto $conexion de PDO
+// Incluimos la conexión a la BD (usa el nuevo conexion.php)
+include 'conexion.php';
 
-// Recuperamos los datos del usuario desde la BD
+// Obtenemos los datos del usuario actual desde la BD
 $stmt = $conexion->prepare("SELECT * FROM tabla_usuarios WHERE usuario = ?");
 $stmt->execute([$_SESSION['usuario']]);
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// Aquí puedes añadir cualquier otra lógica que quieras mostrar en el index,
-// por ejemplo, lista de discos, últimas canciones, etc.
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC); // Guardamos los datos del usuario
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,24 +24,23 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 <body>
     <h1>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?> 👋</h1>
 
-    <!-- Imagen de perfil -->
-    <?php if ($usuario['img_pequena']): ?>
+    <!-- Muestra la imagen de perfil si existe -->
+    <?php if (!empty($usuario['img_pequena'])): ?>
         <img src="<?= htmlspecialchars($usuario['img_pequena']) ?>" alt="Imagen de perfil">
     <?php else: ?>
         <p>Sin imagen de perfil</p>
     <?php endif; ?>
 
-    <!-- Enlaces importantes -->
+    <!-- Enlaces a otras secciones -->
     <p>
-        <a href="perfil.php">Mi perfil</a> | 
-        <a href="logout.php">Cerrar sesión</a>
+        <a href="perfil.php">👤 Mi perfil</a> | 
+        <a href="logout.php">🚪 Cerrar sesión</a>
     </p>
 
     <hr>
 
-    <!-- Aquí podrías incluir la lista de discos/canciones -->
-    <h2>Mis discos y canciones</h2>
-    <p>Aquí podrías llamar a tus funciones de datosDiscografia() o similares.</p>
-
+    <!-- Aquí podrías incluir las funciones de discografía o cualquier otro módulo -->
+    <h2>🎵 Mis discos y canciones</h2>
+    <p>Aquí podrías mostrar tus discos o canciones de la base de datos.</p>
 </body>
 </html>
