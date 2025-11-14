@@ -1,7 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'u
-suario.php';
+require_once 'usuario.php';
 
 protegerPagina();
 
