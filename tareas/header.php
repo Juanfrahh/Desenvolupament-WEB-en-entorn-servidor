@@ -21,7 +21,7 @@ require_once __DIR__ . '/config.php';
         <a href="index.php">Inicio</a>
         <?php if(estaAutenticado()): ?>
             | <a href="add_tarea.php">Añadir tarea</a>
-            | <a href="search.php">Buscar</a>
+            | <a href="buscar.php">Buscar</a>
             | <a href="perfil.php">Perfil</a>
             | <a href="logout.php">Cerrar sesión</a>
             <span style="float:right">
