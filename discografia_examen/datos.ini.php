@@ -1,6 +1,6 @@
 <?php
 // Función que muestra el formulario para crear un disco nuevo y registra el disco en la base de datos
-function formularioDisco(){ 
+function formularioUser(){ 
     echo '<button  onclick=location.href="./index.php">Volver</button>'; // Botón para volver al listado de discos
     echo '<h1>Crear nuevo disco</h1>'; // Título del formulario
     echo '<form action="disconuevo.php" method="post">'; // Formulario HTML, método POST
