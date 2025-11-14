@@ -24,7 +24,6 @@ function limpiarEntrada($data) {
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-// Función para mostrar mensajes flash
 function flash($key, $value = null) {
     if ($value === null) {
         if (isset($_SESSION['flash'][$key])) {
