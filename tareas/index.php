@@ -58,7 +58,7 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <?php
     // Crear conexión usando clase Conexion
-    $conectar = new Conexion('localhost','root','','discografia');
+    $conectar = new Conexion('localhost','root','','tareas');
     $conexion = $conectar->conectionPDO();
 
     // Mostrar todos los álbumes y sus canciones usando datosDiscografia()
