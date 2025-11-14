@@ -1,8 +1,8 @@
 <?php
 require_once 'config.php';
-require_once 'tarea.php';
-
+require_once 'Tarea.php';
 protegerPagina();
+
 $tarea = new Tarea();
 $mensaje = '';
 
