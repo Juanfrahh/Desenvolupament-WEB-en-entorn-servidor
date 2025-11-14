@@ -62,7 +62,6 @@ class Tarea {
     }
 
     public function ultimasCincoAcciones() {
-        // Usamos GREATEST para comparar. Si algún campo es NULL, GREATEST puede devolver NULL; por eso usamos COALESCE.
         $sql = "SELECT t.*, u1.nombre AS creador, u2.nombre AS modificador, u3.nombre AS completador,
                        GREATEST(COALESCE(UNIX_TIMESTAMP(fecha_creacion),0),
                                 COALESCE(UNIX_TIMESTAMP(fecha_modificacion),0),
