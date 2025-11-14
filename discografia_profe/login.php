@@ -4,7 +4,7 @@ session_start();
 include("conexion.ini.php");
 
 // Crear conexión usando tu clase
-$conectar = new Conexion('localhost','user','user','discografia');
+$conectar = new Conexion('localhost','root','', 'discografia');
 $conexion = $conectar->conectionPDO();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
