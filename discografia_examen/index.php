@@ -1,6 +1,6 @@
 <?php
 include 'conexion.ini.php';
-include 'Album.php';
+include 'Album.ini.php';
 
 $cn = new Conexion('localhost', 'root', '', 'discografia');
 $conexion = $cn->conectionPDO();
