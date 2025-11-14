@@ -22,14 +22,7 @@ if (!isset($_SESSION['usuario_id'])) {
 </head>
 <body>
 
-	<div style="padding:10px; background:#eee;">
 
-		<?php else: ?>
-			Bienvenido <strong><?= $_SESSION['usuario'] ?></strong> |
-			<a href="perfil.php">Mi perfil</a> |
-			<a href="logout.php">Cerrar sesión</a>
-		<?php endif; ?>
-	</div>
 
 	<?php datosDiscografia(); ?>
 
