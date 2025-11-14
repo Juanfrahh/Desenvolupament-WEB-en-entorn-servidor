@@ -23,8 +23,7 @@ if (!isset($_SESSION['usuario_id'])) {
 <body>
 
 	<div style="padding:10px; background:#eee;">
-		<?php if (!isset($_SESSION['usuario_id'])): ?>
-			<a href="login.php">Iniciar sesión</a>
+
 		<?php else: ?>
 			Bienvenido <strong><?= $_SESSION['usuario'] ?></strong> |
 			<a href="perfil.php">Mi perfil</a> |
