@@ -1,6 +1,6 @@
 <?php
 // classes/Tarea.php
-require_once 'Conexion.php';
+require_once 'conexion.php';
 
 class Tarea {
     private $db;
