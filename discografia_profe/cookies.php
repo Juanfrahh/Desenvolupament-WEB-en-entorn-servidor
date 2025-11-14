@@ -28,7 +28,7 @@ if (isset($_POST['rechazar'])) {
 </head>
 <body>
 
-<h2>🚨 Aviso de cookies</h2>
+<h2>Aviso de cookies</h2>
 <p>Este sitio usa cookies necesarias para mantener tu sesión. Debes aceptarlas para continuar.</p>
 
 <form method="POST">
