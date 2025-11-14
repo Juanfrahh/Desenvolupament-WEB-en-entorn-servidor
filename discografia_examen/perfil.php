@@ -39,3 +39,4 @@ echo "Paso 10: Usuario obtenido<br>";
 
 var_dump($usuario); // Para verlo
 exit();
+
