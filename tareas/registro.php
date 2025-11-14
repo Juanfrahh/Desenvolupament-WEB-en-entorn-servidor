@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contrasena = $_POST['contrasena'] ?? '';
     $ruta_img = 'default.png';
 
-    if (!is_dir(__DIR__ . '/uploads')) {
+    if (!is_dir(__DIR__ . '/img')) {
         mkdir(__DIR__ . '/uploads', 0755);
     }
     if (!empty($_FILES['foto']['name']) && $_FILES['foto']['error'] === 0) {
