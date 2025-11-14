@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/ssuario.php';
+require_once __DIR__ . '/usuario.php';
 
 $usuario = new Usuario();
 $mensaje = '';
