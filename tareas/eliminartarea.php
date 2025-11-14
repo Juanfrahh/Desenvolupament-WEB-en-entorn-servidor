@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'Tarea.php';
+require_once 'tarea.php';
 
 protegerPagina();
 $id = $_GET['id'] ?? null;
