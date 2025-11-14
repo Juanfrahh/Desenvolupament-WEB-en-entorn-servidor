@@ -1,12 +1,5 @@
 <?php
-session_start(); // Inicia la sesión para poder usar $_SESSION
-
-// Si no hay usuario en sesión, redirige al login
-if (!isset($_SESSION['usuario'])) {
-    header('Location: login.php');
-    exit();
-}
-
+Ç
 // Conexión a la base de datos
 include 'Conexionphp'; // ✅ Incluimos la clase de conexión
 
