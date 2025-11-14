@@ -1,11 +1,14 @@
 <?php
-session_start(); // iniciar sesión
+session_start();
 
-// Si no hay usuario logueado, redirige automáticamente al login
-if (!isset($_SESSION['usuario_id'])) {
-    header('Location: login.php');
+// Si no existe la cookie de aceptación → cerrar sesión y redirigir
+if (!isset($_COOKIE['aceptar_cookies'])) {
+    session_unset();
+    session_destroy();
+    header("Location: cookies.php");
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
