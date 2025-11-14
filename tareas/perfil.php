@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $mensaje = "Error al actualizar perfil.";
     }
-    // refrescar datos
     $datos = $u->getUsuario($_SESSION['usuario_id']);
 }
 
