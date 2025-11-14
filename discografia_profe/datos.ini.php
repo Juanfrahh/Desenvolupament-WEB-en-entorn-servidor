@@ -101,7 +101,7 @@
 	}
 
 	function datosDiscografia(){//devuelve una lista de Albums
-		$conectar = new Conexion('localhost','root','user','discografia');
+		$conectar = new Conexion('localhost','root','','discografia');
 		$conexion = $conectar->conectionPDO();
 		$resultado = $conexion->query('SELECT cod,titulo,discografia,formato,fechaLanzamiento,fechaCompra,precio FROM discografia.album;');
 		echo'<button  onclick=location.href="./disconuevo.php">Nuevo disco</button>';
