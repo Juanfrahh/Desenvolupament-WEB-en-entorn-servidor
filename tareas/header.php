@@ -6,13 +6,7 @@ require_once __DIR__ . '/config.php';
 <head>
     <meta charset="utf-8">
     <title>Gestión de Tareas</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        header nav a { margin-right: 10px; }
-        header img { vertical-align: middle; border-radius: 50%; }
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #ccc; padding: 6px 8px; text-align: left; }
-    </style>
+
 </head>
 <body>
 <header>
