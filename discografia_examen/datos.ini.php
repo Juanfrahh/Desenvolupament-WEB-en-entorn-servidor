@@ -5,7 +5,7 @@ function formularioDisco(){
     echo '<h1>Crear nuevo disco</h1>'; // Título del formulario
     echo '<form action="disconuevo.php" method="post">'; // Formulario HTML, método POST
     echo '<input type="text" required name="titulo" placeholder="Título"/>'; // Campo título
-    echo '<input type="text" required name="discografia" placeholder="Tareas"/>'; // Campo discografía
+    echo '<input type="text" required name="tareas" placeholder="Tareas"/>'; // Campo discografía
     echo '<label>formato: </label>';
     echo '<select name="formato">
         <option> vinilo</option>
