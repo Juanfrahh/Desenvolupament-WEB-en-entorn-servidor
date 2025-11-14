@@ -5,7 +5,6 @@ require_once __DIR__ . '/usuario.php';
 $usuario = new Usuario();
 $mensaje = '';
 
-/* Si existe cookie de "remember", auto-login (básico) */
 if (!estaAutenticado() && !empty($_COOKIE['remember_user'])) {
     $id = (int)$_COOKIE['remember_user'];
     $datos = $usuario->getUsuario($id);
