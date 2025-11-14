@@ -1,17 +1,17 @@
 <?php
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/usuario.php';
+require_once __DIR__ . '/Usuario.php';
 
 $usuario = new Usuario();
 $mensaje = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = limpiarEntrada($_POST['nombre'] ?? '');
+    $apellidos = limpiarEntrada($_POST['apellidos'] ?? '');
     $correo = limpiarEntrada($_POST['correo'] ?? '');
     $contrasena = $_POST['contrasena'] ?? '';
     $ruta_img = 'default.png';
 
-    // Manejo de subida
     if (!is_dir(__DIR__ . '/uploads')) {
         mkdir(__DIR__ . '/uploads', 0755);
     }
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         move_uploaded_file($_FILES['foto']['tmp_name'], __DIR__ . '/uploads/' . $ruta_img);
     }
 
-    if ($usuario->registrar($nombre, $correo, $contrasena, $ruta_img)) {
+    if ($usuario->registrar($nombre, $apellidos, $correo, $contrasena, $ruta_img)) {
         flash('mensaje', 'Registro correcto. Puedes iniciar sesión.');
         header('Location: login.php');
         exit;
@@ -35,6 +35,7 @@ include __DIR__ . '/header.php';
 <h2>Registro</h2>
 <form method="post" enctype="multipart/form-data">
     <label>Nombre: <input type="text" name="nombre" required></label><br><br>
+    <label>Apellidos: <input type="text" name="apellidos" required></label><br><br>
     <label>Correo: <input type="email" name="correo" required></label><br><br>
     <label>Contraseña: <input type="password" name="contrasena" required></label><br><br>
     <label>Foto de perfil: <input type="file" name="foto" accept="image/*"></label><br><br>
