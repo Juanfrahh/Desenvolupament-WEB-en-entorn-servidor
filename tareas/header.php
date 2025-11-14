@@ -27,7 +27,7 @@ require_once 'config.php';
                 <?php if(!empty($_SESSION['usuario_img'])): ?>
                     <img src="img/<?php echo $_SESSION['usuario_img']; ?>" alt="img" width="36">
                 <?php endif; ?>
-                <?php echo $_SESSION['usuario_fullname']; ?>
+                <?php echo $_SESSION['usuario_nombre']; ?>
             </span>
         <?php else: ?>
             | <a href="login.php">Login</a> | <a href="registro.php">Registro</a>
