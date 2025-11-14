@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario'])) {
     exit(); // Detiene la ejecución del script
 }
 
-include 'conexion.php'; 
+include 'conexion.ini.php'; 
 // Incluye el archivo de conexión a la base de datos.
 // Si cambias a otra base de datos (ej. Pokémon), asegúrate de que 'conexion.php' apunte a la nueva BD.
 
