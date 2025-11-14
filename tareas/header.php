@@ -1,0 +1,28 @@
+<?php
+require_once __DIR__ . '/../config/config.php';
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="../public/index.php">Inicio</a> |
+        <a href="../public/add_tarea.php">Añadir Tarea</a> |
+        <a href="../public/search.php">Buscar Tareas</a> |
+        <?php if(estaAutenticado()): ?>
+            <span>Hola, <?= $_SESSION['usuario_nombre'] ?></span>
+            <img src="../assets/img/<?= $_SESSION['usuario_img'] ?>" alt="Perfil" width="30">
+            <a href="../public/perfil.php">Perfil</a> |
+            <a href="../public/logout.php">Cerrar sesión</a>
+        <?php else: ?>
+            <a href="../public/login.php">Login</a> |
+            <a href="../public/register.php">Registro</a>
+        <?php endif; ?>
+    </nav>
+</header>
+<hr>
