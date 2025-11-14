@@ -11,7 +11,7 @@ require_once __DIR__ . '/../config/config.php';
 <header>
     <nav>
         <a href="index.php">Inicio</a> |
-        <a href="../public/add_tarea.php">Añadir Tarea</a> |
+        <a href="add_tarea.php">Añadir Tarea</a> |
         <a href="../public/search.php">Buscar Tareas</a> |
         <?php if(estaAutenticado()): ?>
             <span>Hola, <?= $_SESSION['usuario_nombre'] ?></span>
