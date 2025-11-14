@@ -1,6 +1,12 @@
 <?php
 // classes/Usuario.php
-require_once 'conexion.php';
+require_once "Conexion.php";
+
+$db = new Conexion();
+$pdo = $db->getConexion();
+
+$stmt = $pdo->prepare("SELECT * FROM usuarios");
+$stmt->execute();
 
 class Usuario {
     private $db;
