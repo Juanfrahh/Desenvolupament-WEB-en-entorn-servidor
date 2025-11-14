@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password2 = $_POST['password2'] ?? '';
     
     if (!empty($usuario) && !empty($password) && $password === $password2) {
-        $conexionObj = new Conexion('localhost', 'root', '', 'discografia');
+        $conexionObj = new Conexion('localhost', 'root', '', 'tareas');
         $conexion = $conexionObj->conectionPDO();
         
         try {
