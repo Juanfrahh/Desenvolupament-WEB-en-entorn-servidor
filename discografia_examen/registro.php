@@ -27,7 +27,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
         $stmt->execute([$usuario]);
 
         if ($stmt->fetchColumn() > 0) {
-            $mensaje = "<p style='color:red;'>❌ Ese usuario ya existe.</p>";
+            $mensaje = "<p style='color:red;'>Ese usuario ya existe.</p>";
         }
         else {
             // Registrar usuario
