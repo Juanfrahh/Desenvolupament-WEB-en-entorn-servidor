@@ -2,7 +2,7 @@
 // Función que muestra el formulario para crear un disco nuevo y registra el disco en la base de datos
 function formularioUser(){ 
     echo '<button  onclick=location.href="./index.php">Volver</button>'; // Botón para volver al listado de discos
-    echo '<h1>Crear nuevo disco</h1>'; // Título del formulario
+    echo '<h1>Crear nuevo Usuario</h1>'; // Título del formulario
     echo '<form action="usuarionuevo.php" method="post">'; // Formulario HTML, método POST
     echo '<input type="text" required name="titulo" placeholder="Título"/>'; // Campo título
     echo '<input type="text" required name="tareas" placeholder="Tareas"/>'; // Campo discografía
