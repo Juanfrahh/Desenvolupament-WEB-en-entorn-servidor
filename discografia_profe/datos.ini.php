@@ -130,10 +130,10 @@
         echo '<td>'.$registro['precio'].'</td>';
         echo '<td><button onclick=location.href="./cancionnueva.php?cod='.$codigo.'&titulo='.$registro['titulo'].'">Canción Nueva</button></td>';
         echo '</tr>';
-    }
+		}
 
-    echo '</table>';
-}
+		echo '</table>';
+	}
 
 
 	function datosDisco($album){//Devuelve los datos del album seleccionado
