@@ -19,7 +19,6 @@ class Tarea {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    // Obtener una tarea por id
     public function getTareaById($id) {
         $stmt = $this->db->prepare("SELECT * FROM tareas WHERE id = ?");
         $stmt->execute([$id]);
