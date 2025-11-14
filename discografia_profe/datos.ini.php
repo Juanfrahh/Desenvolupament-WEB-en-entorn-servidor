@@ -168,7 +168,7 @@
 		datosCancion($album->getCod());
 	}
 	function datosCancion($cod){//devuelve los datos de todas las canciones del album pasado
-		$conectar = new Conexion('localhost','root','user','discografia');
+		$conectar = new Conexion('localhost','root','','discografia');
 		$conexion = $conectar->conectionPDO();
 		$resultado = $conexion->query('SELECT * FROM discografia.cancion WHERE album = '.$cod.';');
 		echo'<h3>CANCIONES DEL DISCO</h3>';
