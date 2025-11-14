@@ -6,7 +6,7 @@ protegerPagina();
 
 $tarea = new Tarea();
 $tareas = $tarea->listarTareas();
-include '../includes/header.php';
+include 'header.php';
 ?>
 
 <h2>Lista de Tareas</h2>
