@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/Tarea.php';
+require_once __DIR__ . '/tarea.php';
 
 protegerPagina();
 $t = new Tarea();
