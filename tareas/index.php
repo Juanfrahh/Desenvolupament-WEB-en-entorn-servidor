@@ -62,7 +62,7 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
     $conexion = $conectar->conectionPDO();
 
     // Mostrar todos los álbumes y sus canciones usando datosDiscografia()
-    datosDiscografia();
+    datosTareas();
     ?>
 
     <!-- Botón para agregar un nuevo álbum -->
