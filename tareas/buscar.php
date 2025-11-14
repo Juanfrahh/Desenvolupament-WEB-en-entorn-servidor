@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $resultados = $tareaObj->buscarTareas($termino);
 }
 
-include '../includes/header.php';
+include 'header.php';
 ?>
 
 <h2>Buscar Tareas</h2>
