@@ -1,48 +1,60 @@
 <?php
-require_once 'config.php';
-require_once 'Tarea.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/Tarea.php';
 
 protegerPagina();
-
-$tareaObj = new Tarea();
+$tObj = new Tarea();
 $resultados = [];
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $termino = limpiarEntrada($_POST['termino']);
-    $resultados = $tareaObj->buscarTareas($termino);
+$ultimas = $tObj->ultimasCincoAcciones();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $termino = limpiarEntrada($_POST['termino'] ?? '');
+    if ($termino !== '') {
+        $resultados = $tObj->buscarTareas($termino, 100);
+    }
 }
 
-include 'header.php';
+include __DIR__ . '/header.php';
 ?>
-
-<h2>Buscar Tareas</h2>
-<form method="POST">
-    <label>Buscar por nombre o descripción: <input type="text" name="termino" required></label>
+<h2>Buscar tareas</h2>
+<form method="post">
+    <input type="text" name="termino" required placeholder="Nombre o descripción">
     <button type="submit">Buscar</button>
 </form>
 
-<?php if($resultados): ?>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Creada por</th>
-            <th>Modificada por</th>
-            <th>Completada por</th>
-            <th>Estado</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($resultados as $t): ?>
-        <tr>
-            <td><?= htmlspecialchars($t['nombre']) ?></td>
-            <td><?= htmlspecialchars($t['descripcion']) ?></td>
-            <td><?= htmlspecialchars($t['creador']) ?></td>
-            <td><?= htmlspecialchars($t['modificador']) ?></td>
-            <td><?= htmlspecialchars($t['completador']) ?></td>
-            <td><?= $t['completada'] ? 'Completada' : 'Pendiente' ?></td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+<?php if(!empty($resultados)): ?>
+    <h3>Resultados</h3>
+    <table>
+        <thead><tr><th>Nombre</th><th>Descripción</th><th>Estado</th><th>Usuario acción</th></tr></thead>
+        <tbody>
+            <?php foreach($resultados as $r): ?>
+                <tr>
+                    <td><?= htmlspecialchars($r['nombre']) ?></td>
+                    <td><?= htmlspecialchars($r['descripcion']) ?></td>
+                    <td><?= $r['completada'] ? 'Completada' : 'Pendiente' ?></td>
+                    <td>
+                        <?= $r['completada'] ? htmlspecialchars($r['completador']) : ( $r['fecha_modificacion'] ? htmlspecialchars($r['modificador']) : htmlspecialchars($r['creador']) ) ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+<?php endif; ?>
+
+<h3>Últimas 5 acciones</h3>
+<?php if(empty($ultimas)): ?>
+    <p>No hay acciones todavía.</p>
+<?php else: ?>
+    <ul>
+    <?php foreach($ultimas as $u): ?>
+        <li>
+            <?= htmlspecialchars($u['nombre']) ?> —
+            <?php
+                if ($u['fecha_finalizacion']) echo "completada por " . htmlspecialchars($u['completador']);
+                else if ($u['fecha_modificacion']) echo "modificada por " . htmlspecialchars($u['modificador']);
+                else echo "añadida por " . htmlspecialchars($u['creador']);
+            ?>
+        </li>
+    <?php endforeach; ?>
+    </ul>
 <?php endif; ?>
