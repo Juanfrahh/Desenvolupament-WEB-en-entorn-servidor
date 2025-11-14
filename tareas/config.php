@@ -10,7 +10,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-
 function limpiarEntrada($dato) {
     return htmlspecialchars(trim($dato), ENT_QUOTES, 'UTF-8');
 }
