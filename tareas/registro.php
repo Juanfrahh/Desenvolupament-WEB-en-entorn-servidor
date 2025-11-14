@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ruta_img = 'default.png';
 
     if (!is_dir(__DIR__ . '/img')) {
-        mkdir(__DIR__ . '/uploads', 0755);
+        mkdir(__DIR__ . '/img', 0755);
     }
     if (!empty($_FILES['foto']['name']) && $_FILES['foto']['error'] === 0) {
         $ext = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
