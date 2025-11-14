@@ -39,7 +39,6 @@ class Tarea {
         return $stmt->execute([$nombre, $descripcion, $fecha_mod, $fecha_fin, $completada, $id_usr_mod, $id_usr_comp, $id]);
     }
 
-    // Eliminar tarea (solo si no completada)
     public function eliminarTarea($id) {
         $stmt = $this->db->prepare("DELETE FROM tareas WHERE id = ? AND completada = 0");
         return $stmt->execute([$id]);
