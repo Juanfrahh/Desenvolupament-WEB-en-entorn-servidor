@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php';
-require_once 'usuario.php';
+require_once '../config/config.php';
+require_once '../classes/Usuario.php';
 
 $mensaje = '';
 
@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 }
 
-include 'header.php';
+include '../includes/header.php';
 ?>
 
 <h2>Registro de Usuario</h2>
