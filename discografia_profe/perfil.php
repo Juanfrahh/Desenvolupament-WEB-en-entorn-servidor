@@ -1,42 +1,39 @@
 <?php
 session_start();
-include("conexion.ini.php");
 
-// Verificar sesión
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.php");
     exit();
 }
 
+include("conexion.ini.php");
+
+$conectar = new Conexion('localhost','user','user','discografia');
+$conexion = $conectar->conectionPDO();
+
 $id = $_SESSION['usuario_id'];
 
-// Procesar subida de imagen
+// Si el usuario sube una foto
 if (isset($_FILES['foto']) && $_FILES['foto']['error'] === 0) {
 
-    $nombreTmp = $_FILES['foto']['tmp_name'];
-    $nombreOriginal = $_FILES['foto']['name'];
+    $tmp = $_FILES['foto']['tmp_name'];
+    $nombre = $_FILES['foto']['name'];
 
-    $ext = pathinfo($nombreOriginal, PATHINFO_EXTENSION);
+    $ext = pathinfo($nombre, PATHINFO_EXTENSION);
     $nuevoNombre = "user_" . $id . "." . $ext;
 
-    // Guardar en carpeta img/
-    move_uploaded_file($nombreTmp, "img/" . $nuevoNombre);
+    move_uploaded_file($tmp, "img/" . $nuevoNombre);
 
-    // Guardar ruta en la BD
-    $sql = "UPDATE usuarios SET foto = ? WHERE id = ?";
-    $stmt = $conexion->prepare($sql);
-    $rutaFoto = "img/" . $nuevoNombre;
-    $stmt->bind_param("si", $rutaFoto, $id);
-    $stmt->execute();
+    $ruta = "img/" . $nuevoNombre;
+
+    $stmt = $conexion->prepare("UPDATE usuarios SET foto=? WHERE id=?");
+    $stmt->execute([$ruta, $id]);
 }
 
 // Obtener datos del usuario
-$sql = "SELECT usuario, foto FROM usuarios WHERE id = ?";
-$stmt = $conexion->prepare($sql);
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$stmt->bind_result($usuario, $foto);
-$stmt->fetch();
+$stmt = $conexion->prepare("SELECT usuario, foto FROM usuarios WHERE id=?");
+$stmt->execute([$id]);
+$datos = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,18 +45,19 @@ $stmt->fetch();
 
 <h2>Perfil del Usuario</h2>
 
-<p><strong>Usuario:</strong> <?= $usuario ?></p>
+<p><strong>Usuario:</strong> <?= $datos['usuario'] ?></p>
 
-<?php if (!empty($foto)) : ?>
-    <img src="<?= $foto ?>" width="150" alt="Foto de perfil"><br><br>
-<?php else : ?>
-    <p>No tienes una foto de perfil.</p>
+<?php if ($datos['foto']): ?>
+    <img src="<?= $datos['foto'] ?>" width="150">
+<?php else: ?>
+    <p>No tienes foto de perfil.</p>
 <?php endif; ?>
 
+
 <form method="POST" enctype="multipart/form-data">
-    <label>Subir nueva foto de perfil:</label><br>
-    <input type="file" name="foto" accept="image/*" required><br><br>
-    <button type="submit">Actualizar foto</button>
+    <label>Subir nueva foto:</label><br>
+    <input type="file" name="foto" required><br><br>
+    <button type="submit">Guardar</button>
 </form>
 
 <br>
