@@ -22,7 +22,7 @@ class Usuario {
 
     // Login por correo y contraseña
     public function login($correo, $contrasena) {
-        $stmt = $this->db->prepare("SELECT id, nombre, correo, contrasena, ruta_img FROM usuarios WHERE correo = ?");
+        $stmt = $this->db->prepare("SELECT id, nombre, apellidos, correo, contrasena, ruta_img FROM usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
         $u = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($u && password_verify($contrasena, $u['contrasena'])) {
