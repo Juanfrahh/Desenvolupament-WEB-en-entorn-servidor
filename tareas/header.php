@@ -12,7 +12,7 @@ require_once __DIR__ . 'config.php';
     <nav>
         <a href="index.php">Inicio</a> |
         <a href="creartarea.php">Añadir Tarea</a> |
-        <a href="search.php">Buscar Tareas</a> |
+        <a href="buscar.php">Buscar Tareas</a> |
         <?php if(estaAutenticado()): ?>
             <span>Hola, <?= $_SESSION['usuario_nombre'] ?></span>
             <img src="img/<?= $_SESSION['usuario_img'] ?>" alt="Perfil" width="30">
