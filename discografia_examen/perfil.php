@@ -1,43 +1,24 @@
-<?php
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil de <?= htmlspecialchars($usuario['usuario']) ?></title>
+</head>
+<body>
+    <h1>Perfil de <?= htmlspecialchars($usuario['usuario']) ?></h1>
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    <?php if (!empty($usuario['img_grande'])): ?>
+        <img src="<?= htmlspecialchars($usuario['img_grande']) ?>" alt="Imagen de perfil">
+    <?php else: ?>
+        <p>Sin imagen de perfil</p>
+    <?php endif; ?>
 
-echo "Paso 1: Inicio<br>";
+    <p><strong>Usuario:</strong> <?= htmlspecialchars($usuario['usuario']) ?></p>
+    <p><strong>Email:</strong> <?= htmlspecialchars($usuario['email'] ?? 'No registrado') ?></p>
 
-session_start();
-echo "Paso 2: Sesión iniciada<br>";
-
-if (!isset($_SESSION['usuario'])) {
-    echo "Paso 3: No hay sesión. Redirigiendo...<br>";
-    header('Location: login.php');
-    exit();
-}
-
-echo "Paso 4: Usuario logueado como: ".$_SESSION['usuario']."<br>";
-
-include 'conexion.ini.php';
-echo "Paso 5: conexion.ini.php cargado<br>";
-
-// Crear conexión usando la clase
-$cn = new Conexion('localhost', 'root', '', 'discografia');
-echo "Paso 6: Objeto Conexion creado<br>";
-
-$conexion = $cn->conectionPDO();
-echo "Paso 7: Conexión PDO creada<br>";
-
-// Obtener datos del usuario
-$stmt = $conexion->prepare("SELECT * FROM tabla_usuarios WHERE usuario = ?");
-echo "Paso 8: Consulta preparada<br>";
-
-$stmt->execute([$_SESSION['usuario']]);
-echo "Paso 9: Consulta ejecutada<br>";
-
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-echo "Paso 10: Usuario obtenido<br>";
-
-var_dump($usuario); // Para verlo
-exit();
-
-?>
+    <p>
+        <a href="index.php">Volver a inicio</a> | 
+        <a href="logout.php">Cerrar sesión</a>
+    </p>
+</body>
+</html>
