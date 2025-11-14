@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+session_start(); // Inicia la sesión para poder usar $_SESSION
+
+// Si no hay usuario en sesión, redirige al login
+if (!isset($_SESSION['usuario'])) {
+    header('Location: login.php');
+    exit();
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
