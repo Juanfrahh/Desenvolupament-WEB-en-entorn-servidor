@@ -194,7 +194,7 @@
 	}
 
 	function datosBuscados($textoBuscar, $select, $genero){//Esta función devuelve una lista de canciones dependiendo de los datos que quiera utilizar el usuario para su busqueda
-		$conectar = new Conexion('localhost','root','user','discografia');
+		$conectar = new Conexion('localhost','root','','discografia');
 		$conexion = $conectar->conectionPDO();
 		$resultado1 = $conexion->query('SELECT count(cancion.titulo) as cont FROM discografia.cancion,discografia.album WHERE album.cod = cancion.album and cancion.genero = "'.$genero.'" and '.$select.' LIKE "%'.$textoBuscar.'%";');
 		
