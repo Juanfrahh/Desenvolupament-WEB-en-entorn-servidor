@@ -6,8 +6,7 @@ function formularioUser(){
     echo '<form action="usuarionuevo.php" method="post">'; // Formulario HTML, método POST
     echo '<input type="text" required name="titulo" placeholder="Título"/>'; // Campo título
     echo '<input type="text" required name="tareas" placeholder="Tareas"/>'; // Campo discografía
-    echo '<label>formato: </label>';
- // Selector de formato del disco
+
     echo '<label>fechaLanzamiento: </label>';
     echo '<input type="date" name="fechaLanzamiento"/>'; // Campo fecha de lanzamiento
     echo '<label>fechaCompra: </label>';
