@@ -8,7 +8,6 @@ define('DB_NAME', 'tareas');
 define('DB_USER', 'usr_tareas');
 define('DB_PASS', 'usr_tareas');
 
-// Funciones auxiliares
 function estaAutenticado() {
     return isset($_SESSION['usuario_id']);
 }
