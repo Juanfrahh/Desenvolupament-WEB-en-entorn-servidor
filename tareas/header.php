@@ -20,7 +20,7 @@ require_once __DIR__ . 'config.php';
             <a href="logout.php">Cerrar sesión</a>
         <?php else: ?>
             <a href="login.php">Login</a> |
-            <a href="regist.php">Registro</a>
+            <a href="registro.php">Registro</a>
         <?php endif; ?>
     </nav>
 </header>
