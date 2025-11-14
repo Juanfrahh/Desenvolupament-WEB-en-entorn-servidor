@@ -11,7 +11,7 @@ if (!isset($_SESSION['usuario'])) {
 include 'conexion.ini.php'; // ✅ Incluimos la clase de conexión
 
 // ✅ Creamos la conexión usando la clase
-$conectar = new Conexion('localhost', 'root', '', 'discografia');
+$conectar = new Conexion('localhost', 'root', '', 'tareas');
 // Si usas XAMPP por defecto, cambia a: new Conexion('localhost', 'root', '', 'discografia');
 $conexion = $conectar->conectionPDO();
 
