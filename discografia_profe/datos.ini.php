@@ -197,7 +197,7 @@
         echo '<td>'.$c['duracion'].'</td>';
         echo '<td>'.$c['genero'].'</td>';
         echo '</tr>';
-		}
+	}
 		echo '</table>';
 	}
 
