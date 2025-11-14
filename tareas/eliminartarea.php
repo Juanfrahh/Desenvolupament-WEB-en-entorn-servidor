@@ -1,17 +1,12 @@
 <?php
-require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/tarea.php';
+require_once 'config.php';
+require_once 'Tarea.php';
 
 protegerPagina();
-
-$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+$id = $_GET['id'] ?? null;
 if ($id) {
-    $t = new Tarea();
-    $ok = $t->eliminarTarea($id);
-    if ($ok) {
-        flash('mensaje', 'Tarea eliminada.');
-    } else {
-        flash('mensaje', 'No se pudo eliminar (quizás ya está completada).');
-    }
+    $tarea = new Tarea();
+    $tarea->eliminarTarea($id);
 }
-header('Location: index.php'); exit;
+header('Location: index.php');
+exit;
