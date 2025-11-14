@@ -1,6 +1,6 @@
 <?php
 // classes/Conexion.php
-require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . 'config.php';
 
 class Conexion {
     private $host = DB_HOST;
