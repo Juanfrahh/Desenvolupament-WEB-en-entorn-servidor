@@ -1,6 +1,13 @@
 <?php
 require_once 'config.php';
-require_once 'usuario.php';
+require_once "Conexion.php";
+
+$db = new Conexion();
+$pdo = $db->getConexion();
+
+$stmt = $pdo->prepare("SELECT * FROM usuarios");
+$stmt->execute();
+
 
 $mensaje = '';
 
