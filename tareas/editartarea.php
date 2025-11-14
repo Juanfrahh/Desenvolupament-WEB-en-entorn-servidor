@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($tarea->editarTarea($id, $nombre, $descripcion, $_SESSION['usuario_id'], $completada)) {
         $mensaje = "Tarea actualizada correctamente.";
-        $t = $tarea->getTareaById($id); // refrescar datos
+        $t = $tarea->getTareaById($id);
     } else {
         $mensaje = "Error al actualizar tarea.";
     }
