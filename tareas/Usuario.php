@@ -9,7 +9,6 @@ class Usuario {
         $this->db = (new Conexion())->getConexion();
     }
 
-    // Registrar nuevo usuario
     public function registrar($nombre, $correo, $contrasena, $ruta_img) {
         try {
             $hash = password_hash($contrasena, PASSWORD_DEFAULT);
