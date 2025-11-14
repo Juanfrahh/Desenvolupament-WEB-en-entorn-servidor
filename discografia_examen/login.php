@@ -28,7 +28,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
             $mensaje = "<p style='color:red;'>Usuario o contraseña incorrectos.</p>";
         }
     } else {
-        $mensaje = "<p style='color:red;'>❌ Rellena todos los campos.</p>";
+        $mensaje = "<p style='color:red;'>Rellena todos los campos.</p>";
     }
 }
 ?>
