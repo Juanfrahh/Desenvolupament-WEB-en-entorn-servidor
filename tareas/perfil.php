@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $correo = limpiarEntrada($_POST['correo'] ?? '');
     $ruta_img = $datos['ruta_img'];
 
-    if (!is_dir(__DIR__ . '/uploads')) {
+    if (!is_dir(__DIR__ . '/img')) {
         mkdir(__DIR__ . '/uploads', 0755);
     }
     if (!empty($_FILES['foto']['name']) && $_FILES['foto']['error'] === 0) {
