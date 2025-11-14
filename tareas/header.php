@@ -6,7 +6,6 @@ require_once __DIR__ . '/../config/config.php';
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Tareas</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <header>
