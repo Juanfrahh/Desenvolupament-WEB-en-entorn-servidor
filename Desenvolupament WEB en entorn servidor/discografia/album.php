@@ -1,58 +1,61 @@
 <?php
-include 'conexion.php';
+class Album {
+    private $conexion;
 
-$codigo = $_GET['codigo'] ?? 0;
+    public function __construct($conexion) {
+        $this->conexion = $conexion;
+    }
 
-$stmt = $conexion->prepare("SELECT codigo, titulo, formato, precio FROM album WHERE codigo=?");
-$stmt->execute([$codigo]);
-$album = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Obtener todos los álbumes
+    public function obtenerTodos() {
+        $stmt = $this->conexion->query("SELECT * FROM album ORDER BY titulo");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
-if (!$album) die("Álbum no encontrado.");
+    // Obtener un álbum por código
+    public function obtenerPorCodigo($codigo) {
+        $stmt = $this->conexion->prepare("SELECT * FROM album WHERE codigo=?");
+        $stmt->execute([$codigo]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
-$canciones = $conexion->prepare("SELECT titulo, genero, posicion FROM cancion WHERE album=? ORDER BY posicion");
-$canciones->execute([$codigo]);
+    // Agregar un álbum
+    public function agregar($titulo, $formato, $precio = null) {
+        $stmt = $this->conexion->prepare(
+            "INSERT INTO album (titulo, discografica, formato, fechaLanzamiento, fechaCompra, precio)
+             VALUES (?, 'Desconocida', ?, NULL, NULL, ?)"
+        );
+        $stmt->execute([$titulo, $formato, $precio]);
+    }
+
+    // Eliminar un álbum y sus canciones
+    public function eliminar($codigo) {
+        $this->conexion->beginTransaction();
+        try {
+            $this->conexion->prepare("DELETE FROM cancion WHERE album=?")->execute([$codigo]);
+            $this->conexion->prepare("DELETE FROM album WHERE codigo=?")->execute([$codigo]);
+            $this->conexion->commit();
+        } catch (PDOException $e) {
+            $this->conexion->rollBack();
+            throw $e;
+        }
+    }
+
+    // Obtener canciones de un álbum
+    public function obtenerCanciones($codigo) {
+        $stmt = $this->conexion->prepare("SELECT * FROM cancion WHERE album=? ORDER BY posicion");
+        $stmt->execute([$codigo]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Agregar canción a un álbum
+    public function agregarCancion($codigoAlbum, $titulo, $genero) {
+        $posQuery = $this->conexion->prepare("SELECT COALESCE(MAX(posicion),0)+1 FROM cancion WHERE album=?");
+        $posQuery->execute([$codigoAlbum]);
+        $posicion = $posQuery->fetchColumn();
+
+        $stmt = $this->conexion->prepare("INSERT INTO cancion (titulo, album, posicion, duracion, genero) VALUES (?, ?, ?, NULL, ?)");
+        $stmt->execute([$titulo, $codigoAlbum, $posicion, $genero]);
+    }
+}
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title><?= htmlspecialchars($album['titulo']) ?></title>
-<style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-table { border-collapse: collapse; width: 60%; }
-th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-th { background-color: #f2f2f2; }
-</style>
-</head>
-<body>
-
-<h2><?= htmlspecialchars($album['titulo']) ?></h2>
-<p>
-<strong>Formato:</strong> <?= htmlspecialchars($album['formato']) ?><br>
-<strong>Precio:</strong> <?= htmlspecialchars($album['precio']) ?> €
-</p>
-
-<h3>Canciones</h3>
-
-<?php if ($canciones->rowCount() > 0): ?>
-<table>
-<tr><th>Posición</th><th>Título</th><th>Género</th></tr>
-<?php foreach ($canciones as $c): ?>
-<tr>
-  <td><?= htmlspecialchars($c['posicion']) ?></td>
-  <td><?= htmlspecialchars($c['titulo']) ?></td>
-  <td><?= htmlspecialchars($c['genero']) ?></td>
-</tr>
-<?php endforeach; ?>
-</table>
-<?php else: ?>
-<p><em>No hay canciones registradas en este álbum.</em></p>
-<?php endif; ?>
-
-<br>
-<a href="cancionnueva.php?album=<?= urlencode($codigo) ?>">Añadir canción</a>
-<a href="borraralbum.php?codigo=<?= urlencode($codigo) ?>" onclick="return confirm('¿Seguro que deseas eliminar este álbum y todas sus canciones?');">Borrar álbum</a> |
-<a href="index.php">Volver</a>
-
-</body>
-</html>
