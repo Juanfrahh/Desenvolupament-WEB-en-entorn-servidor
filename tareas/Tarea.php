@@ -1,6 +1,6 @@
 <?php
 // Tarea.php
-require_once __DIR__ . '/Conexion.php';
+require_once __DIR__ . '/conexion.php';
 
 class Tarea {
     private $db;
