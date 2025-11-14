@@ -55,7 +55,7 @@
 		echo '<input id="reg-mod" type="submit" value="Registrar"/>';
 		echo '</form>';
 		if(isset($_POST["titulo"])){
-			$conectar = new Conexion('localhost','root','user','discografia');
+			$conectar = new Conexion('localhost','root','','discografia');
 			$conexion = $conectar->conectionPDO();
 			$cancion = new Cancion($_POST['titulo'],$cancion->getAlbum(),$_POST['posicion'],$_POST['duracion'],$_POST['genero']);
 			$cancion->registrarCancion($conexion);
