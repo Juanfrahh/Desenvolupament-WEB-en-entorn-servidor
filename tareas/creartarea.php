@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once '../classes/Tarea.php';
+require_once 'tarea.php';
 
 protegerPagina();
 
