@@ -41,7 +41,7 @@ include __DIR__ . '/header.php';
             <td>
                 <?php if(!$t['completada']): ?>
                     <a href="editartarea.php?id=<?= $t['id'] ?>">Editar</a> |
-                    <a href="delete_tarea.php?id=<?= $t['id'] ?>" onclick="return confirm('Eliminar tarea?')">Eliminar</a>
+                    <a href="eliminartarea.php?id=<?= $t['id'] ?>" onclick="return confirm('Eliminar tarea?')">Eliminar</a>
                 <?php else: ?>
                     -
                 <?php endif; ?>
