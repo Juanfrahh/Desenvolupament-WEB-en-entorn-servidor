@@ -1,32 +1,18 @@
 <?php
-
-require_once __DIR__ . '/config.php';
-
-class Conexion {
-    private $host = DB_HOST;
-    private $db = DB_NAME;
-    private $user = DB_USER;
-    private $pass = DB_PASS;
+class Conexion{
+    private $ip = "localhost";
+    private $nombre = "usr_tareas";
+    private $password = "usr_tareas";
+    private $bd = "tareas";
     private $pdo;
 
     public function __construct() {
-        $this->conectarPDO();
-    }
-
-    private function conectarPDO() {
-        $opciones = [
-            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
-        ];
         try {
-            $this->pdo = new PDO(
-                "mysql:host={$this->host};dbname={$this->db};charset=utf8",
-                $this->user,
-                $this->pass,
-                $opciones
-            );
+            $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
+            $this->pdo = new PDO("mysql:host={$this->ip};dbname={$this->bd}", $this->nombre, $this->password, $opc);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die("Error conectando a la base de datos: " . $e->getMessage());
+        } catch(PDOException $e) {
+            die("Falló la conexión: " . $e->getMessage());
         }
     }
 
