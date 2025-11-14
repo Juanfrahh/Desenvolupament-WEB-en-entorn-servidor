@@ -1,14 +1,16 @@
 <?php
-
+// Datos de conexión
 $DB_HOST = "localhost";
 $DB_USER = "usr_tareas";
 $DB_PASS = "usr_tareas";
 $DB_NAME = "tareas";
 
+// Iniciar sesión
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Funciones de utilidad
 function limpiarEntrada($dato) {
     return htmlspecialchars(trim($dato), ENT_QUOTES, 'UTF-8');
 }
