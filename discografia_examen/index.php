@@ -17,4 +17,4 @@ $stmt = $conexion->prepare("SELECT * FROM tabla_usuarios WHERE usuario = ?");
 $stmt->execute([$_SESSION['usuario']]);
 $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-?
+?>
