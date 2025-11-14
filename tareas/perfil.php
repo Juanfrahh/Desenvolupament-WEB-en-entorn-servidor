@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 }
 
-include 'header.php';
+include '../includes/header.php';
 ?>
 
 <h2>Perfil de Usuario</h2>
