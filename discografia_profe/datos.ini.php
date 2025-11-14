@@ -105,14 +105,13 @@ function datosDiscografia() {
     $pdo = $conectar->conectionPDO();
 
     try {
-        $resultado = $pdo->query('SELECT codigo, titulo, discografia, formato, fechaLanzamiento, fechaCompra, precio FROM album');
+        $resultado = $pdo->query('SELECT codigo, titulo, formato, fechaLanzamiento, fechaCompra, precio FROM album');
 
         echo '<button onclick=location.href="./disconuevo.php">Nuevo disco</button>';
         echo '<button onclick=location.href="./canciones.php">Buscar canciones</button>';
         echo '<table>';
         echo '<tr>
                 <th>Título</th>
-                <th>Discográfica</th>
                 <th>Formato</th>
                 <th>Fecha Lanzamiento</th>
                 <th>Fecha Compra</th>
@@ -124,7 +123,6 @@ function datosDiscografia() {
             $codigo = $registro['codigo'];
             echo '<tr>';
             echo '<td><a href="disco.php?cod='.$codigo.'">'.$registro['titulo'].'</a></td>';
-            echo '<td>'.$registro['discografia'].'</td>';
             echo '<td>'.$registro['formato'].'</td>';
             echo '<td>'.$registro['fechaLanzamiento'].'</td>';
             echo '<td>'.$registro['fechaCompra'].'</td>';
