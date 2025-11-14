@@ -17,7 +17,7 @@ $conexion = $conectar->conectionPDO();
 
 // ✅ Verificamos que la conexión funcione
 if (!$conexion) {
-    die("❌ Error: No se pudo conectar a la base de datos.");
+    die("Error: No se pudo conectar a la base de datos.");
 }
 
 // Recuperamos los datos del usuario desde la BD
