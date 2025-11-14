@@ -14,7 +14,7 @@ class Usuario {
         try {
             $hash = password_hash($contrasena, PASSWORD_DEFAULT);
             $stmt = $this->db->prepare("INSERT INTO usuarios (nombre, apellidos, correo, contrasena, ruta_img) VALUES (?, ?, ?, ?)");
-            return $stmt->execute([$nombre, $correo, $hash, $ruta_img]);
+            return $stmt->execute([$nombre,$apellido $correo, $hash, $ruta_img]);
         } catch (PDOException $e) {
             return false;
         }
