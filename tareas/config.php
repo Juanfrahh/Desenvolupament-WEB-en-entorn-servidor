@@ -2,7 +2,6 @@
 // config.php
 session_start();
 
-// Configuración de la BD (ajusta si fuera necesario)
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'tareas');
 define('DB_USER', 'usr_tareas');
