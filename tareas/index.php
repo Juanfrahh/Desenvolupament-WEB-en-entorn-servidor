@@ -1,8 +1,8 @@
 <?php
 require_once 'config.php';
-require_once 'tarea.php';
-
+require_once 'Tarea.php';
 protegerPagina();
+
 $tarea = new Tarea();
 $tareas = $tarea->listarTareas();
 
@@ -40,8 +40,8 @@ include 'header.php';
             <td><?php echo $t['completada'] ? 'Sí' : 'No'; ?></td>
             <td>
                 <?php if(!$t['completada']): ?>
-                    <a href="editartarea.php?id=<?php echo $t['id']; ?>">Editar</a> |
-                    <a href="eliminartarea.php?id=<?php echo $t['id']; ?>" onclick="return confirm('¿Seguro que quieres eliminar esta tarea?');">Eliminar</a>
+                    <a href="edit_tarea.php?id=<?php echo $t['id']; ?>">Editar</a> |
+                    <a href="delete_tarea.php?id=<?php echo $t['id']; ?>" onclick="return confirm('¿Seguro que quieres eliminar esta tarea?');">Eliminar</a>
                 <?php endif; ?>
             </td>
         </tr>
