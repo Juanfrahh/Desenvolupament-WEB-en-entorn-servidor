@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/conexion.php';
+require_once 'Conexion.php';
 
 class Usuario {
     private $db;
@@ -8,23 +8,25 @@ class Usuario {
         $this->db = (new Conexion())->getConexion();
     }
 
-    public function registrar($nombre, $correo, $contrasena, $ruta_img) {
+    public function registrar($nombre, $apellidos, $correo, $contrasena, $ruta_img) {
         try {
             $hash = password_hash($contrasena, PASSWORD_DEFAULT);
-            $stmt = $this->db->prepare("INSERT INTO usuarios (nombre, correo, contrasena, ruta_img) VALUES (?, ?, ?, ?)");
-            return $stmt->execute([$nombre, $correo, $hash, $ruta_img]);
+            $stmt = $this->db->prepare("INSERT INTO usuarios (nombre, apellidos, correo, contrasena, ruta_img) VALUES (?, ?, ?, ?, ?)");
+            return $stmt->execute([$nombre, $apellidos, $correo, $hash, $ruta_img]);
         } catch (PDOException $e) {
             return false;
         }
     }
 
     public function login($correo, $contrasena) {
-        $stmt = $this->db->prepare("SELECT id, nombre, correo, contrasena, ruta_img FROM usuarios WHERE correo = ?");
+        $stmt = $this->db->prepare("SELECT id, nombre, apellidos, correo, contrasena, ruta_img FROM usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
         $u = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($u && password_verify($contrasena, $u['contrasena'])) {
             $_SESSION['usuario_id'] = $u['id'];
             $_SESSION['usuario_nombre'] = $u['nombre'];
+            $_SESSION['usuario_apellidos'] = $u['apellidos'];
+            $_SESSION['usuario_fullname'] = trim($u['nombre'] . ' ' . $u['apellidos']);
             $_SESSION['usuario_img'] = $u['ruta_img'];
             return true;
         }
@@ -32,21 +34,21 @@ class Usuario {
     }
 
     public function getUsuario($id) {
-        $stmt = $this->db->prepare("SELECT id, nombre, correo, ruta_img FROM usuarios WHERE id = ?");
+        $stmt = $this->db->prepare("SELECT id, nombre, apellidos, correo, ruta_img FROM usuarios WHERE id = ?");
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function actualizarPerfil($id, $nombre, $correo, $ruta_img = null) {
+    public function actualizarPerfil($id, $nombre, $apellidos, $correo, $ruta_img = null) {
         try {
             if ($ruta_img !== null) {
-                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, correo = ?, ruta_img = ? WHERE id = ?");
-                return $stmt->execute([$nombre, $correo, $ruta_img, $id]);
+                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, apellidos = ?, correo = ?, ruta_img = ? WHERE id = ?");
+                return $stmt->execute([$nombre, $apellidos, $correo, $ruta_img, $id]);
             } else {
-                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, correo = ? WHERE id = ?");
-                return $stmt->execute([$nombre, $correo, $id]);
+                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, apellidos = ?, correo = ? WHERE id = ?");
+                return $stmt->execute([$nombre, $apellidos, $correo, $id]);
             }
-        } catch (PDOException $e) {
+        } catch(PDOException $e) {
             return false;
         }
     }
