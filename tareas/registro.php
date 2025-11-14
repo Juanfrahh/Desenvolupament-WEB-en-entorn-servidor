@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     // Subir imagen
     if(isset($_FILES['foto']) && $_FILES['foto']['error'] == 0){
         $ruta_img = time() . '_' . $_FILES['foto']['name'];
-        move_uploaded_file($_FILES['foto']['tmp_name'], '../assets/img/' . $ruta_img);
+        move_uploaded_file($_FILES['foto']['tmp_name'], 'img/' . $ruta_img);
     }
 
     $usuario = new Usuario();
