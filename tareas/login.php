@@ -15,7 +15,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
 
     if (!empty($usuario) && !empty($password)) {
         // Consulta para obtener la contraseña hasheada del usuario
-        $stmt = $conexion->prepare("SELECT password FROM tabla_usuarios WHERE usuario = ?");
+        $stmt = $conexion->prepare("SELECT password FROM usuarios WHERE usuario = ?");
         $stmt->execute([$usuario]);
         $hash = $stmt->fetchColumn();
 
