@@ -1,53 +1,50 @@
 <?php
-require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/tarea.php';
+require_once 'config.php';
+require_once 'Tarea.php';
 
 protegerPagina();
+$tarea = new Tarea();
+$tareas = $tarea->listarTareas();
 
-$tObj = new Tarea();
-$tareas = $tObj->listarTareas();
-include __DIR__ . '/header.php';
+include 'header.php';
 ?>
-<h2>Lista de tareas</h2>
-
-<?php if($msg = flash('mensaje')): ?>
-    <p style="color:green;"><?= $msg ?></p>
-<?php endif; ?>
-
+<h2>Lista de Tareas</h2>
 <table>
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Creada por</th>
             <th>Modificada por</th>
             <th>Completada por</th>
-            <th>Estado</th>
+            <th>Creación</th>
+            <th>Modificación</th>
+            <th>Finalización</th>
+            <th>Completada</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-    <?php if(empty($tareas)): ?>
-        <tr><td colspan="7">No hay tareas.</td></tr>
-    <?php else: ?>
         <?php foreach($tareas as $t): ?>
         <tr>
-            <td><?= htmlspecialchars($t['nombre']) ?></td>
-            <td><?= htmlspecialchars($t['descripcion']) ?></td>
-            <td><?= htmlspecialchars($t['creador']) ?></td>
-            <td><?= htmlspecialchars($t['modificador']) ?></td>
-            <td><?= htmlspecialchars($t['completador']) ?></td>
-            <td><?= $t['completada'] ? 'Completada' : 'Pendiente' ?></td>
+            <td><?php echo $t['id']; ?></td>
+            <td><?php echo $t['nombre']; ?></td>
+            <td><?php echo $t['descripcion']; ?></td>
+            <td><?php echo $t['creador']; ?></td>
+            <td><?php echo $t['modificador']; ?></td>
+            <td><?php echo $t['completador']; ?></td>
+            <td><?php echo $t['fecha_creacion']; ?></td>
+            <td><?php echo $t['fecha_modificacion']; ?></td>
+            <td><?php echo $t['fecha_finalizacion']; ?></td>
+            <td><?php echo $t['completada'] ? 'Sí' : 'No'; ?></td>
             <td>
                 <?php if(!$t['completada']): ?>
-                    <a href="editartarea.php?id=<?= $t['id'] ?>">Editar</a> |
-                    <a href="eliminartarea.php?id=<?= $t['id'] ?>" onclick="return confirm('Eliminar tarea?')">Eliminar</a>
-                <?php else: ?>
-                    -
+                    <a href="edit_tarea.php?id=<?php echo $t['id']; ?>">Editar</a> |
+                    <a href="delete_tarea.php?id=<?php echo $t['id']; ?>" onclick="return confirm('¿Seguro que quieres eliminar esta tarea?');">Eliminar</a>
                 <?php endif; ?>
             </td>
         </tr>
         <?php endforeach; ?>
-    <?php endif; ?>
     </tbody>
 </table>
