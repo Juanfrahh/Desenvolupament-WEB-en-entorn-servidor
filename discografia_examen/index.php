@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
             $albumObj->agregar($titulo, $formato, $precio);
             $mensaje = "Álbum añadido correctamente";
         } else {
-            $mensaje = "❌ Completa todos los campos";
+            $mensaje = "Completa todos los campos";
         }
     }
 
