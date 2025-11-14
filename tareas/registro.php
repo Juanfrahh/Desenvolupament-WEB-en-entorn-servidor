@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once 'Usuario.php';
+require_once 'usuario.php';
 
 $mensaje = '';
 
