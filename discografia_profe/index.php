@@ -5,7 +5,6 @@ session_start();
 if (!isset($_COOKIE['aceptar_cookies'])) {
     session_unset();
     session_destroy();
-    header("Location: cookies.php");
     exit();
 }
 
