@@ -3,7 +3,7 @@
 function formularioUser(){ 
     echo '<button  onclick=location.href="./index.php">Volver</button>'; // Botón para volver al listado de discos
     echo '<h1>Crear nuevo disco</h1>'; // Título del formulario
-    echo '<form action="usuario.php" method="post">'; // Formulario HTML, método POST
+    echo '<form action="usuarionuevo.php" method="post">'; // Formulario HTML, método POST
     echo '<input type="text" required name="titulo" placeholder="Título"/>'; // Campo título
     echo '<input type="text" required name="tareas" placeholder="Tareas"/>'; // Campo discografía
     echo '<label>formato: </label>';
