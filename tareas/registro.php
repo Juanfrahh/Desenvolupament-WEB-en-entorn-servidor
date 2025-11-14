@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_FILES['foto']['name']) && $_FILES['foto']['error'] === 0) {
         $ext = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
         $ruta_img = time() . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
-        move_uploaded_file($_FILES['foto']['tmp_name'], __DIR__ . '/uploads/' . $ruta_img);
+        move_uploaded_file($_FILES['foto']['tmp_name'], __DIR__ . '/img/' . $ruta_img);
     }
 
     if ($usuario->registrar($nombre, $apellidos, $correo, $contrasena, $ruta_img)) {
