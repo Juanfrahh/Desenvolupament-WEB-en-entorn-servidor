@@ -27,7 +27,7 @@ class Conexion{
             return $conexion;
 
         } catch (PDOException $e) {
-            echo '❌ Falló la conexión: ' . $e->getMessage();
+            echo 'Falló la conexión: ' . $e->getMessage();
             exit();
         }
     }
