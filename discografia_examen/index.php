@@ -54,22 +54,22 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
     <hr>
 
     <!-- Aquí podrías incluir la lista de discos/canciones -->
-        <h2>Mis discos y canciones</h2>
+    <h2>Mis discos y canciones</h2>
 
-        <?php
-        // Crear conexión usando clase Conexion
-        $conectar = new Conexion('localhost','root','','discografia');
-        $conexion = $conectar->conectionPDO();
+    <?php
+    // Crear conexión usando clase Conexion
+    $conectar = new Conexion('localhost','root','','discografia');
+    $conexion = $conectar->conectionPDO();
 
-        // Mostrar todos los álbumes y sus canciones usando datosDiscografia()
-        datosDiscografia();
-        ?>
+    // Mostrar todos los álbumes y sus canciones usando datosDiscografia()
+    datosDiscografia();
+    ?>
 
-        <!-- Botón para agregar un nuevo álbum -->
-        <p>
-            <a href="disconuevo.php">Crear nuevo álbum</a> |
-            <a href="canciones.php">Buscar canciones</a>
-        </p>
+    <!-- Botón para agregar un nuevo álbum -->
+    <p>
+        <a href="disconuevo.php">Crear nuevo álbum</a> |
+        <a href="canciones.php">Buscar canciones</a>
+    </p>
 
 </body>
 </html>
