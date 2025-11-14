@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
-    $sql = "SELECT id, usuario, password FROM usuarios WHERE usuario = ?";
+    $sql = "SELECT id, usuario, password FROM tabla_usuarios WHERE usuario = ?";
     $stmt = $conexion->prepare($sql);
     $stmt->execute([$usuario]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
