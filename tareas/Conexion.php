@@ -1,6 +1,6 @@
 <?php
-// Conexion.php
-require_once __DIR__ . 'config.php';
+// classes/Conexion.php
+require_once __DIR__ . '/../config/config.php';
 
 class Conexion {
     private $host = DB_HOST;
@@ -16,10 +16,9 @@ class Conexion {
                 $this->user,
                 $this->pass
             );
-            // Configurar para lanzar excepciones en errores
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            die("Error de conexión a la base de datos: " . $e->getMessage());
+            die("Error de conexión: " . $e->getMessage());
         }
     }
 }
