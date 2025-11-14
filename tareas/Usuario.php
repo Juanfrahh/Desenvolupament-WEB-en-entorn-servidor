@@ -1,5 +1,4 @@
 <?php
-// Usuario.php
 require_once __DIR__ . '/conexion.php';
 
 class Usuario {
