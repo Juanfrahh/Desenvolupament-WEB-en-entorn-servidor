@@ -1,5 +1,5 @@
 <?php
-// Datos de conexión
+
 $DB_HOST = "localhost";
 $DB_USER = "usr_tareas";
 $DB_PASS = "usr_tareas";
