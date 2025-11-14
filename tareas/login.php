@@ -44,7 +44,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'login') {
     <?php echo $mensaje; ?>
     <form action="login.php" method="post">
         <input type="text" name="usuario" placeholder="Usuario" required><br>
-        <input type="email" name="email" place>
+        <input type="email" name="email" placeholder>
         <input type="password" name="password" placeholder="Contraseña" required><br>
         <input type="hidden" name="accion" value="login">
         <input type="submit" value="Entrar">
