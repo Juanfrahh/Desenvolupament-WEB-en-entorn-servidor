@@ -197,9 +197,9 @@
         echo '<td>'.$c['duracion'].'</td>';
         echo '<td>'.$c['genero'].'</td>';
         echo '</tr>';
-    }
-    echo '</table>';
-}
+		}
+		echo '</table>';
+	}
 
 
 	function datosBuscados($textoBuscar, $select, $genero){//Esta función devuelve una lista de canciones dependiendo de los datos que quiera utilizar el usuario para su busqueda
