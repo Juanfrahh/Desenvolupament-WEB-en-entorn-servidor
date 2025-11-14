@@ -9,7 +9,6 @@ class Tarea {
         $this->db = (new Conexion())->getConexion();
     }
 
-    // Listar todas las tareas (con nombres de usuarios)
     public function listarTareas() {
         $sql = "SELECT t.*, u1.nombre AS creador, u2.nombre AS modificador, u3.nombre AS completador
                 FROM tareas t
