@@ -25,7 +25,6 @@ class Tarea {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Agregar tarea
     public function agregarTarea($nombre, $descripcion, $id_usr_crea) {
         $stmt = $this->db->prepare("INSERT INTO tareas (nombre, descripcion, id_usr_crea) VALUES (?, ?, ?)");
         return $stmt->execute([$nombre, $descripcion, $id_usr_crea]);
