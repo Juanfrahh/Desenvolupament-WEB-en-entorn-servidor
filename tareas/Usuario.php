@@ -45,7 +45,7 @@ class Usuario {
     public function actualizarPerfil($id, $nombre, $apellidos, $correo, $ruta_img = null) {
         try {
             if ($ruta_img !== null) {
-                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, correo = ?, ruta_img = ? WHERE id = ?");
+                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, apelldos correo = ?, ruta_img = ? WHERE id = ?");
                 return $stmt->execute([$nombre, $correo, $ruta_img, $id]);
             } else {
                 $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, correo = ? WHERE id = ?");
