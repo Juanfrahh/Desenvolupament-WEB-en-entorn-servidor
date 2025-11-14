@@ -20,7 +20,6 @@ class Usuario {
         }
     }
 
-    // Login por correo y contraseña
     public function login($correo, $contrasena) {
         $stmt = $this->db->prepare("SELECT id, nombre, correo, contrasena, ruta_img FROM usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
