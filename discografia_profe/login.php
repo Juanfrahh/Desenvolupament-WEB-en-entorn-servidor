@@ -1,36 +1,34 @@
 <?php
 session_start();
+
 include("conexion.ini.php");
 
-// Si ya está logueado, redirigir
-if (isset($_SESSION['usuario_id'])) {
-    header("Location: perfil.php");
-    exit();
-}
+// Crear conexión usando tu clase
+$conectar = new Conexion('localhost','user','user','discografia');
+$conexion = $conectar->conectionPDO();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
-    // Consulta usuario
     $sql = "SELECT id, usuario, password FROM usuarios WHERE usuario = ?";
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("s", $usuario);
-    $stmt->execute();
-    $stmt->store_result();
+    $stmt->execute([$usuario]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($stmt->num_rows === 1) {
-        $stmt->bind_result($id, $user, $passHash);
-        $stmt->fetch();
+    if ($user) {
+        if (password_verify($password, $user['password'])) {
 
-        if (password_verify($password, $passHash)) {
-            $_SESSION['usuario_id'] = $id;
-            $_SESSION['usuario'] = $user;
-            header("Location: perfil.php");
+            $_SESSION['usuario_id'] = $user['id'];
+            $_SESSION['usuario'] = $user['usuario'];
+            header("Location: index.php");
             exit();
+
         } else {
             $error = "Contraseña incorrecta.";
         }
+
     } else {
         $error = "Usuario no encontrado.";
     }
