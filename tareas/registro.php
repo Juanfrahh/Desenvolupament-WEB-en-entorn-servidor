@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ruta_img = 'default.png';
 
     // Manejo de subida
-    if (!is_dir(__DIR__ . '/uploads')) {
+    if (!is_dir(__DIR__ . '/img')) {
         mkdir(__DIR__ . '/uploads', 0755);
     }
     if (!empty($_FILES['foto']['name']) && $_FILES['foto']['error'] === 0) {
