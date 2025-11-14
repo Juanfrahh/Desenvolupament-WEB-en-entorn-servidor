@@ -19,7 +19,7 @@ require_once 'config.php';
     <nav>
         <a href="index.php">Inicio</a>
         <?php if(estaAutenticado()): ?>
-            | <a href="add_tarea.php">Añadir tarea</a>
+            | <a href="creara.php">Añadir tarea</a>
             | <a href="buscar.php">Buscar</a>
             | <a href="perfil.php">Perfil</a>
             | <a href="logout.php">Cerrar sesión</a>
