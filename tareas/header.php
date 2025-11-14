@@ -15,7 +15,7 @@ require_once __DIR__ . '/../config/config.php';
         <a href="search.php">Buscar Tareas</a> |
         <?php if(estaAutenticado()): ?>
             <span>Hola, <?= $_SESSION['usuario_nombre'] ?></span>
-            <img src="../assets/img/<?= $_SESSION['usuario_img'] ?>" alt="Perfil" width="30">
+            <img src="img/<?= $_SESSION['usuario_img'] ?>" alt="Perfil" width="30">
             <a href="../public/perfil.php">Perfil</a> |
             <a href="../public/logout.php">Cerrar sesión</a>
         <?php else: ?>
