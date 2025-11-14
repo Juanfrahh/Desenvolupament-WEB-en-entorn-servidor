@@ -48,6 +48,7 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
     <p>
         <a href="perfil.php">Mi perfil</a> | 
         <a href="logout.php">Cerrar sesión</a>
+        
     </p>
 
     <hr>
