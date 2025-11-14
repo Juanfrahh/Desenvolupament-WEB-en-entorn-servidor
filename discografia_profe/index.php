@@ -1,3 +1,4 @@
+
 session_start(); // Inicia la sesión para poder usar $_SESSION
 
 // Si no hay usuario en sesión, redirige al login
