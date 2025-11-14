@@ -67,7 +67,7 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <!-- Botón para agregar un nuevo álbum -->
     <p>
-        <a href="disconuevo.php">Crear nuevo álbum</a> |
+        <a href="disconuevo.php">Crear nuevo Usuario</a> |
         <a href="canciones.php">Buscar canciones</a>
     </p>
 
