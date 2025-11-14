@@ -1,17 +1,25 @@
 <?php
+// Conexion.php
+require_once __DIR__ . '/../config/config.php';
+
 class Conexion {
-    private $host = "localhost";
-    private $db = "tareas";
-    private $user = "usr_tareas";
-    private $pass = "usr_tareas";
+    private $host = DB_HOST;
+    private $db = DB_NAME;
+    private $user = DB_USER;
+    private $pass = DB_PASS;
     public $pdo;
 
     public function __construct() {
         try {
-            $this->pdo = new PDO("mysql:host={$this->host};dbname={$this->db};charset=utf8", $this->user, $this->pass);
+            $this->pdo = new PDO(
+                "mysql:host={$this->host};dbname={$this->db};charset=utf8",
+                $this->user,
+                $this->pass
+            );
+            // Configurar para lanzar excepciones en errores
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $e) {
-            die("Error de conexión: " . $e->getMessage());
+        } catch (PDOException $e) {
+            die("Error de conexión a la base de datos: " . $e->getMessage());
         }
     }
 }
