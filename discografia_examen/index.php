@@ -35,7 +35,7 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
     <title>Inicio - <?= htmlspecialchars($_SESSION['usuario']) ?></title>
 </head>
 <body>
-    <h1>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?> 👋</h1>
+    <h1>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?></h1>
 
     <!-- Imagen de perfil -->
     <?php if (!empty($usuario['img_pequena'])): ?>
