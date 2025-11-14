@@ -23,7 +23,7 @@ function formularioDisco(){
 
     // Si se envió el formulario, procesamos los datos
     if(isset($_POST["titulo"])){
-        $conectar = new Conexion('localhost','user','user','discografia'); // Crear objeto conexión
+$conectar = new Conexion('localhost','root','', 'discografia');
         $conexion = $conectar->conectionPDO(); // Obtener conexión PDO
         $album = new Album('',$_POST['titulo'],$_POST['discografia'],$_POST['formato'],$_POST['fechaLanzamiento'],$_POST['fechaCompra'],$_POST['precio']);
         $album->registrarDisco($conexion); // Registrar disco en la base de datos
