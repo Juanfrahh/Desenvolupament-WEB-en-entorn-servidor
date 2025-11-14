@@ -13,7 +13,7 @@ class Usuario {
     public function registrar($nombre, $correo, $contrasena, $ruta_img) {
         try {
             $hash = password_hash($contrasena, PASSWORD_DEFAULT);
-            $stmt = $this->db->prepare("INSERT INTO usuarios (nombre, correo, contrasena, ruta_img) VALUES (?, ?, ?, ?)");
+            $stmt = $this->db->prepare("INSERT INTO usuarios (nombre, apellidos, correo, contrasena, ruta_img) VALUES (?, ?, ?, ?)");
             return $stmt->execute([$nombre, $correo, $hash, $ruta_img]);
         } catch (PDOException $e) {
             return false;
