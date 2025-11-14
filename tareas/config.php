@@ -5,7 +5,6 @@ $DB_USER = "usr_tareas";
 $DB_PASS = "usr_tareas";
 $DB_NAME = "tareas";
 
-// Iniciar sesión
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
