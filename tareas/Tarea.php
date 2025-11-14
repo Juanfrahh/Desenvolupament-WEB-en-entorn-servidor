@@ -44,7 +44,6 @@ class Tarea {
         return $stmt->execute([$id]);
     }
 
-    // Buscar tareas por término (nombre o descripción), limit 100 para seguridad
     public function buscarTareas($termino, $limit = 100) {
         $busq = "%{$termino}%";
         $stmt = $this->db->prepare("SELECT t.*, u1.nombre AS creador, u2.nombre AS modificador, u3.nombre AS completador
