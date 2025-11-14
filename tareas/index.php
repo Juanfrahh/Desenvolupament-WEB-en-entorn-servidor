@@ -41,7 +41,7 @@ include 'header.php';
             <td>
                 <?php if(!$t['completada']): ?>
                     <a href="editartarea.php?id=<?php echo $t['id']; ?>">Editar</a> |
-                    <a href="area.php?id=<?php echo $t['id']; ?>" onclick="return confirm('¿Seguro que quieres eliminar esta tarea?');">Eliminar</a>
+                    <a href="eliminartarea.php?id=<?php echo $t['id']; ?>" onclick="return confirm('¿Seguro que quieres eliminar esta tarea?');">Eliminar</a>
                 <?php endif; ?>
             </td>
         </tr>
