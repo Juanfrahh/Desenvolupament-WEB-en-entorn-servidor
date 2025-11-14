@@ -31,7 +31,7 @@ require_once __DIR__ . '/config.php';
                 <?= htmlspecialchars($_SESSION['usuario_nombre'] ?? '') ?>
             </span>
         <?php else: ?>
-            | <a href="login.php">Login</a> | <a href="register.php">Registro</a>
+            | <a href="login.php">Login</a> | <a href="registro.php">Registro</a>
         <?php endif; ?>
     </nav>
 </header>
