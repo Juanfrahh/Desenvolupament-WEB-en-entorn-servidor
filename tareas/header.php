@@ -30,7 +30,7 @@ require_once 'config.php';
                 <?php echo $_SESSION['usuario_fullname']; ?>
             </span>
         <?php else: ?>
-            | <a href="login.php">Login</a> | <a href="register.php">Registro</a>
+            | <a href="login.php">Login</a> | <a href="registro.php">Registro</a>
         <?php endif; ?>
     </nav>
 </header>
