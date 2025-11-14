@@ -37,7 +37,6 @@ class Usuario {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    // Actualizar perfil (nombre, correo, imagen)
     public function actualizarPerfil($id, $nombre, $correo, $ruta_img = null) {
         try {
             if ($ruta_img !== null) {
