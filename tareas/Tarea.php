@@ -30,7 +30,6 @@ class Tarea {
         return $stmt->execute([$nombre, $descripcion, $id_usr_crea]);
     }
 
-    // Editar y/o completar tarea
     public function editarTarea($id, $nombre, $descripcion, $id_usr_mod, $completada = 0) {
         $fecha_mod = date("Y-m-d H:i:s");
         $fecha_fin = $completada ? date("Y-m-d H:i:s") : null;
