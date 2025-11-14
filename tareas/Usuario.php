@@ -36,7 +36,7 @@ class Usuario {
 
     // Obtener usuario por id
     public function getUsuario($id) {
-        $stmt = $this->db->prepare("SELECT id, nombre, correo, ruta_img FROM usuarios WHERE id = ?");
+        $stmt = $this->db->prepare("SELECT id, nombre, apellidos, correo, ruta_img FROM usuarios WHERE id = ?");
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
