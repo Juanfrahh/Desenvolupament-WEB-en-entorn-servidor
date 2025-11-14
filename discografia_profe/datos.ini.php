@@ -100,35 +100,41 @@
 		}
 	}
 
-	function datosDiscografia(){//devuelve una lista de Albums
-		$conectar = new Conexion('localhost','root','','discografia');
-		$conexion = $conectar->conectionPDO();
-		$resultado = $conexion->query('SELECT cod,titulo,discografia,formato,fechaLanzamiento,fechaCompra,precio FROM discografia.album;');
-		echo'<button  onclick=location.href="./disconuevo.php">Nuevo disco</button>';
-		echo'<button  onclick=location.href="./canciones.php">Buscar canciones</button>';
-		echo'<table>';
-		echo'<tr>
-			<th>título</th>
-			<th>Discografía</th>
-			<th>formato</th>
-			<th>fechaLanzamiento</th>
-			<th>fechaCompra</th>
-			<th>Precio</th>			
-		</tr>';
-		while ($registro = $resultado->fetch()) {
-			$album = new Album($registro['cod'],$registro['titulo'],$registro['discografia'],$registro['formato'],$registro['fechaLanzamiento'],$registro['fechaCompra'],$registro['precio']); 
-			echo '<tr>';
-			echo '<td><a href="http://localhost/discografia/disco.php?cod='.$album->getCod().'">'.$album->getTitulo().'</a></td>';
-			echo '<td>'.$album->getDiscografia().'</td>';
-			echo '<td>'.$album->getFormato().'</td>';
-			echo '<td>'.$album->getFechaL().'</td>';
-			echo '<td>'.$album->getFechaC().'</td>';
-			echo '<td>'.$album->getPrecio().'</td>';
-			echo '<th id="botonInsertar" ><button  onclick=location.href="./cancionnueva.php?cod='.$registro['cod'].'&titulo='.$registro['titulo'].'">Canción Nueva</button></th>';
-			echo '</tr>';
-		}
-		echo'</table>';
-	}
+	function datosDiscografia() {
+    $conectar = new Conexion('localhost','root','','discografia');
+    $pdo = $conectar->conectionPDO();
+
+    $resultado = $pdo->query('SELECT codigo, titulo, discografia, formato, fechaLanzamiento, fechaCompra, precio FROM album');
+
+    echo '<button onclick=location.href="./disconuevo.php">Nuevo disco</button>';
+    echo '<button onclick=location.href="./canciones.php">Buscar canciones</button>';
+    echo '<table>';
+    echo '<tr>
+            <th>Título</th>
+            <th>Discográfica</th>
+            <th>Formato</th>
+            <th>Fecha Lanzamiento</th>
+            <th>Fecha Compra</th>
+            <th>Precio</th>
+            <th>Acción</th>
+          </tr>';
+
+    while ($registro = $resultado->fetch(PDO::FETCH_ASSOC)) {
+        $codigo = $registro['codigo'];
+        echo '<tr>';
+        echo '<td><a href="disco.php?cod='.$codigo.'">'.$registro['titulo'].'</a></td>';
+        echo '<td>'.$registro['discografia'].'</td>';
+        echo '<td>'.$registro['formato'].'</td>';
+        echo '<td>'.$registro['fechaLanzamiento'].'</td>';
+        echo '<td>'.$registro['fechaCompra'].'</td>';
+        echo '<td>'.$registro['precio'].'</td>';
+        echo '<td><button onclick=location.href="./cancionnueva.php?cod='.$codigo.'&titulo='.$registro['titulo'].'">Canción Nueva</button></td>';
+        echo '</tr>';
+    }
+
+    echo '</table>';
+}
+
 
 	function datosDisco($album){//Devuelve los datos del album seleccionado
 		$conectar = new Conexion('localhost','root','','discografia');
