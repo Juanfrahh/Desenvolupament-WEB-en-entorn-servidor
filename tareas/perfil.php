@@ -44,7 +44,7 @@ include __DIR__ . '/header.php';
     <label>Correo: <input type="email" name="correo" value="<?= htmlspecialchars($datos['correo']) ?>" required></label><br><br>
     <label>Foto: <input type="file" name="foto" accept="image/*"></label><br><br>
     <?php if (!empty($datos['ruta_img'])): ?>
-        <img src="uploads/<?= htmlspecialchars($datos['ruta_img']) ?>" width="100"><br><br>
+        <img src="img/<?= htmlspecialchars($datos['ruta_img']) ?>" width="100"><br><br>
     <?php endif; ?>
     <button type="submit">Actualizar</button>
 </form>
