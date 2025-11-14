@@ -1,60 +1,75 @@
 <?php
-require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/tarea.php';
+require_once 'config.php';
+require_once 'Tarea.php';
 
 protegerPagina();
-$tObj = new Tarea();
-$resultados = [];
-$ultimas = $tObj->ultimasCincoAcciones();
+$tarea = new Tarea();
+$termino = $_GET['q'] ?? '';
+$resultados = $termino ? $tarea->buscarTareas($termino) : [];
+$ultimas = $tarea->ultimasCincoAcciones();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $termino = limpiarEntrada($_POST['termino'] ?? '');
-    if ($termino !== '') {
-        $resultados = $tObj->buscarTareas($termino, 100);
-    }
-}
-
-include __DIR__ . '/header.php';
+include 'header.php';
 ?>
-<h2>Buscar tareas</h2>
-<form method="post">
-    <input type="text" name="termino" required placeholder="Nombre o descripción">
+<h2>Buscar Tareas</h2>
+<form method="get">
+    <input type="text" name="q" value="<?php echo htmlspecialchars($termino); ?>" placeholder="Buscar por nombre o descripción">
     <button type="submit">Buscar</button>
 </form>
 
-<?php if(!empty($resultados)): ?>
-    <h3>Resultados</h3>
-    <table>
-        <thead><tr><th>Nombre</th><th>Descripción</th><th>Estado</th><th>Usuario acción</th></tr></thead>
-        <tbody>
-            <?php foreach($resultados as $r): ?>
-                <tr>
-                    <td><?= htmlspecialchars($r['nombre']) ?></td>
-                    <td><?= htmlspecialchars($r['descripcion']) ?></td>
-                    <td><?= $r['completada'] ? 'Completada' : 'Pendiente' ?></td>
-                    <td>
-                        <?= $r['completada'] ? htmlspecialchars($r['completador']) : ( $r['fecha_modificacion'] ? htmlspecialchars($r['modificador']) : htmlspecialchars($r['creador']) ) ?>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+<?php if($termino): ?>
+<h3>Resultados</h3>
+<?php if($resultados): ?>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th><th>Nombre</th><th>Descripción</th><th>Creada por</th><th>Modificada por</th><th>Completada por</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($resultados as $t): ?>
+        <tr>
+            <td><?php echo $t['id']; ?></td>
+            <td><?php echo $t['nombre']; ?></td>
+            <td><?php echo $t['descripcion']; ?></td>
+            <td><?php echo $t['creador']; ?></td>
+            <td><?php echo $t['modificador']; ?></td>
+            <td><?php echo $t['completador']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<?php else: ?>
+<p>No se encontraron tareas.</p>
+<?php endif; ?>
 <?php endif; ?>
 
 <h3>Últimas 5 acciones</h3>
-<?php if(empty($ultimas)): ?>
-    <p>No hay acciones todavía.</p>
-<?php else: ?>
-    <ul>
-    <?php foreach($ultimas as $u): ?>
-        <li>
-            <?= htmlspecialchars($u['nombre']) ?> —
-            <?php
-                if ($u['fecha_finalizacion']) echo "completada por " . htmlspecialchars($u['completador']);
-                else if ($u['fecha_modificacion']) echo "modificada por " . htmlspecialchars($u['modificador']);
-                else echo "añadida por " . htmlspecialchars($u['creador']);
-            ?>
-        </li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif; ?>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th><th>Nombre</th><th>Acción más reciente</th><th>Usuario</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($ultimas as $t): ?>
+        <tr>
+            <td><?php echo $t['id']; ?></td>
+            <td><?php echo $t['nombre']; ?></td>
+            <td>
+                <?php
+                if ($t['fecha_finalizacion']) echo "Completada: ".$t['fecha_finalizacion'];
+                elseif ($t['fecha_modificacion']) echo "Modificada: ".$t['fecha_modificacion'];
+                else echo "Creada: ".$t['fecha_creacion'];
+                ?>
+            </td>
+            <td>
+                <?php
+                if ($t['fecha_finalizacion']) echo $t['completador'];
+                elseif ($t['fecha_modificacion']) echo $t['modificador'];
+                else echo $t['creador'];
+                ?>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
