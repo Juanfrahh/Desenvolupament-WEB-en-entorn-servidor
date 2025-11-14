@@ -13,7 +13,6 @@ if (!isset($_SESSION['usuario'])) {
 		<?php
 			include("datos.ini.php");
 			include("conexion.ini.php");
-
 		?>
 	</head>
 	<body>
