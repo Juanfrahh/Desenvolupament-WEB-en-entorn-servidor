@@ -140,8 +140,6 @@ function datosDiscografia() {
     }
 }
 
-
-
 	function datosDisco($album){//Devuelve los datos del album seleccionado
 		$conectar = new Conexion('localhost','root','','discografia');
 		$conexion = $conectar->conectionPDO();
