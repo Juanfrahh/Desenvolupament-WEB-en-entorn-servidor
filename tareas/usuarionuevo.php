@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-        formularioDisco(); // Muestra el formulario para registrar un disco nuevo
+        formularioUser(); // Muestra el formulario para registrar un disco nuevo
         // Para Pokémon: reemplazar por formularioPokemon()
     ?>
 </body>
