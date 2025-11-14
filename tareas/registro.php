@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contrasena = $_POST['contrasena'] ?? '';
     $ruta_img = 'default.png';
 
-    // Manejo de subida
     if (!is_dir(__DIR__ . '/img')) {
         mkdir(__DIR__ . '/img', 0755);
     }
