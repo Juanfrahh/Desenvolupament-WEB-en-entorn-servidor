@@ -19,7 +19,7 @@ if (isset($_POST['accion']) && $_POST['accion'] === 'registro') {
         $mensaje = "<p style='color:red;'>❌ Rellena todos los campos.</p>";
     }
     elseif ($password !== $password2) {
-        $mensaje = "<p style='color:red;'>❌ Las contraseñas no coinciden.</p>";
+        $mensaje = "<p style='color:red;'>Las contraseñas no coinciden.</p>";
     }
     else {
         // Verificar si ya existe el usuario
