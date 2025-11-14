@@ -1,10 +1,19 @@
 <?php
-session_start();
+// Datos de conexión
+$DB_HOST = "localhost";
+$DB_USER = "usr_tareas";
+$DB_PASS = "usr_tareas";
+$DB_NAME = "tareas";
 
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'tareas');
-define('DB_USER', 'usr_tareas');
-define('DB_PASS', 'usr_tareas');
+// Iniciar sesión
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Funciones de utilidad
+function limpiarEntrada($dato) {
+    return htmlspecialchars(trim($dato), ENT_QUOTES, 'UTF-8');
+}
 
 function estaAutenticado() {
     return isset($_SESSION['usuario_id']);
@@ -12,25 +21,21 @@ function estaAutenticado() {
 
 function protegerPagina() {
     if (!estaAutenticado()) {
-        header('Location: login.php');
+        header("Location: login.php");
         exit;
     }
 }
 
-function limpiarEntrada($data) {
-    return htmlspecialchars(strip_tags(trim($data)));
+function flash($clave, $mensaje) {
+    $_SESSION[$clave] = $mensaje;
 }
 
-function flash($key, $value = null) {
-    if ($value === null) {
-        if (isset($_SESSION['flash'][$key])) {
-            $v = $_SESSION['flash'][$key];
-            unset($_SESSION['flash'][$key]);
-            return $v;
-        }
-        return null;
-    } else {
-        $_SESSION['flash'][$key] = $value;
+function getFlash($clave) {
+    if(isset($_SESSION[$clave])){
+        $m = $_SESSION[$clave];
+        unset($_SESSION[$clave]);
+        return $m;
     }
+    return '';
 }
 ?>
