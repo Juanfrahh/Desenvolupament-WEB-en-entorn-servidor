@@ -7,7 +7,6 @@ require_once __DIR__ . '/config.php';
     <meta charset="utf-8">
     <title>Gestión de Tareas</title>
     <style>
-        /* Estilos mínimos para que se vea bien */
         body { font-family: Arial, sans-serif; margin: 20px; }
         header nav a { margin-right: 10px; }
         header img { vertical-align: middle; border-radius: 50%; }
