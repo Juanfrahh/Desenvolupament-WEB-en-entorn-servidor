@@ -54,7 +54,7 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <!-- Aquí podrías incluir la lista de discos/canciones -->
     <h2>Mis discos y canciones</h2>
-    <p>Aquí podrías llamar a tus funciones de datosDiscografia() o similares.</p>
+    <p></p>
 
 </body>
 </html>
