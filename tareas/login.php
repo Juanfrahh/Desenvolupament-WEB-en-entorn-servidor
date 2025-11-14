@@ -33,7 +33,7 @@ include 'header.php';
             <td><?= $t['completada'] ? 'Completada' : 'Pendiente' ?></td>
             <td>
                 <?php if(!$t['completada']): ?>
-                    <a href="edittarea.php?id=<?= $t['id'] ?>">Editar</a> |
+                    <a href="editartarea.php?id=<?= $t['id'] ?>">Editar</a> |
                     <a href="deletetarea.php?id=<?= $t['id'] ?>" onclick="return confirm('¿Eliminar tarea?')">Eliminar</a>
                 <?php else: ?>
                     -
