@@ -21,7 +21,7 @@
 		echo '</form>';
 		
 		if(isset($_POST["titulo"])){
-			$conectar = new Conexion('localhost','root','user','discografia');
+			$conectar = new Conexion('localhost','root','','discografia');
 			$conexion = $conectar->conectionPDO();
 			$album = new Album('',$_POST['titulo'],$_POST['discografia'],$_POST['formato'],$_POST['fechaLanzamiento'],$_POST['fechaCompra'],$_POST['precio']);
 
