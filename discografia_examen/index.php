@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
             $albumObj->agregarCancion($album_id, $titulo, $genero);
             $mensaje = "Canción añadida correctamente";
         } else {
-            $mensaje = "Introduce un título de canción";
+            $mensaje = "❌ Introduce un título de canción";
         }
     }
 }
