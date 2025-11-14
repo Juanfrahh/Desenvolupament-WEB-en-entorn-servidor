@@ -19,7 +19,7 @@ require_once __DIR__ . '/../config/config.php';
             <a href="perfil.php">Perfil</a> |
             <a href="logout.php">Cerrar sesión</a>
         <?php else: ?>
-            <a href="../public/login.php">Login</a> |
+            <a href="login.php">Login</a> |
             <a href="../public/register.php">Registro</a>
         <?php endif; ?>
     </nav>
