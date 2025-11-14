@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }
 }
 
-include '/header.php';
+include 'header.php';
 ?>
 
 <h2>Editar Tarea</h2>
