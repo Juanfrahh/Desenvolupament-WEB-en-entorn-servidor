@@ -1,35 +1,33 @@
 <?php
 require_once 'config.php';
-require_once 'usuario.php';
-
+require_once 'Usuario.php';
 protegerPagina();
-$u = new Usuario();
-$datos = $u->getUsuario($_SESSION['usuario_id']);
+
+$usuario = new Usuario();
+$datos = $usuario->getUsuario($_SESSION['usuario_id']);
 $mensaje = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = limpiarEntrada($_POST['nombre'] ?? '');
-    $apellidos = limpiarEntrada($_POST['apellidos'] ?? '');
     $correo = limpiarEntrada($_POST['correo'] ?? '');
-    $ruta_img = $datos['ruta_img'];
+    $ruta_img = null;
 
-    if (!is_dir('uploads')) mkdir('uploads', 0755);
     if (!empty($_FILES['foto']['name']) && $_FILES['foto']['error'] === 0) {
+        if (!is_dir('img')) mkdir('img', 0755);
         $ext = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
         $ruta_img = time() . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
-        move_uploaded_file($_FILES['foto']['tmp_name'], 'uploads/' . $ruta_img);
+        move_uploaded_file($_FILES['foto']['tmp_name'], 'img/' . $ruta_img);
     }
 
-    if ($u->actualizarPerfil($_SESSION['usuario_id'], $nombre, $apellidos, $correo, $ruta_img)) {
+    if ($usuario->actualizarPerfil($_SESSION['usuario_id'], $nombre, $correo, $ruta_img)) {
         $_SESSION['usuario_nombre'] = $nombre;
-        $_SESSION['usuario_apellidos'] = $apellidos;
-        $_SESSION['usuario_fullname'] = trim($nombre . ' ' . $apellidos);
-        $_SESSION['usuario_img'] = $ruta_img;
-        $mensaje = "Perfil actualizado correctamente.";
+        $_SESSION['usuario_fullname'] = $nombre;
+        if ($ruta_img) $_SESSION['usuario_img'] = $ruta_img;
+        $mensaje = "Perfil actualizado.";
+        $datos = $usuario->getUsuario($_SESSION['usuario_id']);
     } else {
         $mensaje = "Error al actualizar perfil.";
     }
-    $datos = $u->getUsuario($_SESSION['usuario_id']);
 }
 
 include 'header.php';
@@ -37,11 +35,10 @@ include 'header.php';
 <h2>Perfil</h2>
 <form method="post" enctype="multipart/form-data">
     <label>Nombre: <input type="text" name="nombre" value="<?php echo $datos['nombre']; ?>" required></label><br><br>
-    <label>Apellidos: <input type="text" name="apellidos" value="<?php echo $datos['apellidos']; ?>" required></label><br><br>
     <label>Correo: <input type="email" name="correo" value="<?php echo $datos['correo']; ?>" required></label><br><br>
     <label>Foto: <input type="file" name="foto" accept="image/*"></label><br><br>
     <?php if(!empty($datos['ruta_img'])): ?>
-        <img src="uploads/<?php echo $datos['ruta_img']; ?>" width="100"><br><br>
+        <img src="img/<?php echo $datos['ruta_img']; ?>" width="100"><br><br>
     <?php endif; ?>
     <button type="submit">Actualizar</button>
 </form>
