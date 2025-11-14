@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/tarea.php';
+require_once __DIR__ . '/Tarea.php';
 
 protegerPagina();
 
@@ -40,8 +40,8 @@ include __DIR__ . '/header.php';
             <td><?= $t['completada'] ? 'Completada' : 'Pendiente' ?></td>
             <td>
                 <?php if(!$t['completada']): ?>
-                    <a href="editartarea.php?id=<?= $t['id'] ?>">Editar</a> |
-                    <a href="eliminartarea.php?id=<?= $t['id'] ?>" onclick="return confirm('Eliminar tarea?')">Eliminar</a>
+                    <a href="edit_tarea.php?id=<?= $t['id'] ?>">Editar</a> |
+                    <a href="delete_tarea.php?id=<?= $t['id'] ?>" onclick="return confirm('Eliminar tarea?')">Eliminar</a>
                 <?php else: ?>
                     -
                 <?php endif; ?>
