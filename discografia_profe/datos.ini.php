@@ -173,31 +173,34 @@
 
 		datosCancion($album->getCod());
 	}
-	function datosCancion($cod){//devuelve los datos de todas las canciones del album pasado
-		$conectar = new Conexion('localhost','root','','discografia');
-		$conexion = $conectar->conectionPDO();
-		$resultado = $conexion->query('SELECT * FROM discografia.cancion WHERE album = '.$cod.';');
-		echo'<h3>CANCIONES DEL DISCO</h3>';
-		echo'<table>';
-		echo'<tr>
-			<th>título</th>
-			<th>Album</th>
-			<th>posicion</th>
-			<th>duracion</th>
-			<th>genero</th>			
-		</tr>';
-		while ($registro = $resultado->fetch()) {
-			$listaCanciones = new Cancion($registro['titulo'],$registro['album'],$registro['posicion'],$registro['duracion'],$registro['genero']);
-			echo '<tr>';
-			echo '<td>'.$listaCanciones->getTitulo().'</td>';
-			echo '<td>'.$listaCanciones->getAlbum().'</td>';
-			echo '<td>'.$listaCanciones->getPosicion().'</td>';
-			echo '<td>'.$listaCanciones->getDuracion().'</td>';
-			echo '<td>'.$listaCanciones->getGenero().'</td>';
-			echo '</tr>';
-		}
-		echo'</table>';
-	}
+	function datosCancion($codigoAlbum) {
+    $conectar = new Conexion('localhost','root','','discografia');
+    $pdo = $conectar->conectionPDO();
+
+    $stmt = $pdo->prepare('SELECT titulo, posicion, duracion, genero FROM cancion WHERE album = :album ORDER BY posicion');
+    $stmt->execute(['album' => $codigoAlbum]);
+    $canciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo '<h3>Canciones del álbum</h3>';
+    echo '<table>';
+    echo '<tr>
+            <th>Título</th>
+            <th>Posición</th>
+            <th>Duración</th>
+            <th>Género</th>
+          </tr>';
+
+    foreach ($canciones as $c) {
+        echo '<tr>';
+        echo '<td>'.$c['titulo'].'</td>';
+        echo '<td>'.$c['posicion'].'</td>';
+        echo '<td>'.$c['duracion'].'</td>';
+        echo '<td>'.$c['genero'].'</td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+}
+
 
 	function datosBuscados($textoBuscar, $select, $genero){//Esta función devuelve una lista de canciones dependiendo de los datos que quiera utilizar el usuario para su busqueda
 		$conectar = new Conexion('localhost','root','','discografia');
