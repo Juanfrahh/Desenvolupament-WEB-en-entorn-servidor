@@ -31,7 +31,6 @@ class Usuario {
         return false;
     }
 
-    // Obtener usuario por id
     public function getUsuario($id) {
         $stmt = $this->db->prepare("SELECT id, nombre, correo, ruta_img FROM usuarios WHERE id = ?");
         $stmt->execute([$id]);
