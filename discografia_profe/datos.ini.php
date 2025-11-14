@@ -131,7 +131,7 @@
 	}
 
 	function datosDisco($album){//Devuelve los datos del album seleccionado
-		$conectar = new Conexion('localhost','root','user','discografia');
+		$conectar = new Conexion('localhost','root','','discografia');
 		$conexion = $conectar->conectionPDO();
 		$resultado = $conexion->query('SELECT count(titulo) as totalCanciones FROM discografia.cancion WHERE cancion.album = '.$album->getCod().';');
 		while ($registro = $resultado->fetch()) {
