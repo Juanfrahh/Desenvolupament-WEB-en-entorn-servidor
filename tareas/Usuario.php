@@ -1,6 +1,6 @@
 <?php
 // Usuario.php
-require_once __DIR__ . '/conexion.php';
+require_once __DIR__ . '/Conexion.php';
 
 class Usuario {
     private $db;
@@ -9,12 +9,12 @@ class Usuario {
         $this->db = (new Conexion())->getConexion();
     }
 
-    // Registrar nuevo usuario
-    public function registrar($nombre, $correo, $contrasena, $ruta_img) {
+    // Registrar nuevo usuario (ahora con apellidos)
+    public function registrar($nombre, $apellidos, $correo, $contrasena, $ruta_img) {
         try {
             $hash = password_hash($contrasena, PASSWORD_DEFAULT);
-            $stmt = $this->db->prepare("INSERT INTO usuarios (nombre, apellidos, correo, contrasena, ruta_img) VALUES (?, ?, ?, ?)");
-            return $stmt->execute([$nombre,$apellidos, $correo, $hash, $ruta_img]);
+            $stmt = $this->db->prepare("INSERT INTO usuarios (nombre, apellidos, correo, contrasena, ruta_img) VALUES (?, ?, ?, ?, ?)");
+            return $stmt->execute([$nombre, $apellidos, $correo, $hash, $ruta_img]);
         } catch (PDOException $e) {
             return false;
         }
@@ -27,14 +27,17 @@ class Usuario {
         $u = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($u && password_verify($contrasena, $u['contrasena'])) {
             $_SESSION['usuario_id'] = $u['id'];
+            // guardamos nombre y apellidos por separado y una versión completa
             $_SESSION['usuario_nombre'] = $u['nombre'];
+            $_SESSION['usuario_apellidos'] = $u['apellidos'];
+            $_SESSION['usuario_fullname'] = trim($u['nombre'] . ' ' . $u['apellidos']);
             $_SESSION['usuario_img'] = $u['ruta_img'];
             return true;
         }
         return false;
     }
 
-    // Obtener usuario por id
+    // Obtener usuario por id (incluye apellidos)
     public function getUsuario($id) {
         $stmt = $this->db->prepare("SELECT id, nombre, apellidos, correo, ruta_img FROM usuarios WHERE id = ?");
         $stmt->execute([$id]);
@@ -45,12 +48,13 @@ class Usuario {
     public function actualizarPerfil($id, $nombre, $apellidos, $correo, $ruta_img = null) {
         try {
             if ($ruta_img !== null) {
-                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, apelldos correo = ?, ruta_img = ? WHERE id = ?");
-                return $stmt->execute([$nombre, $correo, $ruta_img, $id]);
+                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, apellidos = ?, correo = ?, ruta_img = ? WHERE id = ?");
+                $ok = $stmt->execute([$nombre, $apellidos, $correo, $ruta_img, $id]);
             } else {
-                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, correo = ? WHERE id = ?");
-                return $stmt->execute([$nombre, $correo, $id]);
+                $stmt = $this->db->prepare("UPDATE usuarios SET nombre = ?, apellidos = ?, correo = ? WHERE id = ?");
+                $ok = $stmt->execute([$nombre, $apellidos, $correo, $id]);
             }
+            return $ok;
         } catch (PDOException $e) {
             return false;
         }
