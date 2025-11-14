@@ -1,7 +1,5 @@
 <?php
-require_once __DIR__ . '/config.php';
-setcookie('remember_user', '', time() - 3600, "/");
-session_unset();
+require_once 'config.php';
 session_destroy();
 header('Location: login.php');
 exit;
