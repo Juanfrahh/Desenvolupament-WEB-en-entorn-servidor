@@ -8,7 +8,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
 include("conexion.ini.php");
 
-$conectar = new Conexion('localhost','user','user','discografia');
+$conectar = new Conexion('localhost','root','', 'discografia');
 $conexion = $conectar->conectionPDO();
 
 $id = $_SESSION['usuario_id'];
