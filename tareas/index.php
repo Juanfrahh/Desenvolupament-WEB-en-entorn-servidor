@@ -8,7 +8,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 // Conexión a la base de datos
-include 'conexion.ini.php'; // ✅ Incluimos la clase de conexión
+include 'conexionphp'; // ✅ Incluimos la clase de conexión
 
 // ✅ Creamos la conexión usando la clase
 $conectar = new Conexion('localhost', 'root', '', 'tareas');
