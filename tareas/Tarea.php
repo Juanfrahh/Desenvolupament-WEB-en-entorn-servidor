@@ -1,5 +1,5 @@
 <?php
-require_once 'conexion.php';
+require_once 'Conexion.php';
 
 class Tarea {
     private $db;
@@ -10,9 +10,9 @@ class Tarea {
 
     public function listarTareas() {
         $sql = "SELECT t.*,
-                       CONCAT(u1.nombre, ' ', u1.apellidos) AS creador,
-                       CONCAT(u2.nombre, ' ', u2.apellidos) AS modificador,
-                       CONCAT(u3.nombre, ' ', u3.apellidos) AS completador
+                       u1.nombre AS creador,
+                       u2.nombre AS modificador,
+                       u3.nombre AS completador
                 FROM tareas t
                 LEFT JOIN usuarios u1 ON t.id_usr_crea = u1.id
                 LEFT JOIN usuarios u2 ON t.id_usr_mod = u2.id
@@ -50,9 +50,9 @@ class Tarea {
     public function buscarTareas($termino, $limit = 100) {
         $busq = "%{$termino}%";
         $stmt = $this->db->prepare("SELECT t.*,
-                                           CONCAT(u1.nombre, ' ', u1.apellidos) AS creador,
-                                           CONCAT(u2.nombre, ' ', u2.apellidos) AS modificador,
-                                           CONCAT(u3.nombre, ' ', u3.apellidos) AS completador
+                                           u1.nombre AS creador,
+                                           u2.nombre AS modificador,
+                                           u3.nombre AS completador
                                     FROM tareas t
                                     LEFT JOIN usuarios u1 ON t.id_usr_crea = u1.id
                                     LEFT JOIN usuarios u2 ON t.id_usr_mod = u2.id
@@ -68,21 +68,4 @@ class Tarea {
     }
 
     public function ultimasCincoAcciones() {
-        $sql = "SELECT t.*,
-                       CONCAT(u1.nombre, ' ', u1.apellidos) AS creador,
-                       CONCAT(u2.nombre, ' ', u2.apellidos) AS modificador,
-                       CONCAT(u3.nombre, ' ', u3.apellidos) AS completador,
-                       GREATEST(COALESCE(UNIX_TIMESTAMP(fecha_creacion),0),
-                                COALESCE(UNIX_TIMESTAMP(fecha_modificacion),0),
-                                COALESCE(UNIX_TIMESTAMP(fecha_finalizacion),0)) AS ultima_accion_ts
-                FROM tareas t
-                LEFT JOIN usuarios u1 ON t.id_usr_crea = u1.id
-                LEFT JOIN usuarios u2 ON t.id_usr_mod = u2.id
-                LEFT JOIN usuarios u3 ON t.id_usr_comp = u3.id
-                ORDER BY ultima_accion_ts DESC
-                LIMIT 5";
-        $stmt = $this->db->query($sql);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-}
-?>
+        $
