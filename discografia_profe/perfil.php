@@ -31,7 +31,7 @@ if (isset($_FILES['foto']) && $_FILES['foto']['error'] === 0) {
 }
 
 // Obtener datos del usuario
-$stmt = $conexion->prepare("SELECT usuario, foto FROM usuarios WHERE id=?");
+$stmt = $conexion->prepare("SELECT usuario, foto FROM tabla_usuarios WHERE id=?");
 $stmt->execute([$id]);
 $datos = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
