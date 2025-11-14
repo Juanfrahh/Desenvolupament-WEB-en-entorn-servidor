@@ -1,74 +1,45 @@
 <?php
-// session_start(); // Inicia la sesión para poder usar $_SESSION
+require_once '../config/config.php';
+require_once '../classes/Tarea.php';
 
-// // Si no hay usuario en sesión, redirige al login
-// if (!isset($_SESSION['usuario'])) {
-//     header('Location: login.php');
-//     exit();
-// }
+protegerPagina();
 
-// Conexión a la base de datos
-include 'Conexionphp'; // ✅ Incluimos la clase de conexión
-
-// ✅ Creamos la conexión usando la clase
-$conectar = new Conexion('localhost', 'root', '', 'tareas');
-// Si usas XAMPP por defecto, cambia a: new Conexion('localhost', 'root', '', 'discografia');
-$conexion = $conectar->conectionPDO();
-
-// ✅ Verificamos que la conexión funcione
-if (!$conexion) {
-    die("Error: No se pudo conectar a la base de datos.");
-}
-
-// Recuperamos los datos del usuario desde la BD
-$stmt = $conexion->prepare("SELECT * FROM tabla_usuarios WHERE usuario = ?");
-$stmt->execute([$_SESSION['usuario']]);
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// Aquí puedes añadir cualquier otra lógica que quieras mostrar en el index,
-// por ejemplo, lista de discos, últimas canciones, etc.
+$tarea = new Tarea();
+$tareas = $tarea->listarTareas();
+include '../includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Inicio - <?= htmlspecialchars($_SESSION['usuario']) ?></title>
-</head>
-<body>
-    <h1>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?></h1>
 
-    <!-- Imagen de perfil -->
-    <?php if (!empty($usuario['img_pequena'])): ?>
-        <img src="<?= htmlspecialchars($usuario['img_pequena']) ?>" alt="Imagen de perfil">
-    <?php else: ?>
-        <p>Sin imagen de perfil</p>
-    <?php endif; ?>
-
-    <!-- Enlaces importantes -->
-    <p>
-        <a href="perfil.php">Mi perfil</a> | 
-        <a href="logout.php">Cerrar sesión</a>
-    </p>
-
-    <hr>
-
-    <!-- Aquí podrías incluir la lista de discos/canciones -->
-    <h2>Mis discos y canciones</h2>
-
-    <?php
-    // Crear conexión usando clase Conexion
-    $conectar = new Conexion('localhost','root','','tareas');
-    $conexion = $conectar->conectionPDO();
-
-    // Mostrar todos los álbumes y sus canciones usando datosDiscografia()
-    datosTareas();
-    ?>
-
-    <!-- Botón para agregar un nuevo álbum -->
-    <p>
-        <a href="disconuevo.php">Crear nuevo Usuario</a> |
-        <a href="canciones.php">Buscar canciones</a>
-    </p>
-
-</body>
-</html>
+<h2>Lista de Tareas</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Creada por</th>
+            <th>Modificada por</th>
+            <th>Completada por</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($tareas as $t): ?>
+        <tr>
+            <td><?= htmlspecialchars($t['nombre']) ?></td>
+            <td><?= htmlspecialchars($t['descripcion']) ?></td>
+            <td><?= htmlspecialchars($t['creador']) ?></td>
+            <td><?= htmlspecialchars($t['modificador']) ?></td>
+            <td><?= htmlspecialchars($t['completador']) ?></td>
+            <td><?= $t['completada'] ? 'Completada' : 'Pendiente' ?></td>
+            <td>
+                <?php if(!$t['completada']): ?>
+                    <a href="edit_tarea.php?id=<?= $t['id'] ?>">Editar</a> |
+                    <a href="delete_tarea.php?id=<?= $t['id'] ?>" onclick="return confirm('¿Eliminar tarea?')">Eliminar</a>
+                <?php else: ?>
+                    -
+                <?php endif; ?>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
