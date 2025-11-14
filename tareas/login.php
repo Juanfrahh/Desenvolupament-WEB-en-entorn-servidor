@@ -1,45 +1,28 @@
 <?php
-require_once 'config.php';
-require_once 'tarea.php';
+require_once '../config/config.php';
+require_once '../classes/Usuario.php';
 
-protegerPagina();
+$mensaje = '';
 
-$tarea = new Tarea();
-$tareas = $tarea->listarTareas();
-include 'header.php';
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $correo = limpiarEntrada($_POST['correo']);
+    $contrasena = $_POST['contrasena'];
+    $usuario = new Usuario();
+    if($usuario->login($correo, $contrasena)){
+        header('Location: index.php');
+        exit;
+    } else {
+        $mensaje = "Correo o contraseña incorrectos.";
+    }
+}
+
+include '../includes/header.php';
 ?>
 
-<h2>Lista de Tareas</h2>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Creada por</th>
-            <th>Modificada por</th>
-            <th>Completada por</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($tareas as $t): ?>
-        <tr>
-            <td><?= htmlspecialchars($t['nombre']) ?></td>
-            <td><?= htmlspecialchars($t['descripcion']) ?></td>
-            <td><?= htmlspecialchars($t['creador']) ?></td>
-            <td><?= htmlspecialchars($t['modificador']) ?></td>
-            <td><?= htmlspecialchars($t['completador']) ?></td>
-            <td><?= $t['completada'] ? 'Completada' : 'Pendiente' ?></td>
-            <td>
-                <?php if(!$t['completada']): ?>
-                    <a href="editartarea.php?id=<?= $t['id'] ?>">Editar</a> |
-                    <a href="eliminartarea.php?id=<?= $t['id'] ?>" onclick="return confirm('¿Eliminar tarea?')">Eliminar</a>
-                <?php else: ?>
-                    -
-                <?php endif; ?>
-            </td>
-        </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+<h2>Login</h2>
+<form method="POST">
+    <label>Correo: <input type="email" name="correo" required></label><br>
+    <label>Contraseña: <input type="password" name="contrasena" required></label><br>
+    <button type="submit">Entrar</button>
+</form>
+<p style="color:red;"><?= $mensaje ?></p>
