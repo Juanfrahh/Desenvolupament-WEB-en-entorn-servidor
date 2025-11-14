@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario'])) {
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Discografía</title>
+		<title>Tareas</title>
 		<?php
 			include("datos.ini.php");
 			include("conexion.ini.php");
