@@ -1,11 +1,11 @@
 <?php
 // Función que muestra el formulario para crear un disco nuevo y registra el disco en la base de datos
-function formularioUser(){ 
+function formularioDisco(){ 
     echo '<button  onclick=location.href="./index.php">Volver</button>'; // Botón para volver al listado de discos
     echo '<h1>Crear nuevo disco</h1>'; // Título del formulario
-    echo '<form action="usuario.php" method="post">'; // Formulario HTML, método POST
+    echo '<form action="disconuevo.php" method="post">'; // Formulario HTML, método POST
     echo '<input type="text" required name="titulo" placeholder="Título"/>'; // Campo título
-    echo '<input type="text" required name="tareas" placeholder="Tareas"/>'; // Campo discografía
+    echo '<input type="text" required name="discografia" placeholder="Discografía"/>'; // Campo discografía
     echo '<label>formato: </label>';
     echo '<select name="formato">
         <option> vinilo</option>
@@ -23,7 +23,7 @@ function formularioUser(){
 
     // Si se envió el formulario, procesamos los datos
     if(isset($_POST["titulo"])){
-        $conectar = new Conexion('localhost','root','', 'tareas');
+        $conectar = new Conexion('localhost','root','', 'discografia');
         $conexion = $conectar->conectionPDO(); // Obtener conexión PDO
         $album = new Album('',$_POST['titulo'],$_POST['discografia'],$_POST['formato'],$_POST['fechaLanzamiento'],$_POST['fechaCompra'],$_POST['precio']);
         $album->registrarDisco($conexion); // Registrar disco en la base de datos
