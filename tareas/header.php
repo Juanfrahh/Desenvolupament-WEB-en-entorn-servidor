@@ -26,7 +26,7 @@ require_once __DIR__ . '/config.php';
             | <a href="logout.php">Cerrar sesión</a>
             <span style="float:right">
                 <?php if(!empty($_SESSION['usuario_img'])): ?>
-                    <img src="uploads/<?= htmlspecialchars($_SESSION['usuario_img']) ?>" alt="img" width="36">
+                    <img src="img/<?= htmlspecialchars($_SESSION['usuario_img']) ?>" alt="img" width="36">
                 <?php endif; ?>
                 <?= htmlspecialchars($_SESSION['usuario_nombre'] ?? '') ?>
             </span>
