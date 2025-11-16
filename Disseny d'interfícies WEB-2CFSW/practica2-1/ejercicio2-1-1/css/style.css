@@ -10,14 +10,9 @@ body{
     background-image: url("../imgs/old_map.png");
 }
 #header{
-    background-image: url("../png/images.png");
-    background-repeat: no-repeat;
-    background-position: 15px center;
-    background-size: 70px 50px;
-    image-resolution: 2px;
-    background-color: #35424a;
+    font-family: Courier;
     color: #ffffff;
-    padding: 20px 0 20px 90px;
-    text-align: auto;
-    margin-bottom: 20px;
+    font-size: 1.1em;
+    border-bottom: 6px solid #000000;
+    background-color: #313B44;
 }
