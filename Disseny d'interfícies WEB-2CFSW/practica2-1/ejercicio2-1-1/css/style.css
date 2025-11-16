@@ -47,29 +47,39 @@ h1{
 }
 
 #nav li{
-    padding-top: 80px;
+    padding-top: 60px;
     margin: 0 100px 20px 100px;
     display: inline-block;
     text-align: center;
     cursor: default;
+    position: relative;
+}
+
+/* Oculta las img que están dentro del UL (marcado en el HTML actual)
+   y usa las imágenes como fondo de cada <li> */
+#nav ul > img{
+    display: none;
 }
 
 #contenidos{
-    background-image: url("../imgs/book.png");
+    background-image: url("../png/images (1).png");
     background-repeat: no-repeat;
-    background-position: center 10px;
+    background-position: center top;
+    background-size: 40px 40px;
 }
 
 #videos{
-    background-image: url("../imgs/film.png");
+    background-image: url("../png/images (2).png");
     background-repeat: no-repeat;
-    background-position: center 10px;
+    background-position: center top;
+    background-size: 40px 40px;
 }
 
 #contacto{
-    background-image: url("../imgs/mail.png");
+    background-image: url("../png/descarga (3).png");
     background-repeat: no-repeat;
-    background-position: center 10px;
+    background-position: center top;
+    background-size: 40px 40px;
 }
 
 nav a{
