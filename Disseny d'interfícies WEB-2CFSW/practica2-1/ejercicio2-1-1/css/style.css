@@ -134,6 +134,14 @@ h1{
     border-bottom: 1px solid #999999;
 }
 
+/* Aumentar y centrar las imágenes dentro de los encabezados de artículo */
+.article_header img{
+    width: 80px; /* tamaño nuevo - ajustar si quieres más/menos */
+    height: auto;
+    display: block;
+    margin: 10px auto; /* centra horizontalmente y separa del h2 */
+}
+
 h2{
     padding: 10px;
     font-size: 1.2em;
