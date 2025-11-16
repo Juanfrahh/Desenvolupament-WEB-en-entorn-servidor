@@ -107,7 +107,7 @@ h1{
 }
 
 #content{
-
+    width: 960px;
     margin: 0 auto;
     font-family: verdana;
     font-size: 0.8em;
