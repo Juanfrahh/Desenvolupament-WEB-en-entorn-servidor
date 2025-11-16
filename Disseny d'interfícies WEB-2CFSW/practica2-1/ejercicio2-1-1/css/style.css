@@ -124,7 +124,7 @@ h1{
 }
 
 .article{
-    margi
+    margin-top: 20px;
     width: 240px;
     border: 1px solid lightgray;
     background-color: white;
