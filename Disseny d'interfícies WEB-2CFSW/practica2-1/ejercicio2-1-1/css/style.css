@@ -16,3 +16,9 @@ body{
     border-bottom: 6px solid #000000;
     background-color: #313B44;
 }
+
+#page{
+    width: 960px;
+    margin: 0 auto;
+    text-align: left;
+}
