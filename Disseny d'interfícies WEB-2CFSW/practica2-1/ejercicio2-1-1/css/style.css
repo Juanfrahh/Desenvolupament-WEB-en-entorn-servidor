@@ -47,7 +47,8 @@ h1{
 }
 
 #nav li{
-    padding-top: 60px;
+    /* espacio para el icono circular arriba */
+    padding-top: 80px;
     margin: 10px 100px 20px 100px;
     display: inline-block;
     text-align: center;
@@ -55,29 +56,38 @@ h1{
     position: relative;
 }
 
+/* mantener ocultas las img inline en el HTML actual */
 #nav ul > img{
     display: none;
 }
 
-#contenidos{
+/* pseudo-elemento que mostrará la imagen circular encima de cada li */
+#nav li::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px; /* tamaño del icono - ajustar si hace falta */
+    height: 56px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* iconos por cada opción */
+#contenidos::before{
     background-image: url("../png/images (1).png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 40px 40px;
 }
 
-#videos{
+#videos::before{
     background-image: url("../png/images (2).png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 40px 40px;
 }
 
-#contacto{
+#contacto::before{
     background-image: url("../png/descarga (3).png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: 40px 40px;
 }
 
 nav a{
