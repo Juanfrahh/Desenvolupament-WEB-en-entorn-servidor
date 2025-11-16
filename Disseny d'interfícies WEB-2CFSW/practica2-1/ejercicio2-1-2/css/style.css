@@ -131,7 +131,7 @@ article{
     float: left; /* colocarlos uno al lado del otro */
 }
 
-article > header{
+article{
     background-color: transparent;
     border: none;
     padding: 0;
