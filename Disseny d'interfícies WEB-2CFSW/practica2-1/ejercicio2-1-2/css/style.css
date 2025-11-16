@@ -45,6 +45,7 @@ nav{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin-bottom: 30px;
 }
 
 nav ul{
@@ -82,33 +83,33 @@ nav li::before{
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-/* iconos por cada opción */
-#contenidos::before{
+/* iconos por cada opción - usa nth-child para diferenciar sin id */
+nav li:nth-child(2)::before{
     background-image: url("../png/images (1).png");
 }
 
-#videos::before{
+nav li:nth-child(4)::before{
     background-image: url("../png/images (2).png");
 }
 
-#contacto::before{
+nav li:nth-child(6)::before{
     background-image: url("../png/descarga (3).png");
 }
 
 /* Enlaces del nav: blancos y sin subrayado en todos los estados */
-#nav a,
-#nav a:link,
-#nav a:visited,
-#nav a:active,
-#nav a:hover,
-#nav a:focus{
+nav a,
+nav a:link,
+nav a:visited,
+nav a:active,
+nav a:hover,
+nav a:focus{
     text-decoration: none;
     color: white;
 }
 
-#content{
+main{
     width: 960px;
-    margin: 0 auto 0;
+    margin: 30px auto 0;
     font-family: verdana;
     font-size: 0.8em;
     background-image: url("../png/descarga3.png");
@@ -119,7 +120,7 @@ nav li::before{
     overflow: auto; /* contiene los elementos flotantes */
 }
 
-.article{
+article{
     width: 240px;
     border: 1px solid lightgray;
     background-color: white;
@@ -130,12 +131,18 @@ nav li::before{
     float: left; /* colocarlos uno al lado del otro */
 }
 
-.article_header{
+article > header{
+    background-color: transparent;
+    border: none;
+    padding: 0;
     border-bottom: 1px solid #999999;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
 }
 
 /* Aumentar y centrar las imágenes dentro de los encabezados de artículo */
-.article_header img{
+article > header img{
     width: 80px; /* tamaño nuevo - ajustar si quieres más/menos */
     height: auto;
     display: block;
