@@ -42,7 +42,6 @@ padding: 15px 0; /* margen interno superior e inferior de 15px */
 #footer a {
 color: white;
 }
-/* pequeñas mejoras responsive */
 @media (max-width: 1000px) {
 #page { width: 95%; }
 .article { width: 30%; }
