@@ -62,7 +62,7 @@ h1{
 }
 
 /* mantener ocultas las img inline en el HTML actual */
-#nav ul > img{
+nav ul > img{
     display: none;
 }
 
