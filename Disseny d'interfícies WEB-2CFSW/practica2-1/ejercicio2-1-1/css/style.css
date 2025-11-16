@@ -15,7 +15,7 @@ body{
     background-image: url("../png/images.png");
     background-repeat: no-repeat;
     background-position: left center;
-    image 
+    image resolution: 2dppx;
     background-color: #35424a;
     color: #ffffff;
     padding: 20px 0;
