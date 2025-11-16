@@ -6,7 +6,7 @@ font-family: Verdana, Geneva, Tahoma, sans-serif;
 font-size: 0.8em;
 background-image: url("../imgs/lgrey008.jpg");
 height: 502px;
-padding: 20px; /* un poco de separación interior */
+padding: 20px;
 }
 .article {
 width: 240px;
