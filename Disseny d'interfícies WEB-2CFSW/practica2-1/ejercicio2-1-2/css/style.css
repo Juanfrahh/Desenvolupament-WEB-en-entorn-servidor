@@ -67,7 +67,7 @@ h1{
 }
 
 /* pseudo-elemento que mostrará la imagen circular encima de cada li */
-#nav li::before{
+nav li::before{
     content: "";
     position: absolute;
     top: 10px;
