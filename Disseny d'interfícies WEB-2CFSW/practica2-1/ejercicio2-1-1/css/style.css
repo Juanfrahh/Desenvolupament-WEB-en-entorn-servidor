@@ -14,6 +14,7 @@ body{
 #header{
     background-image: url("../png/images.png");
     background-repeat: no-repeat;
+    background-position: 15px center;
     background-size: 65px 50px;
     image-resolution: 2px;
     background-color: #35424a;
