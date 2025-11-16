@@ -26,9 +26,9 @@ body{
 h1{
     background-image: url("../png/images.png");
     background-repeat: no-repeat;
-    background-position: 25px 10px;
+    background-position: 25px center;
     background-size: 65px 55px;
-    padding: 20px 100px;
+    padding: 40px 100px;
 }
 
 #nav{
