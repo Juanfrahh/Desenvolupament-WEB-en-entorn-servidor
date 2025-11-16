@@ -55,6 +55,9 @@ h1{
     position: relative;
 }
 
+#nav ul > img{
+    display: none;
+}
 
 #contenidos{
     background-image: url("../png/images (1).png");
