@@ -130,7 +130,7 @@ h1{
     text-align: center;
     line-height: 1.8em;
     padding: 5px 5px 22px 5px;
-    margin: 10px; /* el gap del flexbox gestiona el espacio */
+    margin: 20px; /* el gap del flexbox gestiona el espacio */
     float: none; /* quitar float para que flex funcione correctamente */
 }
 
