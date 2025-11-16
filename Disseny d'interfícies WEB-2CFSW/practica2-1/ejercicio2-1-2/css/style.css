@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 20px;
+    text-align: center;
+    background-image: url("../png/descarga2.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+#header{
+    font-family: Courier;
+    color: #ffffff;
+    font-size: 1.1em;
+    border: 6px solid #000000;
+    background-color: #313B44;
+}
+
+#page{
+    width: 960px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+h1{
+    background-image: url("../png/images.png");
+    background-repeat: no-repeat;
+    background-position: 25px center;
+    background-size: 75px 55px;
+    padding: 40px 110px;
+}
+
+#nav{
+    font-family: Courier;
+    font-size: 1.4em;
+    color: silver;
+    text-align: center;
+    background-image: url("../png/descarga1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#nav ul{
+    list-style: none;
+}
+
+#nav li{
+    /* espacio para el icono circular arriba */
+    padding-top: 80px;
+    margin: 10px 100px 20px 100px;
+    display: inline-block;
+    text-align: center;
+    cursor: default;
+    position: relative;
+}
+
+/* mantener ocultas las img inline en el HTML actual */
+#nav ul > img{
+    display: none;
+}
+
+/* pseudo-elemento que mostrará la imagen circular encima de cada li */
+#nav li::before{
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px; /* tamaño del icono - ajustar si hace falta */
+    height: 56px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* iconos por cada opción */
+#contenidos::before{
+    background-image: url("../png/images (1).png");
+}
+
+#videos::before{
+    background-image: url("../png/images (2).png");
+}
+
+#contacto::before{
+    background-image: url("../png/descarga (3).png");
+}
+
+/* Enlaces del nav: blancos y sin subrayado en todos los estados */
+#nav a,
+#nav a:link,
+#nav a:visited,
+#nav a:active,
+#nav a:hover,
+#nav a:focus{
+    text-decoration: none;
+    color: white;
+}
+
+#content{
+    width: 960px;
+    margin: 0 auto 0;
+    font-family: verdana;
+    font-size: 0.8em;
+    background-image: url("../png/descarga3.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto; /* hace que la imagen ocupe el ancho del elemento */
+    height: 502px;
+    overflow: auto; /* contiene los elementos flotantes */
+}
+
+.article{
+    width: 240px;
+    border: 1px solid lightgray;
+    background-color: white;
+    text-align: center;
+    line-height: 1.8em;
+    padding: 5px 5px 22px 5px; /* superior/derecha/abajo/izquierda */
+    margin: 30px; /* márgenes externos de 30px */
+    float: left; /* colocarlos uno al lado del otro */
+}
+
+.article_header{
+    border-bottom: 1px solid #999999;
+}
+
+/* Aumentar y centrar las imágenes dentro de los encabezados de artículo */
+.article_header img{
+    width: 80px; /* tamaño nuevo - ajustar si quieres más/menos */
+    height: auto;
+    display: block;
+    margin: 10px auto; /* centra horizontalmente y separa del h2 */
+}
+
+h2{
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+#footer{
+    clear: both;
+    color: white;
+    font-size: 0.7em;
+    text-align: center;
+    background-color: #313B44;
+    border-top: 6px solid black;
+    padding: 15px 0;
+}
+
+#footer a{
+    color: white;
+}
