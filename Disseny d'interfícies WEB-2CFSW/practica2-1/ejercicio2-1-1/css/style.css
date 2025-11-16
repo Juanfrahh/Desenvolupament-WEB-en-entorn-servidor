@@ -95,14 +95,12 @@ h1{
     background-image: url("../png/descarga (3).png");
 }
 
-/* Enlaces del nav: blancos y sin subrayado en todos los estados */
-#nav a,
-#nav a:link,
-#nav a:visited,
-#nav a:active,
-#nav a:hover,
-#nav a:focus{
+nav a{
     text-decoration: none;
+    color: orange;
+}
+
+nav a:hover{
     color: white;
 }
 
