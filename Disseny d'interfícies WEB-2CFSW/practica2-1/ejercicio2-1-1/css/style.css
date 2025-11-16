@@ -37,6 +37,9 @@ h1{
     color: silver;
     text-align: center;
     background-image: url("../png/descarga1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 #nav ul{
