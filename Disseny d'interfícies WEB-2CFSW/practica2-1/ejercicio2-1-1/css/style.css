@@ -18,7 +18,7 @@ body{
     font-family: Courier;
     color: #ffffff;
     font-size: 1.1em;
-    border: 6px solid #000000;
+    border-bottom: 6px solid #000000;
     background-color: #313B44;
 }
 
@@ -153,6 +153,6 @@ h2{
     padding: 15px 0;
 }
 
-#footer a{
+footer a{
     color: white;
 }
