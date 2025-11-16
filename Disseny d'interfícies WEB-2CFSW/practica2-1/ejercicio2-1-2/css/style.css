@@ -131,18 +131,16 @@ article{
     float: left; /* colocarlos uno al lado del otro */
 }
 
-article > header{
-    background-color: transparent;
-    border: none;
-    padding: 0;
+/* Borde inferior para separar imagen+h2 del contenido */
+article > h2{
+    padding: 10px;
+    font-size: 1.2em;
     border-bottom: 1px solid #999999;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
+    margin: 0;
 }
 
-/* Aumentar y centrar las imágenes dentro de los encabezados de artículo */
-article > header img{
+/* Aumentar y centrar las imágenes dentro de los artículos */
+article > img{
     width: 80px; /* tamaño nuevo - ajustar si quieres más/menos */
     height: auto;
     display: block;
