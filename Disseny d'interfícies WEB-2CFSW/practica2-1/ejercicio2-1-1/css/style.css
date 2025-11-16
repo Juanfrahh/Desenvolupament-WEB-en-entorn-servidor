@@ -83,17 +83,6 @@ h1{
 }
 
 /* iconos por cada opción */
-#contenidos::before{
-    background-image: url("../png/images (1).png");
-}
-
-#videos::before{
-    background-image: url("../png/images (2).png");
-}
-
-#contacto::before{
-    background-image: url("../png/descarga (3).png");
-}
 
 nav a{
     text-decoration: none;
