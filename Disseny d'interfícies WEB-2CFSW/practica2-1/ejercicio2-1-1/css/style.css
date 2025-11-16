@@ -116,11 +116,6 @@ h1{
     background-position: center top;
     background-size: 100% auto; /* hace que la imagen ocupe el ancho del elemento */
     height: 502px;
-    display: flex; /* centra los artículos */
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 30px; /* espacio entre artículos */
 }
 
 .article{
@@ -130,8 +125,8 @@ h1{
     text-align: center;
     line-height: 1.8em;
     padding: 5px 5px 22px 5px;
-    margin: 0; /* el gap del flexbox gestiona el espacio */
-    float: none; /* quitar float para que flex funcione correctamente */
+    margin: 30px;
+    float: left;
 }
 
 .article_header{
@@ -143,7 +138,7 @@ h2{
     font-size: 1.2em;
 }
 
-#footer{
+footer{
     clear: both;
     color: white;
     font-size: 0.7em;
