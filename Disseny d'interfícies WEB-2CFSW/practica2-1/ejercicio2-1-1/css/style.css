@@ -107,13 +107,14 @@ h1{
 }
 
 #content{
-    width: 920px; 
+    width: 960px;
     margin: 0 auto;
     font-family: verdana;
     font-size: 0.8em;
     background-image: url("../png/descarga3.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
+    background-size: 100% auto; /* hace que la imagen ocupe el ancho del elemento */
     height: 502px;
 }
 
