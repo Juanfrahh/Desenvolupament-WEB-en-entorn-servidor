@@ -131,7 +131,7 @@ article{
     float: left; /* colocarlos uno al lado del otro */
 }
 
-article{
+article > header{
     background-color: transparent;
     border: none;
     padding: 0;
@@ -142,7 +142,7 @@ article{
 }
 
 /* Aumentar y centrar las imágenes dentro de los encabezados de artículo */
-article img{
+article > header img{
     width: 80px; /* tamaño nuevo - ajustar si quieres más/menos */
     height: auto;
     display: block;
