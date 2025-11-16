@@ -31,7 +31,7 @@ padding: 10px;
 font-size: 1.2em;
 }
 #footer {
-clear: both; /* se coloca debajo de los flotantes */
+clear: both;
 color: white;
 font-size: 0.7em;
 text-align: center;
