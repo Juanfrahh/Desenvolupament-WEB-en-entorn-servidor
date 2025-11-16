@@ -55,8 +55,6 @@ h1{
     position: relative;
 }
 
-/* Oculta las img que están dentro del UL (marcado en el HTML actual)
-   y usa las imágenes como fondo de cada <li> */
 #nav ul > img{
     display: none;
 }
