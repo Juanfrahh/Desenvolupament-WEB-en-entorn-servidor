@@ -107,7 +107,7 @@ h1{
 }
 
 #content{
-    
+    width: 920px; margin: 0 auto;
     font-family: verdana;
     font-size: 0.8em;
     background-image: url("../imgs/lgrey008.jpg");
