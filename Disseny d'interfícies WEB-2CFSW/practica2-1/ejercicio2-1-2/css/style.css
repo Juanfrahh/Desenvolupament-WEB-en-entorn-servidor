@@ -22,7 +22,7 @@ header{
     background-color: #313B44;
 }
 
-main{
+body{
     width: 960px;
     margin: 0 auto;
     text-align: left;
@@ -96,7 +96,7 @@ nav a:link,
 nav a:visited,
 nav a:active,
 nav a:hover,
-nav a:focus{
+#nav a:focus{
     text-decoration: none;
     color: white;
 }
