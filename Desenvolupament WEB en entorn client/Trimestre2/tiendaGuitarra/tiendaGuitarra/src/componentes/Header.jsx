@@ -1,5 +1,5 @@
 
-export defaufunction Header(){
+export default function Header(){
 
     
     return(
