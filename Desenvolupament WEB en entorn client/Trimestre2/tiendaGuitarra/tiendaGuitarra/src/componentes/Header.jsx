@@ -1,10 +1,10 @@
 
 function Header(){
 
-    const nombre = "Carlos"
+    
 
 
     return(
-        <h>Hola: {nombre}</h>
+        <h1>Desde Header</h1>
     )
 }
