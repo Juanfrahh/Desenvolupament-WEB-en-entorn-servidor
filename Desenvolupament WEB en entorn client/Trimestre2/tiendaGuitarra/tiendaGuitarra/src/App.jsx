@@ -1,5 +1,5 @@
 
-import <Header></Header>
+import Header from
 
 function App() {
   return (
