@@ -1,7 +1,7 @@
 
 function Header(){
 
-    
+    const nombre = ""
 
 
     return(
