@@ -1,5 +1,5 @@
 import { useState } from 'react'
-export default fuc
+export default function 
 
 function App() {
   return (
