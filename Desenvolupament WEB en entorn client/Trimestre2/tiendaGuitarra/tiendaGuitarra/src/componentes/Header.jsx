@@ -7,7 +7,7 @@ export default function Header(){
     return(
         <Fragment>
             <h2>Hola: {nombre}</h2>
-            <p>Hola otra vez</p>
+            <p>Usando Fragment</p>
         </Fragment>
     )
 }
