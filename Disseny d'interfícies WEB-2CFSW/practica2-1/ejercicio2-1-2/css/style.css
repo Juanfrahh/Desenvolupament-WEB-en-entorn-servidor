@@ -135,7 +135,7 @@ nav li::before{
 }
 
 .article_header img{
-    width: 80px; /* tamaño nuevo - ajustar si quieres más/menos */
+    width: 80px;
     height: auto;
     display: block;
     margin: 10px auto; /* centra horizontalmente y separa del h2 */
