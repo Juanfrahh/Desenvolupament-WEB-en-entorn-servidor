@@ -1,4 +1,4 @@
-import 
+import {}
 
 export default function Header(){
 
