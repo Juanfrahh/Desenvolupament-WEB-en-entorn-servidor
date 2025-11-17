@@ -125,7 +125,7 @@ nav li::before{
     float: left;
 }
 
-.article_header{
+article_header{
     border-bottom: 1px solid #999999;
 }
 
