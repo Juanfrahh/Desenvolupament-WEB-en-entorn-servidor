@@ -129,7 +129,7 @@ article{
     border-bottom: 1px solid #999999;
 }
 
-article_header img{
+#article_header img{
     width: 80px;
     height: auto;
     display: block;
