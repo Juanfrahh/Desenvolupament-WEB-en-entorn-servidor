@@ -124,7 +124,8 @@ article{
     padding: 5px 5px 22px 5px;
     margin: 30px;
     float: left;
-} > h2{
+}
+article > h2{
     padding: 10px;
     font-size: 1.2em;
     border-bottom: 1px solid #999999;
