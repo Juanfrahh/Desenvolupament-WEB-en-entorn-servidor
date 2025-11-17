@@ -5,9 +5,9 @@ export default function Header(){
     const nombre = "Carlos";
 
     return(
-        <div>
+        <Fragment>
             <h2>Hola: {nombre}</h2>
             <p>Hola otra vez</p>
-        </div>
+        </Fragment>
     )
 }
