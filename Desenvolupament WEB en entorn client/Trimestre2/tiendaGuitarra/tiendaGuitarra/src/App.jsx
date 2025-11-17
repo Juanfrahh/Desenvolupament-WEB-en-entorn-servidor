@@ -9,7 +9,6 @@ function App() {
     <>
 
       <h1>Tienda de Guitarras</h1>
-
     </>
   )
 }
