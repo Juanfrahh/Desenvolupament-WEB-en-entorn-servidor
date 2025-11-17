@@ -1,4 +1,4 @@
-import Header 
+import Header from "./componentes/Header.jsx"
 
 function App() {
   return (
