@@ -114,7 +114,7 @@ nav li::before{
     background-image: url("../png/descarga3.png");
     background-repeat: no-repeat;
     background-position: center top;
-    background-size: 100% auto; 
+    background-size: 100% auto;
     height: 502px;
     overflow: auto;
 }
