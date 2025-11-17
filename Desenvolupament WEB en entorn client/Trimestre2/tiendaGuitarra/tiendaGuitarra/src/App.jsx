@@ -1,9 +1,5 @@
 
-export default function Header() {
-  return (
-    <h1>Hola desde Header</h1>
-  )
-}
+import
 
 function App() {
   return (
