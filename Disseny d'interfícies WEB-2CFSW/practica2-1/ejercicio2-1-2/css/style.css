@@ -101,7 +101,7 @@ nav a:focus{
     color: white;
 }
 
-#main{
+main{
     width: 960px;
     margin: 0 auto 0;
     font-family: verdana;
