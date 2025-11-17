@@ -6,7 +6,7 @@ export default function Header(){
     return(
         <div>
             <h2>Hola: {nombre}</h2>
-            <p></p>
+            <p>Hola otra vez</p>
         </div>
     )
 }
