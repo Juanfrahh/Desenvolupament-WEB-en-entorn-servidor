@@ -73,7 +73,7 @@ nav li::before{
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 56px; /* tamaño del icono - ajustar si hace falta */
+    width: 56px;
     height: 56px;
     border-radius: 50%;
     background-repeat: no-repeat;
