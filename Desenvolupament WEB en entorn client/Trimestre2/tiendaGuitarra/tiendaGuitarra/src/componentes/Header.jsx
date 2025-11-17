@@ -5,6 +5,6 @@ function Header(){
 
 
     return(
-        <h1>Hola: {nombre}</h1>
+        <h2>Hola: {nombre}</h2>
     )
 }
