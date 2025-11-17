@@ -95,7 +95,6 @@ nav li::before{
     background-image: url("../png/descarga (3).png");
 }
 
-/* Enlaces del nav: blancos y sin subrayado en todos los estados */
 #nav a,
 #nav a:link,
 #nav a:visited,
