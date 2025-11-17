@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 export default function Header(){
 
-    const nombre = "Carlos";
+    const nombre = "Carlos"
 
     return(
         <React.Fragment>
