@@ -7,7 +7,7 @@ export default function Header(){
     return(
         <React.Fragment>
             <h2>Hola: {nombre}</h2>
-            <p>Usando Fragment: Ejemplo 1</p>
+            <p>Usando Fragment: Ejemplo 2</p>
         </React.Fragment>
     )
 }
