@@ -6,7 +6,7 @@ function App() {
   return (
     <>
 
-      <h1>Tienda</h1>
+      <h1>Tienda de Guitarras</h1>
       
     </>
   )
