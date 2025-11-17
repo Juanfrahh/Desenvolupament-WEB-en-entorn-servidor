@@ -79,15 +79,16 @@ nav li::before{
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-#contenidos::before{
+/* iconos por cada opción - usa nth-child para diferenciar sin id */
+nav li:nth-child(2)::before{
     background-image: url("../png/images (1).png");
 }
 
-#videos::before{
+nav li:nth-child(4)::before{
     background-image: url("../png/images (2).png");
 }
 
-#contacto::before{
+nav li:nth-child(6)::before{
     background-image: url("../png/descarga (3).png");
 }
 
@@ -125,11 +126,15 @@ article{
     float: left;
 }
 
-#article_header{
+/* Emular el antiguo .article_header aplicando la separación y borde al h2
+   y centrando la imagen que ahora está directamente dentro del article */
+article > h2{
+    padding: 10px;
+    font-size: 1.2em;
     border-bottom: 1px solid #999999;
 }
 
-#article_header img{
+article > img{
     width: 80px;
     height: auto;
     display: block;
@@ -137,7 +142,8 @@ article{
 }
 
 h2{
-    padding: 10px;
+    /* General h2 fallback (kept small) */
+    padding: 0;
     font-size: 1.2em;
 }
 
