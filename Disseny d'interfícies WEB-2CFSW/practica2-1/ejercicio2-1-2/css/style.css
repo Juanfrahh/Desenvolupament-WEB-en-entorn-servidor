@@ -126,7 +126,7 @@ nav li::before{
     text-align: center;
     line-height: 1.8em;
     padding: 5px 5px 22px 5px; /* superior/derecha/abajo/izquierda */
-    margin: 30px; /* márgenes externos de 30px */
+    margin: 30px;
     float: left;
 }
 
