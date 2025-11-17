@@ -91,12 +91,12 @@ nav li::before{
     background-image: url("../png/descarga (3).png");
 }
 
-#nav a,
-#nav a:link,
-#nav a:visited,
-#nav a:active,
-#nav a:hover,
-#nav a:focus{
+nav a,
+nav a:link,
+nav a:visited,
+nav a:active,
+nav a:hover,
+nav a:focus{
     text-decoration: none;
     color: white;
 }
