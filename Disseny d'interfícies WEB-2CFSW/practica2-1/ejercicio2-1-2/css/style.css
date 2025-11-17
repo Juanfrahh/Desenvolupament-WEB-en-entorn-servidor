@@ -116,7 +116,7 @@ nav li::before{
     background-position: center top;
     background-size: 100% auto; /* hace que la imagen ocupe el ancho del elemento */
     height: 502px;
-    overflow: auto; /* contiene los elementos flotantes */
+    overflow: auto;
 }
 
 .article{
