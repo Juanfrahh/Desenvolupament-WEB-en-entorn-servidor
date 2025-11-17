@@ -1,5 +1,5 @@
 import { useState } from 'react'
-export default function 
+export default function Header
 
 function App() {
   return (
