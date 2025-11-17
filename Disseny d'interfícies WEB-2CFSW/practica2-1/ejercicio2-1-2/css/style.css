@@ -124,9 +124,7 @@ article{
     padding: 5px 5px 22px 5px;
     margin: 30px;
     float: left;
-}
-   y centrando la imagen que ahora está directamente dentro del article */
-article > h2{
+} > h2{
     padding: 10px;
     font-size: 1.2em;
     border-bottom: 1px solid #999999;
