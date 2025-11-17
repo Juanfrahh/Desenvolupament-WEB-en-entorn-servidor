@@ -61,7 +61,6 @@ nav li{
     position: relative;
 }
 
-/* mantener ocultas las img inline en el HTML actual */
 nav ul > img{
     display: none;
 }
