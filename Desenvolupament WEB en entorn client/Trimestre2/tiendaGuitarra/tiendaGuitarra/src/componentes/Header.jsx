@@ -5,9 +5,9 @@ export default function Header(){
     const nombre = "Carlos";
 
     return(
-        <Fragment>
+        <React.Fragment>
             <h2>Hola: {nombre}</h2>
             <p>Usando Fragment: Ejemplo 1</p>
-        </Fragment>
+        </React.Fragment>
     )
 }
