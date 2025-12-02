@@ -77,7 +77,7 @@ nav ul li {
 }
 
 #cuadro1-2 {
-    border: 1px;
+    border: 1px solid black;
     width: 540px;
     height: 500px;
     background-color: #F4F4F4;
