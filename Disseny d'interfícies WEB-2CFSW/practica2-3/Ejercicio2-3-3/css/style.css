@@ -36,7 +36,6 @@ nav {
 }
 nav ul {
     float: left;
-    border: 2px solid black;
     width: 245px;
     height: 30px;
 }
