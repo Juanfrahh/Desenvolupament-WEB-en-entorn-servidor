@@ -81,7 +81,7 @@ nav ul li {
     background-color: #F4F4F4;
 }
 #rectangulos {
-    margin: 20px ;
+    margin: 20px 5px;
     font-size: 10px;
 }
 #nuevo {
