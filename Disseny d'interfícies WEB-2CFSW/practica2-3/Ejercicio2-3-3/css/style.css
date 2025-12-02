@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: serif;
+    width: 1080px;
+    margin: auto;
+    margin-bottom: 5px;
+    border: 1px solid black;
+}
+header {
+    margin: 0;
+    border: 1px solid black;
+    width: 1078px;
+    align-content: center;
+    height: 60px;
+}
+#logo {
+    margin: -1px;
+    border: 2px solid black;
+    float: left;
+    padding: 10PX 5px;
+    width: 100px;
+    font-size: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+nav {
+    text-align: center;
+    float: right;
+    width: 500px;
+    margin-right: 40px;
+    border: 1;
+}
+nav ul {
+    float: left;
+    border: 2px solid black;
+    width: 245px;
+    height: 30px;
+}
+nav ul li {
+    margin: 5px 10px 0 10px;
+    font-size: 12px;
+    list-style: none;
+    float: left;
+    border: 2px solid black;
+}
+.boton {
+    padding: 0 5px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: lightgray;
+    width: 80px;
+}
+/*--------------------------------------------------*/
+.contenido {
+    width: 1080px;
+    height: 500px;
+    display: flex;
+}
+.cuadro {
+    border: 1px solid black;
+    width: 540px;
+    height: 500px;
+    float: left;
+}
+#rectangulos {
+    margin-left: 20px;
+}
+#rectangulo1 {
+    margin-top: 5px; 
+    border: 2px solid black;
+    width: 200px;
+    height: 20px;
+
+}
+.rectangulo2 {
+    margin-top: 5px; 
+    width: 400px;
+    height: 35px;
+    border: 2px solid black;
+
+}
+#rectangulo3 {
+    margin-top: 5px; 
+    border: 2px solid black;
+    width: 150px;
+    height: 35px;
+
+}
+.rectangulo4 {
+    margin-top: 5px; 
+    float: left;
+    border: 2px solid black;
+    width: 125px;
+    height: 35px;
+}
+/*--------------------------------------------------*/
+#cuadro1 {
+    border: 1px solid black;
+    float: left;
+    width: 440px;
+    height: 500px;
+}
+#cuadro2 {
+    border: 1px solid black;
+    float: left;
+    width: 640px;
+    height: 500px;
+}
+.cuadrados{
+    width: 400px;
+    margin: 115px auto auto auto;
+
+}
+#cuadro2-1 {
+    border: 2px solid black;
+    margin: auto auto 20px 0;
+    width: 250px;
+    height: 100px;
+
+}
+.cuadro2-2 {
+    border: 2px solid black;
+    margin:  20px 0 0 0;
+    width: 400px;
+    height: 30px;
+}
+/*--------------------------------------------------*/
+#contenido1{
+    width: 1080px;
+    height: 400px;
+    display: flex;
+}
+#cuadro3 {
+    border: 1px solid black;
+    float: left;
+    width: 640px;
+    height: 400px;
+}
+#cuadro4 {
+    border: 1px solid black;
+    float: left;
+    width: 440px;
+    height: 400px;
+}
+#cuadro3-1 {
+    border: 2px solid black;
+    margin-top:  20px;
+    width: 400px;
+    height: 80px;
+}
+#cuadro3-2 {
+    border: 2px solid black;
+    margin:  20px 0 0 0;
+    width: 400px;
+    height: 30px;
+
+}
+#cuadro3-3 {
+    border: 2px solid black;
+    margin:  20px 0 0 0;
+    width: 130px;
+    height: 30px;
+}
+/*----------------------------------------------------*/
+#contenido2{
+    border-top: 1px solid black;
+    width: 1080px;
+    height: 500px;
+    display: flex;
+    margin-top: 5px;
+}
+#cuadro5 {
+    margin-left: 20px ;
+    width: 1080px;
+}
+#cuadro5-1 {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 400px;
+    height: 30px;
+}
+#cuadro5-2 {
+    margin-top: 5px;
+    border: 1px solid black;
+    width: 280px;
+    height: 10px;
+}
+#cuadro5-3 {
+    margin-top: 5px;
+    margin-right: 20px;
+    border: 1px solid black;
+    width: 320px;
+    height: 420px;
+    float: left;
+}
+#cuadro5-3-1 {
+    border-top: 1px solid black;
+    width: 320px;
+    height: 80px;
+    margin-top: 340px;
+}
+#cuadro5-3-2 {
+    margin: 5px auto;
+    border: 1px solid black;
+    height: 10px;
+    width: 310px;
+}
+#cuadro5-3-3 {
+    border: 1px solid black;
+    height: 20px;
+    width: 310px;
+    margin: 5px auto;
+}
+#cuadro5-3-4 {
+    border: 1px solid black;
+    height: 10px;
+    width: 60px;
+    margin: 5px;
+}
+
+.contenido3 {
+    width: 1080px;
+    height: 200px;
+    border-top: 2px solid black;
+    text-align: center;
+}
+#rectangulo6 {
+    border: 2px solid black;
+    width: 850px;
+    height: 125px;
+    margin: 20px auto;
+}
+#rectangulo6-1 {
+    border: 2px solid black;
+    width: 400px;
+    height: 110px;
+    margin: 10px auto;
+}
+#rectangulo6-2 {
+    border: 2px solid black;
+    width: 380px;
+    height: 25px;
+    margin: 10px auto;
+}
+#rectangulo6-3 {
+    border: 2px solid black;
+    width: 380px;
+    height: 10px;
+    margin: 10px auto;
+}
+
+#rectangulo7 {
+    width: 1020px;
+    height: 170px;
+    margin: 25px auto;
+}
+.rectangulo7-1 {
+    border: 2px solid black;
+    float: left;
+    width: 215px;
+    height: 167px;
+}
+.rectangulo7-1-1 {
+    border: 2px solid black;
+    width: 200px;
+    height: 30px;
+    margin: 5px;
+}
+#rectangulo7-2 {
+    border: 2px solid black;
+    float: left;
+    width: 360px;
+    height: 167px;
+}
+.rectangulo7-2-1 {
+    border: 2px solid black;
+    width: 345px;
+    height: 30px;
+    margin: 5px;
+}
+footer{
+    width: 1080px;
+    height: 70px;
+    border-top: 1px solid black;
+}
+#rectangulo8 {
+    border: 1px solid black;
+    margin: 5px auto;
+    width: 1060px;
+    height: 10px;
+}
+#rectangulo8-1 {
+    border: 1px solid black;
+    margin: auto;
+    width: 1060px;
+    height: 48px;
+}
+#rectangulo8-1-1 {
+    border: 1px solid black;
+    float: left;
+    width: 260px;
+    height: 25px;
+    margin: 10px;
+}
+#rectangulo8-1-2 {
+    border: 1px solid black;
+    float: right;
+    width: 260px;
+    height: 25px;
+    margin: 10px;
+}
