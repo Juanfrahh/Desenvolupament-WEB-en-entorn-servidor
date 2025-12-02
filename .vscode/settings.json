@@ -8,5 +8,6 @@
                 "cmd": ".\\autocommit.bat"
             }
         ]
-    }
+    },
+    "livePreview.defaultPreviewPath": "/Disseny d'interfícies WEB-2CFSW/practica2-3/Ejercicio2-3-3/index.html"
 }
