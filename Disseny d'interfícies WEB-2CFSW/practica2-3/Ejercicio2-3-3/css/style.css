@@ -17,7 +17,6 @@ header {
 }
 #logo {
     margin: -1px;
-    border: 2px solid black;
     float: left;
     padding: 10PX 5px;
     width: 120px;
@@ -96,8 +95,7 @@ nav ul li {
     width: 400px;
     height: 35px;
     border: 2px solid black;
-
-
+}
 /*--------------------------------------------------*/
 #cuadro1 {
     border: 1px solid black;
