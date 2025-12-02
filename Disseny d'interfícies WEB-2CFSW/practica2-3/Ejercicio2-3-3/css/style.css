@@ -15,7 +15,7 @@ header {
     width: 1078px;
     align-content: center;
     height: 60px;
-    background: linear-gradient(#FFFFFF -50%, #6B0DEA -50%);
+    background: linear-gradient(#FFFFFF%, #6B0DEA -50%);
 }
 #logo {
     margin: -1px;
