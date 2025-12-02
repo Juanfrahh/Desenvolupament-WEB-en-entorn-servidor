@@ -163,7 +163,9 @@ h2 {
 .cuadro2-2 strong {
     font-size: 10px;
 }
-.cuadro2-2 div
+.cuadro2-2 div {
+    
+}
 /*--------------------------------------------------*/
 #contenido1{
     width: 1080px;
