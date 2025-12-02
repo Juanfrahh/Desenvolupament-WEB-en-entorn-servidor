@@ -83,19 +83,7 @@ nav ul li {
 #rectangulos {
     margin-left: 20px;
 }
-#rectangulo1 {
-    margin-top: 5px; 
-    border: 2px solid black;
-    width: 200px;
-    height: 20px;
 
-}
-.rectangulo2 {
-    margin-top: 5px; 
-    width: 400px;
-    height: 35px;
-    border: 2px solid black;
-}
 /*--------------------------------------------------*/
 #cuadro1 {
     border: 1px solid black;
