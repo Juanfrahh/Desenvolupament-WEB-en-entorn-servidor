@@ -27,7 +27,7 @@ a {
     color: black;
 }
 nav {
-    pad
+    padding: 10px;
     text-align: center;
     float: right;
     width: 500px;
