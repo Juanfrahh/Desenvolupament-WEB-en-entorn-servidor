@@ -160,7 +160,9 @@ h2 {
     float: left;
     margin: 5px 10px 0 0;
 }
-.cuadro2-2
+.cuadro2-2 strong {
+    
+}
 /*--------------------------------------------------*/
 #contenido1{
     width: 1080px;
