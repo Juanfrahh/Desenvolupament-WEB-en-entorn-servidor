@@ -70,7 +70,6 @@ nav ul li {
     display: flex;
 }
 #cuadro {
-    border: 1px solid black;
     width: 540px;
     height: 500px;
     float: left;
