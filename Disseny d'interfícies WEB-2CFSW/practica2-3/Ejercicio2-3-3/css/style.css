@@ -89,7 +89,9 @@ nav ul li {
     background-color: #6B0DEA;
     color: white;
 }
-<h1>
+h1 {
+    
+}
 /*--------------------------------------------------*/
 #cuadro1 {
     border: 1px solid black;
