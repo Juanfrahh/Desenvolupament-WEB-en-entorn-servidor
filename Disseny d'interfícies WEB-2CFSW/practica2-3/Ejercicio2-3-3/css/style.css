@@ -15,6 +15,7 @@ header {
     width: 1078px;
     align-content: center;
     height: 60px;
+    
 }
 #logo {
     margin: -1px;
@@ -38,7 +39,7 @@ nav ul {
     float: left;
     width: 245px;
     height: 30px;
-    
+
 }
 nav ul li {
     margin: 5px 10px 0 10px;
