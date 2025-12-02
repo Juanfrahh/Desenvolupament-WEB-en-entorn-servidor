@@ -131,6 +131,7 @@ h1 {
 }
 #movil {
     width: 400px;
+    margin: auto;
 }
 #cuadro2 {
     border: 1px solid black;
