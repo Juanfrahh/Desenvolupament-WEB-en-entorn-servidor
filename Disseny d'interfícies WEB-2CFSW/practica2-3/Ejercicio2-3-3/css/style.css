@@ -162,7 +162,7 @@ h2 {
 .cuadro2-2 strong {
     font-size: 10px;
 }
-.cuadro2-2 div {
+.cuadro2-2 .palo {
     float: left;
     border: 1px solid black;
     height: 10px;
