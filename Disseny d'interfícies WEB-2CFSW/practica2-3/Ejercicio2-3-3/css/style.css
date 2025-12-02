@@ -92,6 +92,9 @@ nav ul li {
 h1 {
     font-size: 45px;
 }
+h1 strong {
+    
+}
 /*--------------------------------------------------*/
 #cuadro1 {
     border: 1px solid black;
