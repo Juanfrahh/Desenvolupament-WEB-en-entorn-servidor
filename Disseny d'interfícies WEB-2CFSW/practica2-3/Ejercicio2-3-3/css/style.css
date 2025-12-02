@@ -69,7 +69,7 @@ nav ul li {
     height: 500px;
     display: flex;
 }
-.cuadro {
+#cuadro {
     border: 1px solid black;
     width: 540px;
     height: 500px;
