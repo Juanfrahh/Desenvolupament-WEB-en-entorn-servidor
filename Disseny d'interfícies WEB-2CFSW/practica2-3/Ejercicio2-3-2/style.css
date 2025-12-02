@@ -275,6 +275,7 @@ nav ul li {
 }
 #rectangulo7-2 {
     border: 2px solid black;
+    float: left;
     width: 180px;
     height: 167px;
 }
