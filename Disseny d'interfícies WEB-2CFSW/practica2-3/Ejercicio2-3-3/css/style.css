@@ -54,6 +54,7 @@ nav ul li {
     font-size: 12px;
     background-color: lightgray;
     width: 90px;
+    float: left;
 }
 #boton1 {
     padding: 0 5px;
