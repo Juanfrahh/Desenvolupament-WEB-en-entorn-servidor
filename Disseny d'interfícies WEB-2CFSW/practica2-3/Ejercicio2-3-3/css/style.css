@@ -86,9 +86,7 @@ nav ul li {
     font-size: 10px;
 }
 #nuevo {
-    display:inline-block;
-    text-align: center;
-    width: 30px;
+    
     border-radius: 5px;
     padding: 5px;
     background-color: #6B0DEA;
