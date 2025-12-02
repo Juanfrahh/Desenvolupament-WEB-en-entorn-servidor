@@ -97,21 +97,7 @@ nav ul li {
     height: 35px;
     border: 2px solid black;
 
-}
-#rectangulo3 {
-    margin-top: 5px; 
-    border: 2px solid black;
-    width: 150px;
-    height: 35px;
 
-}
-.rectangulo4 {
-    margin-top: 5px; 
-    float: left;
-    border: 2px solid black;
-    width: 125px;
-    height: 35px;
-}
 /*--------------------------------------------------*/
 #cuadro1 {
     border: 1px solid black;
