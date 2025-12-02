@@ -43,7 +43,7 @@ nav ul {
 
 }
 nav ul li {
-    margin: 5px 10px 0 10px;
+    margin: 5px auto 0 10px;
     font-size: 12px;
     list-style: none;
     float: left;
