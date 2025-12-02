@@ -290,3 +290,8 @@ footer{
     height: 70px;
     border: 1px solid black;
 }
+#rectangulo8 {
+    border-top: 1px solid black;
+    width: 1080px;
+    height: 5px;
+}
