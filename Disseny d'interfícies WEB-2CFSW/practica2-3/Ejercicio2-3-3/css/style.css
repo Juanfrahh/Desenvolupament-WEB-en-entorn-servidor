@@ -47,7 +47,15 @@ nav ul li {
     float: left;
 }
 #boton {
-    padding: º
+    margin-top: 5px;
+    padding: 5px 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    background-color: lightgray;
+    width: 90px;
+}
+#boton1 {
+    padding: 7px 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     background-color: #6B0DEA;
