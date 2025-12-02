@@ -296,4 +296,8 @@ footer{
     width: 1060px;
     height: 10px;
 }
-#
+#rectangulo8-1 {
+    width: 1060px;
+    height: 50px;
+    display: flex;
+}
