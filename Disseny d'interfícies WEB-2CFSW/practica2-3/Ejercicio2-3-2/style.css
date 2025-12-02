@@ -6,6 +6,7 @@ body {
     font-family: serif;
     width: 1080px;
     margin: auto;
+    margin-;
     border: 1px solid black;
 }
 header {
@@ -288,5 +289,5 @@ footer{
     width: 1080px;
     height: 60px;
     border: 1px solid black;
-    
+
 }
