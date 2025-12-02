@@ -47,7 +47,7 @@ nav ul li {
     float: left;
     border: 2px solid black;
 }
-.boton {
+#boton {
     padding: 0 5px;
     display: block;
     font-family: Arial, Helvetica, sans-serif;
