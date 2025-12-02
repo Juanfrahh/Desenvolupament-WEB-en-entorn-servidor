@@ -302,3 +302,9 @@ footer{
     width: 1060px;
     height: 46px;
 }
+#rectangulo8-1-1 {
+    border: 1px solid black;
+    float: left;
+    width: 520px;
+    height: 46px;
+}
