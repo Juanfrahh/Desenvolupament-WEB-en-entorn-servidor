@@ -138,6 +138,7 @@ h2 {
     height: 500px;
 }
 .cuadrados{
+    border: 1;
     width: 400px;
     margin: 115px auto auto auto;
 
