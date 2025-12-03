@@ -167,12 +167,7 @@ h2 {
     float: left;
     border: 1px solid black;
     height: 30px;
-    margin: 0 5px 0 0;
-}
-/*--------------------------------------------------*/
-#contenido1{
-    width: 1080px;
-    height: 400px;
+    margin: 0 5px 0 020px
     display: flex;
 }
 #cuadro3 {
