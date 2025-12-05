@@ -24,7 +24,9 @@
     </strong>
 </nav>
 
-<aside></aside>
+<aside>
+    
+</aside>
 
 <footer>Trabajo  Desarrollo Web en Entorno Servidor 2025/2026 IES Serra Perenxisa</footer>
 
