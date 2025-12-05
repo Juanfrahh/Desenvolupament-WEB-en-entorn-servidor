@@ -23,8 +23,8 @@ onMounted(() => {
 
 
 watch(carrito, () => {
-    guardarLocalStorage();
-}, { deep: true });
+    guardarLocalStorage()
+}, { deep: true })
 
 
 const guardarLocalStorage = () => {

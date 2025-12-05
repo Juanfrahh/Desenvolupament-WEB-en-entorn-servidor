@@ -8,25 +8,29 @@ body {
     margin: auto;
     margin-bottom: 5px;
 }
-header {
-    margin: 0;
-    width: 1080px;
-    align-content: center;
-    height: 80px;
-    background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50% );
-}
-#logo {
-    margin: -1px;
-    float: left;
-    padding: 10PX 5px;
-    width: 120px;
-}
 .morado {
     color: #6B0DEA;
 }
 a {
     text-decoration: none;
     color: black;
+}
+h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+/*------------------------------------------------------------------------------------*/
+header {
+    margin: 0;
+    width: 1080px;
+    align-content: center;
+    height: 100px;
+    background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50% );
+}
+#logo {
+    float: left;
+    padding: 10PX 5px;
+    width: 120px;
 }
 nav {
     padding: 10px 5px;
@@ -66,38 +70,41 @@ nav ul li {
 }
 /*--------------------------------------------------*/
 .contenido {
+    
     width: 1080px;
-    height: 500px;
+    height: 650px;
     display: flex;
+    
 }
 #cuadro {
+    
     width: 540px;
-    height: 500px;
+    height: 550px;
     float: left;
 }
-
 #cuadro1-2 {
+    
     width: 540px;
-    height: 500px;
+    height: 550px;
     background-color: #F4F4F4;
 }
-#mujer {
-    width: 350px;
-    margin: 30px 95px;
-}
 #rectangulos {
+    
     margin: 20px 5px;
     font-size: 10px;
 }
+#mujer {
+    width: 400px;
+    margin: 30px 65px;
+    background-color: #F4F4F4;
+}
+
 #nuevo {
     border-radius: 5px;
     padding: 5px;
     background-color: #6B0DEA;
     color: white;
     margin-right: 5px;
-}
-h2 {
-    font-size: 45px;
 }
 #punto {
     font-size: 60px;
@@ -108,12 +115,13 @@ h2 {
     font-size: 15px;
 }
 #cuenta {
+    text-align: center;
     margin: 20px 0;
     background-color: #6B0DEA;
     color: #FFFFFF;
     padding: 15px 10px;
-    width: 100px;
-    text-align: center;
+    width: 125px;
+    font-size: 12px;
     border-radius: 5px;
 }
 .stores{
@@ -121,232 +129,291 @@ h2 {
     margin-right: 20px;
     width: 110px;
 }
-
 /*--------------------------------------------------*/
 #cuadro1 {
+    
     float: left;
     width: 440px;
-    height: 500px;
+    height: 650px;
 }
 #movil {
-    width: 400px;
-    margin: 70px ;
+    width: 550px;
+    margin-left: 20px;
 }
 #cuadro2 {
+    
+    height: 650px;
     float: left;
     width: 640px;
-    height: 500px;
 }
 .cuadrados{
-    border: 1px solid black;
-    width: 400px;
-    margin: 115px auto auto auto;
+    
+    width: 425px;
+    margin: 70px auto auto 200px;
 
 }
-#cuadro2-1 {
-    border: 1px solid black;
-    margin: auto auto 20px 20px;
-    width: 250px;
-    height: 100px;
-
+.cuadrados h2 {
+    font-size: 60px;
+    width: 500px;
 }
 .cuadro2-2 {
-    margin: 30px 0 0 0;
-    width: 400px;
+    width: 500px;
     height: 30px;
 }
 .cuadro2-2 p {
+    font-size: 20px;
     height: 10px;
     float: left;
-    margin: 5px 10px 0 0;
+    margin: 20px 10px 0 0;
 }
 .cuadro2-2 strong {
     font-size: 10px;
 }
 .palo {
-    float: left;
-    border: 1px solid black;
-    height: 30px;
-    margin: 0 5px 0 10x;
+    background: rgb(211, 211, 211);
+    width: 1px;
+    height: 40px;
+    margin: 30px 0 30px 10px;
+}
+.palo p {
+    margin-left: 23px;
+    width: 400px;
+    font-size: 12px;
+}
+#paso3 {
+    margin-top: 15px;
+    margin-left: 30px;
+    width: 400px;
+    font-size: 15px;
+}
+/*--------------------------------------------------*/
+#contenido1{
+    border-radius: 35px;
+    margin-top: 300px;
+    width: 1080px;
+    height: 400px;
     display: flex;
+    background-color: #F4F4F4;
+}
+#movil2 {
+    width: 400px;
+    margin: 10px 20px 0 5px;
 }
 #cuadro3 {
-    border: 1px solid black;
     float: left;
     width: 640px;
     height: 400px;
 }
+#cuadro33 {
+    margin: auto;
+    width: 440px;
+    height: 400px;
+}
 #cuadro4 {
-    border: 1px solid black;
     float: left;
     width: 440px;
     height: 400px;
 }
 #cuadro3-1 {
-    border: 2px solid black;
-    margin-top:  20px;
-    width: 400px;
+    font-size: 50px;
+    margin: 50px auto;
+    width: 450px;
     height: 80px;
+    float: left;
 }
 #cuadro3-2 {
-    border: 2px solid black;
-    margin:  20px 0 0 0;
+    float: left;
+    margin-top: 20px;
     width: 400px;
     height: 30px;
 
 }
 #cuadro3-3 {
-    border: 2px solid black;
-    margin:  20px 0 0 0;
-    width: 130px;
+    margin: 45px auto;
+    float: left;
+    background-color: #6B0DEA;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 150px;
     height: 30px;
 }
 /*----------------------------------------------------*/
 #contenido2{
-    border-top: 1px solid black;
     width: 1080px;
-    height: 500px;
+    height: 650px;
     display: flex;
-    margin-top: 5px;
+    margin-top: 150px;
 }
-#cuadro5 {
-    margin-left: 20px ;
+#cuadrados1{
     width: 1080px;
+    margin: auto;
 }
 #cuadro5-1 {
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    width: 400px;
+    width: 500px;
     height: 30px;
 }
+#cuadro5-1 {
+    margin-left: -3px;
+}
 #cuadro5-2 {
-    margin-top: 5px;
-    border: 1px solid black;
-    width: 280px;
+    margin-top: 40px;
+    width: 400px;
     height: 10px;
 }
 #cuadro5-3 {
-    margin-top: 5px;
-    margin-right: 20px;
-    border: 1px solid black;
+    margin-top: 50px;
+    margin-right: 40px;
     width: 320px;
-    height: 420px;
     float: left;
 }
+#leticia {
+    width: 340px;
+}
+#susana {
+    width: 340px;
+}
+#felipe {
+    width: 340px;
+}
 #cuadro5-3-1 {
-    border-top: 1px solid black;
     width: 320px;
     height: 80px;
-    margin-top: 340px;
+}
+.fecha {
+    float: left;
+    font-size: 13px;
+}
+.info {
+    font-size: 13px;
+    float: right;
 }
 #cuadro5-3-2 {
     margin: 5px auto;
-    border: 1px solid black;
     height: 10px;
     width: 310px;
 }
 #cuadro5-3-3 {
-    border: 1px solid black;
+    border: 1px solid #FFFFFF;
     height: 20px;
     width: 310px;
-    margin: 5px auto;
+    margin: 15px auto;
 }
 #cuadro5-3-4 {
-    border: 1px solid black;
     height: 10px;
-    width: 60px;
-    margin: 5px;
+    width: 120px;
+    margin: 30px 5px;
 }
-
-.contenido3 {
-    width: 1080px;
-    height: 200px;
-    border-top: 2px solid black;
-    text-align: center;
-}
+/*----------------------------------------------------*/
 #rectangulo6 {
-    border: 2px solid black;
-    width: 850px;
-    height: 125px;
-    margin: 20px auto;
+    border-radius: 20px;
+    background-color: #6B0DEA;
+    width: 800px;
+    height: 250px;
+    margin: auto;
 }
 #rectangulo6-1 {
-    border: 2px solid black;
-    width: 400px;
-    height: 110px;
-    margin: 10px auto;
+    color: white;
+    width: 450px;
+    height: 100px;
+    margin: auto;
 }
 #rectangulo6-2 {
-    border: 2px solid black;
     width: 380px;
     height: 25px;
     margin: 10px auto;
 }
 #rectangulo6-3 {
-    border: 2px solid black;
-    width: 380px;
-    height: 10px;
     margin: 10px auto;
+    background-color: white;
+    border-radius: 10px;
+    height: 60px;
+    width: 300px;
 }
-
+#rectangulo6-3 p {
+    margin-top: 20px;
+    color: #a0a0a0;
+    font-size: 12px;
+    margin-left: 10px;
+    float: left;
+}
+#rectangulo6-4 p {
+    margin-top: 5px;
+    border-radius: 5px;
+    color: white;
+    float: right;
+    padding: 17px 10px;
+    background-color: #6B0DEA;
+    margin-right: 5px;
+}
+/*----------------------------------------------------------*/
+.contenido3 {
+    margin-top: 100px;
+    width: 1080px;
+    height: 150px;
+}
 #rectangulo7 {
-    width: 1020px;
-    height: 170px;
-    margin: 25px auto;
+    text-align: left;
+    width: 930px;
+    height: 150px;
+    margin: auto;
+    margin-top: 140px;
+}
+#rectangulo7 p {
+    font-size: 12px;
 }
 .rectangulo7-1 {
-    border: 2px solid black;
     float: left;
-    width: 215px;
+    width: 210px;
     height: 167px;
 }
 .rectangulo7-1-1 {
-    border: 2px solid black;
     width: 200px;
     height: 30px;
     margin: 5px;
+    margin-left: 35px;
 }
 #rectangulo7-2 {
-    border: 2px solid black;
     float: left;
-    width: 360px;
     height: 167px;
 }
 .rectangulo7-2-1 {
-    border: 2px solid black;
-    width: 345px;
+    width: 250px;
     height: 30px;
     margin: 5px;
+    margin-left: 35px;
 }
+#redes {
+    float: left;
+    width: 85px;
+    height: 22px;
+    margin-top: -5px;
+}
+/*---------------------------------------------------------*/
 footer{
-    width: 1080px;
+    border-top: 1px solid #a0a0a0;
+    margin: auto;
+    width: 930px;
     height: 70px;
-    border-top: 1px solid black;
 }
 #rectangulo8 {
-    border: 1px solid black;
     margin: 5px auto;
-    width: 1060px;
     height: 10px;
 }
 #rectangulo8-1 {
-    border: 1px solid black;
+    font-size: 10px;
     margin: auto;
-    width: 1060px;
+    width: 930px;
     height: 48px;
 }
 #rectangulo8-1-1 {
-    border: 1px solid black;
-    float: left;
+    float: left;    
     width: 260px;
     height: 25px;
-    margin: 10px;
+    margin: 0;
 }
-#rectangulo8-1-2 {
-    border: 1px solid black;
+.rectangulo8-1-2 {
     float: right;
-    width: 260px;
     height: 25px;
-    margin: 10px;
+    margin: 0 0 0 20px;
 }

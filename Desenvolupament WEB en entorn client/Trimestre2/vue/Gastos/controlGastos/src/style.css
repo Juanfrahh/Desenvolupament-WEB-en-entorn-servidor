@@ -1,0 +1,87 @@
+:root{
+  --azul: #3b82f6;
+  --blanco: #FFF;
+  --gris-claro: #F5F5F5;
+  --gris: #94a3b8;
+  --gris-oscuro: #64748b;
+  --negro: #000;
+}
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,*:before,*:after{
+  box-sizing: inherit;
+}
+body{
+  font-size: 1.6rem;
+  font-family: "Lato", sans-serif;
+  background-color: var(--gris-claro);
+}
+h1{
+  font-size: 4rem;
+}
+h2{
+  font-size: 3rem;
+}
+header{
+  background-color: var(--azul);
+}
+header h1{
+  padding: 3rem 0;
+  margin: 0;
+  color: var(--blanco);
+  text-align: center;
+}
+.presupuesto{
+  width: 100%;  
+}
+.campo {
+  display: grid;
+  gap: 2rem;
+}
+.presupuesto label {
+  font-size: 2.2rem;
+  text-align: center;
+  color: var(--azul);
+}
+.presupuesto input[type="number"] {
+  background-color: var(--gris-claro);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: none;
+  font-size: 2.2rem;
+  text-align: center;
+}
+.presupuesto input[type="submit"] {
+  background-color: var(--azul);
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--blanco);
+  font-weight: 900;
+  width: 100%;
+  transition: background-color 300ms ease;
+}
+.presupuesto input[type="submit"]:hover {
+  background-color: #1048A4;
+  cursor: pointer;
+}
+.contenedor{
+  width: 90%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+.contenedor-header{
+  margin-top: -5rem;
+  transform: translateY(5rem);
+  padding: 5rem;
+}
+.sombra{
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  background-color: var(--blanco);
+  border-radius: 1.2rem;
+  padding: 5rem;
+}
