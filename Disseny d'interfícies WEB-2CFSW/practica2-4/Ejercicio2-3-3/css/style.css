@@ -182,7 +182,7 @@ nav ul li a {
 .paso {
     display: flex;
     align-items: flex-start;
-    gap: 25px; /* separación entre número/palo y texto */
+    gap: 25px;
 }
 
 .numero-palo {
