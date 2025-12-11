@@ -91,7 +91,7 @@ nav ul li a {
     width: 1080px;
     height: 650px;
     display: flex;               
-    flex-direction: row;         /* columnas en fila */
+    flex-direction: row;         
     justify-content: space-between; /* espacio entre columnas */
     align-items: center;         /* centrado vertical si se necesita */
 }
