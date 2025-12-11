@@ -303,7 +303,6 @@ nav ul li a {
     font-size: 20px;
 }
 
-/* Contenedor de tarjetas en fila */
 .tarjetas {
     display: flex;
     gap: 20px;
