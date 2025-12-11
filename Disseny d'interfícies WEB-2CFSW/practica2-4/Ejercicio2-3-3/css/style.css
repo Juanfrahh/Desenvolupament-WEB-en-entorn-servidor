@@ -155,7 +155,6 @@ nav ul li a {
     width: 400px;
 }
 
-/* Contenedor derecho con pasos */
 #cuadro2 {
     flex: 0 0 640px;   
     display: flex;
