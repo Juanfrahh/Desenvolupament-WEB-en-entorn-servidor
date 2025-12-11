@@ -173,7 +173,7 @@ nav ul li a {
 .cuadro2-2 {
     display: flex;
     flex-direction: column;
-    width: 150px; /* ancho fijo */
+    width: 150px;
     font-size: 14px;
 }
 .cuadro2-2 p {
