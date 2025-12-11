@@ -438,30 +438,29 @@ nav ul li a {
 }
 
 /*---------------------------------------------------------*/
-footer{
+footer {
     border-top: 1px solid #a0a0a0;
-    margin: auto;
     width: 930px;
     height: 70px;
-}
-#rectangulo8 {
-    margin: 5px auto;
-    height: 10px;
-}
-#rectangulo8-1 {
+    margin: 0 auto;               /* centrado horizontal */
+    display: flex;
+    align-items: flex-start;       /* pegado a la línea superior */
+    padding: 10px 0;              /* espacio interno superior e inferior */
+    justify-content: space-between; /* primer bloque a la izquierda, otros a la derecha */
     font-size: 10px;
-    margin: auto;
-    width: 930px;
-    height: 48px;
 }
+
+#rectangulo8-1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* separa los bloques izquierdo y derecho */
+    align-items: flex-start;        /* pegado a la línea superior */
+}
+
 #rectangulo8-1-1 {
-    float: left;    
-    width: 260px;
-    height: 25px;
-    margin: 0;
+    /* primer bloque a la izquierda */
 }
+
 .rectangulo8-1-2 {
-    float: right;
-    height: 25px;
-    margin: 0 0 0 20px;
+    margin-left: 20px;              /* separación entre los dos enlaces de la derecha */
 }
