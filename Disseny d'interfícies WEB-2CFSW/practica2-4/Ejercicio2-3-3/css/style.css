@@ -343,41 +343,66 @@ nav ul li a {
     width: 800px;
     height: 250px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px; /* separación entre elementos internos */
 }
+
 #rectangulo6-1 {
     color: white;
-    width: 450px;
-    height: 100px;
-    margin: auto;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    font-size: 24px;
 }
+
 #rectangulo6-2 {
-    width: 380px;
-    height: 25px;
-    margin: 10px auto;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    font-size: 16px;
 }
+
 #rectangulo6-3 {
-    margin: 10px auto;
-    background-color: white;
-    border-radius: 10px;
+    display: flex;
+    width: 100%;
+    max-width: 300px;
     height: 60px;
-    width: 300px;
+    border-radius: 10px;
+    background-color: white;
+    overflow: hidden;
 }
+
 #rectangulo6-3 p {
-    margin-top: 20px;
+    flex: 1; /* ocupa todo el espacio disponible */
+    margin: 0;
+    padding-left: 10px;
     color: #a0a0a0;
     font-size: 12px;
-    margin-left: 10px;
-    float: left;
+    display: flex;
+    align-items: center; /* centra verticalmente el texto */
 }
+
+#rectangulo6-4 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
 #rectangulo6-4 p {
-    margin-top: 5px;
+    margin: 0;
+    padding: 10px 15px;
     border-radius: 5px;
-    color: white;
-    float: right;
-    padding: 17px 10px;
     background-color: #6B0DEA;
-    margin-right: 5px;
+    color: white;
+    cursor: pointer;
 }
+
 /*----------------------------------------------------------*/
 .contenido3 {
     margin-top: 100px;
