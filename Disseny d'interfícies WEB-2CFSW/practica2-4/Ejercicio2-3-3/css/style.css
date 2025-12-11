@@ -25,10 +25,10 @@ header {
     height: 100px;
     background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50%);
     
-    display: flex;             /* convierte en flex container */
-    justify-content: space-between; /* separa logo y nav */
-    align-items: center;       /* centra verticalmente */
-    padding: 0 25px;           /* separa los bordes internos */
+    display: flex;                  /* Header flex */
+    justify-content: space-between; /* Logo y nav separados */
+    align-items: center;            /* centrado vertical */
+    padding: 0 25px;
 }
 
 #logo {
@@ -36,21 +36,26 @@ header {
     padding: 10px 5px;
 }
 
+/* Nav como contenedor flex vertical */
 nav {
-    display: flex;             /* nav como flex container */
-    gap: 20px;                 /* espacio entre listas */
+    display: flex;
+    gap: 20px;              /* separa los dos UL */
     align-items: center;
 }
 
+/* Cada UL horizontal */
 nav ul {
-    display: flex;             /* los <li> en fila */
-    list-style: none;          /* elimina bullets */
-    gap: 10px;                 /* espacio entre items */
+    display: flex;           /* los LI en fila */
+    list-style: none;        /* quita bullets */
+    gap: 15px;               /* espacio entre LI */
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
     font-size: 12px;
 }
+
 
 #boton {
     border-radius: 5px;
