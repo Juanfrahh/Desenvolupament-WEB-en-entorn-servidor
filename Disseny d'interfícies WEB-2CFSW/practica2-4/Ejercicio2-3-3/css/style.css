@@ -394,7 +394,7 @@ nav ul li a {
     margin-top: 100px;
     width: 1080px;
     display: flex;
-    justify-content: center; /* centra todo el contenido horizontalmente */
+    justify-content: center;
 }
 
 #rectangulo7 {
