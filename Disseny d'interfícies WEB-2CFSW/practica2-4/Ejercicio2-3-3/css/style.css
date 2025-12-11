@@ -92,7 +92,7 @@ nav ul li a {
     height: 650px;
     display: flex;               
     flex-direction: row;         
-    justify-content: space-between; /* espacio entre columnas */
+    justify-content: space-between;
     align-items: center;         /* centrado vertical si se necesita */
 }
 
