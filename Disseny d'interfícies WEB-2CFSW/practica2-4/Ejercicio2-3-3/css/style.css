@@ -399,7 +399,7 @@ nav ul li a {
 
 #rectangulo7 {
     display: flex; 
-    justify-content: space-between; /* espacio entre columnas internas */
+    justify-content: space-between;
     width: 930px;
     margin: 0 auto 10px auto;
     gap: 20px;
