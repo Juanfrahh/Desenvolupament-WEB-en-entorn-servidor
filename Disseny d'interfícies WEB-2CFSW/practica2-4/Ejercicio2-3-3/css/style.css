@@ -88,24 +88,21 @@ nav ul li a {
 
 /*--------------------------------------------------*/
 .contenido {
-    
     width: 1080px;
     height: 650px;
     display: flex;
-    
 }
 #cuadro {
-    
     width: 540px;
     height: 550px;
     float: left;
 }
 #cuadro1-2 {
-    
     width: 540px;
     height: 550px;
     background-color: #F4F4F4;
 }
+
 #rectangulos {
     
     margin: 20px 5px;
