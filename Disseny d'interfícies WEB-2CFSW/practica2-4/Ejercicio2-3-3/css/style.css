@@ -246,7 +246,7 @@ nav ul li a {
     justify-content: center;
     width: 440px;
     height: 100%;
-    gap: 20px;                  /* Espacio entre título, texto y botón */
+    gap: 20px;                  
 }
 
 #cuadro3-1 {
