@@ -392,16 +392,17 @@ nav ul li a {
 /*----------------------------------------------------------*/
 .contenido3 {
     margin-top: 100px;
-    width: 1080px;
+    width: 100%;               /* ocupa todo el ancho disponible */
     display: flex;
-    justify-content: center;
+    justify-content: center;   /* centra horizontalmente */
 }
 
 #rectangulo7 {
     display: flex; 
-    justify-content: space-between;
+    justify-content: space-between; /* espacio entre columnas internas */
     width: 930px;
-    margin: 10px auto 10px auto;
+    margin: 0 auto;           /* centrado horizontal */
+    gap: 20px;                /* separación entre rectangulo7-1 y rectangulo7-2 */
 }
 
 .rectangulo7-1, #rectangulo7-2 {
@@ -416,16 +417,18 @@ nav ul li a {
 
 .rectangulo7-1-1 {
     width: 200px;
-    margin: 5px 0 0 35px;
+    margin: 5px 0 0 0;       /* eliminar el margen izquierdo extra */
 }
 
 #rectangulo7-2 {
     width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .rectangulo7-2-1 {
-    width: 250px;
-    margin: 5px 0 0 35px;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 10px;
