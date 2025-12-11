@@ -28,13 +28,13 @@ h2 {
 /*--------------------------------------------------*/
 /* HEADER */
 header {
+    width: 1080px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1080px;
-    height: 100px;
     background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50%);
-    padding: 0 10px;
+    padding: 0 25px;
 }
 
 #logo {
@@ -43,15 +43,15 @@ header {
 
 nav {
     display: flex;
-    gap: 20px;
-    align-items: center;
+    gap: 15px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 15px;
+    gap: 10px;
 }
+
 
 nav ul li {
     font-size: 12px;
