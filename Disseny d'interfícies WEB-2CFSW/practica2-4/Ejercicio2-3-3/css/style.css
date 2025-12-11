@@ -144,91 +144,62 @@ nav ul li a {
 }
 
 /*--------------------------------------------------*/
-/* Contenedor principal de esta sección */
-.contenido {
-    display: flex;               /* flex horizontal */
-    justify-content: space-between;
-    align-items: stretch;        /* ambos cuadros tienen la misma altura */
-    width: 1080px;
-    height: 650px;
-    margin-top: 50px;
-}
-
-/* Cuadro izquierdo con la imagen */
 #cuadro1 {
-    flex: 0 0 440px;             /* ancho fijo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
+    float: left;
+    width: 440px;
+    height: 650px;
 }
-
 #movil {
-    width: 400px;                /* ajustar al tamaño real de la imagen */
+    width: 550px;
+    margin-left: 20px;
 }
-
-/* Cuadro derecho con los pasos */
 #cuadro2 {
-    flex: 0 0 640px;             /* ancho fijo */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+    
+    height: 650px;
+    float: left;
+    width: 640px;
 }
-
-/* Contenedor interno "cuadrados" */
-.cuadrados {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;                   /* espacio entre los pasos */
+.cuadrados{
+    
     width: 425px;
-}
+    margin: 70px auto auto 200px;
 
-/* Título principal */
+}
 .cuadrados h2 {
     font-size: 60px;
-    margin: 0;
+    width: 500px;
 }
-
-/* Cada paso (fila de número + descripción) */
-.paso {
-    display: flex;               /* fila horizontal */
-    align-items: flex-start;
-    gap: 20px;                   /* separación entre número y descripción */
-}
-
-/* Número del paso */
 .cuadro2-2 {
-    display: flex;
-    flex-direction: column;
-    width: 60px;                 /* ajustar tamaño del número */
+    width: 500px;
+    height: 30px;
 }
-
 .cuadro2-2 p {
-    margin: 0;
     font-size: 20px;
+    height: 10px;
+    float: left;
+    margin: 20px 10px 0 0;
 }
-
-/* Línea vertical con texto */
+.cuadro2-2 strong {
+    font-size: 10px;
+}
 .palo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 1px;
     background: rgb(211, 211, 211);
-    padding-left: 10px;
+    width: 1px;
+    height: 40px;
+    margin: 30px 0 30px 10px;
 }
-
 .palo p {
-    margin: 0;
+    margin-left: 23px;
+    width: 400px;
     font-size: 12px;
 }
-
-/* Último paso con texto adicional */
 #paso3 {
+    margin-top: 15px;
+    margin-left: 30px;
+    width: 400px;
     font-size: 15px;
-    margin-left: 10px;
 }
-
 /*--------------------------------------------------*/
 #contenido1{
     border-radius: 35px;
