@@ -363,35 +363,24 @@ nav ul li a {
     margin-top: 10px;
 }
 
-/* Contenedor de la fila final */
-#rectangulo6-3-container {
+#rectangulo6-3 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* texto a la izquierda, botón a la derecha */
     align-items: center;
     width: 100%;
     max-width: 300px;
-}
-
-/* Texto a la izquierda */
-#rectangulo6-3 {
-    flex: 1;
     background-color: white;
     border-radius: 10px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
+    padding: 10px;
     color: #a0a0a0;
     font-size: 12px;
 }
 
-/* Botón a la derecha */
 #rectangulo6-4 {
-    margin-left: 10px;
-    padding: 10px 15px;
-    border-radius: 5px;
     background-color: #6B0DEA;
     color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
