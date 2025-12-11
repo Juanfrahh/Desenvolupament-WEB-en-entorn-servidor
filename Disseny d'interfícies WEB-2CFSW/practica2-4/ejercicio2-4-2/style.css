@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 body {
@@ -9,81 +10,60 @@ body {
     font-family: serif;
     text-align: center;
     background-color: wheat;
-
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
-/* HEADER */
 header {
     width: 100%;
     height: 6vh;
     background-color: #4BAF73;
-
-    display: flex;
+    float: left;
     align-items: center;
     justify-content: center;
+    align-content: center;
 }
 
-/* CONTENEDOR PRINCIPAL */
-.contenedor {
-    display: flex;
-    flex: 1;
-}
-
-/* ASIDE */
 .aside {
     width: 18%;
+    float: left;
     background-color: #5AA6C0;
     height: 89vh;
-
-    display: flex;
+    display: block;
     justify-content: center;
-    align-items: start;
-    flex-direction: column;
 }
 
-/* MAIN */
 .main {
     width: 82%;
     height: 89vh;
+    float: right;
     background-color: #D17DF9;
     box-sizing: border-box;
-
-    display: flex;
-    flex-direction: column;
+    display: block;
 }
 
-/* CAJAS INTERNAS */
 .rojo {
-    margin: 15px;
+    margin: 15px 15px;
+    width: auto;
     height: 40vh;
     border: 4px solid #ff0404;
-
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.azul {
-    margin: auto;
+.azul{
+    margin:auto;
     padding: 17vh 23vh;
     border: 4px solid #0404ff;
 }
 
-.azul2 {
+.azul2{
     margin: 15px;
     padding: 15vh;
+    height: auto;
     border: 4px solid #0404ff;
 }
 
-/* FOOTER */
 footer {
     width: 100%;
     background-color: #FA7E5C;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    float: left;
 }
