@@ -456,10 +456,6 @@ footer {
     align-items: flex-start;
 }
 
-#rectangulo8-1-1 {
-    /* bloque izquierdo */
-}
-
 .rectangulo8-1-derecha {
     display: flex;
     gap: 20px; /* separación entre los dos enlaces de la derecha */
