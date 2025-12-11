@@ -1,67 +1,110 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
-body{
+
+body {
     width: 980px;
     margin: 0 auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-#header{
+
+/* HEADER */
+#header {
     background-color: #4baf73;
     text-align: center;
     height: 5vh;
-    padding-top: 2vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 2vh; /* si no lo necesitas, puedes quitarlo */
 }
-h3{
-    font-weight: normal;
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+    display: flex;
+    flex: 1;
 }
-#aside{
+
+/* ASIDE */
+#aside {
     background-color: #5aa6c0;
     width: 21%;
     height: 89vh;
-    float: left;
-    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#main{
+
+/* MAIN */
+#main {
     background-color: #d17df9;
     width: 79%;
     height: 89vh;
-    float: right;
-    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-#main .section{
+
+/* SECCIÓN ROJA PRINCIPAL */
+#main .section {
     border: 4px solid red;
     width: 95%;
     height: 43%;
     margin: 3vh auto;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-.seccion1{
+
+/* AZULES PEQUEÑOS */
+.seccion1 {
     border: 4px solid blue;
     width: 44%;
     height: 29vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#izquierdo{
-    float: left;
-    margin-top: 4vh;
-    margin-left: 3%;
-}
-#derecho{
-    float: right;
-    margin-top: 4vh;
-    margin-right: 3%;
-}
-.seccion2{
+
+/* COLUMNA DE ABAJO */
+.seccion2 {
     border: 4px solid blue;
     width: 30%;
     height: 29vh;
-    float: left;
+
     margin-top: 4vh;
     margin-left: 2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#footer{
-    clear: both;
+
+/* CONTENEDOR DE LA FILA INFERIOR */
+.fila-abajo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* FOOTER */
+#footer {
     background-color: #fa7e5c;
     text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
