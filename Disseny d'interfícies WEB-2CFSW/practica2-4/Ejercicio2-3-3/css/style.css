@@ -291,7 +291,7 @@ nav ul li a {
     width: 1080px;
     display: flex;
     flex-direction: column;
-    gap: 40px; /* separación entre título y contenedor de tarjetas */
+    gap: 40px;
     margin: auto;
 }
 
