@@ -21,37 +21,37 @@ h2 {
 }
 /*------------------------------------------------------------------------------------*/
 header {
-    margin: 0;
     width: 1080px;
-    align-content: center;
     height: 100px;
-    background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50% );
+    background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50%);
+    
+    display: flex;             /* convierte en flex container */
+    justify-content: space-between; /* separa logo y nav */
+    align-items: center;       /* centra verticalmente */
+    padding: 0 25px;           /* separa los bordes internos */
 }
-#logo {
-    float: left;
-    padding: 10PX 5px;
-    width: 120px;
-}
-nav {
-    padding: 10px 5px;
-    text-align: center;
-    float: right;
-    width: 500px;
-    margin-right: 25px;
-    border: 1;
-}
-nav ul {
-    float: left;
-    width: 250px;
-    height: 30px;
 
+#logo {
+    width: 120px;
+    padding: 10px 5px;
 }
+
+nav {
+    display: flex;             /* nav como flex container */
+    gap: 20px;                 /* espacio entre listas */
+    align-items: center;
+}
+
+nav ul {
+    display: flex;             /* los <li> en fila */
+    list-style: none;          /* elimina bullets */
+    gap: 10px;                 /* espacio entre items */
+}
+
 nav ul li {
-    margin: 5px 10px 0 10px;
     font-size: 12px;
-    list-style: none;
-    float: left;
 }
+
 #boton {
     border-radius: 5px;
     padding: 7px 10px;
