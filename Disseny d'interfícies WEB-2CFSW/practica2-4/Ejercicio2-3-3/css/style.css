@@ -189,7 +189,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* separación entre número y palo */
+    gap: 10px;
 }
 
 .numero-palo .numero p {
