@@ -225,7 +225,7 @@ nav ul li a {
     width: 1080px;
     height: 400px;
     display: flex;
-    align-items: center;        /* Centrar verticalmente los hijos */
+    align-items: center;
     justify-content: space-between;
     background-color: #F4F4F4;
     padding: 20px;
