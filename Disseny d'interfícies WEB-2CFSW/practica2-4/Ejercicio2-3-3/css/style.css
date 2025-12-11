@@ -291,7 +291,7 @@ nav ul li a {
     width: 1080px;
     display: flex;
     flex-direction: column;
-    gap: 40px; /* separación entre título y artículos */
+    gap: 40px; /* separación entre título y contenedor de tarjetas */
     margin: auto;
 }
 
@@ -305,15 +305,23 @@ nav ul li a {
     margin-bottom: 30px;
 }
 
-/* Cada artículo vertical */
+/* Contenedor de tarjetas en fila */
+.tarjetas {
+    display: flex;
+    gap: 20px; /* separación entre tarjetas */
+    flex-wrap: wrap; /* para que sea responsive y baje si no cabe */
+}
+
+/* Cada tarjeta vertical */
 #cuadro5-3 {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     width: 320px; /* ancho de cada tarjeta */
     border-radius: 10px;
 }
 
+/* Imagen arriba */
 #cuadro5-3 img {
     width: 100%;
     height: auto;
@@ -321,19 +329,17 @@ nav ul li a {
     object-fit: cover;
 }
 
-/* Fecha y categoría en una fila */
+/* Fecha y categoría en fila */
 #cuadro5-3-2 {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
-    margin-top: 5px;
 }
 
 /* Texto descriptivo debajo */
 #cuadro5-3-3 {
     font-size: 14px;
     line-height: 1.4;
-    padding: 5px 0;
 }
 
 /* Botón leer más abajo */
@@ -341,7 +347,7 @@ nav ul li a {
     font-size: 14px;
     color: #6B0DEA;
     cursor: pointer;
-    align-self: flex-start; /* para que quede a la izquierda */
+    align-self: flex-start; /* alineado a la izquierda */
 }
 
 /*----------------------------------------------------*/
