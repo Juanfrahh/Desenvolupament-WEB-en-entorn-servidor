@@ -147,7 +147,7 @@ nav ul li a {
 #cuadro1 {
     flex: 1;                     /* ocupa proporcionalmente 1 parte */
     display: flex;
-    justify-content: center;     /* centrar imagen */
+    justify-content: center; 
     align-items: center;
 }
 #movil {
