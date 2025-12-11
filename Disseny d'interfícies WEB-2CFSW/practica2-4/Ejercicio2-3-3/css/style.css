@@ -145,7 +145,7 @@ nav ul li a {
 
 /*--------------------------------------------------*/
 #cuadro1 {
-    flex: 1;
+    flex: 1;                     
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -155,11 +155,10 @@ nav ul li a {
     margin-left: 20px;
 }
 #cuadro2 {
-    flex: 1;
-    display: flex;
-    justify-content: center;     /* centrar contenido */
-    align-items: center;
-    padding: 20px;
+    
+    height: 650px;
+    float: left;
+    width: 640px;
 }
 .cuadrados{
     
