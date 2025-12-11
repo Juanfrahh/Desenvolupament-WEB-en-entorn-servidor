@@ -145,7 +145,7 @@ nav ul li a {
 
 /*--------------------------------------------------*/
 #cuadro1 {
-    flex: 1;                     /* ocupa proporcionalmente 1 parte */
+    flex: 1;
     display: flex;
     justify-content: center; 
     align-items: center;
