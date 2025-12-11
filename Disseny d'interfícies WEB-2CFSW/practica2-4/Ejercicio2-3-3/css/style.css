@@ -25,9 +25,9 @@ header {
     height: 100px;
     background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50%);
     
-    display: flex;                  /* Header flex */
-    justify-content: space-between; /* Logo y nav separados */
-    align-items: center;            /* centrado vertical */
+    display: flex;                  
+    justify-content: space-between; 
+    align-items: center;            
     padding: 0 25px;
 }
 
@@ -36,41 +36,56 @@ header {
     padding: 10px 5px;
 }
 
-/* Nav como contenedor flex vertical */
+/* Contenedor del nav */
 nav {
-    display: flex;
-    gap: 20px;              /* separa los dos UL */
+    display: flex;       /* Nav como flex horizontal */
+    gap: 20px;           /* separación entre los dos ul */
     align-items: center;
 }
 
-/* Cada UL horizontal */
+/* Cada UL en fila */
 nav ul {
-    display: flex;           /* los LI en fila */
-    list-style: none;        /* quita bullets */
-    gap: 15px;               /* espacio entre LI */
+    display: flex;       /* LI en fila */
+    list-style: none;    /* quita bullets */
     padding: 0;
     margin: 0;
+    gap: 15px;           /* espacio entre LI */
 }
 
-nav ul li {
+/* Opcional: botones alineados verticalmente centrados */
+nav ul.menu-buttons li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Links normales */
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
     font-size: 12px;
 }
+
+/* Botones */
 #boton {
-    border-radius: 5px;
-    padding: 7px 10px;
-    font-size: 12px;
     background-color: #FFFFFF;
-    width: 90px;
-}
-#boton1 {
     border-radius: 5px;
-    color: white;
     padding: 7px 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    background-color: #6B0DEA;
     width: 90px;
+    color: black;
 }
+
+#boton1 {
+    background-color: #6B0DEA;
+    border-radius: 5px;
+    padding: 7px 10px;
+    width: 90px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /*--------------------------------------------------*/
 .contenido {
     
