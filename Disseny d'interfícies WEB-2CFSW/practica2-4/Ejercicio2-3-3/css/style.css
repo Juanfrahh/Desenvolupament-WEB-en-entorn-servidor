@@ -90,7 +90,7 @@ nav ul li a {
 .contenido {
     width: 1080px;
     height: 650px;
-    display: flex;               /* contenedor flex */
+    display: flex;               
     flex-direction: row;         /* columnas en fila */
     justify-content: space-between; /* espacio entre columnas */
     align-items: center;         /* centrado vertical si se necesita */
