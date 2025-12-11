@@ -34,7 +34,7 @@ header {
 /* MENU */
 .menu ul {
     list-style: none;    /* quita los bullets */
-    padding: 0;          /* quita el padding por defecto */
+    padding: 0;       
     margin: 0;           
     display: flex;
     gap: 20px;          
