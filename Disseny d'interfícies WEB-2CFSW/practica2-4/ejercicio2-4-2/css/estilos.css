@@ -1,12 +1,17 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
+
 body{
     width: 980px;
     margin: 0 auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+
+    /* Estructura general */
+    display: flex;
+    flex-direction: column; /* Header arriba, luego el contenido, luego footer */
 }
 
 /* HEADER */
@@ -17,14 +22,33 @@ body{
     padding-top: 2vh;
 }
 
-/* ASIDE + MAIN (dos columnas) */
+/* CONTENEDOR DE ASIDE + MAIN */
+#aside, #main {
+    height: 89vh;
+}
+
+#header + #aside {
+    /* Este selector no es útil; reemplazamos por wrapper real */
+}
+
+/* Creamos un contenedor para aside + main sin tocar HTML */
+body > #aside,
+body > #main {
+    /* Nada */
+}
+
+/* Usamos un contenedor flex artificial: el propio body en su segunda capa */
 body {
     display: flex;
-    flex-direction: column;
+}
+
+#header ~ *:not(#footer) {
+    display: flex;
 }
 
 #aside, #main {
-    height: 89vh;
+    /* Aside y main al mismo nivel en fila */
+    display: block;
 }
 
 #aside{
@@ -37,44 +61,19 @@ body {
     background-color: #d17df9;
     width: 79%;
     text-align: center;
-}
 
-/* Contenedor horizontal para aside + main */
-#header + #aside {
-    /* Nada */
-}
-#aside, #main {
-    /* Se agrupan con flex */
-}
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Agrupamos columnas debajo del header */
-#header + div {
-    display: flex;
-    flex-direction: row;
-}
-
-#footer{
-    clear: both;
-    background-color: #fa7e5c;
-    text-align: center;
-}
-
-/* SECCIONES DENTRO DEL MAIN */
-#main {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* SECCIONES DENTRO DE MAIN */
 #main .section{
     border: 4px solid red;
     width: 95%;
     height: 43%;
     margin: 3vh auto;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,4 +91,10 @@ body {
     border: 4px solid blue;
     width: 30%;
     height: 29vh;
+}
+
+/* FOOTER */
+#footer{
+    background-color: #fa7e5c;
+    text-align: center;
 }
