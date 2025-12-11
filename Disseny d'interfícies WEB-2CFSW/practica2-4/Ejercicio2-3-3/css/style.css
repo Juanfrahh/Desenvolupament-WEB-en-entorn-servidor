@@ -315,7 +315,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 320px; /* ancho de cada tarjeta */
+    width: 320px;
     border-radius: 10px;
 }
 
