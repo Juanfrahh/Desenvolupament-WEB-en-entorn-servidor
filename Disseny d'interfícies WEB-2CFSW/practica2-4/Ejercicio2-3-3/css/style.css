@@ -406,7 +406,7 @@ nav ul li a {
 
 .rectangulo7-1, #rectangulo7-2 {
     display: flex;
-    flex-direction: column;       /* organiza títulos y texto verticalmente */
+    flex-direction: column;
     gap: 10px;                    /* separación entre elementos dentro del bloque */
 }
 
