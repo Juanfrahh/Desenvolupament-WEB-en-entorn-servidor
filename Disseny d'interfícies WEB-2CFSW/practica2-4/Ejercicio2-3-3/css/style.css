@@ -427,7 +427,7 @@ nav ul li a {
     width: 250px;
     margin: 5px 0 0 35px;
     display: flex;
-    align-items: center;          /* centra verticalmente el contenido dentro del bloque */
+    align-items: center;
     gap: 10px;                    /* espacio entre texto y red social */
 }
 
