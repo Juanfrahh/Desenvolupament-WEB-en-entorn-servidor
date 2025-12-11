@@ -1,0 +1,110 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 980px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER */
+#header {
+    background-color: #4baf73;
+    text-align: center;
+    height: 5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 2vh; /* si no lo necesitas, puedes quitarlo */
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+    display: flex;
+    flex: 1;
+}
+
+/* ASIDE */
+#aside {
+    background-color: #5aa6c0;
+    width: 21%;
+    height: 89vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN */
+#main {
+    background-color: #d17df9;
+    width: 79%;
+    height: 89vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* SECCIÓN ROJA PRINCIPAL */
+#main .section {
+    border: 4px solid red;
+    width: 95%;
+    height: 43%;
+    margin: 3vh auto;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* AZULES PEQUEÑOS */
+.seccion1 {
+    border: 4px solid blue;
+    width: 44%;
+    height: 29vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* COLUMNA DE ABAJO */
+.seccion2 {
+    border: 4px solid blue;
+    width: 30%;
+    height: 29vh;
+
+    margin-top: 4vh;
+    margin-left: 2%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CONTENEDOR DE LA FILA INFERIOR */
+.fila-abajo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* FOOTER */
+#footer {
+    background-color: #fa7e5c;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
