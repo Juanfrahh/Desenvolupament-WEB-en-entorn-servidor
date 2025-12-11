@@ -88,7 +88,6 @@ nav ul li a {
     margin-top: 0;
 }
 
-/* Cada cuadro ocupa la mitad exacta */
 #cuadro, #cuadro1-2 {
     width: 50%;                  
     height: 550px;
