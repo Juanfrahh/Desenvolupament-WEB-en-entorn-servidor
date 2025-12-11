@@ -444,7 +444,7 @@ footer {
     height: 70px;
     margin: 0 auto;
     display: flex;
-    align-items: flex-start; /* pegado al borde superior */
+    align-items: flex-start;
     padding: 10px 0;
     font-size: 10px;
 }
