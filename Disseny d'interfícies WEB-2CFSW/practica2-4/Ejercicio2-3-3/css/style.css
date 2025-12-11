@@ -434,7 +434,7 @@ nav ul li a {
 #redes {
     width: 85px;
     height: 22px;
-    margin-top: 0;                /* ya no usamos float, ajustar vertical con align-items */
+    margin-top: 0;
 }
 
 /*---------------------------------------------------------*/
