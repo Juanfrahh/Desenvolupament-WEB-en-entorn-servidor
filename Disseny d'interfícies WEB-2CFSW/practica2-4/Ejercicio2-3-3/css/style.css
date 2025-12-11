@@ -145,7 +145,7 @@ nav ul li a {
 
 /*--------------------------------------------------*/
 #cuadro1 {
-    flex: 0 0 440px;          /* ancho fijo */
+    flex: 0 0 440px;  
     display: flex;
     justify-content: center;
     align-items: center;
