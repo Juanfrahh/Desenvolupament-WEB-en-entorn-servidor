@@ -145,10 +145,10 @@ nav ul li a {
 
 /*--------------------------------------------------*/
 #cuadro1 {
-    flex: 1;                     
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+    
+    float: left;
+    width: 440px;
+    height: 650px;
 }
 #movil {
     width: 550px;
