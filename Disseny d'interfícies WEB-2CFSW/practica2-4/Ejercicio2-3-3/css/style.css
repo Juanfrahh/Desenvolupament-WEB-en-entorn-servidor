@@ -337,49 +337,47 @@ nav ul li a {
 }
 
 /*----------------------------------------------------*/
-#contenido1 {
-    display: flex;
-    justify-content: center;  /* centra todo el contenido horizontalmente */
-    align-items: center;      /* centra verticalmente si quieres */
-    gap: 20px;                /* separación entre cuadro3 y cuadro4 */
-    width: 1080px;
-    margin: 300px auto 0 auto; /* centrado horizontal con margen superior */
-    border-radius: 35px;
-    background-color: #F4F4F4;
-    height: 400px;
-}
-
-#cuadro3 {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 640px; /* ancho del rectángulo 3 */
-    height: 400px;
-}
-
-#cuadro4 {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 440px; /* ancho del rectángulo 4 */
-    height: 400px;
-}
-
 #rectangulo6 {
     border-radius: 20px;
     background-color: #6B0DEA;
     width: 800px;
     height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto; /* centrado dentro del cuadro3 */
-    padding: 20px;
+    margin: auto;
 }
-
+#rectangulo6-1 {
+    color: white;
+    width: 450px;
+    height: 100px;
+    margin: auto;
+}
+#rectangulo6-2 {
+    width: 380px;
+    height: 25px;
+    margin: 10px auto;
+}
+#rectangulo6-3 {
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 10px;
+    height: 60px;
+    width: 300px;
+}
+#rectangulo6-3 p {
+    margin-top: 20px;
+    color: #a0a0a0;
+    font-size: 12px;
+    margin-left: 10px;
+    float: left;
+}
+#rectangulo6-4 p {
+    margin-top: 5px;
+    border-radius: 5px;
+    color: white;
+    float: right;
+    padding: 17px 10px;
+    background-color: #6B0DEA;
+    margin-right: 5px;
+}
 /*----------------------------------------------------------*/
 .contenido3 {
     margin-top: 100px;
