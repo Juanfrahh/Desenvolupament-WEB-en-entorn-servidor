@@ -233,7 +233,7 @@ nav ul li a {
 }
 
 #cuadro3, #cuadro4 {
-    flex: 0 0 auto;            /* Mantener tamaño fijo */
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
