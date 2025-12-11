@@ -1,34 +1,38 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 1080px;
-    margin: auto;
-    margin-bottom: 5px;
+    margin: 0 auto;
 }
+
 .morado {
     color: #6B0DEA;
 }
+
 a {
     text-decoration: none;
     color: black;
 }
+
 h2 {
     font-size: 45px;
     margin-bottom: 20px;
 }
-/*------------------------------------------------------------------------------------*/
+
+/* HEADER */
 header {
     width: 1080px;
     height: 100px;
-    background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50%);
-    
     display: flex;                  
     justify-content: space-between; 
     align-items: center;            
     padding: 0 25px;
+    background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50%);
 }
 
 #logo {
@@ -36,31 +40,21 @@ header {
     padding: 10px 5px;
 }
 
-/* Contenedor del nav */
+/* NAV */
 nav {
-    display: flex;       /* Nav como flex horizontal */
-    gap: 20px;           /* separación entre los dos ul */
+    display: flex;
+    gap: 20px;            
     align-items: center;
 }
 
-/* Cada UL en fila */
 nav ul {
-    display: flex;       /* LI en fila */
-    list-style: none;    /* quita bullets */
+    display: flex;
+    list-style: none;
     padding: 0;
     margin: 0;
-    gap: 15px;           /* espacio entre LI */
+    gap: 15px;
 }
 
-/* Opcional: botones alineados verticalmente centrados */
-nav ul.menu-buttons li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Links normales */
 nav ul li a {
     text-decoration: none;
     color: black;
@@ -68,13 +62,13 @@ nav ul li a {
     font-size: 12px;
 }
 
-/* Botones */
 #boton {
     background-color: #FFFFFF;
     border-radius: 5px;
     padding: 7px 10px;
     width: 90px;
     color: black;
+    text-align: center;
 }
 
 #boton1 {
@@ -83,39 +77,42 @@ nav ul li a {
     padding: 7px 10px;
     width: 90px;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
-/*--------------------------------------------------*/
+/* CONTENIDO PRINCIPAL */
 .contenido {
     width: 1080px;
-    height: 650px;
     display: flex;               
-    flex-direction: row;         
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start; /* empieza desde la izquierda */
+    align-items: stretch;        /* altura uniforme */
+    margin-top: 0;               /* pegado al header */
 }
 
+/* Cada cuadro ocupa la mitad exacta */
 #cuadro, #cuadro1-2 {
-    width: 540px;
+    width: 50%;                  
     height: 550px;
 }
 
+/* Segundo cuadro gris alineado con header gris */
 #cuadro1-2 {
     background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Contenido interno del cuadro blanco */
 #rectangulos {
-    
-    margin: 20px 5px;
-    font-size: 10px;
+    margin: 20px;
+    font-size: 14px;
 }
+
 #mujer {
     width: 400px;
-    margin: 30px 65px;
-    background-color: #F4F4F4;
+    height: auto;
 }
-
 #nuevo {
     border-radius: 5px;
     padding: 5px;
@@ -125,11 +122,11 @@ nav ul li a {
 }
 #punto {
     font-size: 60px;
-    font-family: serif;
     color: #6B0DEA;
 }
 #slogan {
     font-size: 15px;
+    margin-top: 10px;
 }
 #cuenta {
     text-align: center;
@@ -141,11 +138,11 @@ nav ul li a {
     font-size: 12px;
     border-radius: 5px;
 }
-.stores{
-    margin: 30px 0;
-    margin-right: 20px;
+.stores {
+    margin: 30px 10px 0 0;
     width: 110px;
 }
+
 /*--------------------------------------------------*/
 #cuadro1 {
     
