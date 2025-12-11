@@ -199,7 +199,7 @@ nav ul li a {
 
 .palo {
     width: 2px;
-    height: 40px; /* palo más largo */
+    height: 40px;
     background-color: rgb(211, 211, 211);
 }
 
