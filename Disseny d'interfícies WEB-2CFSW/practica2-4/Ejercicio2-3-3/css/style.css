@@ -442,25 +442,25 @@ footer {
     border-top: 1px solid #a0a0a0;
     width: 930px;
     height: 70px;
-    margin: 0 auto;               /* centrado horizontal */
+    margin: 0 auto;
     display: flex;
-    align-items: flex-start;       /* pegado a la línea superior */
-    padding: 10px 0;              /* espacio interno superior e inferior */
-    justify-content: space-between; /* primer bloque a la izquierda, otros a la derecha */
+    align-items: flex-start; /* pegado al borde superior */
+    padding: 10px 0;
     font-size: 10px;
 }
 
 #rectangulo8-1 {
     display: flex;
+    justify-content: space-between; /* espacio entre izquierda y derecha */
     width: 100%;
-    justify-content: space-between; /* separa los bloques izquierdo y derecho */
-    align-items: flex-start;        /* pegado a la línea superior */
+    align-items: flex-start;
 }
 
 #rectangulo8-1-1 {
-    /* primer bloque a la izquierda */
+    /* bloque izquierdo */
 }
 
-.rectangulo8-1-2 {
-    margin-left: 20px;              /* separación entre los dos enlaces de la derecha */
+.rectangulo8-1-derecha {
+    display: flex;
+    gap: 20px; /* separación entre los dos enlaces de la derecha */
 }
