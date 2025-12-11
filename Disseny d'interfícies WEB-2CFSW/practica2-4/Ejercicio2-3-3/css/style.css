@@ -157,7 +157,7 @@ nav ul li a {
 
 /* Contenedor derecho con pasos */
 #cuadro2 {
-    flex: 0 0 640px;          /* ancho fijo */
+    flex: 0 0 640px;   
     display: flex;
     justify-content: center;
     align-items: flex-start;
