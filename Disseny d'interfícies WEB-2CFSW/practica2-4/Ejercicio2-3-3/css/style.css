@@ -277,9 +277,10 @@ nav ul li a {
 #contenido2 {
     width: 1080px;
     display: flex;
-    justify-content: center;
-    margin-top: 150px;
+    justify-content: center;  /* centra horizontalmente */
+    margin: 150px auto 0 auto; /* margen superior y centrado horizontal */
 }
+
 
 #cuadrados1 {
     width: 1080px;
