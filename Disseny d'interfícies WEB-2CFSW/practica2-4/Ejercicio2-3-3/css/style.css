@@ -333,7 +333,7 @@ nav ul li a {
     font-size: 14px;
     color: #6B0DEA;
     cursor: pointer;
-    align-self: flex-start; /* alineado a la izquierda */
+    align-self: flex-start;
 }
 
 /*----------------------------------------------------*/
