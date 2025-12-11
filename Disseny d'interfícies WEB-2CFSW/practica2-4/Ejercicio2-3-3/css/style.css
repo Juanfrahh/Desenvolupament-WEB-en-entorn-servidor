@@ -177,8 +177,10 @@ nav ul li a {
 /* Título dentro de los pasos */
 .cuadrados h2 {
     font-size: 60px;
-    margin: 0;
+    width: 500px;
+    margin-top: 30px; /* separa el título del bloque de arriba */
 }
+
 
 /* Cada paso */
 .paso {
