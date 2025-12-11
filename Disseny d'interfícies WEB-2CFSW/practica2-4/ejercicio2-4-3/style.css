@@ -34,7 +34,7 @@ header {
 /* MENU */
 .menu ul {
     padding: 0;       
-    margin-bottom: 10px0;           
+    margin-bottom: 10px;           
     display: flex;
     gap: 20px;          
 }
