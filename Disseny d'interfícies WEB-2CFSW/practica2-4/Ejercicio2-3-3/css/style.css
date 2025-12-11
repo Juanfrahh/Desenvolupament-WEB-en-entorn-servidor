@@ -375,6 +375,7 @@ nav ul li a {
     padding: 10px;
     color: #a0a0a0;
     font-size: 12px;
+    margin: 0 auto; /* centra horizontalmente dentro de su padre */
 }
 
 #rectangulo6-4 {
