@@ -161,10 +161,11 @@ nav ul li a {
     align-items: center;
     padding: 20px;
 }
-.cuadrados {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.cuadrados{
+    
+    width: 425px;
+    margin: 70px auto auto 200px;
+
 }
 .cuadrados h2 {
     font-size: 60px;
