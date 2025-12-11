@@ -327,7 +327,6 @@ nav ul li a {
     object-fit: cover;
 }
 
-/* Fecha y categoría en fila */
 #cuadro5-3-2 {
     display: flex;
     justify-content: space-between;
