@@ -180,7 +180,7 @@ nav ul li a {
 .paso {
     display: flex;
     align-items: flex-start;
-    gap: 20px;                /* espacio entre número+linea y texto */
+    gap: 20px;
 }
 
 /* Contenedor del número y línea vertical */
