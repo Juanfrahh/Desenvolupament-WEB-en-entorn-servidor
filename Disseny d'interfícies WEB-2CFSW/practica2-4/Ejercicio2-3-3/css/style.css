@@ -44,7 +44,6 @@ nav ul {
     float: left;
     width: 250px;
     height: 30px;
-
 }
 nav ul li {
     margin: 5px 10px 0 10px;
@@ -52,6 +51,7 @@ nav ul li {
     list-style: none;
     float: left;
 }
+
 #boton {
     border-radius: 5px;
     padding: 7px 10px;
