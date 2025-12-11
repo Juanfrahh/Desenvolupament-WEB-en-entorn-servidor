@@ -355,7 +355,7 @@ nav ul li a {
 #rectangulo6-1 {
     color: white;
     width: 100%;
-    max-width: 450px;          /* ancho del contenido, centrado automáticamente */
+    max-width: 450px;
     text-align: center;
 }
 
