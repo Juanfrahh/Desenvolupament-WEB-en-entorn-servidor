@@ -8,60 +8,86 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
 }
+
+/* ===== HEADER ===== */
 #header{
     background-color: #4baf73;
     text-align: center;
     height: 5vh;
     padding-top: 2vh;
 }
+
 h3{
     font-weight: normal;
 }
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor del Aside + Main */
+.wrapper{
+    display: flex;
+    height: 89vh;
+}
+
+/* ===== ASIDE ===== */
 #aside{
     background-color: #5aa6c0;
     width: 21%;
-    height: 89vh;
-    float: left;
     text-align: center;
 }
+
+/* ===== MAIN ===== */
 #main{
     background-color: #d17df9;
     width: 79%;
-    height: 89vh;
-    float: right;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* Secciones del Main */
 #main .section{
     border: 4px solid red;
     width: 95%;
     height: 43%;
     margin: 3vh auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+/* ===== Sub-secciones de la primera sección ===== */
 .seccion1{
     border: 4px solid blue;
     width: 44%;
     height: 29vh;
 }
-#izquierdo{
-    float: left;
+
+/* El contenedor ya los acomoda con flex
+#izquierdo y #derecho ya no necesitan float */
+#izquierdo, #derecho {
     margin-top: 4vh;
-    margin-left: 3%;
 }
-#derecho{
-    float: right;
-    margin-top: 4vh;
-    margin-right: 3%;
-}
+
+/* ===== Sub-secciones de la segunda sección ===== */
 .seccion2{
     border: 4px solid blue;
     width: 30%;
     height: 29vh;
-    float: left;
     margin-top: 4vh;
     margin-left: 2%;
 }
+
+/* ===== FOOTER ===== */
 #footer{
-    clear: both;
     background-color: #fa7e5c;
     text-align: center;
+    clear: both; /* Ya no hace falta, pero no estorba */
 }
