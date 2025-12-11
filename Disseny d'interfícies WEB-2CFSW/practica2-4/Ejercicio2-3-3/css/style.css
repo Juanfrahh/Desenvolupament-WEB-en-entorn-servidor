@@ -193,9 +193,8 @@ nav ul li a {
     padding-left: 10px;
 }
 .palo p {
-    margin-left: 23px;
-    width: 400px;
     font-size: 12px;
+    margin: 0;
 }
 #paso3 {
     margin-top: 15px;
