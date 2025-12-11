@@ -202,7 +202,6 @@ nav ul li a {
     background-color: rgb(211, 211, 211);
 }
 
-/* Texto del paso, alineado al mismo nivel que el número */
 .paso-texto {
     font-size: 14px;
     line-height: 1.4;
