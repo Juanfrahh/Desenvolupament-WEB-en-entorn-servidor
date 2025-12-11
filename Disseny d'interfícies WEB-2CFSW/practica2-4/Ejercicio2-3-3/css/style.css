@@ -277,7 +277,7 @@ nav ul li a {
 #contenido2 {
     width: 1080px;
     display: flex;
-    justify-content: center;  /* centra horizontalmente */
+    justify-content: center;
     margin: 150px auto 0 auto; /* margen superior y centrado horizontal */
 }
 
