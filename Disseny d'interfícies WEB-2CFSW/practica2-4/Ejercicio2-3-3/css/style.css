@@ -306,7 +306,7 @@ nav ul li a {
 /* Contenedor de tarjetas en fila */
 .tarjetas {
     display: flex;
-    gap: 20px; /* separación entre tarjetas */
+    gap: 20px;
     flex-wrap: wrap; /* para que sea responsive y baje si no cabe */
 }
 
