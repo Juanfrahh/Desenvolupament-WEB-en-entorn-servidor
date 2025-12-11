@@ -224,7 +224,7 @@ nav ul li a {
     margin-top: 300px;
     width: 1080px;
     height: 400px;
-    display: flex;              /* Flex horizontal */
+    display: flex;
     align-items: center;        /* Centrar verticalmente los hijos */
     justify-content: space-between;
     background-color: #F4F4F4;
