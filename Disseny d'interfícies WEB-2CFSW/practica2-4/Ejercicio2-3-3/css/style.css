@@ -194,7 +194,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: ;
+    margin-right: 20px;
 }
 
 /* Número del paso */
