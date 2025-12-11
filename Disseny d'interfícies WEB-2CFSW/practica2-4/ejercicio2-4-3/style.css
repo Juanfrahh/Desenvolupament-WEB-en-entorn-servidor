@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 /* HEADER */
@@ -32,6 +34,8 @@ header {
 /* MENU */
 .menu ul {
     list-style: none;
+    display: flex;
+    gap: 20px; /* espacio entre opciones */
 }
 
 .menu li {
@@ -48,6 +52,7 @@ header {
 .contenido {
     width: 100%;
     display: flex;
+    flex: 1; /* ocupa el espacio disponible */
 }
 
 /* ASIDE */
@@ -59,13 +64,14 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 8vh;
 }
 
 .aside a {
     color: white;
-    padding-top: 8vh;
     display: block;
     font-size: 24px;
+    margin-bottom: 2vh;
     text-decoration: none;
 }
 
@@ -78,34 +84,38 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0;
+    justify-content: flex-start;
+    padding: 1vh 0;
+    gap: 1.5%; /* espacio entre cajas rojas */
 }
 
 /* CAJA ROJA */
 .rojo {
-    margin: 1.5%;
-    width: auto;
+    width: 95%;
     height: 40vh;
     border: 4px solid #ff0404;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around; /* distribuye las azules */
     align-items: center;
 }
 
 /* CAJAS AZULES */
 .azul {
-    margin: auto;
     width: 47%;
     height: 80%;
     border: 4px solid #0404ff;
 }
 
 .azul2 {
-    margin: 1.5%;
     width: 30%;
     height: 80%;
     border: 4px solid #0404ff;
+}
+
+/* CAJA ROJA 2 (flex para 3 azules) */
+.rojo:nth-child(2) {
+    justify-content: space-between;
 }
 
 /* FOOTER */
@@ -116,4 +126,5 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 6vh;
 }
