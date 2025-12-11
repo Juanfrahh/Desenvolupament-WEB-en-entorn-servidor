@@ -173,7 +173,7 @@ nav ul li a {
 }
 
 .cuadrados h2 {
-    margi
+    margin-top: 50px;
     font-size: 60px;
     line-height: 1.1;
     margin-bottom: 30px; /* separación con el primer paso */
