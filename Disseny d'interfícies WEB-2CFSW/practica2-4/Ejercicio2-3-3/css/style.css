@@ -353,20 +353,17 @@ nav ul li a {
 
 #rectangulo6-1 {
     color: white;
-    text-align: center;
     width: 100%;
     max-width: 450px;
-    font-size: 24px;
+    text-align: center;
 }
 
 #rectangulo6-2 {
-    width: 100%;
-    max-width: 380px;
-    text-align: center;
     font-size: 16px;
+    margin-top: 10px;
 }
 
-/* Contenedor de la fila final: texto + botón */
+/* Contenedor de la fila final */
 #rectangulo6-3-container {
     display: flex;
     justify-content: space-between;
@@ -377,10 +374,10 @@ nav ul li a {
 
 /* Texto a la izquierda */
 #rectangulo6-3 {
-    flex: 1; 
-    height: 60px;
-    border-radius: 10px;
+    flex: 1;
     background-color: white;
+    border-radius: 10px;
+    height: 60px;
     display: flex;
     align-items: center;
     padding-left: 10px;
@@ -395,8 +392,10 @@ nav ul li a {
     border-radius: 5px;
     background-color: #6B0DEA;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    white-space: nowrap;
 }
 
 /*----------------------------------------------------------*/
