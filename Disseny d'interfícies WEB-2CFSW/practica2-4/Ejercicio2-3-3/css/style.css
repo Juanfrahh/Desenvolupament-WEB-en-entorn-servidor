@@ -398,7 +398,7 @@ nav ul li a {
 }
 
 #rectangulo7 {
-    display: flex;                /* flex horizontal para las columnas */
+    display: flex; 
     justify-content: space-between; /* separa los bloques igual */
     width: 930px;
     margin: 10px auto 10px auto;   /* centrado horizontal y margen superior */
