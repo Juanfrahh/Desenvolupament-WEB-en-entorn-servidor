@@ -26,6 +26,7 @@ header {
     height: 6vh;
     background-color: #4BAF73;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
