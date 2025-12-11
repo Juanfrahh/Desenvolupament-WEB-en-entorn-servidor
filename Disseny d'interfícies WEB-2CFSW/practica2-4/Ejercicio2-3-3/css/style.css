@@ -401,7 +401,7 @@ nav ul li a {
     display: flex; 
     justify-content: space-between;
     width: 930px;
-    margin: 10px auto 10px auto;   /* centrado horizontal y margen superior */
+    margin: 10px auto 10px auto;
 }
 
 .rectangulo7-1, #rectangulo7-2 {
