@@ -37,7 +37,7 @@ header {
     padding: 0;          /* quita el padding por defecto */
     margin: 0;           /* quita el margin por defecto */
     display: flex;
-    gap: 20px;           /* espacio entre opciones */
+    gap: 20px;          
 }
 
 
