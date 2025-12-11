@@ -180,7 +180,7 @@ nav ul li a {
 
 /* Cada paso */
 .paso {
-    display: flex;            
+    display: flex;
     align-items: flex-start;
     gap: 20px;                /* espacio entre número+linea y texto */
 }
