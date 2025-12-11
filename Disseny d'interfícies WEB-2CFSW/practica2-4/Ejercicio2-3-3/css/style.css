@@ -155,8 +155,7 @@ nav ul li a {
     margin-left: 20px;
 }
 #cuadro2 {
-    flex: 1;                     /* ocupa proporcionalmente 1 parte */
-    display: flex;
+    flex: 1;    display: flex;
     justify-content: center;     /* centrar contenido */
     align-items: center;
     padding: 20px;
