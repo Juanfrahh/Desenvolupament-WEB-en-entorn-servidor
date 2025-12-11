@@ -401,7 +401,7 @@ nav ul li a {
     display: flex; 
     justify-content: space-between; /* espacio entre columnas internas */
     width: 930px;
-    margin: 0 auto;           /* centrado horizontal */
+    margin: 0 auto 10px auto;           /* centrado horizontal */
     gap: 20px;                /* separación entre rectangulo7-1 y rectangulo7-2 */
 }
 
