@@ -403,6 +403,7 @@ nav ul li a {
     width: 930px;
     margin: 0 auto 10px auto;           /* centrado horizontal */
     gap: 20px;
+}
 
 .rectangulo7-1, #rectangulo7-2 {
     display: flex;
