@@ -428,7 +428,7 @@ nav ul li a {
     margin: 5px 0 0 35px;
     display: flex;
     align-items: center;
-    gap: 10px;                    /* espacio entre texto y red social */
+    gap: 10px;
 }
 
 #redes {
