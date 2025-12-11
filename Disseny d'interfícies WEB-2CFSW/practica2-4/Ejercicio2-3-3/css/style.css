@@ -22,7 +22,7 @@ header {
     width: 1080px;
     height: 100px;
     background: linear-gradient(90deg, #FFFFFF 50%, #F4F4F4 50%);
-    
+    margin: ;
     display: flex;                  
     justify-content: space-between; 
     align-items: center;            
