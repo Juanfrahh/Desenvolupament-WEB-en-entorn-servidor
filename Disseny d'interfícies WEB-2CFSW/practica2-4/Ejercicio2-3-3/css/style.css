@@ -155,10 +155,11 @@ nav ul li a {
     margin-left: 20px;
 }
 #cuadro2 {
-    
-    height: 650px;
-    float: left;
-    width: 640px;
+    flex: 1;                     /* ocupa proporcionalmente 1 parte */
+    display: flex;
+    justify-content: center;     /* centrar contenido */
+    align-items: center;
+    padding: 20px;
 }
 .cuadrados{
     
