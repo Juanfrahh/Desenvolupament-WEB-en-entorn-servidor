@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postres</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div>
+        <img src="images/postres.png" alt="postres" class="imagen_difuminada" id="img_postres">
+        <div id="div_p1">
+            <p>Postre 1</p>
+            <p>Dulce mezcla internacional con vocabulario suave, expresiones deliciosas y un toque de pronunciación “aprobadita”.
+            </p>
+            <form action="#" method="post" id="form_postres1">
+                <input type="radio" id="resp_postre1" name="entrante" value="resp_postre1">
+                <label for="resp_postre1">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+
+                <input type="radio" id="resp_postre2" name="entrante" value="resp_postre2">
+                <label for="resp_postre2">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+
+                <input type="radio" id="resp_postre3" name="entrante" value="resp_postre3">
+                <label for="resp_postre3">Tarta Lingüística de Francés e Inglés</label><br>
+
+                <input type="radio" id="resp_postre4" name="entrante" value="resp_postre4">
+                <label for="resp_postre4">Flan de Itinerario Personal para la Empleabilidad</label><br>
+
+                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta7')">Enviar respuesta</button>
+            </form>
+
+        </div>
+        <div id="div_p2" style="display: none">
+            <p>Postre 2</p>
+            <p>Suave, motivador y lleno de futuro… pero servido con la típica pregunta: “¿Y tú qué quieres hacer con tu vida?”
+            </p>
+            <form action="#" method="post" id="form_postres2">
+                <input type="radio" id="resp_postre5" name="entrante" value="resp_postre5">
+                <label for="resp_postre5">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+
+                <input type="radio" id="resp_postre6" name="entrante" value="resp_postre6">
+                <label for="resp_postre6">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+
+                <input type="radio" id="resp_postre7" name="entrante" value="resp_postre7">
+                <label for="resp_postre7">Tarta Lingüística de Francés e Inglés</label><br>
+
+                <input type="radio" id="resp_postre8" name="entrante" value="resp_postre8">
+                <label for="resp_postre8">Flan de Itinerario Personal para la Empleabilidad</label><br>
+
+                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta8')">Enviar respuesta</button>
+            </form>
+
+        </div>
+        <div id="div_continuar"  style="display: none">
+            <a href="bebidas.html" class="boton">Continuar</a>
+        </div>
+    </div>
+</body>
+
+</html>

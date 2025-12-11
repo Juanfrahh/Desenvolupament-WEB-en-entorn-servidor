@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú Navideño - Quiz Interactivo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <div class="snowflakes" id="snowflakes"></div>
+
+    <header>
+      <div class="christmas-lights">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <div id="div_p1">
+        <p>Entrante 1</p>
+        <p>
+          Perfectamente alineada, distancia entre hojas medida con regla.
+          Incluye: saludo oficial, orden de precedencias y cero alimentos
+          reales.
+        </p>
+        <form id="form_entrantes1">
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta1"
+              name="entrante1"
+              value="respuesta1"
+            /><span>Lasaña de Gestión Avanzada de la Información</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta2"
+              name="entrante1"
+              value="respuesta2"
+            /><span>Ensalada de Protocolo con Etiqueta al Punto</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta3"
+              name="entrante1"
+              value="respuesta3"
+            /><span>Pincho de Contabilidad</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta4"
+              name="entrante1"
+              value="respuesta4"
+            /><span
+              >Pincho de Organización de Eventos Empresariales</span
+            ></label
+          >
+          <button
+            type="button"
+            class="boton"
+            onclick="verificarRespuesta('pregunta1')"
+          >
+            Enviar respuesta
+          </button>
+        </form>
+      </div>
+
+      <div id="div_p2" style="display: none">
+        <p>Entrante 2</p>
+        <p>
+          Planificado, calendarizado, enviado por email, aprobado por tres
+          departamentos… y cancelado a última hora como todo buen evento
+        </p>
+        <form id="form_entrantes2">
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta5"
+              name="entrante2"
+              value="respuesta5"
+            /><span>Lasaña de Gestión Avanzada de la Información</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta6"
+              name="entrante2"
+              value="respuesta6"
+            /><span>Ensalada de Protocolo con Etiqueta al Punto</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta7"
+              name="entrante2"
+              value="respuesta7"
+            /><span>Pincho de Contabilidad</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta8"
+              name="entrante2"
+              value="respuesta8"
+            /><span
+              >Pincho de Organización de Eventos Empresariales</span
+            ></label
+          >
+          <button
+            type="button"
+            class="boton"
+            onclick="verificarRespuesta('pregunta2')"
+          >
+            Enviar respuesta
+          </button>
+        </form>
+      </div>
+
+      <div id="div_p3" style="display: none">
+        <p>Entrante 3</p>
+        <p>
+          Crujiente mezcla de asientos, balances y ese sabor clásico a "¿Por qué
+          no me cuadra un céntimo?"
+        </p>
+        <form id="form_entrantes3">
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta9"
+              name="entrante3"
+              value="respuesta9"
+            /><span>Lasaña de Gestión Avanzada de la Información</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta10"
+              name="entrante3"
+              value="respuesta10"
+            /><span>Ensalada de Protocolo con Etiqueta al Punto</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta11"
+              name="entrante3"
+              value="respuesta11"
+            /><span>Pincho de Contabilidad</span></label
+          >
+          <label class="radio-option"
+            ><input
+              type="radio"
+              id="respuesta12"
+              name="entrante3"
+              value="respuesta12"
+            /><span
+              >Pincho de Organización de Eventos Empresariales</span
+            ></label
+          >
+          <button
+            type="button"
+            class="boton"
+            onclick="verificarRespuesta('pregunta3')"
+          >
+            Enviar respuesta
+          </button>
+        </form>
+      </div>
+
+      <div class="alerta-modal" id="alertaModal">
+        <div class="alerta-contenido" id="alertaContenido">
+          <h3 id="alertaTitulo"></h3>
+          <img id="alertaImagen" src="images.png" alt="Imagen de resultado" />
+          <p id="alertaMensaje"></p>
+          <button onclick="cerrarAlerta()">Continuar</button>
+        </div>
+      </div>
+
+      <div class="entrantes-container">
+        <div class="imagen_difuminada" id="entrante1">
+          <h2>🥗 Ensalada de Protocolo con Etiqueta al Punto</h2>
+          <h4>
+            Perfectamente alineada, distancia entre hojas medida con regla
+          </h4>
+          <h4>
+            Incluye: saludo oficial, orden de precedencias y cero alimentos
+            reales.
+          </h4>
+        </div>
+
+        <div class="imagen_difuminada" id="entrante2">
+          <h2>🎯 Pincho de Organización de Eventos Empresariales</h2>
+          <h4>
+            Planificado, calendarizado, enviado por email, aprobado por tres
+            departamentos…
+          </h4>
+          <h4>y cancelado a última hora como todo buen evento.</h4>
+        </div>
+
+        <div class="imagen_difuminada" id="entrante3">
+          <h2>📊 Pincho de Contabilidad</h2>
+          <h4>Crujiente mezcla de asientos, balances y ese sabor clásico</h4>
+          <h4>"¿Por qué no me cuadra un céntimo?"</h4>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="christmas-lights">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
+    </footer>
+
+    <div class="alerta-modal" id="alertaModal">
+      <div class="alerta-contenido">
+        <h3 id="alertaTitulo"></h3>
+        <p id="alertaMensaje"></p>
+        <button onclick="cerrarAlerta()">Continuar</button>
+      </div>
+    </div>
+
+  </body>
+</html>

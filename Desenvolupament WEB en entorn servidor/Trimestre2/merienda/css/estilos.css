@@ -1,0 +1,762 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mountains of Christmas", "Comic Sans MS", "Arial", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #0a1f2e 0%, #1a3a4a 50%, #0f2537 100%);
+  min-height: 100vh;
+}
+
+/* Nieve animada de fondo */
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Header con luces navideñas */
+header {
+  height: 100px;
+  background: linear-gradient(180deg, #8b0000 0%, #dc143c 50%, #b22222 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.christmas-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.light {
+  width: 20px;
+  height: 30px;
+  border-radius: 50% 50% 40% 40%;
+  box-shadow: 0 0 20px currentColor;
+  animation: twinkle 1.5s infinite;
+}
+
+.light:nth-child(1) {
+  color: #ff0000;
+  animation-delay: 0s;
+}
+.light:nth-child(2) {
+  color: #00ff00;
+  animation-delay: 0.3s;
+}
+.light:nth-child(3) {
+  color: #ffff00;
+  animation-delay: 0.6s;
+}
+.light:nth-child(4) {
+  color: #0000ff;
+  animation-delay: 0.9s;
+}
+.light:nth-child(5) {
+  color: #ff00ff;
+  animation-delay: 1.2s;
+}
+.light:nth-child(6) {
+  color: #ff0000;
+  animation-delay: 0.2s;
+}
+.light:nth-child(7) {
+  color: #00ff00;
+  animation-delay: 0.5s;
+}
+.light:nth-child(8) {
+  color: #ffff00;
+  animation-delay: 0.8s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.3;
+    filter: brightness(0.5);
+  }
+}
+
+/* Contenedor principal */
+#principio {
+  position: relative;
+  min-height: calc(100vh - 180px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  z-index: 2;
+  background: radial-gradient(
+      ellipse at 50% 50%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(220, 20, 60, 0.2) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(34, 139, 34, 0.2) 0%,
+      transparent 50%
+    );
+}
+
+/* Título principal con efecto 3D */
+.luces-navidad {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  margin: 20px 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000,
+    0 0 40px #ff6f6f, 0 0 70px #ff6f6f, 0 0 80px #ff6f6f,
+    2px 2px 2px rgba(0, 0, 0, 0.8), 4px 4px 4px rgba(0, 0, 0, 0.6);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000,
+      0 0 40px #ff6f6f, 0 0 70px #ff6f6f, 2px 2px 2px rgba(0, 0, 0, 0.8);
+  }
+  33% {
+    text-shadow: 0 0 10px #00ff2a, 0 0 20px #00ff2a, 0 0 30px #00ff2a,
+      0 0 40px #6fff8b, 0 0 70px #6fff8b, 2px 2px 2px rgba(0, 0, 0, 0.8);
+  }
+  66% {
+    text-shadow: 0 0 10px #ffe600, 0 0 20px #ffe600, 0 0 30px #ffe600,
+      0 0 40px #fff7a6, 0 0 70px #fff7a6, 2px 2px 2px rgba(0, 0, 0, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000,
+      0 0 40px #ff6f6f, 0 0 70px #ff6f6f, 2px 2px 2px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 30px;
+}
+
+/* Párrafo decorativo */
+.intro-text {
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  color: #f0f0f0;
+  text-align: center;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  line-height: 1.8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón mejorado con efecto navideño */
+.boton {
+  position: relative;
+  margin-top: 50px;
+  padding: 20px 60px;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #228b22 100%);
+  border-radius: 50px;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 20px rgba(34, 139, 34, 0.6), 0 0 40px rgba(50, 205, 50, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.5), inset 0 -3px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.boton::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.boton:hover {
+  background: linear-gradient(135deg, #32cd32 0%, #3fe03f 50%, #32cd32 100%);
+  box-shadow: 0 0 30px rgba(50, 205, 50, 0.8), 0 0 60px rgba(50, 205, 50, 0.6),
+    0 15px 40px rgba(0, 0, 0, 0.6), inset 0 -3px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05) translateY(-5px);
+  border-color: #ffed4e;
+}
+
+.boton:active {
+  transform: scale(0.98) translateY(-2px);
+}
+
+/* Footer */
+footer {
+  height: 80px;
+  background: linear-gradient(0deg, #8b0000 0%, #dc143c 50%, #b22222 100%);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-bottom: 0;
+}
+
+/* Decoración adicional: estrellas */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Ornamentos flotantes */
+.ornament {
+  position: fixed;
+  font-size: 3rem;
+  opacity: 0.3;
+  animation: sway 4s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(20px) rotate(10deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header,
+  footer {
+    height: 60px;
+  }
+  .light {
+    width: 15px;
+    height: 20px;
+  }
+  .intro-text {
+    padding: 20px;
+    margin: 30px 20px;
+  }
+  .boton {
+    padding: 15px 40px;
+    margin-top: 30px;
+  }
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+
+/* --- Código CSS existente (Mantenido) --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Mountains of Christmas", "Arial", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #0a1f2e 0%, #1a3a4a 50%, #0f2537 100%);
+  min-height: 100vh;
+  color: #f0f0f0;
+}
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.snowflake {
+  position: absolute;
+  top: -10px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+header {
+  height: 100px;
+  background: linear-gradient(180deg, #8b0000 0%, #dc143c 50%, #b22222 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+footer {
+  height: 80px;
+  background: linear-gradient(0deg, #8b0000 0%, #dc143c 50%, #b22222 100%);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
+}
+.christmas-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+}
+.light {
+  width: 20px;
+  height: 30px;
+  border-radius: 50% 50% 40% 40%;
+  box-shadow: 0 0 20px currentColor;
+  animation: twinkle 1.5s infinite;
+}
+.light:nth-child(1) {
+  color: #ff0000;
+  animation-delay: 0s;
+}
+.light:nth-child(2) {
+  color: #00ff00;
+  animation-delay: 0.3s;
+}
+.light:nth-child(3) {
+  color: #ffff00;
+  animation-delay: 0.6s;
+}
+.light:nth-child(4) {
+  color: #0000ff;
+  animation-delay: 0.9s;
+}
+.light:nth-child(5) {
+  color: #ff00ff;
+  animation-delay: 1.2s;
+}
+.light:nth-child(6) {
+  color: #ff0000;
+  animation-delay: 0.2s;
+}
+.light:nth-child(7) {
+  color: #00ff00;
+  animation-delay: 0.5s;
+}
+.light:nth-child(8) {
+  color: #ffff00;
+  animation-delay: 0.8s;
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.3;
+    filter: brightness(0.5);
+  }
+}
+.main-container {
+  position: relative;
+  min-height: calc(100vh - 180px);
+  padding: 20px 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.entrantes-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+.imagen_difuminada {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  margin: 20px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  filter: blur(9px);
+  transform: translateY(0);
+}
+.imagen_difuminada:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+.imagen_difuminada h2 {
+  color: #ffd700;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  margin-bottom: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+.imagen_difuminada h4 {
+  color: #f0f0f0;
+  font-size: clamp(1.1rem, 2.3vw, 1.6rem);
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin: 3px 0;
+}
+#div_p1,
+#div_p2,
+#div_p3,
+#div_continuar {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  margin: 30px auto;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#div_p1 p:first-child,
+#div_p2 p:first-child,
+#div_p3 p:first-child {
+  color: #ffd700;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+#div_p1 p:nth-child(2),
+#div_p2 p:nth-child(2),
+#div_p3 p:nth-child(2) {
+  color: #f0f0f0;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  text-align: center;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 0 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.radio-option:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateX(5px);
+}
+.radio-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #ffd700;
+  flex-shrink: 0;
+}
+.radio-option label {
+  color: #f0f0f0;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  cursor: pointer;
+  flex: 1;
+}
+.radio-option:has(input[type="radio"]:checked) {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: #ffd700;
+}
+.boton {
+  margin: 30px auto 0;
+  padding: 18px 50px;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #228b22 100%);
+  border-radius: 50px;
+  border: 3px solid #ffd700;
+  box-shadow: 0 0 20px rgba(34, 139, 34, 0.6), 0 0 40px rgba(50, 205, 50, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: fit-content;
+}
+.boton::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+.boton:hover {
+  background: linear-gradient(135deg, #32cd32 0%, #3fe03f 50%, #32cd32 100%);
+  box-shadow: 0 0 30px rgba(50, 205, 50, 0.8), 0 0 60px rgba(50, 205, 50, 0.6),
+    0 15px 40px rgba(0, 0, 0, 0.6);
+  transform: scale(1.05) translateY(-3px);
+  border-color: #ffed4e;
+}
+.boton:active {
+  transform: scale(0.98) translateY(-1px);
+}
+@media (max-width: 950px) {
+  #div_p1,
+  #div_p2,
+  #div_p3,
+  .entrantes-container {
+    max-width: 95%;
+  }
+}
+@media (max-width: 768px) {
+  header,
+  footer {
+    height: 60px;
+  }
+  .light {
+    width: 15px;
+    height: 20px;
+  }
+  .imagen_difuminada {
+    padding: 8px;
+    margin: 10px 10px;
+  }
+  #div_p1,
+  #div_p2,
+  #div_p3 {
+    padding: 25px;
+  }
+  .boton {
+    padding: 15px 35px;
+  }
+  .imagen_difuminada h2 {
+    font-size: 2rem;
+    margin-bottom: 1px;
+  }
+  .imagen_difuminada h4 {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    margin: 2px 0;
+  }
+  #div_p1 p:first-child,
+  #div_p2 p:first-child,
+  #div_p3 p:first-child {
+    font-size: 1.8rem;
+  }
+  #div_p1 p:nth-child(2),
+  #div_p2 p:nth-child(2),
+  #div_p3 p:nth-child(2) {
+    font-size: 1.1rem;
+  }
+}
+
+/* --- NUEVO CSS para la Alerta Modal --- */
+.alerta-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro transparente */
+  display: none; /* Inicialmente oculto */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté por encima de todo */
+  backdrop-filter: blur(5px);
+}
+
+.alerta-contenido {
+  background: #1a3a4a;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.3s ease-out;
+  max-width: 90%;
+  width: 400px;
+  border: 5px solid #ffd700; /* Borde dorado */
+}
+
+.alerta-contenido h3 {
+  font-size: 2.5rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.alerta-contenido button {
+  background-color: #dc143c; /* Rojo de Navidad */
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+}
+
+.alerta-contenido button:hover {
+  background-color: #b22222;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
