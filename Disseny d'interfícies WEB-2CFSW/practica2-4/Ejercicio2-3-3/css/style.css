@@ -212,7 +212,7 @@ nav ul li a {
 .paso-texto .titulo-paso {
     font-size: 20px;      /* título del paso más grande */
     font-weight: bold;
-    margin-bottom: 5px;   /* separación del texto */
+    margin-bottom: 5px;
 }
 
 .paso-texto p:not(.titulo-paso) {
