@@ -451,7 +451,7 @@ footer {
 
 #rectangulo8-1 {
     display: flex;
-    justify-content: space-between; /* espacio entre izquierda y derecha */
+    justify-content: space-between; 
     width: 100%;
     align-items: flex-start;
 }
