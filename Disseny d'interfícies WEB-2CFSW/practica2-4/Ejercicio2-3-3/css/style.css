@@ -157,7 +157,7 @@ nav ul li a {
 #cuadro2 {
     flex: 1;
     display: flex;
-    justify-content: center;     /* centrar contenido */
+    justify-content: center;
     align-items: center;
     padding: 20px;
 }
