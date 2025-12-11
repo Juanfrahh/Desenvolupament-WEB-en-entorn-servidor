@@ -307,7 +307,7 @@ nav ul li a {
 .tarjetas {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap; /* para que sea responsive y baje si no cabe */
+    flex-wrap: wrap;
 }
 
 #cuadro5-3 {
