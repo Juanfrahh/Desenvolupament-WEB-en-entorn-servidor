@@ -88,20 +88,20 @@ nav ul li a {
 .contenido {
     width: 1080px;
     height: 650px;
-    display: flex;               
-    flex-direction: row;         
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-#cuadro, #cuadro1-2 {
-    width: 540px;               
+#cuadro {
+    width: 540px;
     height: 550px;
 }
-
 #cuadro1-2 {
+    width: 540px;
+    height: 550px;
     background-color: #F4F4F4;
 }
+
 
 #rectangulos {
     
