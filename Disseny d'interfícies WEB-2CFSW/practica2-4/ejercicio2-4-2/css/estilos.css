@@ -8,88 +8,60 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
 }
-
-/* HEADER */
 #header{
     background-color: #4baf73;
     text-align: center;
     height: 5vh;
     padding-top: 2vh;
 }
-
-/* ASIDE + MAIN (dos columnas) */
-body {
-    display: flex;
-    flex-direction: column;
+h3{
+    font-weight: normal;
 }
-
-#aside, #main {
-    height: 89vh;
-}
-
 #aside{
     background-color: #5aa6c0;
     width: 21%;
+    height: 89vh;
+    float: left;
     text-align: center;
 }
-
 #main{
     background-color: #d17df9;
     width: 79%;
+    height: 89vh;
+    float: right;
     text-align: center;
 }
-
-/* Contenedor horizontal para aside + main */
-#header + #aside {
-    /* Nada */
-}
-#aside, #main {
-    /* Se agrupan con flex */
-}
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Agrupamos columnas debajo del header */
-#header + div {
-    display: flex;
-    flex-direction: row;
-}
-
-#footer{
-    clear: both;
-    background-color: #fa7e5c;
-    text-align: center;
-}
-
-/* SECCIONES DENTRO DEL MAIN */
-#main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #main .section{
     border: 4px solid red;
     width: 95%;
     height: 43%;
     margin: 3vh auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
-
-/* Primera fila (dos elementos) */
 .seccion1{
     border: 4px solid blue;
     width: 44%;
     height: 29vh;
 }
-
-/* Segunda fila (tres elementos) */
+#izquierdo{
+    float: left;
+    margin-top: 4vh;
+    margin-left: 3%;
+}
+#derecho{
+    float: right;
+    margin-top: 4vh;
+    margin-right: 3%;
+}
 .seccion2{
     border: 4px solid blue;
     width: 30%;
     height: 29vh;
+    float: left;
+    margin-top: 4vh;
+    margin-left: 2%;
+}
+#footer{
+    clear: both;
+    background-color: #fa7e5c;
+    text-align: center;
 }
