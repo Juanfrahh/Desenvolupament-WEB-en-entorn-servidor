@@ -90,16 +90,19 @@ nav ul li a {
 .contenido {
     width: 1080px;
     height: 650px;
-    display: flex;
+
+    display: flex;               /* contenedor flex */
+    flex-direction: row;         /* columnas en fila */
+    justify-content: space-between; /* espacio entre columnas */
+    align-items: center;         /* centrado vertical si se necesita */
 }
-#cuadro {
-    width: 540px;
+
+#cuadro, #cuadro1-2 {
+    width: 540px;                /* cada columna ocupa la mitad */
     height: 550px;
-    float: left;
 }
+
 #cuadro1-2 {
-    width: 540px;
-    height: 550px;
     background-color: #F4F4F4;
 }
 
