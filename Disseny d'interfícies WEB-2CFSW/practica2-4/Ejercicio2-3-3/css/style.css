@@ -83,7 +83,7 @@ nav ul li a {
 .contenido {
     width: 1080px;
     display: flex;               
-    justify-content: flex-start; /* empieza desde la izquierda */
+    justify-content: flex-start;
     align-items: stretch;        /* altura uniforme */
     margin-top: 0;               /* pegado al header */
 }
