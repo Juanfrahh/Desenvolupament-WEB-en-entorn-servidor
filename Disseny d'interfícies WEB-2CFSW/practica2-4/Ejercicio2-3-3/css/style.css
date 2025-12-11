@@ -164,7 +164,6 @@ nav ul li a {
     padding: 20px;
 }
 
-/* Contenedor de todos los pasos */
 .cuadrados {
     display: flex;
     flex-direction: column;   /* columna de pasos */
