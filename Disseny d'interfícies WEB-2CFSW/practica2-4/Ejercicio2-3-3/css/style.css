@@ -168,7 +168,7 @@ nav ul li a {
 .cuadrados {
     display: flex;
     flex-direction: column;
-    gap: 50px; /* espacio entre título y pasos */
+    gap: 50px;
     width: 425px;
 }
 
