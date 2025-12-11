@@ -33,10 +33,13 @@ header {
 
 /* MENU */
 .menu ul {
-    list-style: none;
+    list-style: none;    /* quita los bullets */
+    padding: 0;          /* quita el padding por defecto */
+    margin: 0;           /* quita el margin por defecto */
     display: flex;
-    gap: 20px; /* espacio entre opciones */
+    gap: 20px;           /* espacio entre opciones */
 }
+
 
 .menu li {
     display: inline;
