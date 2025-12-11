@@ -242,7 +242,7 @@ nav ul li a {
 
 #cuadro33 {
     display: flex;
-    flex-direction: column;     /* Columna para título, texto y botón */
+    flex-direction: column;
     justify-content: center;
     width: 440px;
     height: 100%;
