@@ -33,7 +33,6 @@ class Controller
 					   Config::$mvc_bd_clave,
 					   Config::$mvc_bd_hostname);
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			// comprobar campos formulario
 			if ($m->validarDatos($_POST['nombre'], $_POST['energia'],$_POST['proteina'], $_POST['hc'], $_POST['fibra'], $_POST['grasa'])) {
 				$m->insertarAlimento($_POST['nombre'], $_POST['energia'], $_POST['proteina'], $_POST['hc'], $_POST['fibra'], $_POST['grasa']);
 				header('Location: index.php?ctl=listar');
