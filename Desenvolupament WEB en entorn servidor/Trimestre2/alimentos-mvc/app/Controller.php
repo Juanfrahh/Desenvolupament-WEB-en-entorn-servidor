@@ -1,5 +1,4 @@
 ﻿<?php
-// app/Controller.php
 class Controller
 {
 	public function inicio() {
