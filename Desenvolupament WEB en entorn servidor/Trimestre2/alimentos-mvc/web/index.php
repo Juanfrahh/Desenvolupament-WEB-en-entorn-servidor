@@ -3,10 +3,6 @@
 require_once __DIR__ . '/../app/Config.php';
 require_once __DIR__ . '/../app/Model.php';
 require_once __DIR__ . '/../app/Controller.php';
-// enrutamiento
-/* array asociativo cuya función es definir una tabla para mapear
-* (asociar), rutas en acciones de un controlador.
-* Esta tabla será utilizada para saber qué acción se debe disparar */
 $map = array(
 	'inicio' => array('controller' =>'Controller', 'action' =>'inicio'),
 	'listar' => array('controller' =>'Controller', 'action' =>'listar'),
