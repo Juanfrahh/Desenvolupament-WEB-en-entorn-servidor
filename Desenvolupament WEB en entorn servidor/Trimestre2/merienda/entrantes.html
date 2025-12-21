@@ -1,245 +1,389 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menú Navideño - Quiz Interactivo</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
-    <script src="js/script.js"></script>
-  </head>
-  <body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrantes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <!-- Estrellas -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Nieve -->
     <div class="snowflakes" id="snowflakes"></div>
 
-    <header>
-      <div class="christmas-lights">
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-      </div>
-    </header>
+    <!-- Guirnaldas -->
+    <div class="garland-top">
+        <div class="christmas-lights" id="lights-top"></div>
+    </div>
 
+    <div class="garland-bottom">
+        <div class="christmas-lights" id="lights-bottom"></div>
+    </div>
+
+    <!-- Contenedor principal -->
     <div class="main-container">
-      <div id="div_p1">
-        <p>Entrante 1</p>
-        <p>
-          Perfectamente alineada, distancia entre hojas medida con regla.
-          Incluye: saludo oficial, orden de precedencias y cero alimentos
-          reales.
-        </p>
-        <form id="form_entrantes1">
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta1"
-              name="entrante1"
-              value="respuesta1"
-            /><span>Lasaña de Gestión Avanzada de la Información</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta2"
-              name="entrante1"
-              value="respuesta2"
-            /><span>Ensalada de Protocolo con Etiqueta al Punto</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta3"
-              name="entrante1"
-              value="respuesta3"
-            /><span>Pincho de Contabilidad</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta4"
-              name="entrante1"
-              value="respuesta4"
-            /><span
-              >Pincho de Organización de Eventos Empresariales</span
-            ></label
-          >
-          <button
-            type="button"
-            class="boton"
-            onclick="verificarRespuesta('pregunta1')"
-          >
-            Enviar respuesta
-          </button>
-        </form>
-      </div>
+        <h2 style="text-align: center; color: #b30000; font-family: 'Mountains of Christmas', cursive; font-size: 2.5em; margin-bottom: 20px;">🍖 Entrantes 🍖</h2>
 
-      <div id="div_p2" style="display: none">
-        <p>Entrante 2</p>
-        <p>
-          Planificado, calendarizado, enviado por email, aprobado por tres
-          departamentos… y cancelado a última hora como todo buen evento
-        </p>
-        <form id="form_entrantes2">
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta5"
-              name="entrante2"
-              value="respuesta5"
-            /><span>Lasaña de Gestión Avanzada de la Información</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta6"
-              name="entrante2"
-              value="respuesta6"
-            /><span>Ensalada de Protocolo con Etiqueta al Punto</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta7"
-              name="entrante2"
-              value="respuesta7"
-            /><span>Pincho de Contabilidad</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta8"
-              name="entrante2"
-              value="respuesta8"
-            /><span
-              >Pincho de Organización de Eventos Empresariales</span
-            ></label
-          >
-          <button
-            type="button"
-            class="boton"
-            onclick="verificarRespuesta('pregunta2')"
-          >
-            Enviar respuesta
-          </button>
-        </form>
-      </div>
+        <!-- PLATO 1 -->
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato1">
+                <h2>Ensalada de Protocolo con Etiqueta al Punto</h2>
+                <h4>Perfectamente alineada, distancia entre hojas medida con regla</h4>
+                <h4>Incluye: Saludo oficial, orden de precedencias y cero alimentos reales</h4>
+            </div>
 
-      <div id="div_p3" style="display: none">
-        <p>Entrante 3</p>
-        <p>
-          Crujiente mezcla de asientos, balances y ese sabor clásico a "¿Por qué
-          no me cuadra un céntimo?"
-        </p>
-        <form id="form_entrantes3">
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta9"
-              name="entrante3"
-              value="respuesta9"
-            /><span>Lasaña de Gestión Avanzada de la Información</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta10"
-              name="entrante3"
-              value="respuesta10"
-            /><span>Ensalada de Protocolo con Etiqueta al Punto</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta11"
-              name="entrante3"
-              value="respuesta11"
-            /><span>Pincho de Contabilidad</span></label
-          >
-          <label class="radio-option"
-            ><input
-              type="radio"
-              id="respuesta12"
-              name="entrante3"
-              value="respuesta12"
-            /><span
-              >Pincho de Organización de Eventos Empresariales</span
-            ></label
-          >
-          <button
-            type="button"
-            class="boton"
-            onclick="verificarRespuesta('pregunta3')"
-          >
-            Enviar respuesta
-          </button>
-        </form>
-      </div>
+            <!-- Pregunta 1 -->
+            <div id="div_p1" class="pregunta-container">
+                <h3>🎄 Pregunta 1 🎄</h3>
+                <p>Perfectamente alineada, distancia entre hojas medida con regla. Incluye: saludo oficial, orden de precedencias y cero alimentos reales.</p>
+                <form id="form_entrantes1">
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta1" name="entrante" value="respuesta1">
+                        <label for="respuesta1">Lasaña de Gestión Avanzada de la Información</label>
+                    </div>
 
-      <div class="alerta-modal" id="alertaModal">
-        <div class="alerta-contenido" id="alertaContenido">
-          <h3 id="alertaTitulo"></h3>
-          <img id="alertaImagen" src="images.png" alt="Imagen de resultado" />
-          <p id="alertaMensaje"></p>
-          <button onclick="cerrarAlerta()">Continuar</button>
-        </div>
-      </div>
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta2" name="entrante" value="respuesta2">
+                        <label for="respuesta2">Ensalada de Protocolo con Etiqueta al Punto</label>
+                    </div>
 
-      <div class="entrantes-container">
-        <div class="imagen_difuminada" id="entrante1">
-          <h2>🥗 Ensalada de Protocolo con Etiqueta al Punto</h2>
-          <h4>
-            Perfectamente alineada, distancia entre hojas medida con regla
-          </h4>
-          <h4>
-            Incluye: saludo oficial, orden de precedencias y cero alimentos
-            reales.
-          </h4>
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta3" name="entrante" value="respuesta3">
+                        <label for="respuesta3">Pincho de Contabilidad</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta4" name="entrante" value="respuesta4">
+                        <label for="respuesta4">Pincho de Organización de Eventos Empresariales</label>
+                    </div>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta1')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
 
-        <div class="imagen_difuminada" id="entrante2">
-          <h2>🎯 Pincho de Organización de Eventos Empresariales</h2>
-          <h4>
-            Planificado, calendarizado, enviado por email, aprobado por tres
-            departamentos…
-          </h4>
-          <h4>y cancelado a última hora como todo buen evento.</h4>
+        <!-- PLATO 2 -->
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato2">
+                <h2>Pincho de Organización de Eventos Empresariales</h2>
+                <h4>Planificado, calendarizado, enviado por email, aprobado por tres departamentos... y cancelado a última hora como todo buen evento</h4>
+            </div>
+
+            <!-- Pregunta 2 -->
+            <div id="div_p2" class="pregunta-container" style="display: none">
+                <h3>🎄 Pregunta 2 🎄</h3>
+                <p>Planificado, calendarizado, enviado por email, aprobado por tres departamentos… y cancelado a última hora como todo buen evento</p>
+                <form id="form_entrantes2">
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta5" name="entrante2" value="respuesta5">
+                        <label for="respuesta5">Lasaña de Gestión Avanzada de la Información</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta6" name="entrante2" value="respuesta6">
+                        <label for="respuesta6">Ensalada de Protocolo con Etiqueta al Punto</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta7" name="entrante2" value="respuesta7">
+                        <label for="respuesta7">Pincho de Contabilidad</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta8" name="entrante2" value="respuesta8">
+                        <label for="respuesta8">Pincho de Organización de Eventos Empresariales</label>
+                    </div>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta2')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
 
-        <div class="imagen_difuminada" id="entrante3">
-          <h2>📊 Pincho de Contabilidad</h2>
-          <h4>Crujiente mezcla de asientos, balances y ese sabor clásico</h4>
-          <h4>"¿Por qué no me cuadra un céntimo?"</h4>
+        <!-- PLATO 3 -->
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato3">
+                <h2>Pincho de Contabilidad</h2>
+                <h4>Crujiente mezcla de asientos, balances y ese sabor clásico a "¿Por qué no me cuadra un céntimo?"</h4>
+            </div>
+
+            <!-- Pregunta 3 -->
+            <div id="div_p3" class="pregunta-container" style="display: none">
+                <h3>🎄 Pregunta 3 🎄</h3>
+                <p>Crujiente mezcla de asientos, balances y ese sabor clásico a "¿Por qué no me cuadra un céntimo?"</p>
+                <form id="form_entrantes3">
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta9" name="entrante3" value="respuesta9">
+                        <label for="respuesta9">Lasaña de Gestión Avanzada de la Información</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta10" name="entrante3" value="respuesta10">
+                        <label for="respuesta10">Ensalada de Protocolo con Etiqueta al Punto</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta11" name="entrante3" value="respuesta11">
+                        <label for="respuesta11">Pincho de Contabilidad</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="respuesta12" name="entrante3" value="respuesta12">
+                        <label for="respuesta12">Pincho de Organización de Eventos Empresariales</label>
+                    </div>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta3')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
-      </div>
+
+        <!-- Botón continuar -->
+        <div id="div_continuar" class="pregunta-container" style="display: none">
+            <a href="principales.html" class="boton">Continuar a Principales</a>
+        </div>
     </div>
 
-    <footer>
-      <div class="christmas-lights">
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-        <div class="light"></div>
-      </div>
-    </footer>
-
-    <div class="alerta-modal" id="alertaModal">
-      <div class="alerta-contenido">
-        <h3 id="alertaTitulo"></h3>
-        <p id="alertaMensaje"></p>
-        <button onclick="cerrarAlerta()">Continuar</button>
-      </div>
+    <!-- Modal personalizado -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div id="modalContent" class="modal-content">
+            <div id="modalIcon" class="modal-icon"></div>
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p>
+            <button id="modalButton" onclick="cerrarModal()">Aceptar</button>
+        </div>
     </div>
 
-  </body>
+    <!-- Audios para efectos de sonido -->
+    <audio id="audio-correcto" src="sounds/cascabeles.mp3" preload="auto"></audio>
+    <audio id="audio-incorrecto" src="sounds/hohoho.mp3" preload="auto"></audio>
+
+    <script>
+        // Crear estrellas
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Crear nieve
+        const snowflakesContainer = document.getElementById('snowflakes');
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+            snowflakesContainer.appendChild(snowflake);
+        }
+
+        // Crear luces
+        const lightsTopContainer = document.getElementById('lights-top');
+        const lightsBottomContainer = document.getElementById('lights-bottom');
+        for (let i = 0; i < 20; i++) {
+            const light1 = document.createElement('div');
+            light1.className = 'light';
+            lightsTopContainer.appendChild(light1);
+
+            const light2 = document.createElement('div');
+            light2.className = 'light';
+            lightsBottomContainer.appendChild(light2);
+        }
+
+        // Variables globales para guardar los datos del modal correcto
+        let modalData = {
+            platoId: null,
+            div_desaparece: null,
+            div_aparece: null
+        };
+
+        // Función para mostrar modal navideño
+        function mostrarModal(tipo, titulo, mensaje, platoId = null, divDesaparece = null, divAparece = null) {
+            const overlay = document.getElementById('modalOverlay');
+            const content = document.getElementById('modalContent');
+            const icon = document.getElementById('modalIcon');
+            const titleEl = document.getElementById('modalTitle');
+            const messageEl = document.getElementById('modalMessage');
+
+            // Sonidos
+            const sonidoCorrecto = document.getElementById('audio-correcto');
+            const sonidoIncorrecto = document.getElementById('audio-incorrecto');
+
+            // Reproducir sonido según tipo
+            if (tipo === 'correcto' || tipo === 'completado') {
+                sonidoCorrecto.currentTime = 0;
+                sonidoCorrecto.play();
+            } else {
+                sonidoIncorrecto.currentTime = 0;
+                sonidoIncorrecto.play();
+            }
+
+            // Guardar los datos si es una respuesta correcta
+            if (tipo === 'correcto' || tipo === 'completado') {
+                modalData.platoId = platoId;
+                modalData.div_desaparece = divDesaparece;
+                modalData.div_aparece = divAparece;
+            }
+
+            // Limpiar copos de nieve anteriores
+            const oldSnowflakes = content.querySelectorAll('.modal-snowflake');
+            oldSnowflakes.forEach(s => s.remove());
+
+            if (tipo === 'correcto') {
+                content.className = 'modal-content correcto';
+                icon.innerHTML = '🎄';
+                titleEl.innerHTML = titulo;
+                messageEl.innerHTML = mensaje;
+            } else if (tipo === 'completado') {
+                content.className = 'modal-content completado';
+                icon.innerHTML = '🎉';
+                titleEl.innerHTML = titulo;
+                messageEl.innerHTML = mensaje;
+            } else {
+                content.className = 'modal-content incorrecto';
+                icon.innerHTML = '🎅';
+                titleEl.innerHTML = titulo;
+                messageEl.innerHTML = mensaje;
+            }
+
+            // Añadir copos de nieve al modal
+            for (let i = 0; i < 8; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'modal-snowflake';
+                snowflake.innerHTML = '❄';
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDelay = Math.random() * 2 + 's';
+                content.appendChild(snowflake);
+            }
+
+            overlay.style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            const overlay = document.getElementById('modalOverlay');
+            const content = document.getElementById('modalContent');
+            
+            // Si hay datos guardados (respuesta correcta), actualizar la página
+            if (modalData.platoId || modalData.div_desaparece) {
+                if (modalData.platoId) {
+                    document.getElementById(modalData.platoId).classList.add('desbloqueado');
+                }
+                if (modalData.div_desaparece) {
+                    document.getElementById(modalData.div_desaparece).style.display = "none";
+                }
+                if (modalData.div_aparece) {
+                    document.getElementById(modalData.div_aparece).style.display = "block";
+                    centrarPregunta(modalData.div_aparece); // Centra la pregunta nueva
+                }
+                
+                // Resetear los datos
+                modalData = {
+                    platoId: null,
+                    div_desaparece: null,
+                    div_aparece: null
+                };
+            }
+            
+            overlay.style.display = 'none';
+        }
+
+        // Función de verificación
+        function verificarRespuesta(pregunta) {
+            let opciones;
+            
+            // Seleccionar el grupo correcto de radio buttons según la pregunta
+            if (pregunta === 'pregunta1') {
+                opciones = document.getElementsByName('entrante');
+            } else if (pregunta === 'pregunta2') {
+                opciones = document.getElementsByName('entrante2');
+            } else if (pregunta === 'pregunta3') {
+                opciones = document.getElementsByName('entrante3');
+            }
+            
+            let seleccionada = null;
+
+            for (let i = 0; i < opciones.length; i++) {
+                if (opciones[i].checked) {
+                    seleccionada = opciones[i].value;
+                    break;
+                }
+            }
+
+            if (seleccionada === null) {
+                mostrarModal('incorrecto', '¡Atención!', 'Por favor, selecciona una respuesta.');
+                return;
+            }
+
+            let platoId = null;
+            let div_desaparece = null;
+            let div_aparece = null;
+            let respuestaCorrecta = null;
+            let esUltima = false;
+
+            switch (pregunta) {
+                case "pregunta1":
+                    respuestaCorrecta = "respuesta2";
+                    platoId = "plato1";
+                    div_desaparece = "div_p1";
+                    div_aparece = "div_p2";
+                    break;
+                case "pregunta2":
+                    respuestaCorrecta = "respuesta8";
+                    platoId = "plato2";
+                    div_desaparece = "div_p2";
+                    div_aparece = "div_p3";
+                    break;
+                case "pregunta3":
+                    respuestaCorrecta = "respuesta11";
+                    platoId = "plato3";
+                    div_desaparece = "div_p3";
+                    div_aparece = "div_continuar";
+                    esUltima = true;
+                    break;
+            }
+
+            if (seleccionada === respuestaCorrecta) {
+                if (esUltima) {
+                    mostrarModal('completado', '🎊 ¡Felicidades! 🎊', '¡Has completado el primer menú de entrantes navideños!', platoId, div_desaparece, div_aparece);
+                    localStorage.setItem("entrantes_superado", "yes");
+                } else {
+                    mostrarModal('correcto', '¡Respuesta Correcta! 🎉', '¡Has desbloqueado un plato navideño!', platoId, div_desaparece, div_aparece);
+                }
+            } else {
+                mostrarModal('incorrecto', '¡Respuesta Incorrecta! ❌', 'Vuelve a intentarlo. ¡Tú puedes!');
+            }
+        }
+
+        function centrarPregunta(idPregunta) {
+            const elemento = document.getElementById(idPregunta);
+            if (elemento) {
+                const rect = elemento.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const elementoCentro = rect.top + scrollTop - (window.innerHeight / 2) + (rect.height / 2);
+
+                window.scrollTo({
+                    top: elementoCentro,
+                    behavior: 'smooth'
+                });
+
+                window.addEventListener('load', () => {
+                    centrarPregunta('div_p1');
+                });
+            }
+        }
+
+        window.addEventListener('load', () => {
+            centrarPregunta('div_p1');
+        });
+
+    </script>
+</body>
 </html>

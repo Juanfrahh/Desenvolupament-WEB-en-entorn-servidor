@@ -1,0 +1,458 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: "Mountains of Christmas", "Arial", sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(180deg, #0a1f2e 0%, #1a3a4a 50%, #0f2537 100%);
+    min-height: 100vh;
+    color: #f0f0f0;
+}
+
+/* Nieve */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1em;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Estrellas */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Guirnaldas */
+.garland-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(180deg, #8b0000 0%, #dc143c 100%);
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.garland-top .christmas-lights {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.garland-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(0deg, #8b0000 0%, #dc143c 100%);
+    z-index: 10;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.garland-bottom .christmas-lights {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.light {
+    width: 15px;
+    height: 25px;
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 0 0 20px currentColor;
+    animation: lightTwinkle 1.5s infinite;
+}
+
+.light:nth-child(4n+1) { color: #ff0000; animation-delay: 0s; }
+.light:nth-child(4n+2) { color: #00ff00; animation-delay: 0.3s; }
+.light:nth-child(4n+3) { color: #ffff00; animation-delay: 0.6s; }
+.light:nth-child(4n) { color: #0000ff; animation-delay: 0.9s; }
+
+@keyframes lightTwinkle {
+    0%, 100% {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+    50% {
+        opacity: 0.4;
+        filter: brightness(0.5);
+    }
+}
+
+/* Contenedor principal */
+.main-container {
+    position: relative;
+    min-height: 100vh;
+    padding: 100px 20px 100px;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Plato con pregunta */
+.plato-seccion {
+    margin-bottom: 40px;
+}
+
+.plato-item {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+    filter: blur(9px);
+    margin-bottom: 20px;
+}
+
+.plato-item.desbloqueado {
+    filter: blur(0px);
+    background: rgba(50, 205, 50, 0.2);
+    border-color: #32cd32;
+    box-shadow: 0 0 30px rgba(50, 205, 50, 0.4);
+}
+
+.plato-item h2 {
+    color: #ffd700;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.plato-item h4 {
+    color: #f0f0f0;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Contenedor de preguntas */
+.pregunta-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease;
+    margin-bottom: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pregunta-container h3 {
+    color: #ffd700;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.pregunta-container p {
+    color: #f0f0f0;
+    font-size: clamp(1.1rem, 2.3vw, 1.5rem);
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 215, 0, 0.5);
+    transform: translateX(5px);
+}
+
+.radio-option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #ffd700;
+    flex-shrink: 0;
+}
+
+.radio-option label {
+    color: #f0f0f0;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    cursor: pointer;
+    flex: 1;
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+}
+
+/* Botón */
+.boton {
+    margin: 30px auto 0;
+    padding: 18px 50px;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #228b22 100%);
+    border-radius: 50px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 20px rgba(34, 139, 34, 0.6), 0 0 40px rgba(50, 205, 50, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: fit-content;
+}
+
+.boton:hover {
+    background: linear-gradient(135deg, #32cd32 0%, #3fe03f 50%, #32cd32 100%);
+    box-shadow: 0 0 30px rgba(50, 205, 50, 0.8), 0 0 60px rgba(50, 205, 50, 0.6);
+    transform: scale(1.05) translateY(-3px);
+}
+
+/* Modal de alerta navideña */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a3a4a 0%, #0f2537 100%);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
+    border: 5px solid #ffd700;
+    max-width: 90%;
+    width: 500px;
+    position: relative;
+    animation: modalAppear 0.4s ease-out;
+}
+
+@keyframes modalAppear {
+    from {
+        transform: scale(0.7) translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content.correcto {
+    border-color: #32cd32;
+    box-shadow: 0 0 50px rgba(50, 205, 50, 0.5);
+    background-image: url(../images/descarga3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal-content.incorrecto {
+    border-color: #dc143c;
+    box-shadow: 0 0 50px rgba(220, 20, 60, 0.5);
+    background-image: url(../images/descarga2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: yellow;
+}
+
+.modal-content.completado {
+    border-color: #ffd700;
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.7);
+    background-image: url('https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    width: 600px;
+    padding: 50px;
+}
+
+.modal-content.completado::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 31, 46, 0.85);
+    border-radius: 25px;
+    z-index: -1;
+}
+
+.modal-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: iconBounce 0.6s ease;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.modal-content h3 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #ffd700;
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+.modal-content p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: #f0f0f0;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.modal-content button {
+    background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+    color: white;
+    border: 3px solid #ffd700;
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-content.incorrecto button {
+    background: linear-gradient(135deg, #dc143c 0%, #b22222 100%);
+}
+
+.modal-content button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+/* Modal snowflakes */
+.modal-snowflake {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
+    animation: modalSnowfall 3s linear infinite;
+}
+
+@keyframes modalSnowfall {
+    to {
+        transform: translateY(400px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 90px 15px 90px;
+    }
+
+    .pregunta-container {
+        padding: 25px;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+    }
+
+    .modal-content.completado {
+        width: 90%;
+        padding: 40px 25px;
+    }
+}

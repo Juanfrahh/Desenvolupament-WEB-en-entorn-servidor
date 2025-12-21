@@ -1,0 +1,115 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: serif;
+	margin: 15px;
+	line-height: 1.5;
+}
+
+.layout {
+	display: flex;
+	flex-direction: column;
+}
+
+.lista-datos {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.lista-datos li {
+	display: inline;
+}
+
+.lista-datos li::after {
+	content: "; ";
+}
+
+.lista-datos li:last-child::after {
+	content: "";
+}
+@media (min-width: 600px) {
+
+	.layout {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+	}
+
+	.datos {
+		flex: 0 0 30%;
+	}
+
+	.derecha {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+    .lista-datos{
+        list-style: disc;
+        padding-left: 20px;
+    }
+	.lista-datos li {
+		display: list-item;
+	}
+
+	.lista-datos li::after {
+		content: "";
+	}
+
+	.lista-contenido {
+		display: flex;
+        list-style: none;
+	    padding-left: 0;
+    	margin-left: 0;
+
+	}
+
+	.lista-contenido li {
+		flex: 1;
+	}
+}
+
+@media (min-width: 1200px) {
+
+	.layout {
+		display: flex;
+		gap: 30px;
+	}
+
+	.derecha {
+		display: contents;
+	}
+
+	.datos,
+	.descripcion,
+	.contenido {
+		flex: 1;
+	}
+
+	.datos,
+	.descripcion,
+	.contenido {
+		margin: 0;
+	}
+
+	.datos h2,
+	.descripcion h2,
+	.contenido h2 {
+		margin-top: 0;
+	}
+
+	.descripcion p {
+		margin-top: 0;
+	}
+
+	.lista-contenido {
+		display: block;
+		padding-left: 20px;
+        list-style: disc;
+	}
+}
+
+

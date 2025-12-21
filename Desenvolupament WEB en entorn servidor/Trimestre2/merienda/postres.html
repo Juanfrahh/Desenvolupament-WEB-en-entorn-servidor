@@ -1,63 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postres</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-
 <body>
-    <div>
-        <img src="images/postres.png" alt="postres" class="imagen_difuminada" id="img_postres">
-        <div id="div_p1">
-            <p>Postre 1</p>
-            <p>Dulce mezcla internacional con vocabulario suave, expresiones deliciosas y un toque de pronunciación “aprobadita”.
-            </p>
-            <form action="#" method="post" id="form_postres1">
-                <input type="radio" id="resp_postre1" name="entrante" value="resp_postre1">
-                <label for="resp_postre1">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+    <div class="stars" id="stars"></div>
 
-                <input type="radio" id="resp_postre2" name="entrante" value="resp_postre2">
-                <label for="resp_postre2">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+    <div class="snowflakes" id="snowflakes"></div>
 
-                <input type="radio" id="resp_postre3" name="entrante" value="resp_postre3">
-                <label for="resp_postre3">Tarta Lingüística de Francés e Inglés</label><br>
+    <div class="garland-top">
+        <div class="christmas-lights" id="lights-top"></div>
+    </div>
 
-                <input type="radio" id="resp_postre4" name="entrante" value="resp_postre4">
-                <label for="resp_postre4">Flan de Itinerario Personal para la Empleabilidad</label><br>
+    <div class="garland-bottom">
+        <div class="christmas-lights" id="lights-bottom"></div>
+    </div>
 
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta7')">Enviar respuesta</button>
-            </form>
+    <div class="main-container">
+        <h2 style="text-align: center; color: #b30000; font-family: 'Mountains of Christmas', cursive; font-size: 2.5em; margin-bottom: 20px;">🍰 POSTRES 🍰</h2>
+        
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato1">
+                <h2>Tarta Lingüística de Francés e Inglés</h2>
+                <h4>Dulce mezcla internacional con vocabulario suave, expresiones deliciosas y un toque de pronunciación "aprobada".</h4>
+            </div>
 
+            <div id="div_p1" class="pregunta-container">
+                <h3>🎄 Pregunta 1 🎄</h3>
+                <p>Dulce mezcla internacional con vocabulario suave, expresiones deliciosas y un toque de pronunciación “aprobadita”.</p>
+                <form id="form_postres1">
+                    <div class="radio-option">
+                        <input type="radio" id="p1_r1" name="postre1_name" value="p1_r1">
+                        <label for="p1_r1">Té de Gestión de Recursos Humanos</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="p1_r2" name="postre1_name" value="p1_r2">
+                        <label for="p1_r2">Limonada de Sostenibilidad Aplicada</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="p1_r3" name="postre1_name" value="p1_r3">
+                        <label for="p1_r3">Tarta Lingüística de Francés e Inglés</label>
+                    </div>
+
+                    <div class="radio-option">
+                        <input type="radio" id="p1_r4" name="postre1_name" value="p1_r4">
+                        <label for="p1_r4">Flan de Itinerario Personal para la Empleabilidad</label>
+                    </div>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta8')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
-        <div id="div_p2" style="display: none">
-            <p>Postre 2</p>
-            <p>Suave, motivador y lleno de futuro… pero servido con la típica pregunta: “¿Y tú qué quieres hacer con tu vida?”
-            </p>
-            <form action="#" method="post" id="form_postres2">
-                <input type="radio" id="resp_postre5" name="entrante" value="resp_postre5">
-                <label for="resp_postre5">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
 
-                <input type="radio" id="resp_postre6" name="entrante" value="resp_postre6">
-                <label for="resp_postre6">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato2">
+                <h2>Flan de Itinerario Personal para la Empleabilidad</h2>
+                <h4>Suave, motivador y lleno de futuro...</h4>
+                <h4>pero servido con la típica pregunta: "¿Y tú qué quieres hacer con tu vida?"</h4>
+            </div>
 
-                <input type="radio" id="resp_postre7" name="entrante" value="resp_postre7">
-                <label for="resp_postre7">Tarta Lingüística de Francés e Inglés</label><br>
+            <div id="div_p2" class="pregunta-container" style="display: none">
+                <h3>🎄 Pregunta 2 🎄</h3>
+                <p>Suave, motivador y lleno de futuro… pero servido con la típica pregunta: “¿Y tú qué quieres hacer con tu vida?”</p>
+                <form id="form_postres2">
+                    <div class="radio-option">
+                        <input type="radio" id="p2_r1" name="postre2_name" value="p2_r1">
+                        <label for="p2_r1">Té de Gestión de Recursos Humanos</label>
+                    </div>
 
-                <input type="radio" id="resp_postre8" name="entrante" value="resp_postre8">
-                <label for="resp_postre8">Flan de Itinerario Personal para la Empleabilidad</label><br>
+                    <div class="radio-option">
+                        <input type="radio" id="p2_r2" name="postre2_name" value="p2_r2">
+                        <label for="p2_r2">Limonada de Sostenibilidad Aplicada</label>
+                    </div>
 
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta8')">Enviar respuesta</button>
-            </form>
+                    <div class="radio-option">
+                        <input type="radio" id="p2_r3" name="postre2_name" value="p2_r3">
+                        <label for="p2_r3">Tarta Lingüística de Francés e Inglés</label>
+                    </div>
 
+                    <div class="radio-option">
+                        <input type="radio" id="p2_r4" name="postre2_name" value="p2_r4">
+                        <label for="p2_r4">Flan de Itinerario Personal para la Empleabilidad</label>
+                    </div>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta9')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
-        <div id="div_continuar"  style="display: none">
-            <a href="bebidas.html" class="boton">Continuar</a>
+
+        <div id="div_continuar" class="pregunta-container" style="display: none">
+            <a href="bebidas.html" class="boton">Continuar a Bebidas</a>
         </div>
     </div>
-</body>
 
+    <div id="modalOverlay" class="modal-overlay">
+        <div id="modalContent" class="modal-content">
+            <div id="modalIcon" class="modal-icon"></div>
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p>
+            <button id="modalButton" onclick="cerrarModal()">Aceptar</button>
+        </div>
+    </div>
+
+    <!-- Audios para efectos de sonido -->
+    <audio id="audio-correcto" src="sounds/cascabeles.mp3" preload="auto"></audio>
+    <audio id="audio-incorrecto" src="sounds/hohoho.mp3" preload="auto"></audio>
+
+    <script>
+        if (localStorage.getItem("principales_superado") !== "yes") {
+            window.location.href = "principales.html";
+        }
+
+        // LÓGICA DE ESTRELLAS, NIEVE Y LUCES
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        const snowflakesContainer = document.getElementById('snowflakes');
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+            snowflakesContainer.appendChild(snowflake);
+        }
+
+        const lightsTopContainer = document.getElementById('lights-top');
+        const lightsBottomContainer = document.getElementById('lights-bottom');
+        for (let i = 0; i < 20; i++) {
+            const light1 = document.createElement('div');
+            light1.className = 'light';
+            lightsTopContainer.appendChild(light1);
+
+            const light2 = document.createElement('div');
+            light2.className = 'light';
+            lightsBottomContainer.appendChild(light2);
+        }
+
+        // LÓGICA DEL MODAL Y RESPUESTAS
+        let modalData = { platoId: null, div_desaparece: null, div_aparece: null };
+
+        function mostrarModal(tipo, titulo, mensaje, platoId = null, divDesaparece = null, divAparece = null) {
+            const overlay = document.getElementById('modalOverlay');
+            const content = document.getElementById('modalContent');
+            const icon = document.getElementById('modalIcon');
+            const titleEl = document.getElementById('modalTitle');
+            const messageEl = document.getElementById('modalMessage');
+
+            const sonidoCorrecto = document.getElementById('audio-correcto');
+            const sonidoIncorrecto = document.getElementById('audio-incorrecto');
+
+            // Reproducir sonido según tipo
+            if (tipo === 'correcto' || tipo === 'completado') {
+                sonidoCorrecto.currentTime = 0;
+                sonidoCorrecto.play();
+                modalData.platoId = platoId;
+                modalData.div_desaparece = divDesaparece;
+                modalData.div_aparece = divAparece;
+            } else {
+                sonidoIncorrecto.currentTime = 0;
+                sonidoIncorrecto.play();
+                modalData = { platoId: null, div_desaparece: null, div_aparece: null };
+            }
+
+            // Configurar modal
+            content.className = tipo === 'correcto' ? 'modal-content correcto' :
+                                tipo === 'completado' ? 'modal-content completado' : 'modal-content incorrecto';
+
+            icon.innerHTML = tipo === 'correcto' ? '🎄' :
+                             tipo === 'completado' ? '🎉' : '🎅';
+            titleEl.innerHTML = titulo;
+            messageEl.innerHTML = mensaje;
+
+            // Copos de nieve
+            const oldSnowflakes = content.querySelectorAll('.modal-snowflake');
+            oldSnowflakes.forEach(s => s.remove());
+            for (let i = 0; i < 8; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'modal-snowflake';
+                snowflake.innerHTML = '❄';
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDelay = Math.random() * 2 + 's';
+                content.appendChild(snowflake);
+            }
+
+            overlay.style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            const overlay = document.getElementById('modalOverlay');
+            if (modalData.platoId || modalData.div_desaparece) {
+                if (modalData.platoId) document.getElementById(modalData.platoId).classList.add('desbloqueado');
+                if (modalData.div_desaparece) document.getElementById(modalData.div_desaparece).style.display = "none";
+                if (modalData.div_aparece) document.getElementById(modalData.div_aparece).style.display = "block";
+                centrarPregunta(modalData.div_aparece);
+                modalData = { platoId: null, div_desaparece: null, div_aparece: null };
+            }
+            overlay.style.display = 'none';
+        }
+
+        function verificarRespuesta(pregunta) {
+            let nameAttribute = pregunta === 'pregunta8' ? 'postre1_name' : 'postre2_name';
+
+            const opciones = document.getElementsByName(nameAttribute);
+            let seleccionada = null;
+            for (let i = 0; i < opciones.length; i++) {
+                if (opciones[i].checked) { seleccionada = opciones[i].value; break; }
+            }
+
+            if (!seleccionada) {
+                mostrarModal('incorrecto', '¡Atención!', 'Por favor, selecciona una respuesta.');
+                return;
+            }
+
+            let platoId, div_desaparece, div_aparece, respuestaCorrecta, esUltima = false;
+            switch(pregunta) {
+                case 'pregunta8':
+                    respuestaCorrecta = 'p1_r3'; platoId='plato1'; div_desaparece='div_p1'; div_aparece='div_p2'; break;
+                case 'pregunta9':
+                    respuestaCorrecta = 'p2_r4'; platoId='plato2'; div_desaparece='div_p2'; div_aparece='div_continuar'; esUltima=true; break;
+            }
+
+            if (seleccionada === respuestaCorrecta) {
+                if (esUltima) {
+                    mostrarModal('completado', '🎊 ¡Felicidades! 🎊', '¡Has completado el menú de postres navideños!', platoId, div_desaparece, div_aparece);
+                    localStorage.setItem("postres_superado", "yes");
+                } else {
+                    mostrarModal('correcto', '¡Respuesta Correcta! 🎉', '¡Has desbloqueado un postre navideño!', platoId, div_desaparece, div_aparece);
+                }
+            } else {
+                mostrarModal('incorrecto', '¡Respuesta Incorrecta! ❌', 'Vuelve a intentarlo. ¡Tú puedes!');
+            }
+        }
+
+        function centrarPregunta(idPregunta) {
+            const elemento = document.getElementById(idPregunta);
+            if (elemento) {
+                const rect = elemento.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const elementoCentro = rect.top + scrollTop - (window.innerHeight / 2) + (rect.height / 2);
+
+                window.scrollTo({
+                    top: elementoCentro,
+                    behavior: 'smooth' // scroll suave
+                });
+            }
+        }
+
+        window.addEventListener('load', () => {
+            centrarPregunta('div_p1'); // Centra la primera pregunta al cargar
+        });
+    </script>
+</body>
 </html>

@@ -1,22 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Merienda</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+    <title>Menú Navideño Completo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/estilofin.css">
+    <link rel="stylesheet" href="./css/cookie.css">
 </head>
-
 <body>
-    <div>
-        <h1>Disfruta de la merienda</h1>
-        <img src="images/entrantes.png" alt="entrantes" id="img_entrantes">
-        <img src="images/principales.png" alt="principales" id="img_principales">
-        <img src="images/postres.png" alt="postres" id="img_postres">
-        <img src="images/bebidas.png" alt="bebidas" id="img_bebidas">
-    </div>
-</body>
+    <div class="stars" id="stars"></div>
+    <div class="snowflakes" id="snowflakes"></div>
 
+    <div class="garland-top">
+        <div class="christmas-lights" id="lights-top"></div>
+    </div>
+
+    <div class="garland-bottom">
+        <div class="christmas-lights" id="lights-bottom"></div>
+    </div>
+
+    <div class="main-container">
+        <h1 class="titulo-final">
+            🎉 ¡MENÚ NAVIDEÑO COMPLETO! 🎉
+        </h1>
+        <h2 class="subtitulo-final">
+            El banquete de conocimientos ha sido descifrado.
+        </h2>
+
+        <div class="menu-summary-container">
+            <div class="sello-aprobado">APROBADO<br>POR SANTA</div>
+
+            <img src="images/entrantes.png" alt="entrantes" class="menu-icon">
+            <h3 class="category-title">🍖 Entrantes 🍖</h3>
+            <ul class="menu-list">
+                <li>
+                    <strong>Ensalada de Protocolo con Etiqueta al Punto</strong>
+                    <p class="description">Perfectamente alineada, distancia entre hojas medida con regla.</p>
+                </li>
+                <li>
+                    <strong>Pincho de Organización de Eventos</strong>
+                    <p class="description">Planificado, calendarizado... y cancelado a última hora como todo buen evento.</p>
+                </li>
+                <li>
+                    <strong>Pincho de Contabilidad</strong>
+                    <p class="description">Crujiente mezcla de asientos y ese sabor a "¿Por qué no me cuadra un céntimo?".</p>
+                </li>
+            </ul>
+            
+            <hr class="menu-separator">
+
+            <img src="images/principales.png" alt="principales" class="menu-icon">
+            <h3 class="category-title">🍽️ Platos 🍽️Principales </h3>
+            <ul class="menu-list">
+                <li>
+                    <strong>Lasaña de Gestión Avanzada</strong>
+                    <p class="description">Capas infinitas de documentos y una salsa secreta llamada "¿Dónde guardé esto?".</p>
+                </li>
+                <li>
+                    <strong>Estofado de Gestión Financiera</strong>
+                    <p class="description">Cocción lenta servida con aroma a "este Excel pide clemencia".</p>
+                </li>
+                <li>
+                    <strong>Linguini de Lenguaje de Marcas</strong>
+                    <p class="description">Tiras de etiquetas ordenadas con un aliño de HTML que se rompe por un cierre mal puesto.</p>
+                </li>
+            </ul>
+            
+            <hr class="menu-separator">
+
+            <img src="images/postres.png" alt="postres" class="menu-icon">
+            <h3 class="category-title">🍰 Postres 🍰</h3>
+            <ul class="menu-list">
+                <li>
+                    <strong>Tarta Lingüística (FR/EN)</strong>
+                    <p class="description">Dulce mezcla internacional con un toque de pronunciación "aprobadita".</p>
+                </li>
+                <li>
+                    <strong>Plan de Itinerario Personal</strong>
+                    <p class="description">Motivador y servido con la típica pregunta: "¿Y tú qué quieres hacer con tu vida?".</p>
+                </li>
+            </ul>
+
+            <hr class="menu-separator">
+
+            <img src="images/bebidas.png" alt="bebidas" class="menu-icon">
+            <h3 class="category-title">🍹 Bebidas 🍹</h3>
+            <ul class="menu-list">
+                <li>
+                    <strong>Café de Digitalización</strong>
+                    <p class="description">Intenso, en taza con QR que no funciona. Ideal si el WiFi colabora.</p>
+                </li>
+                <li>
+                    <strong>Limonada de Sostenibilidad</strong>
+                    <p class="description">Fresca, huella de carbono cero. Para beber despacio y reciclar.</p>
+                </li>
+                <li>
+                    <strong>Malteada Multiplataforma</strong>
+                    <p class="description">Cambia de sabor según el sistema operativo donde la bebas.</p>
+                </li>
+                <li>
+                    <strong>Té de Recursos Humanos</strong>
+                    <p class="description">Cálido. Viene con una galleta en forma de "evaluación del desempeño".</p>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="clicker-container">
+            <button id="cookie-btn">🍰</button>
+            
+            <div id="score">0</div>
+        </div>        
+        <a href="index.html" class="boton btn-inicio">Volver al Inicio</a>
+    </div>
+
+    <script>
+        if (localStorage.getItem("bebidas_superado") !== "yes") {
+            window.location.href = "bebidas.html";
+        }
+
+        // Estrellas
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+        // Nieve
+        const snowflakesContainer = document.getElementById('snowflakes');
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+            snowflakesContainer.appendChild(snowflake);
+        }
+        // Luces
+        const lightsTopContainer = document.getElementById('lights-top');
+        const lightsBottomContainer = document.getElementById('lights-bottom');
+        for (let i = 0; i < 20; i++) {
+            const light1 = document.createElement('div');
+            light1.className = 'light';
+            lightsTopContainer.appendChild(light1);
+            const light2 = document.createElement('div');
+            light2.className = 'light';
+            lightsBottomContainer.appendChild(light2);
+        }
+
+        // --- LÓGICA COOKIE CLICKER MINIMALISTA ---
+        let score = 0;
+        const scoreEl = document.getElementById('score');
+        const cookieBtn = document.getElementById('cookie-btn');
+
+        cookieBtn.addEventListener('click', () => {
+            score += 1;
+            scoreEl.textContent = score;
+            
+            // Opcional: Pequeña animación extra en el texto al subir puntos
+            scoreEl.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                scoreEl.style.transform = "scale(1)";
+            }, 100);
+        });
+    </script>
+</body>
 </html>

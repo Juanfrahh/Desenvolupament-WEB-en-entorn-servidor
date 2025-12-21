@@ -1,107 +1,331 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bebidas</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-
 <body>
-    <div>
-        <img src="images/bebidas.png" alt="bebidas" class="imagen_difuminada" id="img_bebidas">
-        <div id="div_p1">
-            <p>Bebida 1</p>
-            <p>Intenso, moderno y servido en una taza con QR que nadie consigue escanear.
-             Ideal para despertarte… si el WiFi colabora.
-            </p>
-            <form action="#" method="post" id="form_bebida1">
-                <input type="radio" id="resp_bebida1" name="entrante" value="resp_bebida1">
-                <label for="resp_bebida1">Té de Gestión de Recursos Humanos</label><br>
+    <!-- Audios para efectos de sonido -->
+    <audio id="audio-correcto" src="sounds/cascabeles.mp3" preload="auto"></audio>
+    <audio id="audio-incorrecto" src="sounds/hohoho.mp3" preload="auto"></audio>
 
-                <input type="radio" id="resp_bebida2" name="entrante" value="resp_bebida2">
-                <label for="resp_bebida2">Malteada de Desarrollo de Aplicaciones Multiplataforma</label><br>
+    <div class="stars" id="stars"></div>
+    <div class="snowflakes" id="snowflakes"></div>
 
-                <input type="radio" id="resp_bebida3" name="entrante" value="resp_bebida3">
-                <label for="resp_bebida3">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+    <div class="garland-top">
+        <div class="christmas-lights" id="lights-top"></div>
+    </div>
+    <div class="garland-bottom">
+        <div class="christmas-lights" id="lights-bottom"></div>
+    </div>
 
-                <input type="radio" id="resp_bebida4" name="entrante" value="resp_bebida4">
-                <label for="resp_bebida4">Café de Digitalización Aplicada al Sistema Productivo</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta9')">Enviar respuesta</button>
-            </form>
-
+    <div class="main-container">
+        <h2 style="text-align: center; color: #b30000; font-family: 'Mountains of Christmas', cursive; font-size: 2.5em; margin-bottom: 20px;">🍹 BEBIDAS 🍹</h2>
+        
+        <!-- Bebida 1 -->
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato1">
+                <h2>Café de Digitalización Aplicada al Sistema Productivo</h2>
+                <h4>Intenso, moderno y servido en una taza con QR que nadie consigue escanear.</h4>
+                <h4>Ideal para despertarte... si el WiFi colabora.</h4>
+            </div>
+            <div id="div_p1" class="pregunta-container">
+                <h3>🎄 Pregunta 1 🎄</h3>
+                <p>Intenso, moderno y servido en una taza con QR que nadie consigue escanear. Ideal para despertarte... si el WiFi colabora.</p>
+                <form id="form_bebidas1">
+                    <div class="radio-option">
+                        <input type="radio" id="b1_r1" name="bebida1_name" value="b1_r1">
+                        <label for="b1_r1">Té de Gestión de Recursos Humanos</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b1_r2" name="bebida1_name" value="b1_r2">
+                        <label for="b1_r2">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b1_r3" name="bebida1_name" value="b1_r3">
+                        <label for="b1_r3">Café de Digitalización Aplicada al Sistema Productivo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b1_r4" name="bebida1_name" value="b1_r4">
+                        <label for="b1_r4">Malteada de Desarrollo de Aplicaciones Multiplataforma</label>
+                    </div>
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta4')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
-        <div id="div_p2" style="display: none">
-            <p>Bebida 2</p>
-            <p>Fresca, con huella de carbono cero y sabor eco-friendly.
-                Perfecta para beber despacio y reciclar con responsabilidad.
-            </p>
-            <form action="#" method="post" id="form_bebida2">
-                <input type="radio" id="resp_bebida5" name="entrante" value="resp_bebida5">
-                <label for="resp_bebida5">Té de Gestión de Recursos Humanos</label><br>
 
-                <input type="radio" id="resp_bebida6" name="entrante" value="resp_bebida6">
-                <label for="resp_bebida6">Malteada de Desarrollo de Aplicaciones Multiplataforma</label><br>
-
-                <input type="radio" id="resp_bebida7" name="entrante" value="resp_bebida7">
-                <label for="resp_bebida7">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
-
-                <input type="radio" id="resp_bebida8" name="entrante" value="resp_bebida8">
-                <label for="resp_bebida8">Café de Digitalización Aplicada al Sistema Productivo</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta10')">Enviar respuesta</button>
-            </form>
-
+        <!-- Bebida 2 -->
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato2">
+                <h2>Limonada de Sostenibilidad Aplicada al Sistema Productivo</h2>
+                <h4>Fresca, con huella de carbono cero y sabor eco-friendly.</h4>
+                <h4>Perfecta para beber despacio y reciclar con responsabilidad.</h4>
+            </div>
+            <div id="div_p2" class="pregunta-container" style="display: none">
+                <h3>🎄 Pregunta 2 🎄</h3>
+                <p>Fresca, con huella de carbono cero y sabor eco-friendly. Perfecta para beber despacio y reciclar con responsabilidad.</p>
+                <form id="form_bebidas2">
+                    <div class="radio-option">
+                        <input type="radio" id="b2_r1" name="bebida2_name" value="b2_r1">
+                        <label for="b2_r1">Té de Gestión de Recursos Humanos</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b2_r2" name="bebida2_name" value="b2_r2">
+                        <label for="b2_r2">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b2_r3" name="bebida2_name" value="b2_r3">
+                        <label for="b2_r3">Café de Digitalización Aplicada al Sistema Productivo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b2_r4" name="bebida2_name" value="b2_r4">
+                        <label for="b2_r4">Malteada de Desarrollo de Aplicaciones Multiplataforma</label>
+                    </div>
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta5')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
-        <div id="div_p3" style="display: none">
-            <p>Bebida 3</p>
-            <p>Batido adaptable a cualquier vaso, copa o recipiente.
-               Cambia de sabor según el sistema operativo donde la bebas.
-            </p>
-            <form action="#" method="post" id="form_bebida3">
-                <input type="radio" id="resp_bebida9" name="entrante" value="resp_bebida9">
-                <label for="resp_bebida9">Té de Gestión de Recursos Humanos</label><br>
 
-                <input type="radio" id="resp_bebida10" name="entrante" value="resp_bebida10">
-                <label for="resp_bebida10">Malteada de Desarrollo de Aplicaciones Multiplataformao</label><br>
-
-                <input type="radio" id="resp_bebida11" name="entrante" value="resp_bebida11">
-                <label for="resp_bebida11">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
-
-                <input type="radio" id="resp_bebida12" name="entrante" value="resp_bebida12">
-                <label for="resp_bebida12">Café de Digitalización Aplicada al Sistema Productivo</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta11')">Enviar respuesta</button>
-            </form>
+        <!-- Bebida 3 -->
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato3">
+                <h2>Malteada de Desarrollo de Aplicaciones Multiplataforma</h2>
+                <h4>Batido adaptable a cualquier vaso, copa o recipiente.</h4>
+                <h4>Cambia de sabor según el sistema operativo donde la bebas.</h4>
+            </div>
+            <div id="div_p3" class="pregunta-container" style="display: none">
+                <h3>🎄 Pregunta 3 🎄</h3>
+                <p>Batido adaptable a cualquier vaso, copa o recipiente. Cambia de sabor según el sistema operativo donde la bebas.</p>
+                <form id="form_bebidas3">
+                    <div class="radio-option">
+                        <input type="radio" id="b3_r1" name="bebida3_name" value="b3_r1">
+                        <label for="b3_r1">Té de Gestión de Recursos Humanos</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b3_r2" name="bebida3_name" value="b3_r2">
+                        <label for="b3_r2">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b3_r4" name="bebida3_name" value="b3_r4">
+                        <label for="b3_r4">Café de Digitalización Aplicada al Sistema Productivo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b3_r3" name="bebida3_name" value="b3_r3">
+                        <label for="b3_r3">Malteada de Desarrollo de Aplicaciones Multiplataforma</label>
+                    </div>
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta6')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
-        <div id="div_p4" style="display: none">
-            <p>Bebida 4</p>
-            <p>Suave, cálido y perfectamente infundido.
-                Viene con una galleta en forma de “evaluación del desempeño”.
-            </p>
-            <form action="#" method="post" id="form_bebida4">
-                <input type="radio" id="resp_bebida9" name="entrante" value="resp_bebida9">
-                <label for="resp_bebida9">Té de Gestión de Recursos Humanos</label><br>
 
-                <input type="radio" id="resp_bebida10" name="entrante" value="resp_bebida10">
-                <label for="resp_bebida10">Malteada de Desarrollo de Aplicaciones Multiplataformao</label><br>
-
-                <input type="radio" id="resp_bebida11" name="entrante" value="resp_bebida11">
-                <label for="resp_bebida11">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
-
-                <input type="radio" id="resp_bebida12" name="entrante" value="resp_bebida12">
-                <label for="resp_bebida12">Café de Digitalización Aplicada al Sistema Productivo</label><br>
-
-                <button type="reset" class="boton" onclick="verificarRespuesta('pregunta12')">Enviar respuesta</button>
-            </form>
+        <!-- Bebida 4 -->
+        <div class="plato-seccion">
+            <div class="plato-item" id="plato4">
+                <h2>Té de Gestión de Recursos Humanos</h2>
+                <h4>Suave, cálido y perfectamente infundido.</h4>
+                <h4>Viene con una galleta en forma de "evaluación del desempeño".</h4>
+            </div>
+            <div id="div_p4" class="pregunta-container" style="display: none">
+                <h3>🎄 Pregunta 4 🎄</h3>
+                <p>Suave, cálido y perfectamente infundido. Viene con una galleta en forma de "evaluación del desempeño".</p>
+                <form id="form_bebidas4">
+                    <div class="radio-option">
+                        <input type="radio" id="b4_r1" name="bebida4_name" value="b4_r1">
+                        <label for="b4_r1">Té de Gestión de Recursos Humanos</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b4_r2" name="bebida4_name" value="b4_r2">
+                        <label for="b4_r2">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b4_r3" name="bebida4_name" value="b4_r3">
+                        <label for="b4_r3">Café de Digitalización Aplicada al Sistema Productivo</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="b4_r4" name="bebida4_name" value="b4_r4">
+                        <label for="b4_r4">Malteada de Desarrollo de Aplicaciones Multiplataforma</label>
+                    </div>
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta7')">Enviar respuesta</button>
+                </form>
+            </div>
         </div>
-        <div id="div_continuar"  style="display: none">
-            <a href="fin.html" class="boton">Continuar</a>
+
+        <div id="div_continuar" class="pregunta-container" style="display: none">
+            <a href="fin.html" class="boton">Continuar a Fin</a>
         </div>
     </div>
-</body>
 
+    <!-- Modal -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div id="modalContent" class="modal-content">
+            <div id="modalIcon" class="modal-icon"></div>
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p>
+            <button id="modalButton" onclick="cerrarModal()">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        if (localStorage.getItem("postres_superado") !== "yes") {
+            window.location.href = "postres.html";
+        }
+
+        // ESTRELLAS
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // NIEVE
+        const snowflakesContainer = document.getElementById('snowflakes');
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+            snowflakesContainer.appendChild(snowflake);
+        }
+
+        // LUCES
+        const lightsTopContainer = document.getElementById('lights-top');
+        const lightsBottomContainer = document.getElementById('lights-bottom');
+        for (let i = 0; i < 20; i++) {
+            const light1 = document.createElement('div');
+            light1.className = 'light';
+            lightsTopContainer.appendChild(light1);
+            const light2 = document.createElement('div');
+            light2.className = 'light';
+            lightsBottomContainer.appendChild(light2);
+        }
+
+        // Modal y sonidos
+        let modalData = { platoId: null, div_desaparece: null, div_aparece: null };
+
+        function mostrarModal(tipo, titulo, mensaje, platoId = null, divDesaparece = null, divAparece = null) {
+            const overlay = document.getElementById('modalOverlay');
+            const content = document.getElementById('modalContent');
+            const icon = document.getElementById('modalIcon');
+            const titleEl = document.getElementById('modalTitle');
+            const messageEl = document.getElementById('modalMessage');
+
+            const sonidoCorrecto = document.getElementById('audio-correcto');
+            const sonidoIncorrecto = document.getElementById('audio-incorrecto');
+
+            if (tipo === 'correcto' || tipo === 'completado') {
+                sonidoCorrecto.currentTime = 0;
+                sonidoCorrecto.play();
+                modalData.platoId = platoId;
+                modalData.div_desaparece = divDesaparece;
+                modalData.div_aparece = divAparece;
+            } else {
+                sonidoIncorrecto.currentTime = 0;
+                sonidoIncorrecto.play();
+                modalData = { platoId: null, div_desaparece: null, div_aparece: null };
+            }
+
+            content.className = tipo === 'correcto' ? 'modal-content correcto' :
+                                tipo === 'completado' ? 'modal-content completado' : 'modal-content incorrecto';
+
+            icon.innerHTML = tipo === 'correcto' ? '🎄' :
+                             tipo === 'completado' ? '🎉' : '🎅';
+
+            titleEl.innerHTML = titulo;
+            messageEl.innerHTML = mensaje;
+
+            const oldSnowflakes = content.querySelectorAll('.modal-snowflake');
+            oldSnowflakes.forEach(s => s.remove());
+            for (let i = 0; i < 8; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'modal-snowflake';
+                snowflake.innerHTML = '❄';
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDelay = Math.random() * 2 + 's';
+                content.appendChild(snowflake);
+            }
+
+            overlay.style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            const overlay = document.getElementById('modalOverlay');
+            if (modalData.platoId || modalData.div_desaparece) {
+                if (modalData.platoId) document.getElementById(modalData.platoId).classList.add('desbloqueado');
+                if (modalData.div_desaparece) document.getElementById(modalData.div_desaparece).style.display = "none";
+                if (modalData.div_aparece) document.getElementById(modalData.div_aparece).style.display = "block";
+                centrarPregunta(modalData.div_aparece);
+                modalData = { platoId: null, div_desaparece: null, div_aparece: null };
+            }
+            overlay.style.display = 'none';
+        }
+
+        function verificarRespuesta(pregunta) {
+            let nameAttribute;
+            if (pregunta === 'pregunta4') nameAttribute = 'bebida1_name';
+            else if (pregunta === 'pregunta5') nameAttribute = 'bebida2_name';
+            else if (pregunta === 'pregunta6') nameAttribute = 'bebida3_name';
+            else if (pregunta === 'pregunta7') nameAttribute = 'bebida4_name';
+
+            const opciones = document.getElementsByName(nameAttribute);
+            let seleccionada = null;
+            for (let i = 0; i < opciones.length; i++) {
+                if (opciones[i].checked) { seleccionada = opciones[i].value; break; }
+            }
+            if (seleccionada === null) {
+                mostrarModal('incorrecto', '¡Atención!', 'Por favor, selecciona una respuesta.');
+                return;
+            }
+
+            let platoId, div_desaparece, div_aparece, respuestaCorrecta, esUltima = false;
+
+            switch (pregunta) {
+                case "pregunta4": respuestaCorrecta="b1_r3"; platoId="plato1"; div_desaparece="div_p1"; div_aparece="div_p2"; break;
+                case "pregunta5": respuestaCorrecta="b2_r2"; platoId="plato2"; div_desaparece="div_p2"; div_aparece="div_p3"; break;
+                case "pregunta6": respuestaCorrecta="b3_r3"; platoId="plato3"; div_desaparece="div_p3"; div_aparece="div_p4"; break;
+                case "pregunta7": respuestaCorrecta="b4_r1"; platoId="plato4"; div_desaparece="div_p4"; div_aparece="div_continuar"; esUltima=true; break;
+            }
+
+            if (seleccionada === respuestaCorrecta) {
+                if (esUltima) {
+                    mostrarModal('completado', '🎊 ¡Felicidades! 🎊', '¡Has completado el menú de bebidas navideñas!', platoId, div_desaparece, div_aparece);
+                    localStorage.setItem("bebidas_superado", "yes");
+                } else {
+                    mostrarModal('correcto', '¡Respuesta Correcta! 🎉', '¡Has desbloqueado una bebida navideña!', platoId, div_desaparece, div_aparece);
+                }
+            } else {
+                mostrarModal('incorrecto', '¡Respuesta Incorrecta! ❌', 'Vuelve a intentarlo. ¡Tú puedes!');
+            }
+
+        }
+
+        function centrarPregunta(idPregunta) {
+            const elemento = document.getElementById(idPregunta);
+            if (elemento) {
+                const rect = elemento.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const elementoCentro = rect.top + scrollTop - (window.innerHeight / 2) + (rect.height / 2);
+
+                window.scrollTo({
+                    top: elementoCentro,
+                    behavior: 'smooth' // scroll suave
+                });
+            }
+        }
+
+        window.addEventListener('load', () => {
+            centrarPregunta('div_p1'); // Centra la primera pregunta al cargar
+        });
+    </script>
+</body>
 </html>

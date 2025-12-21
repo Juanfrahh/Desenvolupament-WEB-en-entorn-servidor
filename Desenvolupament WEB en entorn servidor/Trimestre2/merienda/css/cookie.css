@@ -1,0 +1,50 @@
+/* Estilos Minimalistas del Clicker */
+        .clicker-container {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espacio entre galleta y número */
+        }
+
+        /* El Score (Solo el número) */
+        #score {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 4rem; /* Tamaño grande */
+            font-weight: bold;
+            color: #ffd700; /* Dorado para destacar sobre el fondo oscuro */
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 2px 2px 4px rgba(0,0,0,0.8);
+            line-height: 1;
+        }
+
+        /* La Galleta (Botón Emoji) */
+        #cookie-btn {
+            background: none;
+            border: none;
+            font-size: 8rem; /* Tamaño gigante del emoji */
+            cursor: pointer;
+            user-select: none; /* Evita que se seleccione el emoji al hacer click rápido */
+            transition: transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote suave */
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            padding: 0;
+            margin: 0;
+            outline: none; /* Quita el borde azul al hacer click */
+        }
+
+        /* Animación al hacer click */
+        #cookie-btn:active {
+            transform: scale(0.90) rotate(5deg);
+        }
+
+        /* Efecto hover sutil */
+        #cookie-btn:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+        }
+
+        #cookie-btn:focus {
+            outline: none;
+            box-shadow: none;
+            background: none;
+        }
