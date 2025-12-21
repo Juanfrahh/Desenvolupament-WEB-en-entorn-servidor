@@ -10,7 +10,6 @@ class Controller
 		require __DIR__ . '/templates/inicio.php';
 	}
 	
-	
 	public function listar() {
 		$m = new Model(Config::$mvc_bd_nombre,
 					   Config::$mvc_bd_usuario,
