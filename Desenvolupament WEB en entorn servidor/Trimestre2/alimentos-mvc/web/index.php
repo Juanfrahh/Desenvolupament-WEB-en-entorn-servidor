@@ -28,7 +28,6 @@ else {
 }
 
 $controlador = $map[$ruta];
-// Ejecucion del controlador asociado a la ruta
 if (method_exists($controlador['controller'], $controlador['action'])) {
 	call_user_func(array(new $controlador['controller'], $controlador['action']));
 }
