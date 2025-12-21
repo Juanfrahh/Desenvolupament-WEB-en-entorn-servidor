@@ -24,7 +24,6 @@ if (isset($_GET['ctl'])) {
 	}
 }
 else {
-	// ruta por defecto, por si la query string llega vacía
 	$ruta = 'inicio';
 }
 
