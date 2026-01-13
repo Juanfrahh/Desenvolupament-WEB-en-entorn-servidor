@@ -442,7 +442,7 @@ textarea {
         overflow: hidden;
     }
 
-    .preview iframe {
+.preview iframe {
         width: 1920px;
         height: 1080px;
         transform: scale(0.2);
