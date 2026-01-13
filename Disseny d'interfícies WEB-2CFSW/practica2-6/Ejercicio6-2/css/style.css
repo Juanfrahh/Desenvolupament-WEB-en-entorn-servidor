@@ -438,7 +438,9 @@ textarea {
 #contenido9 .previews{
     width: 100%;
 }
-
+#contenido9 .previews{
+    width: 100%;
+}
 /*----------------------------------TABLET--------------------------------*/
 @media (min-width: 750px) {
     .flecha{
