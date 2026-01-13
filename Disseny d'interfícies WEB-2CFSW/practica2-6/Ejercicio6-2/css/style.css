@@ -435,20 +435,7 @@ textarea {
     border-radius: 50%;
     font-size: 150px;
 }
-#contenido9 .preview {
 
-        width: 400px;
-        height: 100vh;
-        border: 1px solid #ccc;
-        overflow: hidden;
-    }
-
-#contenido9 .preview iframe {
-        width: 1920px;
-        height: 100vh;
-        transform: scale(0.2);
-        transform-origin: top left;
-    }
 /*----------------------------------TABLET--------------------------------*/
 @media (min-width: 750px) {
     .flecha{
