@@ -9,5 +9,6 @@
             }
         ]
     },
-    "livePreview.defaultPreviewPath": "/Disseny d'interfícies WEB-2CFSW/practica2-3/Ejercicio2-3-3/index.html"
+    "livePreview.defaultPreviewPath": "/Disseny d'interfícies WEB-2CFSW/practica2-3/Ejercicio2-3-3/index.html",
+    "liveServer.settings.port": 5501
 }
