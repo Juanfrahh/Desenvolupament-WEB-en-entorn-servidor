@@ -766,49 +766,17 @@ textarea {
 
 /*---------------------------------------Contenido9---------------------------------------*/
 
-    #contenido9{
-    background-color: var(--color-fondo-principal);
-    font-family: var(--fuente-principal);
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-#contenido9 h2{
-    font-size: 3.8vh;
-}
-#contenido9 p{
-    padding: 1vh 0;
-    font-size: 2.5vh;
-}
-#contenido9 .icono-circulo {
-    margin: 0 auto;
-    width: 300px;
-    height: 200px;
-    color: var(--color-secundario);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 150px;
-}
-
-.previews {
-        gap: 3vh;
+   #contenido9 h2 {
+        font-size: 4.5vh;
+        margin-bottom: 5vh;
     }
 
     .preview {
         width: 95%;
-        height: 80vh;
-        border-radius: 15px;
+        height: 70vh;
+        border-radius: 12px;
     }
-
-    .preview:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-    }
+}
 
 /*---------------------------------------FOOTER-------------------------------------------*/
     footer p{
