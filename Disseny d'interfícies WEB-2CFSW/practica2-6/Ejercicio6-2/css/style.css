@@ -744,21 +744,34 @@ textarea {
 
 /*---------------------------------------Contenido9---------------------------------------*/
 
-    #contenido9 {
-        height: 90vh;
-    }
-    #contenido9 h2{
-        font-size: 3.2vh;
-    }
-    #contenido9 p{
-        width: 80%;
-        font-size: 2vh;
-        padding: 0;
-    }
-    #contenido9 .icono-circulo {
-        font-size: 200px;
-        height: 400px;
-    }
+    #contenido9{
+    background-color: var(--color-fondo-principal);
+    font-family: var(--fuente-principal);
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#contenido9 h2{
+    font-size: 3.8vh;
+}
+#contenido9 p{
+    padding: 1vh 0;
+    font-size: 2.5vh;
+}
+#contenido9 .icono-circulo {
+    margin: 0 auto;
+    width: 300px;
+    height: 200px;
+    color: var(--color-secundario);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 150px;
+}
 
 /*---------------------------------------FOOTER-------------------------------------------*/
     footer p{
