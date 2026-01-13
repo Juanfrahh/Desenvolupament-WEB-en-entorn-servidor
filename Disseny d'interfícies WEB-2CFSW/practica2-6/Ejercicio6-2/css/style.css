@@ -407,7 +407,6 @@ textarea {
 }
 /*-----------------------------------------WEBS--------------------------------------------*/
 
-/* MÓVIL */
 #contenido9 {
     background-color: var(--color-fondo-principal);
     font-family: var(--fuente-principal);
@@ -462,6 +461,9 @@ textarea {
     height: 100%;
     border: none;
     display: block;
+    pointer-events: none;
+    transform: scale(0.8);
+    transform-origin: top left;
 }
 /*----------------------------------TABLET--------------------------------*/
 @media (min-width: 750px) {
