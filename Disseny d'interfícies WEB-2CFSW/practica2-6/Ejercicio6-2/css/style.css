@@ -437,7 +437,7 @@ textarea {
 }
 #contenido9 .preview {
         width: 400px;
-        height: 700px;
+        height: 100vh;
         border: 1px solid #ccc;
         overflow: hidden;
     }
