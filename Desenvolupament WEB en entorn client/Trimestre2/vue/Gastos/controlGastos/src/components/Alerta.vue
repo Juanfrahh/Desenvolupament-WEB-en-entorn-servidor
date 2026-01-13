@@ -4,12 +4,8 @@
   </div>
 </template>
 
-<script setup>
-    
-</script>
-
 <style scoped>
-.alerta {
+.alerta{
   padding: 1rem;
   font-weight: 900;
   text-transform: uppercase;

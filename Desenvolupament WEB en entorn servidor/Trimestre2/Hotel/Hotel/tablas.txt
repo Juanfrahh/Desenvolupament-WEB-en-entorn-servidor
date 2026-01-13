@@ -1,0 +1,21 @@
+CREATE TABLE habitaciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(50),
+    precio DECIMAL(6,2),
+    descripcion TEXT
+);
+
+INSERT INTO habitaciones (tipo, precio, descripcion) VALUES
+('Individual', 50, 'Habitación individual'),
+('Doble', 80, 'Habitación doble'),
+('Suite', 150, 'Suite de lujo');
+
+Tabla reservas
+CREATE TABLE reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_cliente VARCHAR(100),
+    habitacion_id INT,
+    fecha_entrada DATE,
+    fecha_salida DATE,
+    FOREIGN KEY (habitacion_id) REFERENCES habitaciones(id)
+);

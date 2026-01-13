@@ -1,145 +1,250 @@
+<script setup>
+import { ref } from 'vue'
+import Alerta from './Alerta.vue'
+import cerrarModal from '../assets/cerrar.svg'
+
+const error = ref('')
+
+const props = defineProps({
+  modal: {
+    type: Object,
+    required: true
+  },
+  nombre: {
+    type: String,
+    required: true
+  },
+  cantidad: {
+    type: [String, Number],
+    required: true
+  },
+  categoria: {
+    type: String,
+    required: true
+  },
+  disponible: {
+    type: Number,
+    required: true
+  },
+  id: {
+    type: [String, null],
+    required: true
+  }
+})
+
+const emit = defineEmits([
+  'ocultar-modal', 
+  'guardar-gasto', 
+  'update:nombre', 
+  'update:cantidad', 
+  'update:categoria',
+  'eliminar-gasto'
+])
+
+const agregarGasto = () => {
+  if (!props.nombre || !props.cantidad || !props.categoria) {
+    error.value = 'TODOS LOS CAMPOS SON OBLIGATORIOS'
+    setTimeout(() => {
+      error.value = ''
+    }, 2000)
+    return
+  }
+
+  if (props.cantidad < 1) {
+    error.value = 'LA CANTIDAD DEBE SER SUPERIOR A 0'
+    setTimeout(() => {
+      error.value = ''
+    }, 2000)
+    return
+  }
+
+  if (props.id) {
+    // Editando
+    const cantidadAntigua = props.cantidad
+    if (props.cantidad > cantidadAntigua + props.disponible) {
+      error.value = 'HAS EXCEDIDO EL PRESUPUESTO'
+      setTimeout(() => {
+        error.value = ''
+      }, 2000)
+      return
+    }
+  } else {
+    // Añadiendo
+    if (props.cantidad > props.disponible) {
+      error.value = 'HAS EXCEDIDO EL PRESUPUESTO'
+      setTimeout(() => {
+        error.value = ''
+      }, 2000)
+      return
+    }
+  }
+
+  emit('guardar-gasto')
+}
+</script>
+
 <template>
-  <div class="overlay">
-    <div class="modal">
-      <h2>AÑADIR GASTO</h2>
+  <div class="modal">
+    <div class="cerrar-modal">
+      <img 
+        :src="cerrarModal"
+        alt="cerrar modal"
+        @click="$emit('ocultar-modal')"
+      />
+    </div>
 
-      <div v-if="error" class="alerta">
-        {{ error }}
-      </div>
+    <div 
+      class="contenedor-formulario"
+      :class="[modal.animar ? 'animar' : 'cerrar']"
+    >
+      <form class="nuevo-gasto" @submit.prevent="agregarGasto">
+        <legend>{{ id ? 'Editar Gasto' : 'Añadir Gasto' }}</legend>
 
-      <form @submit.prevent="submitGasto">
+        <Alerta v-if="error">{{ error }}</Alerta>
+
         <div class="campo">
-          <label>Nombre gasto</label>
+          <label for="nombre">Nombre Gasto</label>
           <input
+            id="nombre"
             type="text"
-            placeholder="Ej: Comida"
-            v-model="nombre"
+            placeholder="Nombre del gasto"
+            :value="nombre"
+            @input="$emit('update:nombre', $event.target.value)"
           />
         </div>
 
         <div class="campo">
-          <label>Cantidad</label>
+          <label for="cantidad">Cantidad</label>
           <input
+            id="cantidad"
             type="number"
-            placeholder="Ej: 50"
-            v-model="cantidad"
+            placeholder="Cantidad del gasto: ej. 300"
+            :value="cantidad"
+            @input="$emit('update:cantidad', +$event.target.value)"
           />
         </div>
 
-        <input type="submit" value="Añadir gasto" />
+        <div class="campo">
+          <label for="categoria">Categoría</label>
+          <select
+            id="categoria"
+            :value="categoria"
+            @input="$emit('update:categoria', $event.target.value)"
+          >
+            <option value="">-- Seleccione --</option>
+            <option value="ahorro">Ahorro</option>
+            <option value="comida">Cesta compra</option>
+            <option value="casa">Casa</option>
+            <option value="ocio">Ocio</option>
+            <option value="salud">Salud</option>
+            <option value="suscripciones">Suscripciones</option>
+            <option value="gastos">Gastos Varios</option>
+          </select>
+        </div>
+
+        <input 
+          type="submit" 
+          :value="id ? 'Guardar Cambios' : 'Añadir Gasto'"
+        />
       </form>
+
+      <button
+        v-if="id"
+        type="button"
+        class="btn-eliminar"
+        @click="$emit('eliminar-gasto')"
+      >
+        Eliminar Gasto
+      </button>
     </div>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import { defineEmits } from 'vue'
-
-const emit = defineEmits(['guardar-gasto', 'ocultar-modal'])
-
-const nombre = ref('')
-const cantidad = ref('')
-const error = ref('')
-let timeoutId = null // 🔥 para limpiar el timeout si se repite
-
-const submitGasto = () => {
-  // Limpiar cualquier timeout anterior
-  if (timeoutId) clearTimeout(timeoutId)
-  error.value = ''
-
-  if (nombre.value.trim() === '' || cantidad.value === '') {
-    error.value = 'TODOS LOS CAMPOS SON OBLIGATORIOS'
-    // Desaparece tras 3 segundos
-    timeoutId = setTimeout(() => { error.value = '' }, 3000)
-    return
-  }
-
-  if (Number(cantidad.value) <= 0) {
-    error.value = 'LA CANTIDAD DEBE SER SUPERIOR A 0'
-    timeoutId = setTimeout(() => { error.value = '' }, 3000)
-    return
-  }
-
-  emit('guardar-gasto', {
-    nombre: nombre.value,
-    cantidad: Number(cantidad.value)
-  })
-
-  nombre.value = ''
-  cantidad.value = ''
-}
-</script>
-
-
 <style scoped>
-.overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
 .modal {
-  padding: 3rem;
-  border-radius: 1.2rem;
-  width: 90%;
-  max-width: 70rem;
+  position: absolute;
+  background-color: rgb(0 0 0 / 0.9);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.modal h2 {
-  text-align: center;
-  color: var(--blanco);
-  margin-bottom: 2rem;
+.cerrar-modal {
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
 }
 
-.alerta {
-  background-color: var(--blanco);
-  color: #B91C1C;
-  font-weight: 900;
-  text-transform: uppercase;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  border-left: 0.5rem solid #B91C1C;
-  text-align: center;
-}
-
-.campo {
-  margin-bottom: 2rem;
-}
-
-.campo label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  color: var(--blanco);
-}
-
-.campo input {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.6rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--gris);
-}
-
-input[type="submit"] {
-  width: 100%;
-  padding: 1.2rem;
-  font-size: 1.8rem;
-  background-color: var(--azul);
-  color: var(--blanco);
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 900;
+.cerrar-modal img {
+  width: 3rem;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
-  background-color: #1048A4;
+.contenedor-formulario {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+  opacity: 0;
 }
 
+.contenedor-formulario.animar {
+  opacity: 1;
+}
+
+.contenedor-formulario.cerrar {
+  opacity: 0;
+}
+
+.nuevo-gasto {
+  margin: 10rem auto 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.nuevo-gasto legend {
+  text-align: center;
+  color: var(--blanco);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.campo {
+  display: grid;
+  gap: 2rem;
+}
+
+.nuevo-gasto input,
+.nuevo-gasto select {
+  background-color: var(--gris-claro);
+  border-radius: 1rem;
+  padding: 1rem;
+  border: none;
+  font-size: 2.2rem;
+}
+
+.nuevo-gasto label {
+  color: var(--blanco);
+  font-size: 3rem;
+}
+
+.nuevo-gasto input[type="submit"] {
+  background-color: var(--azul);
+  color: var(--blanco);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  background-color: #ef4444;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--blanco);
+  margin-top: 10rem;
+  cursor: pointer;
+}
 </style>
