@@ -795,6 +795,21 @@ textarea {
     font-size: 150px;
 }
 
+.previews {
+        gap: 3vh;
+    }
+
+    .preview {
+        width: 95%;
+        height: 80vh;
+        border-radius: 15px;
+    }
+
+    .preview:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
+
 /*---------------------------------------FOOTER-------------------------------------------*/
     footer p{
         font-size: 1.5vh;
