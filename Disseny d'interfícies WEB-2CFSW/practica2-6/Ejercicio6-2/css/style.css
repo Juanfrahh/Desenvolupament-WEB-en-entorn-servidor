@@ -407,7 +407,6 @@ textarea {
 }
 /*-----------------------------------------WEBS--------------------------------------------*/
 
-/* MÓVIL */
 #contenido9 {
     background-color: var(--color-fondo-principal);
     font-family: var(--fuente-principal);
@@ -450,6 +449,7 @@ textarea {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 .preview:hover {
@@ -462,6 +462,9 @@ textarea {
     height: 100%;
     border: none;
     display: block;
+    transform: scale(0.5);
+    transform-origin: top left;
+    pointer-events: auto;
 }
 /*----------------------------------TABLET--------------------------------*/
 @media (min-width: 750px) {
