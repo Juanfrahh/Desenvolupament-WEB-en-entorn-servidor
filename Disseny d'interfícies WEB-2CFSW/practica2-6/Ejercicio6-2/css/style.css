@@ -442,9 +442,9 @@ textarea {
         overflow: hidden;
     }
 
-#contenido9 .preview iframe {
-        width: 100%
-        height: 
+#contenido .preview iframe {
+        width: 1920px;
+        height: 1080px;
         transform: scale(0.2);
         transform-origin: top left;
         border: none;
