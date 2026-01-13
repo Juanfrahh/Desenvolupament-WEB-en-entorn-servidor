@@ -1052,5 +1052,28 @@ textarea {
         margin: auto;
         font-size: 1.8vh;
     }
-    
+
+ #contenido9 {
+        padding: 6vh 0;
+    }
+
+    #contenido9 h2 {
+        font-size: 5vh;
+        margin-bottom: 6vh;
+    }
+
+    .previews {
+        gap: 3vh;
+    }
+
+    .preview {
+        width: 95%;
+        height: 80vh;
+        border-radius: 15px;
+    }
+
+    .preview:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+    }
 }
