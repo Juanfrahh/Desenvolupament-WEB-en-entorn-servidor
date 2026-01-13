@@ -443,8 +443,8 @@ textarea {
     }
 
 #contenido9 .preview iframe {
-        width: 100%;
-        height: auto;
+        width: 100%
+        height: 
         transform: scale(0.2);
         transform-origin: top left;
         border: none;
